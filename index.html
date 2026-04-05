@@ -37,8 +37,11 @@
         }
 
         p {
-            margin-bottom: 20px;
+            margin-bottom: 22px;
             color: var(--text-soft);
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         nav {
@@ -96,6 +99,10 @@
             margin-right: auto;
         }
 
+        img:first-of-type {
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+        }
+
         .btn {
             display: inline-block;
             background: var(--accent);
@@ -141,103 +148,295 @@
             border: none;
             margin: 30px 0;
         }
+
+        .fade {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-delay-2 { transition-delay: 0.2s; }
+        .fade-delay-3 { transition-delay: 0.4s; }
+
+        #chapter {
+            background: linear-gradient(to bottom, #111, #1a1a1a);
+        }
+
+        #chapter p {
+            color: #ddd;
+        }
+
+        #chapter img {
+            box-shadow: 0 0 40px rgba(255,200,120,0.15);
+        }
+
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #ef4444;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            z-index: 999;
+            transition: transform 0.2s;
+        }
+
+        .floating-cta:hover {
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
 
     <nav>
         <a href="#home">Home</a>
+        <a href="#chapter">Beginning</a>
         <a href="#moments">Moments</a>
-        <a href="#book">Book</a>
+        <a href="#buddy">Buddy & Sir</a>
         <a href="#world">World</a>
         <a href="#river">River</a>
+        <a href="#book">Book</a>
     </nav>
 
     <section id="home">
         <div class="container">
-            <img src="hero-raft.png" alt="Buddy and Sir Hero">
-            <h1>The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>
-            <p>
-            She brings the chaos.<br>
-            He holds the line.<br>
-            The river handles the rest.
+            <img src="hero-raft.png" alt="Buddy and Sir Hero" class="fade">
+            <h1 class="fade">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>
+            <p class="fade" style="opacity:0.7;">
+                Early readers get first access before public release.
             </p>
-            <img src="arch.png" alt="Gateway to the River">
-            <p>The morning started with a broken water pump and a bad idea. It was supposed to be a simple fix, but in a world where the environment has a memory, nothing is ever truly simple.</p>
-            <p>Welcome to the beginning of a number one selling book series of 2026. A journey through hopepunk landscapes and cozy chaos.</p>
-            <a href="#book" class="btn">Step Into the River</a>
-            <p>Buddy makes things happen. Sir survives them. The river keeps score.</p>
+            <h2 class="fade fade-delay-2">
+            The river reacts.<br>
+            They weren’t ready.
+            </h2>
+            <p class="fade fade-delay-3">
+            It wasn’t supposed to be anything.<br>
+            Just a broken pump.<br>
+            Just a normal morning.<br><br>
+            And then something shifted.
+            </p>
+            <img src="arch.png" alt="Gateway to the River" class="fade">
+            <a href="#chapter" class="btn fade">Enter Before It Changes</a>
+            
             <div style="margin-top: 60px;">
-                <h2>Stay Close</h2>
-                <p>
-                When the river changes,<br>
-                you’ll know first.
-                </p>
-                <form action="#" method="POST">
-                    <input type="email" name="email" placeholder="Enter your email" required>
-                    <button type="submit" class="btn">Join the Journey</button>
+                <h2 class="fade">The river remembers who stays.</h2>
+                <form name="contact" method="POST" data-netlify="true" class="fade">
+                    <input type="hidden" name="form-name" value="contact">
+                    <p>
+                        Get early access before the river changes.<br>
+                        And everything that follows.
+                    </p>
+                    <input type="email" name="email" placeholder="Enter your email" required><br><br>
+                    <button type="submit" class="btn primary">Don’t Miss What Happens Next</button>
+                    <p style="font-size:0.75rem;opacity:0.5;">
+                        You’ll know before the next shift happens.
+                    </p>
                 </form>
+                <p style="font-size:0.8rem;opacity:0.6;">
+                    Access opens quietly. Not everyone gets in.
+                </p>
+                <p style="font-size:0.75rem;opacity:0.5;">
+                    Some people arrive too late.
+                </p>
+                <p class="fade" style="font-size:0.85rem;opacity:0.7;">
+                    No spam. Just story.
+                </p>
+                <p class="success fade" style="display:none;color:#16a34a;">
+                    You’re in. Watch the river.
+                </p>
             </div>
+        </div>
+    </section>
+
+    <section id="chapter" style="background:#111;color:#fff;">
+        <div class="container">
+            <h1 class="fade">The Rambunctious River</h1>
+            <p class="fade">
+            The morning started with a broken water pump and a bad idea.
+            </p>
+            <p class="fade">
+            Buddy Bootz was halfway up a ladder, arguing with a machine that had already decided otherwise.
+            </p>
+            <p class="fade">
+            It should have ended there.
+            </p>
+            <p class="fade">
+            But something shifted.
+            </p>
+            <img src="prelude.png" class="fade">
+            <p class="fade">
+            Not loud.<br>
+            Not sudden.<br><br>Just enough to feel wrong.
+            </p>
+            <p class="fade">
+            The trees didn’t move.<br>
+            The wind didn’t change.<br><br>But the air… noticed.
+            </p>
+            <img src="prelude-maze.png" class="fade">
+            <p class="fade">
+            And somewhere beyond the trees—<br>
+            something was already waiting.
+            </p>
+            <p class="fade" style="opacity:0.6;">
+                You could still leave.<br>
+                But you won’t.
+            </p>
+            <p class="fade" style="opacity:0.5;">
+                Because something already noticed you.
+            </p>
+            <a href="#book" class="btn fade">Keep Following</a>
         </div>
     </section>
 
     <section id="moments">
         <div class="container">
-            <h1>Moments</h1>
-            <p>The morning pump failure wasn't just a mechanical breakdown; it was the start of the drift.</p>
-            <img src="buddy-sir-pump-chaos.png" alt="Pump Chaos">
-            <p>Navigation is less about direction and more about surviving the turns you didn't see coming.</p>
-            <img src="maze.png" alt="The Maze of Reeds">
-            <p>When the sun dips low, the light changes everything we thought we knew about the shore.</p>
-            <img src="lantern_2026.png" alt="Lantern Light">
-            <p>It should have stopped. It didn’t.</p>
+            <h1 class="fade">Moments</h1>
+            <p class="fade">
+            It starts small.<br>
+            It always does.<br><br>
+            Something breaks.<br>
+            Something slips.<br>
+            Something doesn’t stop.
+            </p>
+            <p class="fade" style="opacity:0.5;">
+                You thought it would stop here.
+            </p>
+            <img src="buddy-sir-pump-chaos.png" alt="Pump Chaos" class="fade">
+            <img src="maze.png" alt="The Maze of Reeds" class="fade">
+            <img src="lantern_2026.png" alt="Lantern Light" class="fade">
         </div>
     </section>
 
-    <section id="book">
+    <section id="buddy">
         <div class="container">
-            <img src="buddy-sir-book-opening-river.png" alt="Story Opening">
-            <h1>The Prelude</h1>
-            <p>The Rambunctious River doesn’t just flow; it observes. Our story begins as the Duo realizes the environment isn't just a backdrop—it's a witness.</p>
-            <p>Most mistakes begin with confidence. This one began with a pump. Every chapter uncovers a bit more of the mystery hidden beneath the neon green adhesive of the Sticky Frog Forest.</p>
-            <a href="#" class="btn">Read the Prelude</a>
-            <div class="blog-post">
-                <h2>From the Riverbank Blog</h2>
-                <p>Insights, field notes, and the things that didn't stay written on the first pass.</p>
-                <img src="buddy-sir-story-page-river-creature.png" alt="River Creature Study">
-                <h3>The Day the River Noticed</h3>
-                <p>It wasn’t the current that changed. It was the way the light hit the ripples, like it was looking back at us.</p>
-                <a href="#" class="btn">Read Post</a>
-            </div>
+            <h1 class="fade">The Duo</h1>
+            <p class="fade">
+            She doesn’t wait.<br>
+            He doesn’t leave.<br><br>
+            Whatever this is—<br>
+            they’re already in it together.
+            </p>
+            <img src="hero-raft.png" alt="Buddy and Sir Together" class="fade">
+            <p class="fade">
+            She moves before thinking.<br>
+            He steadies what follows.<br><br>
+            Not balance.<br>
+            Not control.<br><br>
+            
+            Just enough to keep going.
+            </p>
+            <a href="#book" class="btn fade">Keep Following</a>
         </div>
     </section>
 
     <section id="world">
         <div class="container">
-            <h1>The Environment</h1>
-            <p>The world shifts. It watches. It occasionally interferes. This is not a place you simply walk through; it is a place you negotiate with.</p>
-            <img src="map.png" alt="The Known World">
-            <p>Navigation requires a steady hand and an eye for the things that shouldn't be moving, but are.</p>
-            <img src="frog-chaos.png" alt="Sticky Frog Forest">
-            <p>The paths here are written in the silt and rewritten by the tide every single hour.</p>
-            <img src="prelude-maze.png" alt="Maze Navigation">
-            <p>From the luminous golden lighting of the peaks to the gritty energy of the dusty breakbeats in the valley, every sense is engaged.</p>
+            <h1 class="fade">The Environment</h1>
+            <p class="fade">
+            This isn’t a place you explore.<br>
+            It’s a place that notices you.<br><br>
+            And once it does—<br>
+            it doesn’t forget.
+            </p>
+            <img src="map.png" alt="The Known World" class="fade">
+            <img src="frog-chaos.png" alt="Sticky Frog Forest" class="fade">
         </div>
     </section>
 
     <section id="river">
         <div class="container">
-            <h1>The Rambunctious River</h1>
-            <p>Twelve hundred feet of unpredictable force. It doesn't follow the rules of physics; it follows the rules of the moment.</p>
-            <img src="frog-chaos.png" alt="River Chaos">
-            <p>To navigate the river is to enter a maze where the walls are made of water and the exits are hidden in the reeds.</p>
-            <img src="prelude-maze.png" alt="The Maze of Reeds">
-            <p>Everything slows down when the pot is brewing. Even the current seems to respect the coffee break.</p>
-            <img src="raft_coffeetime.png" alt="Rafting into the Unknown">
-            <p>Tension is high, but the reward is higher. If you can stay on the raft, you might just see the truth of the world.</p>
-            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+            <h1 class="fade">The Rambunctious River</h1>
+            <p class="fade">
+            It doesn’t carry you.<br>
+            It tests you.<br><br>
+            Every choice moves something.<br>
+            Every mistake echoes.<br><br>
+            And it’s already watching.
+            </p>
+            <img src="prelude.png" alt="The River Prelude" class="fade">
+            <img src="hero-raft.png" alt="Raft in the Current" class="fade">
+            <img src="raft_coffeetime.png" alt="A Moment of Calm" class="fade">
+            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen class="fade"></iframe>
         </div>
     </section>
 
+    <section id="book">
+        <div class="container">
+            <img src="buddy-sir-book-opening-river.png" alt="Story Opening" class="fade">
+            <h2 class="fade">
+            You weren’t supposed to see this.
+            </h2>
+            <p class="fade">
+            But now you have a choice.<br><br>
+            Step away—<br>
+            or follow it.
+            </p>
+            <a href="#chapter" class="btn primary fade">Keep Following</a>
+            <p class="fade" style="opacity:0.7;">
+                Or stay here—and let the river find you.
+            </p>
+            <p class="fade" style="opacity:0.5;">
+                It already has.
+            </p>
+            <div class="blog-post">
+                <h2 class="fade">From the Riverbank Blog</h2>
+                <img src="buddy-sir-story-page-river-creature.png" alt="River Creature Study" class="fade">
+                <h3 class="fade">The Day the River Noticed</h3>
+                <p class="fade">It wasn’t the current that changed. It was the way the light hit the ripples, like it was looking back at us.</p>
+                <a href="#chapter" class="btn fade">Step Into the River</a>
+            </div>
+            <p class="fade" style="opacity:0.6;">
+                It started with a broken pump.<br>
+                It doesn’t end there.
+            </p>
+            <p class="fade" style="opacity:0.5;">
+                Scroll back.<br>
+                See where it changed.
+            </p>
+        </div>
+    </section>
+
+    <a href="#book" class="floating-cta">Don’t Miss What Happens Next</a>
+
+    <script>
+        const faders = document.querySelectorAll('.fade');
+
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, { threshold: 0.2 });
+
+        faders.forEach(el => observer.observe(el));
+
+        const form = document.querySelector("form");
+        const success = document.querySelector(".success");
+
+        if(form){
+        form.addEventListener("submit", function(e) {
+          e.preventDefault();
+
+          fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(new FormData(form)).toString()
+          }).then(() => {
+            success.style.display = "block";
+            form.reset();
+          });
+        });
+        }
+    </script>
 </body>
-</html>
+</html>```
