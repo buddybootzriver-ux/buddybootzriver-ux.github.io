@@ -193,6 +193,17 @@
         .floating-cta:hover {
             transform: translateY(-2px);
         }
+
+        #success {
+            display: none;
+        }
+
+        #success:target {
+            display: block !important;
+            color: #16a34a;
+            font-weight: 600;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -229,18 +240,33 @@
             
             <div style="margin-top: 60px;">
                 <h2 class="fade">The river remembers who stays.</h2>
-                <form name="contact" method="POST" data-netlify="true" class="fade">
-                    <input type="hidden" name="form-name" value="contact">
-                    <p>
-                        Get early access before the river changes.<br>
-                        And everything that follows.
-                    </p>
-                    <input type="email" name="email" placeholder="Enter your email" required><br><br>
-                    <button type="submit" class="btn primary">Don’t Miss What Happens Next</button>
-                    <p style="font-size:0.75rem;opacity:0.5;">
-                        You’ll know before the next shift happens.
-                    </p>
+                
+                <form action="https://formspree.io/f/xdapyaar" method="POST" class="fade">
+                  <p>
+                    Get early access before the river changes.<br>
+                    And everything that follows.
+                  </p>
+                  <input 
+                    type="email" 
+                    name="email" 
+                    placeholder="Enter your email" 
+                    required
+                  >
+                  <input type="hidden" name="_subject" value="New River Subscriber">
+                  <input type="hidden" name="_next" value="https://buddybootzriver-ux.github.io/#success">
+                  <br><br>
+                  <button type="submit" class="btn primary">
+                    Don’t Miss What Happens Next
+                  </button>
+                  <p style="font-size:0.75rem;opacity:0.5;">
+                    You’ll know before the next shift happens.
+                  </p>
                 </form>
+
+                <div id="success">
+                  You’re in. Watch the river.
+                </div>
+
                 <p style="font-size:0.8rem;opacity:0.6;">
                     Access opens quietly. Not everyone gets in.
                 </p>
@@ -249,9 +275,6 @@
                 </p>
                 <p class="fade" style="font-size:0.85rem;opacity:0.7;">
                     No spam. Just story.
-                </p>
-                <p class="success fade" style="display:none;color:#16a34a;">
-                    You’re in. Watch the river.
                 </p>
             </div>
         </div>
@@ -329,6 +352,7 @@
             <p class="fade">
             She moves before thinking.<br>
             He steadies what follows.<br><br>
+            
             Not balance.<br>
             Not control.<br><br>
             
@@ -419,24 +443,6 @@
         }, { threshold: 0.2 });
 
         faders.forEach(el => observer.observe(el));
-
-        const form = document.querySelector("form");
-        const success = document.querySelector(".success");
-
-        if(form){
-        form.addEventListener("submit", function(e) {
-          e.preventDefault();
-
-          fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(new FormData(form)).toString()
-          }).then(() => {
-            success.style.display = "block";
-            form.reset();
-          });
-        });
-        }
     </script>
 </body>
 </html>```
