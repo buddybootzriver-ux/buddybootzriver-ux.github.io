@@ -1,496 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Adventures of Buddy Bootz & Sir Drinks-A’Lot</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #F4FAF7;
-            --bg-alt: #FFFFFF;
-            --text: #2F2F2F;
-            --text-soft: #6B7280;
-            --accent: #FF3B3B;
-            --gold: #F2C94C;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<title>Buddy Bootz & Sir Drinks-A’Lot</title>
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.8;
-            overflow-x: hidden;
-        }
+<link rel="icon" type="image/png" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700&display=swap" rel="stylesheet">
 
-        h1, h2, h3 {
-            font-family: 'Outfit', sans-serif;
-            margin-bottom: 15px;
-            color: var(--text);
-        }
+<style>
+:root {
+  --bg: #F4FAF7;
+  --bg-alt: #FFFFFF;
+  --text: #2F2F2F;
+  --text-soft: #6B7280;
+  --accent: #FF3B3B;
+}
 
-        p {
-            margin-bottom: 22px;
-            color: var(--text-soft);
-            max-width: 620px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-        nav {
-            padding: 20px;
-            background: var(--bg-alt);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
+body {
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.8;
+}
 
-        nav a {
-            text-decoration: none;
-            color: var(--text);
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
+h1,h2,h3 {
+  font-family:'Outfit',sans-serif;
+  margin-bottom:15px;
+}
 
-        nav a:hover {
-            color: var(--accent);
-        }
+p {
+  color:var(--text-soft);
+  max-width:620px;
+  margin:0 auto 20px;
+}
 
-        section {
-            padding: 80px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
+nav {
+  background:white;
+  padding:20px;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  position:sticky;
+  top:0;
+  z-index: 1000;
+}
 
-        section:nth-child(even) {
-            background-color: var(--bg-alt);
-        }
+nav a {
+  text-decoration:none;
+  color:var(--text);
+  font-weight:600;
+}
 
-        .container {
-            max-width: 800px;
-            width: 100%;
-            margin: auto;
-            padding: 0 15px;
-        }
+section {
+  padding:80px 20px;
+  text-align:center;
+}
 
-        img {
-            width: 100%;
-            max-width: 700px;
-            height: auto;
-            border-radius: 16px;
-            margin-top: 30px;
-            margin-bottom: 30px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
+section:nth-child(even) {
+  background:var(--bg-alt);
+}
 
-        img:first-of-type {
-            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-        }
+.container {
+  max-width:800px;
+  margin:auto;
+}
 
-        .btn {
-            display: inline-block;
-            background: var(--accent);
-            color: white;
-            padding: 14px 28px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 10px;
-            transition: transform 0.2s;
-        }
+img {
+  width:100%;
+  max-width:700px;
+  border-radius:16px;
+  margin:30px auto;
+  display:block;
+}
 
-        .btn:hover {
-            transform: scale(1.05);
-        }
+input[type="email"] {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  width: 100%;
+  max-width: 300px;
+}
 
-        .blog-post {
-            text-align: left;
-            background: var(--bg);
-            padding: 25px;
-            border-radius: 12px;
-            margin-top: 20px;
-        }
+.btn {
+  background:var(--accent);
+  color:white;
+  padding:14px 28px;
+  border-radius:10px;
+  text-decoration:none;
+  display:inline-block;
+  margin-top:10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
 
-        form {
-            margin-top: 40px;
-        }
-
-        input[type="email"] {
-            padding: 14px;
-            border-radius: 10px;
-            border: 1px solid #ddd;
-            width: 100%;
-            max-width: 300px;
-            margin-bottom: 10px;
-        }
-
-        iframe {
-            width: 100%;
-            max-width: 600px;
-            height: 315px;
-            border-radius: 16px;
-            border: none;
-            margin: 30px 0;
-        }
-
-        .fade {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s ease;
-        }
-
-        .fade.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .fade-delay-2 { transition-delay: 0.2s; }
-        .fade-delay-3 { transition-delay: 0.4s; }
-
-        #chapter {
-            background: linear-gradient(to bottom, #111, #1a1a1a);
-        }
-
-        #chapter p {
-            color: #ddd;
-        }
-
-        #chapter img {
-            box-shadow: 0 0 40px rgba(255,200,120,0.15);
-        }
-
-        .floating-cta {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #ef4444;
-            color: white;
-            padding: 12px 18px;
-            border-radius: 999px;
-            text-decoration: none;
-            font-weight: 600;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            z-index: 999;
-            transition: transform 0.2s;
-        }
-
-        .floating-cta:hover {
-            transform: translateY(-2px);
-        }
-
-        #success {
-            display: none;
-        }
-
-        #success:target {
-            display: block !important;
-            color: #16a34a;
-            font-weight: 600;
-            margin-top: 20px;
-        }
-    </style>
+/* SUCCESS MESSAGE */
+#river-response {
+  display:none;
+  margin-top:30px;
+  font-weight:600;
+  color:#16a34a;
+}
+</style>
 </head>
+
 <body>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#chapter">Beginning</a>
-        <a href="#moments">Moments</a>
-        <a href="#buddy">Buddy & Sir</a>
-        <a href="#world">World</a>
-        <a href="#river">River</a>
-        <a href="#book">Book</a>
-    </nav>
+<nav>
+<a href="#home">Home</a>
+<a href="#chapter">Beginning</a>
+<a href="#buddy">Duo</a>
+<a href="#world">World</a>
+</nav>
 
-    <section id="home">
-        <div class="container">
-            <img src="hero-raft.png" alt="Buddy and Sir Hero" class="fade">
-            <h1 class="fade">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>
-            <p class="fade" style="opacity:0.7;">
-                Early readers get first access before public release.
-            </p>
-            <h2 class="fade fade-delay-2">
-            The river reacts.<br>
-            They weren’t ready.
-            </h2>
-            <p class="fade fade-delay-3">
-            It wasn’t supposed to be anything.<br>
-            Just a broken pump.<br>
-            Just a normal morning.<br><br>
-            And then something shifted.
-            </p>
-            <img src="arch.png" alt="Gateway to the River" class="fade">
-            <a href="#chapter" class="btn fade">Enter Before It Changes</a>
-            
-            <div style="margin-top: 60px;">
-                <h2 class="fade">The river remembers who stays.</h2>
-                
-                <form id="river-form" class="fade">
-                  <p>
-                    Get early access before the river changes.<br>
-                    And everything that follows.
-                  </p>
+<section id="home">
+<div class="container">
 
-                  <input 
-                    type="email" 
-                    name="email" 
-                    placeholder="Enter your email" 
-                    required
-                  >
+<img src="hero-raft.png" alt="Buddy and Sir on the raft">
 
-                  <br><br>
+<h1>The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>
 
-                  <button type="submit" class="btn primary">
-                    Don’t Miss What Happens Next
-                  </button>
+<p>Early readers get access first.</p>
 
-                  <p style="font-size:0.75rem;opacity:0.5;">
-                    You’ll know before the next shift happens.
-                  </p>
-                </form>
+<a href="#chapter" class="btn">Enter Before It Changes</a>
 
-                <div id="river-response" style="
-                  display:none;
-                  margin-top:30px;
-                  font-weight:600;
-                  color:#16a34a;
-                  font-size:1.1rem;
-                ">
-                  You’re in.
-                  <br><br>
-                  It already noticed.
-                  <br><br>
-                  Scroll.
-                  <br><br>
-                  Something changed.
-                </div>
+<form id="river-form" style="margin-top: 40px;">
 
-                <p style="font-size:0.8rem;opacity:0.6;">
-                    Access opens quietly. Not everyone gets in.
-                </p>
-                <p style="font-size:0.75rem;opacity:0.5;">
-                    Some people arrive too late.
-                </p>
-                <p class="fade" style="font-size:0.85rem;opacity:0.7;">
-                    No spam. Just story.
-                </p>
-            </div>
-        </div>
-    </section>
+<input type="email" name="email" placeholder="Enter your email" required>
 
-    <section id="chapter" style="background:#111;color:#fff;">
-        <div class="container">
-            <h1 class="fade">The Rambunctious River</h1>
-            <p class="fade">
-            The morning started with a broken water pump and a bad idea.
-            </p>
-            <p class="fade">
-            Buddy Bootz was halfway up a ladder, arguing with a machine that had already decided otherwise.
-            </p>
-            <p class="fade">
-            It should have ended there.
-            </p>
-            <p class="fade">
-            But something shifted.
-            </p>
-            <img src="prelude.png" class="fade">
-            <p class="fade">
-            Not loud.<br>
-            Not sudden.<br><br>Just enough to feel wrong.
-            </p>
-            <p class="fade">
-            The trees didn’t move.<br>
-            The wind didn’t change.<br><br>But the air… noticed.
-            </p>
-            <img src="prelude-maze.png" class="fade">
-            <p class="fade">
-            And somewhere beyond the trees—<br>
-            something was already waiting.
-            </p>
-            <p class="fade" style="opacity:0.6;">
-                You could still leave.<br>
-                But you won’t.
-            </p>
-            <p class="fade" style="opacity:0.5;">
-                Because something already noticed you.
-            </p>
-            <a href="#book" class="btn fade">Keep Following</a>
-        </div>
-    </section>
+<br><br>
 
-    <section id="moments">
-        <div class="container">
-            <h1 class="fade">Moments</h1>
-            <p class="fade">
-            It starts small.<br>
-            It always does.<br><br>
-            Something breaks.<br>
-            Something slips.<br>
-            Something doesn’t stop.
-            </p>
-            <p class="fade" style="opacity:0.5;">
-                You thought it would stop here.
-            </p>
-            <img src="buddy-sir-pump-chaos.png" alt="Pump Chaos" class="fade">
-            <img src="maze.png" alt="The Maze of Reeds" class="fade">
-            <img src="lantern_2026.png" alt="Lantern Light" class="fade">
-        </div>
-    </section>
+<button type="submit" class="btn">Join</button>
 
-    <section id="buddy">
-        <div class="container">
-            <h1 class="fade">The Duo</h1>
-    
-            <p class="fade">
-            She doesn’t wait.<br>
-            He doesn’t leave.<br><br>
-            Whatever this is—<br>
-            they’re already in it together.
-            </p>
-    
-            <img src="buddy-treehouse.png" alt="Buddy's Treehouse" class="fade">
-    
-            <p class="fade">
-            She moves before thinking.<br>
-            Chaos follows like it’s already hers.
-            </p>
-    
-            <img src="sir-place.png" alt="Sir’s Place" class="fade">
-    
-            <p class="fade">
-            He steadies what follows.<br>
-            Not control—<br>
-            just enough to keep things from breaking completely.
-            </p>
-    
-            <a href="#book" class="btn fade">Keep Following</a>
-        </div>
-    </section>
+</form>
 
-    <section id="world">
-        <div class="container">
-            <h1 class="fade">The Environment</h1>
-            <p class="fade">
-            This isn’t a place you explore.<br>
-            It’s a place that notices you.<br><br>
-            And once it does—<br>
-            it doesn’t forget.
-            </p>
-            <img src="map.png" alt="The Known World" class="fade">
-            <img src="frog-chaos.png" alt="Sticky Frog Forest" class="fade">
-        </div>
-    </section>
+<div id="river-response">
+You’re in.
+<br><br>
+It already noticed.
+<br><br>
+Scroll.
+<br><br>
+Something changed.
+</div>
 
-    <section id="river">
-        <div class="container">
-            <h1 class="fade">The Rambunctious River</h1>
-            <p class="fade">
-            It doesn’t carry you.<br>
-            It tests you.<br><br>
-            Every choice moves something.<br>
-            Every mistake echoes.<br><br>
-            And it’s already watching.
-            </p>
-            <img src="prelude.png" alt="The River Prelude" class="fade">
-            <img src="hero-raft.png" alt="Raft in the Current" class="fade">
-            <img src="raft_coffeetime.png" alt="A Moment of Calm" class="fade">
-            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen class="fade"></iframe>
-        </div>
-    </section>
+</div>
+</section>
 
-    <section id="book">
-        <div class="container">
-            <img src="buddy-sir-book-opening-river.png" alt="Story Opening" class="fade">
-            <h2 class="fade">
-            You weren’t supposed to see this.
-            </h2>
-            <p class="fade">
-            But now you have a choice.<br><br>
-            Step away—<br>
-            or follow it.
-            </p>
-            <a href="#chapter" class="btn primary fade">Keep Following</a>
-            <p class="fade" style="opacity:0.7;">
-                Or stay here—and let the river find you.
-            </p>
-            <p class="fade" style="opacity:0.5;">
-                It already has.
-            </p>
-            <div class="blog-post">
-                <h2 class="fade">From the Riverbank Blog</h2>
-                <img src="buddy-sir-story-page-river-creature.png" alt="River Creature Study" class="fade">
-                <h3 class="fade">The Day the River Noticed</h3>
-                <p class="fade">It wasn’t the current that changed. It was the way the light hit the ripples, like it was looking back at us.</p>
-                <a href="#chapter" class="btn fade">Step Into the River</a>
-            </div>
-            <p class="fade" style="opacity:0.6;">
-                It started with a broken pump.<br>
-                It doesn’t end there.
-            </p>
-            <p class="fade" style="opacity:0.5;">
-                Scroll back.<br>
-                See where it changed.
-            </p>
-        </div>
-    </section>
+<section id="chapter">
+<div class="container">
 
-    <a href="#book" class="floating-cta">Don’t Miss What Happens Next</a>
+<h1>The Rambunctious River</h1>
 
-    <script>
-    const faders = document.querySelectorAll('.fade');
+<p>The morning started with a broken water pump.</p>
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.2 });
+<img src="prelude.png" alt="The river prelude">
 
-    faders.forEach(el => observer.observe(el));
+<p>Something shifted.</p>
 
-    // FORM SUBMISSION (AJAX)
-    const form = document.getElementById("river-form");
-    const responseMessage = document.getElementById("river-response");
+<img src="prelude-maze.png" alt="The river maze">
 
-    if (form) {
-      form.addEventListener("submit", async function(e) {
-        e.preventDefault();
+</div>
+</section>
 
-        const data = new FormData(form);
+<section id="buddy">
+<div class="container">
 
-        const response = await fetch("https://formspree.io/f/xdapyaar", {
-          method: "POST",
-          body: data,
-          headers: {
-            'Accept': 'application/json'
-          }
-        });
+<h1>The Duo</h1>
 
-        if (response.ok) {
-          form.style.display = "none";
-          responseMessage.style.display = "block";
-        } else {
-          alert("Something went wrong. Try again.");
-        }
-      });
-    }
-    </script>
+<p>She doesn’t wait. He doesn’t leave.</p>
+
+<img src="buddy_treehouse.png" alt="Buddy's treehouse">
+
+<p>Chaos follows her.</p>
+
+<img src="sirs_place.png" alt="Sir's place">
+
+<p>He steadies what follows.</p>
+
+</div>
+</section>
+
+<section id="world">
+<div class="container">
+
+<h1>The World</h1>
+
+<img src="map.png" alt="World Map">
+<img src="frog-chaos.png" alt="Frog Forest Chaos">
+
+</div>
+</section>
+
+<script>
+const form = document.getElementById("river-form");
+const responseMessage = document.getElementById("river-response");
+
+form.addEventListener("submit", async function(e){
+e.preventDefault();
+
+const data = new FormData(form);
+
+const response = await fetch("https://formspree.io/f/xdapyaar", {
+method:"POST",
+body:data,
+headers:{'Accept':'application/json'}
+});
+
+if(response.ok){
+form.style.display="none";
+responseMessage.style.display="block";
+} else {
+alert("The river is busy. Please try again.");
+}
+});
+</script>
+
 </body>
 </html>
