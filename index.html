@@ -241,30 +241,38 @@
             <div style="margin-top: 60px;">
                 <h2 class="fade">The river remembers who stays.</h2>
                 
-                <form action="https://formspree.io/f/xdapyaar" method="POST" class="fade">
+                <form id="river-form" class="fade">
                   <p>
                     Get early access before the river changes.<br>
                     And everything that follows.
                   </p>
+
                   <input 
                     type="email" 
                     name="email" 
                     placeholder="Enter your email" 
                     required
                   >
-                  <input type="hidden" name="_subject" value="New River Subscriber">
-                  <input type="hidden" name="_next" value="https://buddybootzriver-ux.github.io/#success">
+
                   <br><br>
+
                   <button type="submit" class="btn primary">
                     Don’t Miss What Happens Next
                   </button>
+
                   <p style="font-size:0.75rem;opacity:0.5;">
                     You’ll know before the next shift happens.
                   </p>
                 </form>
 
-                <div id="success">
-                  You’re in. Watch the river.
+                <div id="river-response" style="
+                  display:none;
+                  margin-top:30px;
+                  font-weight:600;
+                  color:#16a34a;
+                  font-size:1.1rem;
+                ">
+                  You’re in. The river noticed you.
                 </div>
 
                 <p style="font-size:0.8rem;opacity:0.6;">
@@ -432,17 +440,44 @@
     <a href="#book" class="floating-cta">Don’t Miss What Happens Next</a>
 
     <script>
-        const faders = document.querySelectorAll('.fade');
+    const faders = document.querySelectorAll('.fade');
 
-        const observer = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-            }
-          });
-        }, { threshold: 0.2 });
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
 
-        faders.forEach(el => observer.observe(el));
+    faders.forEach(el => observer.observe(el));
+
+    // FORM SUBMISSION (AJAX)
+    const form = document.getElementById("river-form");
+    const responseMessage = document.getElementById("river-response");
+
+    if (form) {
+      form.addEventListener("submit", async function(e) {
+        e.preventDefault();
+
+        const data = new FormData(form);
+
+        const response = await fetch("https://formspree.io/f/xdapyaar", {
+          method: "POST",
+          body: data,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          form.style.display = "none";
+          responseMessage.style.display = "block";
+        } else {
+          alert("Something went wrong. Try again.");
+        }
+      });
+    }
     </script>
 </body>
 </html>```
