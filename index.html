@@ -18,20 +18,16 @@
   --gold: #F2C94C;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin:0; padding:0; box-sizing:border-box; }
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: var(--bg);
+  background: var(--bg);
   color: var(--text);
   line-height: 1.8;
 }
 
-h1, h2, h3 {
+h1,h2,h3 {
   font-family: 'Outfit', sans-serif;
   margin-bottom: 15px;
 }
@@ -59,18 +55,14 @@ nav a {
   font-size: 0.9rem;
 }
 
-nav a:hover {
-  color: var(--accent);
-}
+nav a:hover { color: var(--accent); }
 
 section {
   padding: 80px 20px;
   text-align: center;
 }
 
-section:nth-child(even) {
-  background: var(--bg-alt);
-}
+section:nth-child(even) { background: var(--bg-alt); }
 
 .container {
   max-width: 800px;
@@ -117,11 +109,11 @@ img {
 <section id="home">
 <div class="container">
 
-<img src="images/hero-raft.png" alt="Buddy and Sir on the river">
+<img src="images/title.png" alt="Buddy Bootz Title">
 
-<h1>The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>
+<p><strong>The river doesn’t forget. It reacts.</strong></p>
 
-<p><strong>The river doesn’t forget.<br>It reacts.</strong></p>
+<img src="images/hero.png" alt="Buddy Bootz and Sir Drinks-A’Lot on the Rambunctious River">
 
 <h2>The river reacts.<br>They weren’t ready.</h2>
 
@@ -143,11 +135,11 @@ And then something shifted.
 <form name="contact" method="POST" data-netlify="true">
 <input type="hidden" name="form-name" value="contact">
 
-<p>Get Chapter One + future drops before anyone else.</p>
+<p>Get first access before public release.</p>
 
 <input type="email" name="email" placeholder="Enter your email" required><br><br>
 
-<button type="submit" class="btn">Enter the River</button>
+<button type="submit" class="btn">Step In</button>
 </form>
 
 <p style="font-size:0.85rem;">No spam. Just story.</p>
@@ -162,7 +154,7 @@ And then something shifted.
 
 <h1>Prelude — The Rambunctious River</h1>
 
-<img src="images/buddy-sir-book-opening-river.png">
+<img src="images/buddy-sir-book-opening-river.png" alt="River Opening">
 
 <p>The morning started with a broken water pump and a bad idea.</p>
 
@@ -184,7 +176,7 @@ The wind didn’t change.<br><br>
 But the light—hit the water differently.
 </p>
 
-<img src="images/prelude.png">
+<img src="images/prelude.png" alt="Shift in the River">
 
 <p>
 And somewhere beyond the trees—<br>
@@ -208,8 +200,8 @@ Something slips.<br>
 Something doesn’t stop.
 </p>
 
-<img src="images/buddy-sir-pump-chaos.png">
-<img src="images/maze.png">
+<img src="images/buddy-sir-pump-chaos.png" alt="Pump Chaos">
+<img src="images/maze.png" alt="The Maze">
 
 </div>
 </section>
@@ -223,14 +215,13 @@ Something doesn’t stop.
 <p>
 She leans in.<br>
 He steadies the ground.<br><br>
-Whatever this is—<br>
-they’re already in it together.
+They’re already in it together.
 </p>
 
-<img src="images/buddy.png">
-<img src="images/sir.png">
-<img src="images/buddy_treehouse.png">
-<img src="images/sirs_place.png">
+<img src="images/buddy.png" alt="Buddy Bootz">
+<img src="images/sir.png" alt="Sir Drinks-A’Lot">
+<img src="images/buddy_treehouse.png" alt="Buddy Treehouse">
+<img src="images/sirs_place.png" alt="Sir's Place">
 
 </div>
 </section>
@@ -246,9 +237,10 @@ This isn’t a place you explore.<br>
 It notices you.
 </p>
 
-<img src="images/map.png">
-<img src="images/frog-chaos.png">
-<img src="images/buddy-sir-story-page-river-creature.png">
+<img src="images/map.png" alt="World Map">
+<img src="images/frog-chaos.png" alt="Frog Chaos">
+<img src="images/frog-king.png" alt="Frog King">
+<img src="images/buddy-sir-story-page-river-creature.png" alt="River Creature">
 
 <p>
 <strong>The Day the River Noticed</strong><br>
@@ -271,7 +263,7 @@ The river pauses here.<br>
 Not for long.
 </p>
 
-<img src="images/raft_coffeetime.png">
+<img src="images/raft_coffeetime.png" alt="Coffee Time Raft">
 
 </div>
 </section>
@@ -280,18 +272,27 @@ Not for long.
 <section id="youtube">
 <div class="container">
 
-<h1>Watch</h1>
+<h1>Watch the River</h1>
 
-<iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+<p>
+It won’t look like this again.<br>
+Watch it while it’s still changing.
+</p>
+
+<iframe src="https://www.youtube.com/embed/p3zV0qvuLVQ" allowfullscreen></iframe>
+
+<a href="https://www.youtube.com/@BuddyBootzAdventure" class="btn">
+Follow the Chaos
+</a>
 
 </div>
 </section>
 
-<!-- BOOK CTA -->
+<!-- BOOK -->
 <section id="book">
 <div class="container">
 
-<img src="images/hero-raft.png">
+<img src="images/bootz_cover.png" alt="Book Cover">
 
 <h2>You weren’t supposed to see this.</h2>
 
@@ -302,7 +303,9 @@ Leave it here—<br>
 or see what it does next.
 </p>
 
-<a href="#" class="btn">Read Book One</a>
+<img src="images/cta.png" alt="Call to Action">
+
+<a href="#" class="btn">Start the First Crossing</a>
 
 </div>
 </section>
