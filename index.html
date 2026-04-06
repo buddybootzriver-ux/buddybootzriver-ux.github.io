@@ -1,116 +1,223 @@
-<!-- SAME FILE — ONLY LOOP ADDITIONS -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Adventures of Buddy Bootz & Sir Drinks-A’Lot</title>
 
-<!-- BLOG SECTION (UPDATED ONLY THIS PART) -->
-<section id="blogs">
+<link rel="icon" type="image/png" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#F4FAF7;
+  --bg-alt:#FFFFFF;
+  --text:#2F2F2F;
+  --text-soft:#6B7280;
+  --accent:#FF3B3B;
+  --gold:#F2C94C;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.8;
+  transition:background 1s ease;
+  overflow-x: hidden;
+}
+
+body.tension{background:#eef7f2;}
+
+h1,h2,h3{font-family:'Outfit',sans-serif; line-height: 1.2; margin-bottom: 10px;}
+
+section{padding:80px 20px;text-align:center;}
+section:nth-child(even){background:var(--bg-alt);}
+.container{max-width:800px;margin:auto;}
+
+img{
+  width:100%;
+  max-width:700px;
+  border-radius:16px;
+  margin:30px 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+iframe {
+  width: 100%;
+  max-width: 700px;
+  height: 394px;
+  border-radius: 16px;
+  border: none;
+  margin: 30px 0;
+}
+
+.btn{
+  background:var(--accent);
+  color:#fff;
+  padding:14px 28px;
+  border-radius:10px;
+  text-decoration:none;
+  display:inline-block;
+  position:relative;
+  overflow:hidden;
+  font-weight: 600;
+}
+
+.btn::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-150%;
+  width:50%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,rgba(242,201,76,0.4),transparent);
+  transform:skewX(-20deg);
+}
+
+.btn:hover::after{animation:shimmer 1.2s ease;}
+@keyframes shimmer{100%{left:150%;}}
+
+.fade{opacity:0;transform:translateY(30px);transition:all .8s ease;}
+.fade.show{opacity:1;transform:translateY(0);}
+</style>
+</head>
+
+<body>
+
+<section id="home">
 <div class="container">
-<h1 class="fade">From the Riverbank</h1>
-<img src="buddy-sir-story-page-river-creature.png" class="fade" alt="River Creature">
-
-<p class="fade">
-It wasn’t the current that changed. It was the way the light hit the ripples—like it was looking back.
-</p>
-
-<p class="fade">The creatures here aren’t just animals. They are part of the current itself.</p>
-
-<!-- LOOP ADD -->
-<p class="fade">
-There’s more to this one.<br>
-We talked about it—before it changed again.
-</p>
-
-<a href="#coffee" class="btn fade">Listen In</a>
-
-<!-- LOOP ADD -->
-<p class="fade">If you want to see what happens next—stay close.</p>
-
+<img src="hero.png" class="fade show">
+<h1 class="fade show">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>
+<p class="fade show"><strong>The river doesn’t forget. It reacts.</strong></p>
+<h2 class="fade show">They weren’t ready.</h2>
+<a href="#prelude" class="btn fade show">Step Into the River</a>
 </div>
 </section>
 
+<section id="prelude">
+<div class="container">
+<h1 class="fade">Preview — The Rambunctious River</h1>
+<img src="buddy-sir-book-opening-river.png" class="fade">
 
-<!-- COFFEE SECTION (UPDATED ONLY THIS PART) -->
+<div class="fade" style="text-align:left;max-width:600px;margin:auto;">
+<p>The morning started wrong.<br>The pump coughed.<br>The ladder slipped.<br>The bush fought back.<br>Buddy Bootz landed flat on her dignity and blamed the squirrel.</p>
+<br>
+<p>Sir Drinks-A’Lot didn’t argue...</p>
+<br>
+<p>The raft creaked.<br>The water shifted.<br><strong>the river opened.</strong></p>
+</div>
+</div>
+</section>
+
+<section id="moments">
+<div class="container">
+<h1 class="fade">Moments of Chaos</h1>
+<img src="buddy-sir-pump-chaos.png" class="fade">
+<img src="frog-chaos.png" class="fade">
+<p class="fade">It doesn't slow down.</p>
+</div>
+</section>
+
+<section id="duo">
+<div class="container">
+<h1 class="fade">The Duo</h1>
+<img src="buddy.png" class="fade">
+<img src="sir.png" class="fade">
+<h2 class="fade">The Homesteads</h2>
+<img src="buddy_treehouse.png" class="fade">
+<img src="sirs_place.png" class="fade">
+<p class="fade">And somehow… it keeps working.</p>
+</div>
+</section>
+
+<!-- COFFEE -->
 <section id="coffee">
 <div class="container">
 <h1 class="fade">Coffee Time</h1>
 <h3 class="fade">The Podcast</h3>
+<img src="raft_coffeetime.png" class="fade">
 
-<img src="raft_coffeetime.png" class="fade" alt="Coffee on the Raft">
+<p class="fade">Conversations between the chaos. It’s quieter here. Not for long.</p>
 
-<p class="fade">
-Conversations between the chaos. It’s quieter here. Not for long.
-</p>
-
-<!-- LOOP ADD -->
-<p class="fade">
-Some things are easier to see than explain.<br>
-This one… you’ll want to watch.
-</p>
-
+<!-- LOOP -->
+<p class="fade">Some things are easier to see than explain.<br>This one… you’ll want to watch.</p>
 <a href="#youtube" class="btn fade">Watch It Happen</a>
-
-<!-- LOOP ADD -->
 <p class="fade">If you want to see what happens next—stay close.</p>
 
 </div>
 </section>
 
-
-<!-- YOUTUBE SECTION (UPDATED ONLY THIS PART) -->
+<!-- YOUTUBE -->
 <section id="youtube">
 <div class="container">
 <h1 class="fade">Watch the River</h1>
+<p class="fade">Watch what happens next. Before it changes.</p>
 
-<p class="fade">
-Watch what happens next. Before it changes.
-</p>
+<iframe src="https://www.youtube.com/embed/p3zV0qvuLVQ" class="fade"></iframe>
 
-<iframe src="https://www.youtube.com/embed/p3zV0qvuLVQ" allowfullscreen class="fade"></iframe>
+<a href="https://www.youtube.com/@BuddyBootzAdventure" class="btn fade">Watch More</a>
 
-<br>
-
-<a href="https://www.youtube.com/@BuddyBootzAdventure" class="btn fade">
-Watch More
-</a>
-
-<!-- LOOP ADD -->
-<p class="fade">
-That’s not even the full story.<br>
-It didn’t start there.
-</p>
-
+<!-- LOOP -->
+<p class="fade">That’s not even the full story.<br>It didn’t start there.</p>
 <a href="#prelude" class="btn fade">Go Back to the Beginning</a>
-
-<!-- LOOP ADD -->
 <p class="fade">If you want to see what happens next—stay close.</p>
 
 </div>
 </section>
 
-
-<!-- FINAL CTA SECTION (UPDATED TEXT ONLY) -->
-<section id="stay-close" class="fade">
+<!-- WORLD -->
+<section id="world">
 <div class="container">
+<h1 class="fade">The World</h1>
+<img src="map.png" class="fade">
+<p class="fade">You’re not seeing all of it yet.</p>
+</div>
+</section>
 
-<h2 style="font-size: 1.8rem; margin-bottom: 10px;">
-When the river changes, you’ll know first.
-</h2>
+<!-- BLOG -->
+<section id="blogs">
+<div class="container">
+<h1 class="fade">From the Riverbank</h1>
+<img src="buddy-sir-story-page-river-creature.png" class="fade">
 
-<p style="font-size: 1rem; margin-bottom: 20px;">
-Join the journey and stay connected to every twist, turn, and unexpected moment.
-</p>
+<p class="fade">It wasn’t the current that changed...</p>
+<p class="fade">The creatures here aren’t just animals...</p>
 
-<form style="margin-top: 20px;">
-<input type="email" placeholder="Enter your email" style="padding:12px;border-radius:8px;border:1px solid #ccc; width: 100%; max-width: 300px;"><br><br>
-<button type="submit" class="btn">Step In</button>
-</form>
-
-<p style="font-size:0.85rem; margin-top: 15px; color: var(--text-soft);">
-If you want to see what happens next—you’ll want to be here first.
-</p>
-
-<!-- LOOP CHANGE -->
-<a href="#home" class="btn" style="margin-top: 40px; background: transparent; color: var(--text); border: 1px solid #ccc;">
-Start Again
-</a>
+<!-- LOOP -->
+<p class="fade">There’s more to this one.<br>We talked about it—before it changed again.</p>
+<a href="#coffee" class="btn fade">Listen In</a>
+<p class="fade">If you want to see what happens next—stay close.</p>
 
 </div>
 </section>
+
+<!-- FINAL -->
+<section id="stay-close" class="fade">
+<div class="container">
+<h2>When the river changes, you’ll know first.</h2>
+
+<form>
+<input type="email" placeholder="Enter your email">
+<br><br>
+<button class="btn">Step In</button>
+</form>
+
+<a href="#home" class="btn">Start Again</a>
+</div>
+</section>
+
+<script>
+const faders=document.querySelectorAll('.fade');
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){entry.target.classList.add('show');}
+});
+},{threshold:0.15});
+faders.forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>
