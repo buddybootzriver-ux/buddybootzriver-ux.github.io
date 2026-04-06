@@ -5,29 +5,71 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Adventures of Buddy Bootz & Sir Drinks-A’Lot</title>
 
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700&display=swap" rel="stylesheet">
+
 <style>
 :root {
-  --bg-primary: #F7F7F7;
-  --bg-secondary: #FFFFFF;
-  --text-main: #111111;
-  --text-muted: #444444;
-  --accent: #C62828;
+  --bg: #F4FAF7;
+  --bg-alt: #FFFFFF;
+  --text: #2F2F2F;
+  --text-soft: #6B7280;
+  --accent: #FF3B3B;
+  --gold: #F2C94C;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: var(--bg-primary);
-  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.8;
+}
+
+h1, h2, h3 {
+  font-family: 'Outfit', sans-serif;
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 20px;
+  color: var(--text-soft);
+}
+
+nav {
+  padding: 20px;
+  background: var(--bg-alt);
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+nav a:hover {
+  color: var(--accent);
 }
 
 section {
-  padding: 100px 20px;
+  padding: 80px 20px;
   text-align: center;
 }
 
 section:nth-child(even) {
-  background: var(--bg-secondary);
+  background: var(--bg-alt);
 }
 
 .container {
@@ -37,46 +79,137 @@ section:nth-child(even) {
 
 img {
   width: 100%;
-  max-width: 480px;
-  border-radius: 12px;
-  margin: 25px 0;
-}
-
-h1, h2 {
-  color: var(--text-main);
-}
-
-p {
-  color: var(--text-muted);
-  max-width: 600px;
-  margin: 0 auto 1.5rem;
+  max-width: 700px;
+  border-radius: 16px;
+  margin: 30px 0;
 }
 
 .btn {
   background: var(--accent);
   color: white;
-  padding: 12px 24px;
+  padding: 14px 28px;
+  border-radius: 10px;
   text-decoration: none;
   display: inline-block;
-  margin-top: 15px;
+}
+
+#prelude {
+  background: linear-gradient(to bottom, #f4faf7, #ffffff);
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
+<nav>
+<a href="#home">Home</a>
+<a href="#prelude">Prelude</a>
+<a href="#moments">Moments</a>
+<a href="#buddy">Buddy & Sir</a>
+<a href="#world">World</a>
+<a href="#coffee">Coffee</a>
+<a href="#youtube">Watch</a>
+<a href="#book">Book</a>
+</nav>
+
 <!-- HOME -->
 <section id="home">
 <div class="container">
 
-<img src="images/hero.png" alt="Buddy and Sir at the river">
+<img src="images/hero-raft.png" alt="Buddy and Sir on the river">
 
-<h1>The river doesn’t forget.</h1>
-<p>It keeps track.</p>
-<p>It keeps track of every ripple, every bad idea, and every choice made on the Rambunctious River.</p>
+<h1>The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>
 
-<h2>It reacts. They weren’t ready.</h2>
-<p>Buddy makes it happen.<br>Sir deals with what follows.</p>
+<p><strong>The river doesn’t forget.<br>It reacts.</strong></p>
+
+<h2>The river reacts.<br>They weren’t ready.</h2>
+
+<p>
+It wasn’t supposed to be anything.<br>
+Just a broken pump.<br>
+Just a normal morning.<br><br>
+And then something shifted.
+</p>
+
+<img src="images/arch.png" alt="Gateway to the River">
+
+<a href="#prelude" class="btn">Step Into the River</a>
+
+<!-- EMAIL -->
+<div style="margin-top:60px;">
+<h2>Stay Close</h2>
+
+<form name="contact" method="POST" data-netlify="true">
+<input type="hidden" name="form-name" value="contact">
+
+<p>Get Chapter One + future drops before anyone else.</p>
+
+<input type="email" name="email" placeholder="Enter your email" required><br><br>
+
+<button type="submit" class="btn">Enter the River</button>
+</form>
+
+<p style="font-size:0.85rem;">No spam. Just story.</p>
+</div>
+
+</div>
+</section>
+
+<!-- PRELUDE -->
+<section id="prelude">
+<div class="container">
+
+<h1>Prelude — The Rambunctious River</h1>
+
+<img src="images/buddy-sir-book-opening-river.png">
+
+<p>The morning started with a broken water pump and a bad idea.</p>
+
+<p>Buddy Bootz was halfway up a ladder, arguing with a machine that had already decided otherwise.</p>
+
+<p>It should have ended there.</p>
+
+<p>But something shifted.</p>
+
+<p>
+Not loud.<br>
+Not sudden.<br>
+Just enough to feel… off.
+</p>
+
+<p>
+The trees didn’t move.<br>
+The wind didn’t change.<br><br>
+But the light—hit the water differently.
+</p>
+
+<img src="images/prelude.png">
+
+<p>
+And somewhere beyond the trees—<br>
+something had already noticed them.
+</p>
+
+</div>
+</section>
+
+<!-- MOMENTS -->
+<section id="moments">
+<div class="container">
+
+<h1>Moments</h1>
+
+<p>
+It starts small.<br>
+It always does.<br><br>
+Something breaks.<br>
+Something slips.<br>
+Something doesn’t stop.
+</p>
+
+<img src="images/buddy-sir-pump-chaos.png">
+<img src="images/maze.png">
 
 </div>
 </section>
@@ -86,124 +219,18 @@ p {
 <div class="container">
 
 <h1>The Duo</h1>
-<p>One starts it. One survives it. <strong>Neither leaves.</strong></p>
 
-<h2>Buddy Bootz</h2>
-<img src="images/buddy.png" alt="Buddy Bootz">
+<p>
+She leans in.<br>
+He steadies the ground.<br><br>
+Whatever this is—<br>
+they’re already in it together.
+</p>
 
-<h2>Sir Drinks-A’Lot</h2>
-<img src="images/sir.png" alt="Sir Drinks-A'Lot">
-
-<h2>The Homesteads</h2>
-
-<p><strong>Buddy’s Treehouse:</strong></p>
-<img src="images/buddy_treehouse.png" alt="Buddy's Treehouse">
-
-<p><strong>Sir’s Place:</strong></p>
-<img src="images/sirs_place.png" alt="Sir's Place">
-
-<p>And somehow… it keeps working.</p>
-
-</div>
-</section>
-
-<!-- PRELUDE -->
-<section id="prelude">
-<div class="container">
-
-<h2>Prelude — The Rambunctious River</h2>
-
-<img src="images/buddy-sir-book-opening-river.png" alt="Opening river moment">
-
-<p>The water pump bolted to the outside of Buddy Bootz’s treehouse was doing its best to come apart in public.</p>
-
-<p>The little metal box rattled against the oak boards. Pipes knocked together. A loose valve buzzed.</p>
-
-<p>Something inside snapped—and a spring shot into the leaves overhead.</p>
-
-<p>Buddy Bootz stood at the top of a ladder, steadying the machine with one hand and forcing a screwdriver into a seam that had already made up its mind.</p>
-
-<p>“Alright,” Buddy said. “You’ve made your point.”</p>
-
-<p>The pump coughed.</p>
-
-<p>A blast of rusty water hit her straight in the face.</p>
-
-<p>Buddy went still.</p>
-
-<p>“…That felt personal.”</p>
-
-<p>Below her, something crashed through the brush.</p>
-
-<p>Sir Drinks-A’Lot stepped into view, looking like the morning had already disappointed him.</p>
-
-<p>“I was fine,” he said, brushing off a branch, “until the forest got involved.”</p>
-
-<p>It should have stopped there.</p>
-
-<p><strong>It didn’t.</strong></p>
-
-<p>Because just beyond the trees—</p>
-
-<p>there’s a river.</p>
-
-<p>And it doesn’t behave.</p>
-
-<p>It shifts.<br>It watches.<br>It remembers.</p>
-
-<p>And once it pulls you in—</p>
-
-<p><strong>it doesn’t let go.</strong></p>
-
-</div>
-</section>
-
-<!-- MOMENTS -->
-<section id="moments">
-<div class="container">
-
-<h1>Moments of Chaos</h1>
-
-<img src="images/buddy-sir-pump-chaos.png" alt="Pump chaos">
-<img src="images/frog-chaos.png" alt="Frog chaos">
-
-<p>It doesn’t slow down.</p>
-
-</div>
-</section>
-
-<!-- COFFEE (PODCAST) -->
-<section id="coffee">
-<div class="container">
-
-<h1>Coffee Time</h1>
-<h3>Podcast</h3>
-
-<p><strong>It’s quieter here.</strong></p>
-<p>Not for long.</p>
-
-<img src="images/raft_coffeetime.png" alt="Podcast raft">
-
-<p>Conversations between the chaos.</p>
-
-</div>
-</section>
-
-<!-- YOUTUBE -->
-<section id="youtube">
-<div class="container">
-
-<h1>YouTube</h1>
-
-<p>Watch what happens next.<br>Before it changes.</p>
-
-<iframe width="100%" height="315"
-src="https://www.youtube.com/embed/p3zV0qvuLVQ"
-allowfullscreen></iframe>
-
-<a href="https://www.youtube.com/@BuddyBootzAdventure" class="btn">
-Watch More
-</a>
+<img src="images/buddy.png">
+<img src="images/sir.png">
+<img src="images/buddy_treehouse.png">
+<img src="images/sirs_place.png">
 
 </div>
 </section>
@@ -215,22 +242,67 @@ Watch More
 <h1>The World</h1>
 
 <p>
-This is how it looks—before you understand it.<br>
-You’re not seeing all of it yet.
+This isn’t a place you explore.<br>
+It notices you.
 </p>
 
-<img src="images/map.png" alt="Map">
-
-<h2>Field Notes</h2>
+<img src="images/map.png">
+<img src="images/frog-chaos.png">
+<img src="images/buddy-sir-story-page-river-creature.png">
 
 <p>
-The creatures here aren’t just animals.<br>
-They are part of the current itself.
+<strong>The Day the River Noticed</strong><br>
+It wasn’t the current that changed.<br>
+It was the way the light hit the ripples—<br>
+like it was looking back.
 </p>
 
-<img src="images/buddy-sir-story-page-river-creature.png" alt="Blog creature">
+</div>
+</section>
 
-<p>It doesn’t stay like this.</p>
+<!-- COFFEE -->
+<section id="coffee">
+<div class="container">
+
+<h1>Coffee Time</h1>
+
+<p>
+The river pauses here.<br>
+Not for long.
+</p>
+
+<img src="images/raft_coffeetime.png">
+
+</div>
+</section>
+
+<!-- YOUTUBE -->
+<section id="youtube">
+<div class="container">
+
+<h1>Watch</h1>
+
+<iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+
+</div>
+</section>
+
+<!-- BOOK CTA -->
+<section id="book">
+<div class="container">
+
+<img src="images/hero-raft.png">
+
+<h2>You weren’t supposed to see this.</h2>
+
+<p>But now you have a choice.</p>
+
+<p>
+Leave it here—<br>
+or see what it does next.
+</p>
+
+<a href="#" class="btn">Read Book One</a>
 
 </div>
 </section>
