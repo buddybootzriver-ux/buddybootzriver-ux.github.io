@@ -27,13 +27,8 @@ line-height:1.8;
 overflow-x:hidden;
 }
 
-.section-light{
-background:linear-gradient(to bottom,#5AB0DD,#4FA3D1);
-}
-
-.section-dark{
-background:linear-gradient(to bottom,#4FA3D1,#3F95C4);
-}
+.section-light{background:linear-gradient(to bottom,#5AB0DD,#4FA3D1);}
+.section-dark{background:linear-gradient(to bottom,#4FA3D1,#3F95C4);}
 
 section{
 padding:80px 20px;
@@ -41,10 +36,7 @@ text-align:center;
 border-top:1px solid rgba(255,255,255,0.08);
 }
 
-.container{
-max-width:800px;
-margin:auto;
-}
+.container{max-width:800px;margin:auto;}
 
 h1{
 font-family:'Outfit',sans-serif;
@@ -162,11 +154,15 @@ Sir deals with what follows.
 
 <div class="fade" style="text-align:left;max-width:600px;margin:auto;">
 <p>The morning started wrong.<br>The pump coughed.<br>The ladder slipped.<br>The bush fought back.<br>Buddy Bootz landed flat on her dignity and blamed the squirrel.</p>
+
 <p>It doesn’t stop there.</p>
+
 <br>
 <p>Sir Drinks-A’Lot didn’t argue...</p>
 <br>
+
 <h2 style="margin-top:2rem;">It didn’t.</h2>
+
 <p>The raft creaked.<br>The water shifted.<br><strong>the river opened.</strong></p>
 </div>
 
@@ -174,6 +170,7 @@ Sir deals with what follows.
 <p class="fade">This was the easy part.</p>
 
 <a href="#signup" class="btn fade">Keep Going</a>
+
 </div>
 </section>
 
@@ -183,13 +180,8 @@ Sir deals with what follows.
 <h1 class="fade">You made it this far.</h1>
 <p class="fade">Most people don’t.</p>
 
-<p class="fade">
-The river doesn’t show everything at once.<br>
-But you can stay ahead of it.
-</p>
-
 <form id="emailForm" class="fade">
-<input type="email" id="emailInput" placeholder="Enter your email" required>
+<input type="email" placeholder="Enter your email" required>
 <br><br>
 <button class="btn">Stay Ahead</button>
 </form>
@@ -203,7 +195,7 @@ when something shifts.
 </div>
 </section>
 
-<!-- REST OF SITE UNCHANGED BELOW (your full structure preserved) -->
+<!-- (ALL OTHER SECTIONS PRESERVED EXACTLY) -->
 
 <script>
 const faders=document.querySelectorAll('.fade');
@@ -228,9 +220,9 @@ const msg = document.getElementById("successMsg");
 
 if(form){
 form.addEventListener("submit", function(e){
-  e.preventDefault();
-  msg.style.display = "block";
-  form.reset();
+e.preventDefault();
+msg.style.display="block";
+form.reset();
 });
 }
 </script>
