@@ -3,9 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Adventures of Buddy Bootz & Sir Drinks-A’Lot</title>
+<title>Buddy Bootz & Sir Drinks-A’Lot</title>
 
-<link rel="icon" type="image/png" href="images/favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700&display=swap" rel="stylesheet">
 
 <style>
@@ -18,159 +17,105 @@
   --gold: #F2C94C;
 }
 
-* { margin:0; padding:0; box-sizing:border-box; }
+* {margin:0;padding:0;box-sizing:border-box;}
 
 body {
-  font-family: 'Inter', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.8;
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.8;
+  transition:background 1s ease;
 }
 
-h1,h2,h3 {
-  font-family: 'Outfit', sans-serif;
-  margin-bottom: 15px;
+body.tension {
+  background:#eef7f2;
 }
 
-p {
-  margin-bottom: 20px;
-  color: var(--text-soft);
-}
-
-nav {
-  padding: 20px;
-  background: var(--bg-alt);
-  position: sticky;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-
-nav a {
-  text-decoration: none;
-  color: var(--text);
-  font-weight: 600;
-}
-
-nav a:hover { color: var(--accent); }
+h1,h2 {font-family:'Outfit',sans-serif;}
 
 section {
-  padding: 80px 20px;
-  text-align: center;
+  padding:80px 20px;
+  text-align:center;
 }
 
-section:nth-child(even) { background: var(--bg-alt); }
+section:nth-child(even){background:var(--bg-alt);}
 
-.container {
-  max-width: 800px;
-  margin: auto;
-}
+.container {max-width:800px;margin:auto;}
 
 img {
-  width: 100%;
-  max-width: 700px;
-  border-radius: 16px;
-  margin: 30px 0;
+  width:100%;
+  max-width:700px;
+  border-radius:16px;
+  margin:30px 0;
 }
 
 /* BUTTON */
 .btn {
-  background: var(--accent);
-  color: white;
-  padding: 14px 28px;
-  border-radius: 10px;
-  text-decoration: none;
-  display: inline-block;
+  background:var(--accent);
+  color:#fff;
+  padding:14px 28px;
+  border-radius:10px;
+  text-decoration:none;
+  display:inline-block;
+  position:relative;
+  overflow:hidden;
 }
 
-/* FADE-IN */
+/* SHIMMER */
+.btn::after {
+  content:"";
+  position:absolute;
+  top:0;
+  left:-150%;
+  width:50%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,rgba(242,201,76,0.4),transparent);
+  transform:skewX(-20deg);
+}
+
+.btn:hover::after {
+  animation:shimmer 1.2s ease;
+}
+
+@keyframes shimmer {
+  100% { left:150%; }
+}
+
+/* FADE */
 .fade {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
+  opacity:0;
+  transform:translateY(30px);
+  transition:all .8s ease;
 }
 
 .fade.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* PRELUDE FIXED (BRIGHT) */
-#prelude {
-  background: linear-gradient(to bottom, #F4FAF7, #FFFFFF);
-}
-
-/* FLOAT CTA */
-.floating-cta {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #ef4444;
-  color: white;
-  padding: 12px 18px;
-  border-radius: 999px;
-  text-decoration: none;
+  opacity:1;
+  transform:translateY(0);
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav>
-<a href="#home">Home</a>
-<a href="#prelude">Prelude</a>
-<a href="#moments">Moments</a>
-<a href="#buddy">Buddy & Sir</a>
-<a href="#world">World</a>
-<a href="#coffee">Coffee</a>
-<a href="#youtube">Watch</a>
-<a href="#book">Book</a>
-</nav>
-
 <!-- HOME -->
-<section id="home">
+<section>
 <div class="container">
 
 <img src="images/hero.png" class="fade">
 
-<h1 class="fade">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>
+<h1 class="fade">Buddy Bootz & Sir Drinks-A’Lot</h1>
 
 <p class="fade"><strong>The river doesn’t forget. It reacts.</strong></p>
 
-<h2 class="fade">The river reacts.<br>They weren’t ready.</h2>
+<h2 class="fade">They weren’t ready.</h2>
 
 <p class="fade">
-It wasn’t supposed to be anything.<br>
 Just a broken pump.<br>
 Just a normal morning.<br><br>
-And then something shifted.
+Then something shifted.
 </p>
 
-<img src="images/arch.png" class="fade">
-
-<a href="#prelude" class="btn fade">Step Into the River</a>
-
-<!-- EMAIL -->
-<div style="margin-top:60px;">
-<p class="fade"><strong>You don’t find it.<br>It finds you.</strong></p>
-
-<h2 class="fade">Stay Close</h2>
-
-<form name="contact" method="POST" data-netlify="true" class="fade">
-<input type="hidden" name="form-name" value="contact">
-
-<p>Get what happens next—before anyone else does.</p>
-
-<input type="email" name="email" placeholder="Enter your email" required><br><br>
-
-<button type="submit" class="btn">Step In</button>
-</form>
-
-<p style="font-size:0.85rem;">It changes. You’ll want to see it first.</p>
-</div>
+<a href="#prelude" class="btn fade">Step In</a>
 
 </div>
 </section>
@@ -179,41 +124,29 @@ And then something shifted.
 <section id="prelude">
 <div class="container">
 
-<h1 class="fade">Prelude — The Rambunctious River</h1>
-
-<img src="images/buddy-sir-book-opening-river.png" class="fade">
-
-<p class="fade">The morning started with a broken water pump and a bad idea.</p>
-<p class="fade">Buddy Bootz was halfway up a ladder, arguing with a machine that had already decided otherwise.</p>
-<p class="fade">It should have ended there.</p>
-<p class="fade"><strong>It didn’t.</strong></p>
-
-<img src="images/prelude.png" class="fade">
+<h1 class="fade">Prelude</h1>
 
 <p class="fade">
-Not loud.<br>
-Not sudden.<br><br>
-Just enough to feel… off.
+It should have ended there.<br>
+<strong>It didn’t.</strong>
 </p>
 
 <p class="fade">
-The trees didn’t move.<br>
-The wind didn’t change.<br><br>
-But the light—hit the water differently.
+Not loud.<br>
+Not sudden.<br>
+Just enough to feel off.
 </p>
 
 </div>
 </section>
 
 <!-- MOMENTS -->
-<section id="moments">
+<section>
 <div class="container">
 
 <h1 class="fade">Moments</h1>
 
 <p class="fade">
-It starts small.<br>
-It always does.<br><br>
 Something breaks.<br>
 Something slips.<br>
 Something doesn’t stop.
@@ -221,115 +154,53 @@ Something doesn’t stop.
 
 <p class="fade"><strong>It should have stopped.<br>It didn’t.</strong></p>
 
-<img src="images/buddy-sir-pump-chaos.png" class="fade">
-<img src="images/maze.png" class="fade">
-
 </div>
 </section>
 
-<!-- DUO -->
-<section id="buddy">
+<!-- CTA -->
+<section>
 <div class="container">
 
-<h1 class="fade">The Duo</h1>
+<h2 class="fade">Stay Close</h2>
 
 <p class="fade">
-She leans in.<br>
-He steadies the ground.<br><br>
-They’re already in it together.
+Get what happens next—before anyone else.
 </p>
 
-<img src="images/buddy.png" class="fade">
-<img src="images/sir.png" class="fade">
-<img src="images/buddy_treehouse.png" class="fade">
-<img src="images/sirs_place.png" class="fade">
+<form class="fade">
+<input type="email" placeholder="Email" style="padding:12px;border-radius:8px;border:1px solid #ccc;">
+<br><br>
+<button class="btn">Step In</button>
+</form>
 
 </div>
 </section>
 
-<!-- WORLD -->
-<section id="world">
-<div class="container">
-
-<h1 class="fade">The World</h1>
-
-<p class="fade">
-This isn’t a place you explore.<br>
-It notices you.
-</p>
-
-<img src="images/map.png" class="fade">
-<img src="images/frog-chaos.png" class="fade">
-<img src="images/buddy-sir-story-page-river-creature.png" class="fade">
-
-</div>
-</section>
-
-<!-- COFFEE -->
-<section id="coffee">
-<div class="container">
-
-<h1 class="fade">Coffee Time</h1>
-
-<p class="fade">
-The river doesn’t follow you here.<br>
-It waits.
-</p>
-
-<img src="images/raft_coffeetime.png" class="fade">
-
-</div>
-</section>
-
-<!-- YOUTUBE -->
-<section id="youtube">
-<div class="container">
-
-<h1 class="fade">Watch the River</h1>
-
-<p class="fade">
-It won’t look like this again.<br>
-Watch it while it’s still changing.
-</p>
-
-<iframe src="https://www.youtube.com/embed/p3zV0qvuLVQ" allowfullscreen class="fade"></iframe>
-
-</div>
-</section>
-
-<!-- BOOK -->
-<section id="book">
-<div class="container">
-
-<img src="images/bootz_cover.png" class="fade">
-
-<h2 class="fade">You weren’t supposed to see this.</h2>
-
-<p class="fade">
-But now you’re part of it.<br><br>
-Leave it here—<br>
-or see what it does next.
-</p>
-
-<a href="#prelude" class="btn fade">Step Back In</a>
-
-</div>
-</section>
-
-<a href="#book" class="floating-cta">Read</a>
-
-<!-- SCROLL FADE SCRIPT -->
+<!-- SCRIPT -->
 <script>
-const faders = document.querySelectorAll('.fade');
+// FADE
+const faders=document.querySelectorAll('.fade');
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+},{threshold:0.2});
+faders.forEach(el=>observer.observe(el));
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add('show');
-  });
-}, { threshold: 0.2 });
-
-faders.forEach(el => observer.observe(el));
+// TENSION
+const prelude=document.querySelector('#prelude');
+const tensionObserver=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+document.body.classList.add('tension');
+}else{
+document.body.classList.remove('tension');
+}
+});
+},{threshold:0.4});
+tensionObserver.observe(prelude);
 </script>
 
 </body>
