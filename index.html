@@ -31,7 +31,7 @@ body.tension {
   background:#eef7f2;
 }
 
-h1,h2 {font-family:'Outfit',sans-serif;}
+h1,h2 {font-family:'Outfit',sans-serif; line-height: 1.2; margin-bottom: 10px;}
 
 section {
   padding:80px 20px;
@@ -45,6 +45,8 @@ section:nth-child(even){background:var(--bg-alt);}
 img {
   width:100%;
   max-width:700px;
+  min-height: 200px; /* Ensures the page has height even if image fails to load */
+  background: #eee; /* Placeholder color */
   border-radius:16px;
   margin:30px 0;
 }
@@ -59,9 +61,11 @@ img {
   display:inline-block;
   position:relative;
   overflow:hidden;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
 }
 
-/* SHIMMER */
 .btn::after {
   content:"";
   position:absolute;
@@ -81,13 +85,14 @@ img {
   100% { left:150%; }
 }
 
-/* FADE */
+/* FADE ANIMATION */
 .fade {
   opacity:0;
-  transform:translateY(30px);
-  transition:all .8s ease;
+  transform:translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
+/* This class makes things visible */
 .fade.show {
   opacity:1;
   transform:translateY(0);
@@ -97,109 +102,87 @@ img {
 
 <body>
 
-<!-- HOME -->
 <section>
 <div class="container">
+  <img src="images/hero.png" class="fade show" alt="Hero Image">
+  <h1 class="fade show">Buddy Bootz & Sir Drinks-A’Lot</h1>
+  <p class="fade show"><strong>The river doesn’t forget. It reacts.</strong></p>
+  <h2 class="fade show">They weren’t ready.</h2>
+  
+  <p class="fade show">
+    Just a broken pump.<br>
+    Just a normal morning.<br><br>
+    Then something shifted.
+  </p>
 
-<img src="images/hero.png" class="fade">
-
-<h1 class="fade">Buddy Bootz & Sir Drinks-A’Lot</h1>
-
-<p class="fade"><strong>The river doesn’t forget. It reacts.</strong></p>
-
-<h2 class="fade">They weren’t ready.</h2>
-
-<p class="fade">
-Just a broken pump.<br>
-Just a normal morning.<br><br>
-Then something shifted.
-</p>
-
-<a href="#prelude" class="btn fade">Step In</a>
-
+  <a href="#prelude" class="btn fade show">Step In</a>
 </div>
 </section>
 
-<!-- PRELUDE -->
 <section id="prelude">
 <div class="container">
-
-<h1 class="fade">Prelude</h1>
-
-<p class="fade">
-It should have ended there.<br>
-<strong>It didn’t.</strong>
-</p>
-
-<p class="fade">
-Not loud.<br>
-Not sudden.<br>
-Just enough to feel off.
-</p>
-
+  <h1 class="fade">Prelude</h1>
+  <p class="fade">It should have ended there.<br><strong>It didn’t.</strong></p>
+  <p class="fade">Not loud.<br>Not sudden.<br>Just enough to feel off.</p>
 </div>
 </section>
 
-<!-- MOMENTS -->
 <section>
 <div class="container">
-
-<h1 class="fade">Moments</h1>
-
-<p class="fade">
-Something breaks.<br>
-Something slips.<br>
-Something doesn’t stop.
-</p>
-
-<p class="fade"><strong>It should have stopped.<br>It didn’t.</strong></p>
-
+  <h1 class="fade">Moments</h1>
+  <p class="fade">Something breaks.<br>Something slips.<br>Something doesn’t stop.</p>
+  <p class="fade"><strong>It should have stopped.<br>It didn’t.</strong></p>
 </div>
 </section>
 
-<!-- CTA -->
 <section>
 <div class="container">
-
-<h2 class="fade">Stay Close</h2>
-
-<p class="fade">
-Get what happens next—before anyone else.
-</p>
-
-<form class="fade">
-<input type="email" placeholder="Email" style="padding:12px;border-radius:8px;border:1px solid #ccc;">
-<br><br>
-<button class="btn">Step In</button>
-</form>
-
+  <h2 class="fade">Stay Close</h2>
+  <p class="fade">Get what happens next—before anyone else.</p>
+  <form class="fade" style="margin-top: 20px;">
+    <input type="email" placeholder="Email" style="padding:12px;border-radius:8px;border:1px solid #ccc; width: 100%; max-width: 300px;">
+    <br><br>
+    <button type="submit" class="btn">Step In</button>
+  </form>
 </div>
 </section>
 
-<!-- SCRIPT -->
 <script>
-// FADE
-const faders=document.querySelectorAll('.fade');
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add('show');
-}
-});
-},{threshold:0.2});
-faders.forEach(el=>observer.observe(el));
+// Select all elements with the 'fade' class
+const faders = document.querySelectorAll('.fade');
 
-// TENSION
-const prelude=document.querySelector('#prelude');
-const tensionObserver=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-document.body.classList.add('tension');
-}else{
-document.body.classList.remove('tension');
-}
+const appearOptions = {
+  threshold: 0.15, // Trigger when 15% of the element is visible
+  rootMargin: "0px 0px -50px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) {
+      return;
+    } else {
+      entry.target.classList.add('show');
+      appearOnScroll.unobserve(entry.target); // Stop watching once it's shown
+    }
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
 });
-},{threshold:0.4});
+
+// TENSION EFFECT
+const prelude = document.querySelector('#prelude');
+const tensionObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      document.body.classList.add('tension');
+    } else {
+      document.body.classList.remove('tension');
+    }
+  });
+}, { threshold: 0.3 });
+
 tensionObserver.observe(prelude);
 </script>
 
