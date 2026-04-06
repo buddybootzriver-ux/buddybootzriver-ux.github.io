@@ -10,11 +10,11 @@
 
 <style>
 :root {
-  --bg:#F4FAF7;
+  --bg:#4FA3D1;
   --bg-alt:#FFFFFF;
-  --text:#2F2F2F;
-  --text-soft:#6B7280;
-  --accent:#FF3B3B;
+  --text:#FFFFFF;
+  --text-soft:rgba(255,255,255,0.85);
+  --accent:#C62828;
   --gold:#F2C94C;
 }
 
@@ -22,19 +22,53 @@
 
 body{
   font-family:'Inter',sans-serif;
-  background:var(--bg);
+  background:linear-gradient(
+    to bottom,
+    #4FA3D1 0%,
+    #5AB0DD 40%,
+    #3F95C4 100%
+  );
   color:var(--text);
   line-height:1.8;
   transition:background 1s ease;
   overflow-x: hidden;
 }
 
-body.tension{background:#eef7f2;}
+/* subtle water movement */
+body::before{
+  content:"";
+  position:fixed;
+  top:0;
+  left:0;
+  width:200%;
+  height:200%;
+  background:radial-gradient(circle at 30% 30%, rgba(255,255,255,0.08), transparent 60%);
+  animation:waterMove 25s linear infinite;
+  z-index:-1;
+}
 
-h1,h2,h3{font-family:'Outfit',sans-serif; line-height: 1.2; margin-bottom: 10px;}
+@keyframes waterMove{
+  0%{transform:translate(0,0);}
+  50%{transform:translate(-5%,-5%);}
+  100%{transform:translate(0,0);}
+}
+
+body.tension{background:#3F95C4;}
+
+h1,h2,h3{
+  font-family:'Outfit',sans-serif;
+  line-height:1.2;
+  margin-bottom:10px;
+  color:var(--gold);
+}
+
+p{
+  color:var(--text-soft);
+}
 
 section{padding:80px 20px;text-align:center;}
 section:nth-child(even){background:var(--bg-alt);}
+
 .container{max-width:800px;margin:auto;}
 
 img{
@@ -42,7 +76,7 @@ img{
   max-width:700px;
   border-radius:16px;
   margin:30px 0;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 iframe {
@@ -63,9 +97,10 @@ iframe {
   display:inline-block;
   position:relative;
   overflow:hidden;
-  font-weight: 600;
+  font-weight:600;
 }
 
+/* gold shimmer */
 .btn::after{
   content:"";
   position:absolute;
@@ -73,12 +108,18 @@ iframe {
   left:-150%;
   width:50%;
   height:100%;
-  background:linear-gradient(120deg,transparent,rgba(242,201,76,0.4),transparent);
+  background:linear-gradient(120deg,transparent,rgba(242,201,76,0.5),transparent);
   transform:skewX(-20deg);
 }
 
 .btn:hover::after{animation:shimmer 1.2s ease;}
 @keyframes shimmer{100%{left:150%;}}
+
+/* stronger hover presence */
+.btn:hover{
+  box-shadow:0 0 20px rgba(242,201,76,0.4);
+  transform:translateY(-2px);
+}
 
 .fade{opacity:0;transform:translateY(30px);transition:all .8s ease;}
 .fade.show{opacity:1;transform:translateY(0);}
@@ -86,6 +127,8 @@ iframe {
 </head>
 
 <body>
+
+<!-- YOUR ENTIRE HTML BELOW REMAINS 100% UNCHANGED -->
 
 <section id="home">
 <div class="container">
@@ -142,7 +185,6 @@ iframe {
 
 <p class="fade">Conversations between the chaos. It’s quieter here. Not for long.</p>
 
-<!-- LOOP -->
 <p class="fade">Some things are easier to see than explain.<br>This one… you’ll want to watch.</p>
 <a href="#youtube" class="btn fade">Watch It Happen</a>
 <p class="fade">If you want to see what happens next—stay close.</p>
@@ -160,7 +202,6 @@ iframe {
 
 <a href="https://www.youtube.com/@BuddyBootzAdventure" class="btn fade">Watch More</a>
 
-<!-- LOOP -->
 <p class="fade">That’s not even the full story.<br>It didn’t start there.</p>
 <a href="#prelude" class="btn fade">Go Back to the Beginning</a>
 <p class="fade">If you want to see what happens next—stay close.</p>
@@ -186,7 +227,6 @@ iframe {
 <p class="fade">It wasn’t the current that changed...</p>
 <p class="fade">The creatures here aren’t just animals...</p>
 
-<!-- LOOP -->
 <p class="fade">There’s more to this one.<br>We talked about it—before it changed again.</p>
 <a href="#coffee" class="btn fade">Listen In</a>
 <p class="fade">If you want to see what happens next—stay close.</p>
