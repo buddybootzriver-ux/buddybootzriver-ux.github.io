@@ -1,271 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Adventures of Buddy Bootz & Sir Drinks-A’Lot</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regal Interface</title>
+    <style>
+        /* Base Reset & Typography */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
 
-<link rel="icon" type="image/png" href="favicon.png">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700&display=swap" rel="stylesheet">
+        header {
+            padding: 40px 20px;
+            text-align: center;
+            background: #fff;
+        }
 
-<style>
-:root {
-  --bg:#F4FAF7;
-  --bg-alt:#FFFFFF;
-  --text:#2F2F2F;
-  --text-soft:#6B7280;
-  --accent:#FF3B3B;
-  --gold:#F2C94C;
-}
+        section {
+            padding: 80px 20px;
+            text-align: center;
+        }
 
-*{margin:0;padding:0;box-sizing:border-box;}
+        /* Gold glow on images */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(242, 201, 76, 0.25);
+            transition: transform 0.3s ease;
+        }
 
-body{
-  font-family:'Inter',sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.8;
-  transition:background 1s ease;
-  overflow-x: hidden;
-}
+        img:hover {
+            transform: scale(1.02);
+        }
 
-body.tension{background:#eef7f2;}
+        /* Soft gold section tint (alternating) */
+        section:nth-child(even) {
+            background: linear-gradient(to bottom, #FFFFFF, #FFF9E6);
+        }
 
-h1,h2,h3{font-family:'Outfit',sans-serif; line-height: 1.2; margin-bottom: 10px;}
+        /* Rich red buttons */
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #FFFFFF;
+            padding: 15px 35px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            background: linear-gradient(135deg, #D92D2D, #FF3B3B);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(217, 45, 45, 0.2);
+        }
 
-section{
-  padding:80px 20px;
-  text-align:center;
-}
+        /* Hover effect for buttons */
+        .btn:hover {
+            background: linear-gradient(135deg, #FF3B3B, #D92D2D);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(217, 45, 45, 0.4);
+        }
 
-section:nth-child(even){background:var(--bg-alt);}
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-.container{max-width:800px;margin:auto;}
-
-img{
-  width:100%;
-  max-width:700px;
-  border-radius:16px;
-  margin:30px 0;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-iframe {
-  width: 100%;
-  max-width: 700px;
-  height: 394px;
-  border-radius: 16px;
-  border: none;
-  margin: 30px 0;
-}
-
-.btn{
-  background:var(--accent);
-  color:#fff;
-  padding:14px 28px;
-  border-radius:10px;
-  text-decoration:none;
-  display:inline-block;
-  position:relative;
-  overflow:hidden;
-  font-weight: 600;
-}
-
-.btn::after{
-  content:"";
-  position:absolute;
-  top:0;
-  left:-150%;
-  width:50%;
-  height:100%;
-  background:linear-gradient(120deg,transparent,rgba(242,201,76,0.4),transparent);
-  transform:skewX(-20deg);
-}
-
-.btn:hover::after{
-  animation:shimmer 1.2s ease;
-}
-
-@keyframes shimmer{
-  100%{left:150%;}
-}
-
-.fade{
-  opacity:0;
-  transform:translateY(30px);
-  transition:all .8s ease;
-}
-
-.fade.show{
-  opacity:1;
-  transform:translateY(0);
-}
-</style>
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #222;
+        }
+    </style>
 </head>
-
 <body>
 
-<section id="home">
-<div class="container">
-<img src="hero.png" class="fade show" alt="Hero">
-<h1 class="fade show">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>
-<p class="fade show"><strong>The river doesn’t forget. It reacts.</strong></p>
-<h2 class="fade show">They weren’t ready.</h2>
-<a href="#prelude" class="btn fade show">Step Into the River</a>
-</div>
-</section>
+    <header>
+        <h1>Project Showcase</h1>
+    </header>
 
-<section id="prelude">
-<div class="container">
-<h1 class="fade">Preview — The Rambunctious River</h1>
-<img src="buddy-sir-book-opening-river.png" class="fade" alt="River Opening">
-<div class="fade" style="text-align: left; max-width: 600px; margin: auto;">
-<p>The morning started wrong.<br>
-The pump coughed.<br>
-The ladder slipped.<br>
-The bush fought back.<br>
-Buddy Bootz landed flat on her dignity and blamed the squirrel.</p>
-<br>
-<p>Sir Drinks-A’Lot didn’t argue. He never argued in the mornings. He simply watched, took a slow sip from his flask, and waited for the chaos to decide what it wanted.</p>
-<br>
-<p>It didn’t take long.<br>
-The river shimmered.<br>
-Not the usual shimmer. Not sunlight. Not reflection.<br>
-Something else.<br>
-Something watching back.</p>
-<br>
-<p>Buddy saw it first. Of course she did. Trouble had a habit of introducing itself to her personally.</p>
-<br>
-<p>Sir stepped forward, calm as ever, like a man who had already accepted that the day would not go according to plan.</p>
-<br>
-<p>The raft creaked.<br>
-The water shifted.<br>
-And just beneath the surface…<br>
-<strong>the river opened.</strong></p>
-</div>
-</div>
-</section>
+    <section>
+        <div class="container">
+            <h2>The Vision</h2>
+            <p>Experience a design where subtle gold undertones meet bold action.</p>
+            <img src="https://via.placeholder.com/600x350" alt="Showcase Image">
+        </div>
+    </section>
 
-<section id="moments">
-<div class="container">
-<h1 class="fade">Moments of Chaos</h1>
-<img src="buddy-sir-pump-chaos.png" class="fade" alt="Pump Chaos">
-<img src="frog-chaos.png" class="fade" alt="Frog Chaos">
-<p class="fade">It doesn't slow down. Something breaks. Something slips. Something doesn’t stop.</p>
-</div>
-</section>
+    <section>
+        <div class="container">
+            <h2>Take Action</h2>
+            <p>Our buttons are designed to stand out against the warmth of the layout.</p>
+            <div style="margin-top: 30px;">
+                <a href="#" class="btn">Get Started Now</a>
+            </div>
+        </div>
+    </section>
 
-<section id="duo">
-<div class="container">
-<h1 class="fade">The Duo</h1>
-<img src="buddy.png" class="fade" alt="Buddy">
-<img src="sir.png" class="fade" alt="Sir">
-<h2 class="fade">The Homesteads</h2>
-<img src="buddy_treehouse.png" class="fade" alt="Buddy's Treehouse">
-<img src="sirs_place.png" class="fade" alt="Sir's Place">
-<p class="fade">And somehow… it keeps working.</p>
-</div>
-</section>
-
-<section id="coffee">
-<div class="container">
-<h1 class="fade">Coffee Time</h1>
-<h3 class="fade">The Podcast</h3>
-<img src="raft_coffeetime.png" class="fade" alt="Coffee on the Raft">
-<p class="fade">Conversations between the chaos. It’s quieter here. Not for long.</p>
-</div>
-</section>
-
-<section id="youtube">
-<div class="container">
-<h1 class="fade">Watch the River</h1>
-<p class="fade">Watch what happens next. Before it changes.</p>
-<iframe src="https://www.youtube.com/embed/p3zV0qvuLVQ" allowfullscreen class="fade"></iframe>
-<br>
-<a href="https://www.youtube.com/@BuddyBootzAdventure" class="btn fade">Watch More</a>
-</div>
-</section>
-
-<section id="world">
-<div class="container">
-<h1 class="fade">The World</h1>
-<img src="map.png" class="fade" alt="The Map">
-<p class="fade">You’re not seeing all of it yet.</p>
-</div>
-</section>
-
-<section id="blogs">
-<div class="container">
-<h1 class="fade">From the Riverbank</h1>
-<img src="buddy-sir-story-page-river-creature.png" class="fade" alt="River Creature">
-<p class="fade">
-It wasn’t the current that changed. It was the way the light hit the ripples—like it was looking back.
-</p>
-<p class="fade">The creatures here aren’t just animals. They are part of the current itself.</p>
-</div>
-</section>
-
-<section class="fade" style="text-align:center; padding: 40px 20px;">
-  <div class="container">
-    <h1 style="font-size: 2rem; line-height: 1.3; max-width: 700px; margin: 0 auto;">
-      She brings the chaos. He holds the line. The river handles the rest.
-    </h1>
-  </div>
-</section>
-
-<section class="fade" style="text-align:center; padding: 60px 20px;">
-  <div class="container">
-    <p style="font-size: 1.5rem; line-height: 1.6; margin: 0;">
-      It should have stopped.
-    </p>
-    <p style="font-size: 1.5rem; font-weight: bold; margin-top: 10px;">
-      It didn’t.
-    </p>
-  </div>
-</section>
-
-<section id="stay-close" class="fade">
-<div class="container">
-  <h2 style="font-size: 1.8rem; margin-bottom: 10px;">
-    When the river changes, you’ll know first.
-  </h2>
-  <p style="font-size: 1rem; margin-bottom: 20px;">
-    Join the journey and stay connected to every twist, turn, and unexpected moment.
-  </p>
-  
-  <form style="margin-top: 20px;">
-    <input type="email" placeholder="Enter your email" style="padding:12px;border-radius:8px;border:1px solid #ccc; width: 100%; max-width: 300px;"><br><br>
-    <button type="submit" class="btn">Step In</button>
-  </form>
-  
-  <p style="font-size:0.85rem; margin-top: 15px; color: var(--text-soft);">It changes. You’ll want to see it first.</p>
-  <a href="#home" class="btn" style="margin-top: 40px; background: transparent; color: var(--text); border: 1px solid #ccc;">Back to Top</a>
-</div>
-</section>
-
-<script>
-const faders=document.querySelectorAll('.fade');
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add('show');
-}
-});
-},{threshold:0.15});
-faders.forEach(el=>observer.observe(el));
-
-const prelude=document.querySelector('#prelude');
-const tensionObserver=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-document.body.classList.add('tension');
-}else{
-document.body.classList.remove('tension');
-}
-});
-},{threshold:0.3});
-tensionObserver.observe(prelude);
-</script>
+    <section>
+        <div class="container">
+            <h2>Visual Depth</h2>
+            <p>Notice the soft golden glow surrounding the imagery below.</p>
+            <img src="https://via.placeholder.com/600x350" alt="Depth Image">
+        </div>
+    </section>
 
 </body>
 </html>
