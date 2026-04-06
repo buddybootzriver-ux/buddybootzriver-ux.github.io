@@ -68,19 +68,26 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 0 20px;
-            text-align: center;
+            text-align: left;
         }
 
         section {
             padding: 120px 0;
-            text-align: center;
         }
 
         section:nth-child(even) {
             background-color: var(--bg-secondary);
         }
 
+        section .container > *:not(:last-child) {
+            margin-bottom: 1.5rem;
+        }
+
         /* Typography Hierarchy */
+        h1, h2, h3 {
+            text-align: center;
+        }
+
         h1 { 
             font-family: 'Outfit', sans-serif;
             font-size: clamp(2.5rem, 8vw, 4rem); 
@@ -104,8 +111,9 @@
         p {
             font-size: 1.1rem;
             color: var(--text-muted);
-            margin: 0 auto 1.5rem;
-            max-width: var(--max-reading);
+            margin: 0 auto 1.8rem;
+            max-width: 620px;
+            line-height: 1.9;
         }
 
         strong {
@@ -133,6 +141,7 @@
         form {
             margin: 40px auto;
             max-width: 400px;
+            text-align: center;
         }
 
         input[type="email"] {
@@ -168,6 +177,7 @@
             font-weight: 600;
             padding: 20px;
             line-height: 1.6;
+            text-align: center;
         }
 
         /* Podcast / YouTube Control */
