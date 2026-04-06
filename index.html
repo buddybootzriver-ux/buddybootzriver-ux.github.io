@@ -13,130 +13,146 @@
 <style>
 :root {
   --bg: #F4FAF7;
-  --bg-soft: #FFFFFF;
+  --bg-alt: #FFFFFF;
   --text: #2F2F2F;
   --text-soft: #6B7280;
   --accent: #EF4444;
 }
 
+/* BASE */
 body {
   font-family: 'Inter', sans-serif;
   background: var(--bg);
   color: var(--text);
   margin: 0;
-  text-align: center;
+}
+
+/* NAV */
+header {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  padding: 20px 40px;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--text);
 }
 
 /* SECTIONS */
 section {
-  padding: 90px 20px;
+  padding: 100px 20px;
 }
 
-section:nth-child(even){
-  background: var(--bg-soft);
-}
-
-/* NAV */
-nav {
-  display:flex;
-  justify-content:space-between;
-  padding:20px;
-  background: var(--bg);
-  position:sticky;
-  top:0;
-  z-index:1000;
-}
-
-.nav-right {
-  display:flex;
-  gap:20px;
-}
-
-nav a {
-  text-decoration:none;
-  color:var(--text);
-  font-weight:600;
-}
-
-nav a:hover {
-  opacity:0.6;
+section:nth-child(even) {
+  background: var(--bg-alt);
 }
 
 /* CONTAINER */
 .container {
-  max-width:620px;
-  margin:auto;
+  max-width: 900px;
+  margin: auto;
+  text-align: left;
 }
 
-/* TEXT */
+/* TYPOGRAPHY */
 h1 {
-  font-size:2.4rem;
-  margin-bottom:15px;
+  font-size: 2.8rem;
+  margin-bottom: 20px;
 }
 
 h2 {
-  font-size:1.6rem;
-  margin-bottom:15px;
+  font-size: 2rem;
+  margin-top: 40px;
 }
 
 p {
-  color:var(--text-soft);
-  line-height:1.7;
-  margin-bottom:18px;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  max-width: 620px;
+  color: var(--text-soft);
 }
 
-/* IMAGES (CONTROLLED) */
+/* IMAGES */
 img {
-  max-width:100%;
-  height:auto;
-  border-radius:14px;
-  margin:25px 0;
+  max-width: 520px;
+  width: 100%;
+  display: block;
+  margin: 30px auto;
+  border-radius: 14px;
 }
 
 /* BUTTON */
 .btn {
   background: var(--accent);
-  color:white;
-  padding:12px 26px;
-  border-radius:999px;
-  text-decoration:none;
-  display:inline-block;
-  margin-top:20px;
+  color: white;
+  padding: 12px 26px;
+  border-radius: 999px;
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
 }
 
 /* FORM */
 input {
-  padding:12px;
-  width:80%;
-  border-radius:8px;
-  border:1px solid #ccc;
+  padding: 12px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
 #success {
-  display:none;
-  color:#16a34a;
-  font-weight:600;
-  margin-top:15px;
+  display: none;
+  color: #16a34a;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+/* SCROLL FADE */
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.8s ease;
+}
+
+.fade.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>
 </head>
 
 <body>
 
+<header>
 <nav>
-<div><strong>BUDDY & SIR</strong></div>
-<div class="nav-right">
+<strong>BUDDY & SIR</strong>
+<div>
 <a href="#home">Home</a>
 <a href="#prelude">Prelude</a>
-<a href="#buddy">Duo</a>
+<a href="#duo">Duo</a>
 <a href="#coffee">Podcast</a>
 <a href="#blog">Blog</a>
 </div>
 </nav>
+</header>
+
+<main>
 
 <!-- HERO -->
 <section id="home">
-<div class="container">
+<div class="container fade">
 
 <h1>The river doesn’t forget.</h1>
 
@@ -146,8 +162,6 @@ And it already noticed you.
 </p>
 
 <img src="images/hero.png">
-
-<h2>They weren’t ready.</h2>
 
 <p>
 Buddy makes it happen.<br>
@@ -160,32 +174,20 @@ Sir deals with what follows.
 <button class="btn">Stay Ahead</button>
 </form>
 
-<div id="success">
-You’re in.<br>Something changed.
-</div>
+<div id="success">You’re in. Something changed.</div>
 
 </div>
 </section>
 
 <!-- PRELUDE -->
 <section id="prelude">
-<div class="container">
+<div class="container fade">
 
-<h2 style="margin-bottom:40px;">
-Prelude — The Rambunctious River
-</h2>
+<h2>Prelude — The Rambunctious River</h2>
 
-<p>
-The water pump bolted to the outside of Buddy Bootz’s treehouse was doing its best to come apart in public.
-</p>
+<p>The water pump bolted to the outside of Buddy Bootz’s treehouse was doing its best to come apart in public.</p>
 
-<p>
-The little metal box rattled hard against the oak boards. Pipes knocked together. A loose valve buzzed. Something inside snapped—and a spring shot into the leaves overhead.
-</p>
-
-<p>
-Buddy Bootz stood at the top of a ladder, steadying the machine with one hand and forcing a screwdriver into a seam that had already made up its mind.
-</p>
+<p>Something inside snapped—and a spring shot into the leaves overhead.</p>
 
 <p><strong>“Alright,” Buddy said. “You’ve made your point.”</strong></p>
 
@@ -197,35 +199,19 @@ Buddy Bootz stood at the top of a ladder, steadying the machine with one hand an
 
 <p><em>“…That felt personal.”</em></p>
 
-<p>Below her, something crashed through the brush.</p>
+<p>Sir Drinks-A’Lot stepped into view looking like the morning had already disappointed him.</p>
 
-<p>
-Sir Drinks-A’Lot stepped into view looking like the morning had already disappointed him.
-</p>
-
-<p>
-“I was fine,” he said, brushing off a branch, “until the forest got involved.”
-</p>
-
-<p style="margin-top:40px;">It should have stopped there.</p>
+<p>It should have stopped there.</p>
 
 <p><strong>It didn’t.</strong></p>
 
-<p style="margin-top:40px;">Because just beyond the trees—</p>
+<p>Because just beyond the trees—</p>
 
-<p style="font-size:1.2rem;">there’s a river.</p>
+<p style="font-size:1.3rem;">there’s a river.</p>
 
-<p>And it doesn’t behave.</p>
+<p>It shifts. It watches. It remembers.</p>
 
-<p>
-It shifts.<br>
-It watches.<br>
-It remembers.
-</p>
-
-<p>And once it pulls you in—</p>
-
-<p style="font-size:1.1rem;"><strong>it doesn’t let go.</strong></p>
+<p><strong>And once it pulls you in—it doesn’t let go.</strong></p>
 
 <a href="#" class="btn">Enter the River</a>
 
@@ -233,48 +219,37 @@ It remembers.
 </section>
 
 <!-- DUO -->
-<section id="buddy">
-<div class="container">
+<section id="duo">
+<div class="container fade">
 
-<h1>The Duo</h1>
-
-<p>
-One starts it.<br>
-One survives it.<br>
-Neither leaves.
-</p>
-
-<img src="images/buddy.png">
 <h2>Buddy Bootz</h2>
+<p>Bold. Fast. Already doing something she shouldn’t.</p>
+<img src="images/buddy.png">
 
-<img src="images/sir.png">
 <h2>Sir Drinks-A’Lot</h2>
+<p>Steady. Capable. Already tired of this.</p>
+<img src="images/sir.png">
 
+<h2>Her Place</h2>
 <img src="images/buddy_treehouse.png">
-<h2>Buddy’s Treehouse</h2>
 
+<h2>His Place</h2>
 <img src="images/sirs_place.png">
-<h2>Sir’s Place</h2>
-
-<p>
-They don’t balance each other.<br>
-They survive each other.
-</p>
 
 </div>
 </section>
 
 <!-- PODCAST -->
 <section id="coffee">
-<div class="container">
+<div class="container fade">
 
-<h1>Coffee Time</h1>
+<h2>Coffee Time</h2>
 
-<p>It’s quieter here.<br>Not for long.</p>
+<p>It’s quieter here. Not for long.</p>
 
 <img src="images/raft_coffeetime.png">
 
-<iframe width="100%" height="300"
+<iframe width="100%" height="315"
 src="https://www.youtube.com/embed?listType=user_uploads&list=BuddyBootzAdventure"
 allowfullscreen></iframe>
 
@@ -283,13 +258,11 @@ allowfullscreen></iframe>
 
 <!-- BLOG -->
 <section id="blog">
-<div class="container">
+<div class="container fade">
 
-<h1>From the Riverbank</h1>
+<h2>From the Riverbank</h2>
 
 <img src="images/buddy-sir-story-page-river-creature.png">
-
-<h2>The Day the River Noticed</h2>
 
 <p>
 It wasn’t the current that changed.<br>
@@ -299,7 +272,27 @@ It was the way it looked back.
 </div>
 </section>
 
+</main>
+
+<footer class="container" style="padding:60px 20px;">
+<p style="font-size:0.9rem;">© Buddy Bootz & Sir Drinks-A’Lot</p>
+</footer>
+
 <script>
+/* FADE SCROLL */
+const faders = document.querySelectorAll('.fade');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+});
+
+faders.forEach(el => observer.observe(el));
+
+/* FORM */
 const form = document.getElementById("form");
 const success = document.getElementById("success");
 
