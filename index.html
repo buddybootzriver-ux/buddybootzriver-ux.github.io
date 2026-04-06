@@ -1,57 +1,239 @@
-You are a Senior Front-End Developer.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Adventures of Buddy Bootz & Sir Drinks-A’Lot</title>
 
-TASK:
-Fix ONLY image paths. Do NOT change anything else.
+<style>
+:root {
+  --bg-primary: #F7F7F7;
+  --bg-secondary: #FFFFFF;
+  --text-main: #111111;
+  --text-muted: #444444;
+  --accent: #C62828;
+}
 
-CRITICAL RULES:
-- DO NOT change layout
-- DO NOT change text
-- DO NOT remove anything
-- DO NOT modify sections
-- ONLY fix image paths
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-main);
+}
 
-----------------------------------------
+section {
+  padding: 100px 20px;
+  text-align: center;
+}
 
-GROUND TRUTH:
+section:nth-child(even) {
+  background: var(--bg-secondary);
+}
 
-All images are located in:
+.container {
+  max-width: 800px;
+  margin: auto;
+}
 
-/images/
+img {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 12px;
+  margin: 25px 0;
+}
 
-----------------------------------------
+h1, h2 {
+  color: var(--text-main);
+}
 
-FIX:
+p {
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
 
-Every image must use:
+.btn {
+  background: var(--accent);
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 15px;
+}
+</style>
+</head>
 
-src="images/filename.png"
+<body>
 
-----------------------------------------
+<!-- HOME -->
+<section id="home">
+<div class="container">
 
-REPLACE:
+<img src="images/hero.png" alt="Buddy and Sir at the river">
 
-src="hero.png"
-src="buddy.png"
-src="sir.png"
-src="map.png"
-src="raft_coffeetime.png"
+<h1>The river doesn’t forget.</h1>
+<p>It keeps track.</p>
+<p>It keeps track of every ripple, every bad idea, and every choice made on the Rambunctious River.</p>
 
-WITH:
+<h2>It reacts. They weren’t ready.</h2>
+<p>Buddy makes it happen.<br>Sir deals with what follows.</p>
 
-src="images/hero.png"
-src="images/buddy.png"
-src="images/sir.png"
-src="images/map.png"
-src="images/raft_coffeetime.png"
+</div>
+</section>
 
-----------------------------------------
+<!-- DUO -->
+<section id="buddy">
+<div class="container">
 
-IMPORTANT:
-- Apply to ALL images
-- Do NOT change anything else
-- Do NOT remove anything
+<h1>The Duo</h1>
+<p>One starts it. One survives it. <strong>Neither leaves.</strong></p>
 
-----------------------------------------
+<h2>Buddy Bootz</h2>
+<img src="images/buddy.png" alt="Buddy Bootz">
 
-OUTPUT:
-Return full index.html only
+<h2>Sir Drinks-A’Lot</h2>
+<img src="images/sir.png" alt="Sir Drinks-A'Lot">
+
+<h2>The Homesteads</h2>
+
+<p><strong>Buddy’s Treehouse:</strong></p>
+<img src="images/buddy_treehouse.png" alt="Buddy's Treehouse">
+
+<p><strong>Sir’s Place:</strong></p>
+<img src="images/sirs_place.png" alt="Sir's Place">
+
+<p>And somehow… it keeps working.</p>
+
+</div>
+</section>
+
+<!-- PRELUDE -->
+<section id="prelude">
+<div class="container">
+
+<h2>Prelude — The Rambunctious River</h2>
+
+<img src="images/buddy-sir-book-opening-river.png" alt="Opening river moment">
+
+<p>The water pump bolted to the outside of Buddy Bootz’s treehouse was doing its best to come apart in public.</p>
+
+<p>The little metal box rattled against the oak boards. Pipes knocked together. A loose valve buzzed.</p>
+
+<p>Something inside snapped—and a spring shot into the leaves overhead.</p>
+
+<p>Buddy Bootz stood at the top of a ladder, steadying the machine with one hand and forcing a screwdriver into a seam that had already made up its mind.</p>
+
+<p>“Alright,” Buddy said. “You’ve made your point.”</p>
+
+<p>The pump coughed.</p>
+
+<p>A blast of rusty water hit her straight in the face.</p>
+
+<p>Buddy went still.</p>
+
+<p>“…That felt personal.”</p>
+
+<p>Below her, something crashed through the brush.</p>
+
+<p>Sir Drinks-A’Lot stepped into view, looking like the morning had already disappointed him.</p>
+
+<p>“I was fine,” he said, brushing off a branch, “until the forest got involved.”</p>
+
+<p>It should have stopped there.</p>
+
+<p><strong>It didn’t.</strong></p>
+
+<p>Because just beyond the trees—</p>
+
+<p>there’s a river.</p>
+
+<p>And it doesn’t behave.</p>
+
+<p>It shifts.<br>It watches.<br>It remembers.</p>
+
+<p>And once it pulls you in—</p>
+
+<p><strong>it doesn’t let go.</strong></p>
+
+</div>
+</section>
+
+<!-- MOMENTS -->
+<section id="moments">
+<div class="container">
+
+<h1>Moments of Chaos</h1>
+
+<img src="images/buddy-sir-pump-chaos.png" alt="Pump chaos">
+<img src="images/frog-chaos.png" alt="Frog chaos">
+
+<p>It doesn’t slow down.</p>
+
+</div>
+</section>
+
+<!-- COFFEE (PODCAST) -->
+<section id="coffee">
+<div class="container">
+
+<h1>Coffee Time</h1>
+<h3>Podcast</h3>
+
+<p><strong>It’s quieter here.</strong></p>
+<p>Not for long.</p>
+
+<img src="images/raft_coffeetime.png" alt="Podcast raft">
+
+<p>Conversations between the chaos.</p>
+
+</div>
+</section>
+
+<!-- YOUTUBE -->
+<section id="youtube">
+<div class="container">
+
+<h1>YouTube</h1>
+
+<p>Watch what happens next.<br>Before it changes.</p>
+
+<iframe width="100%" height="315"
+src="https://www.youtube.com/embed/p3zV0qvuLVQ"
+allowfullscreen></iframe>
+
+<a href="https://www.youtube.com/@BuddyBootzAdventure" class="btn">
+Watch More
+</a>
+
+</div>
+</section>
+
+<!-- WORLD -->
+<section id="world">
+<div class="container">
+
+<h1>The World</h1>
+
+<p>
+This is how it looks—before you understand it.<br>
+You’re not seeing all of it yet.
+</p>
+
+<img src="images/map.png" alt="Map">
+
+<h2>Field Notes</h2>
+
+<p>
+The creatures here aren’t just animals.<br>
+They are part of the current itself.
+</p>
+
+<img src="images/buddy-sir-story-page-river-creature.png" alt="Blog creature">
+
+<p>It doesn’t stay like this.</p>
+
+</div>
+</section>
+
+</body>
+</html>
