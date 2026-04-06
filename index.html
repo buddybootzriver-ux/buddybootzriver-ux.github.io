@@ -1,379 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Adventures of Buddy Bootz & Sir Drinks-A’Lot</title>
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #F4FAF7;
-            --bg-alt: #FFFFFF;
-            --text: #2F2F2F;
-            --text-soft: #6B7280;
-            --accent: #FF3B3B;
-            --gold: #F2C94C;
-        }
+You are a Senior Front-End Developer.
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+TASK:
+Fix ONLY image paths. Do NOT change anything else.
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.8;
-            overflow-x: hidden;
-        }
+CRITICAL RULES:
+- DO NOT change layout
+- DO NOT change text
+- DO NOT remove anything
+- DO NOT modify sections
+- ONLY fix image paths
 
-        h1, h2, h3 {
-            font-family: 'Outfit', sans-serif;
-            margin-bottom: 15px;
-            color: var(--text);
-        }
+----------------------------------------
 
-        p {
-            margin-bottom: 20px;
-            color: var(--text-soft);
-        }
+GROUND TRUTH:
 
-        nav {
-            padding: 20px;
-            background: var(--bg-alt);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
+All images are located in:
 
-        nav a {
-            text-decoration: none;
-            color: var(--text);
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
+/images/
 
-        nav a:hover {
-            color: var(--accent);
-        }
+----------------------------------------
 
-        section {
-            padding: 80px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
+FIX:
 
-        section:nth-child(even) {
-            background-color: var(--bg-alt);
-        }
+Every image must use:
 
-        .container {
-            max-width: 800px;
-            width: 100%;
-            margin: auto;
-            padding: 0 15px;
-        }
+src="images/filename.png"
 
-        img {
-            width: 100%;
-            max-width: 700px;
-            height: auto;
-            border-radius: 16px;
-            margin-top: 30px;
-            margin-bottom: 30px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
+----------------------------------------
 
-        .btn {
-            display: inline-block;
-            background: var(--accent);
-            color: white;
-            padding: 14px 28px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 10px;
-            transition: transform 0.2s;
-        }
+REPLACE:
 
-        .btn:hover {
-            transform: scale(1.05);
-        }
+src="hero.png"
+src="buddy.png"
+src="sir.png"
+src="map.png"
+src="raft_coffeetime.png"
 
-        .blog-post {
-            text-align: left;
-            background: var(--bg);
-            padding: 25px;
-            border-radius: 12px;
-            margin-top: 20px;
-        }
+WITH:
 
-        form {
-            margin-top: 40px;
-        }
+src="images/hero.png"
+src="images/buddy.png"
+src="images/sir.png"
+src="images/map.png"
+src="images/raft_coffeetime.png"
 
-        input[type="email"] {
-            padding: 14px;
-            border-radius: 10px;
-            border: 1px solid #ddd;
-            width: 100%;
-            max-width: 300px;
-            margin-bottom: 10px;
-        }
+----------------------------------------
 
-        iframe {
-            width: 100%;
-            max-width: 600px;
-            height: 315px;
-            border-radius: 16px;
-            border: none;
-            margin: 30px 0;
-        }
+IMPORTANT:
+- Apply to ALL images
+- Do NOT change anything else
+- Do NOT remove anything
 
-        .fade { opacity: 1; transition: opacity 0.5s ease-in; }
-        .fade-delay-2 { transition-delay: 0.2s; }
-        .fade-delay-3 { transition-delay: 0.4s; }
+----------------------------------------
 
-        #prelude {
-            background: linear-gradient(to bottom, #111, #1a1a1a);
-        }
-
-        #prelude p {
-            color: #ddd;
-        }
-
-        #prelude img {
-            box-shadow: 0 0 40px rgba(255,200,120,0.15);
-        }
-
-        .floating-cta {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #ef4444;
-            color: white;
-            padding: 12px 18px;
-            border-radius: 999px;
-            text-decoration: none;
-            font-weight: 600;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            z-index: 999;
-            transition: transform 0.2s;
-        }
-
-        .floating-cta:hover {
-            transform: translateY(-2px);
-        }
-    </style>
-</head>
-<body>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#prelude">Prelude</a>
-        <a href="#moments">Moments</a>
-        <a href="#buddy">Buddy & Sir</a>
-        <a href="#world">World</a>
-        <a href="#coffee">Coffee Time</a>
-        <a href="#youtube">Watch</a>
-        <a href="#book">Book</a>
-    </nav>
-
-    <section id="home">
-        <div class="container">
-            <img src="images/hero-raft.png" alt="Buddy and Sir Hero" class="fade">
-            <h1 class="fade">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>
-            <p class="fade" style="opacity:0.7;">
-                Early readers get first access before public release.
-            </p>
-            <h2 class="fade fade-delay-2">
-            The river reacts.<br>
-            They weren’t ready.
-            </h2>
-            <p class="fade fade-delay-3">
-            It wasn’t supposed to be anything.<br>
-            Just a broken pump.<br>
-            Just a normal morning.<br><br>
-            And then something shifted.
-            </p>
-            <img src="images/arch.png" alt="Gateway to the River" class="fade">
-            <a href="#prelude" class="btn fade">Step Into the River</a>
-            
-            <div style="margin-top: 60px;">
-                <h2 class="fade">Stay Close</h2>
-                <form name="contact" method="POST" data-netlify="true" class="fade">
-                    <input type="hidden" name="form-name" value="contact">
-                    <p>
-                        Get Chapter One + future drops before anyone else.
-                    </p>
-                    <input type="email" name="email" placeholder="Enter your email" required><br><br>
-                    <button type="submit" class="btn primary">Enter the River</button>
-                </form>
-                <p class="fade" style="font-size:0.85rem;opacity:0.7;">
-                    No spam. Just story.
-                </p>
-                <p class="success fade" style="display:none;color:#16a34a;">
-                    You’re in. Watch the river.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="prelude" style="background:#111;color:#fff;">
-        <div class="container">
-            <h1 class="fade">Prelude — The Rambunctious River</h1>
-            <img src="images/buddy-sir-book-opening-river.png" class="fade">
-            <p class="fade">
-            The morning started with a broken water pump and a bad idea.
-            </p>
-            <p class="fade">
-            Buddy Bootz was halfway up a ladder, arguing with a machine that had already decided otherwise.
-            </p>
-            <p class="fade">
-            It should have ended there.
-            </p>
-            <p class="fade">
-            But something shifted.
-            </p>
-            <img src="images/prelude.png" class="fade">
-            <p class="fade">
-            Not loud.<br>
-            Not sudden.<br><br>Just enough to feel wrong.
-            </p>
-            <p class="fade">
-            The trees didn’t move.<br>
-            The wind didn’t change.<br><br>But the air… noticed.
-            </p>
-            <img src="images/prelude-maze.png" class="fade">
-            <p class="fade">
-            And somewhere beyond the trees—<br>
-            something was already waiting.
-            </p>
-            <a href="#moments" class="btn fade">Keep Going</a>
-        </div>
-    </section>
-
-    <section id="moments">
-        <div class="container">
-            <h1 class="fade">Moments</h1>
-            <p class="fade">
-            It starts small.<br>
-            It always does.<br><br>
-            Something breaks.<br>
-            Something slips.<br>
-            Something doesn’t stop.
-            </p>
-            <img src="images/buddy-sir-pump-chaos.png" alt="Pump Chaos" class="fade">
-            <img src="images/maze.png" alt="The Maze of Reeds" class="fade">
-        </div>
-    </section>
-
-    <section id="buddy">
-        <div class="container">
-            <h1 class="fade">The Duo</h1>
-            <p class="fade">
-            She doesn’t wait.<br>
-            He doesn’t leave.<br><br>
-            Whatever this is—<br>
-            they’re already in it together.
-            </p>
-            <img src="images/buddy.png" alt="Buddy Bootz" class="fade">
-            <img src="images/sir.png" alt="Sir Drinks-A'Lot" class="fade">
-            <img src="images/buddy_treehouse.png" alt="Buddy's Treehouse" class="fade">
-            <img src="images/sirs_place.png" alt="Sir's Place" class="fade">
-            <p class="fade">One dreams of the next horizon while the other keeps the raft afloat. It is the perfect balance of ambition and reality.</p>
-            <a href="#world" class="btn fade">See the World</a>
-        </div>
-    </section>
-
-    <section id="world">
-        <div class="container">
-            <h1 class="fade">The Environment</h1>
-            <p class="fade">
-            This isn’t a place you explore.<br>
-            It’s a place that notices you.<br><br>
-            And once it does—<br>
-            it doesn’t forget.
-            </p>
-            <img src="images/map.png" alt="The Known World" class="fade">
-            <img src="images/frog-chaos.png" alt="Sticky Frog Forest" class="fade">
-            <img src="images/buddy-sir-story-page-river-creature.png" alt="River Creature Study" class="fade">
-        </div>
-    </section>
-
-    <section id="coffee">
-        <div class="container">
-            <h1 class="fade">Coffee Time</h1>
-            <p class="fade">
-            A moment of calm amidst the rambunctious current. Grab a cup and join the conversation.
-            </p>
-            <img src="images/raft_coffeetime.png" alt="A Moment of Calm" class="fade">
-        </div>
-    </section>
-
-    <section id="youtube">
-        <div class="container">
-            <h1 class="fade">Watch the Adventure</h1>
-            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen class="fade"></iframe>
-        </div>
-    </section>
-
-    <section id="book">
-        <div class="container">
-            <img src="images/hero-raft.png" alt="Raft in the Current" class="fade">
-            <h2 class="fade">
-            You weren’t supposed to see this.
-            </h2>
-            <p class="fade">
-            But now you have a choice.<br><br>
-            Step away—<br>
-            or follow it.
-            </p>
-            <a href="#prelude" class="btn primary fade">Read Chapter One</a>
-            <p class="fade" style="opacity:0.7;">
-                Or stay here—and let the river find you.
-            </p>
-            <div class="blog-post">
-                <h2 class="fade">From the Riverbank Blog</h2>
-                <h3 class="fade">The Day the River Noticed</h3>
-                <p class="fade">It wasn’t the current that changed. It was the way the light hit the ripples, like it was looking back at us.</p>
-                <a href="#prelude" class="btn fade">Step Into the River</a>
-            </div>
-        </div>
-    </section>
-
-    <a href="#book" class="floating-cta">Read Now</a>
-
-    <script>
-        const form = document.querySelector("form");
-        const success = document.querySelector(".success");
-
-        if(form){
-        form.addEventListener("submit", function(e) {
-          e.preventDefault();
-
-          fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(new FormData(form)).toString()
-          }).then(() => {
-            success.style.display = "block";
-            form.reset();
-          });
-        });
-        }
-    </script>
-</body>
-</html>
+OUTPUT:
+Return full index.html only
