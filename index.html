@@ -27,7 +27,6 @@ body{
   overflow-x:hidden;
 }
 
-/* 🌊 RIVER DEPTH SYSTEM */
 .section-light{
   background:linear-gradient(to bottom,#5AB0DD,#4FA3D1);
 }
@@ -127,40 +126,117 @@ iframe{
 
 <body>
 
+<!-- HOME -->
 <section id="home" class="section-dark">
 <div class="container">
 <img src="hero.png" class="fade show">
 <h1 class="fade show">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>
 <p id="hero-line" class="fade show"><strong>The river doesn’t forget. It reacts.</strong></p>
+<p class="fade show">It keeps track.</p>
 <h2 class="fade show">They weren’t ready.</h2>
 <a href="#prelude" class="btn fade show">Step Into the River</a>
+
+<p class="fade show">
+Start here.<br>
+Then decide if you’re leaving.
+</p>
+
+<p class="fade show">
+Buddy makes it happen.<br>
+Sir deals with what follows.
+</p>
+
 </div>
 </section>
 
+<!-- PRELUDE -->
 <section id="prelude" class="section-light">
 <div class="container">
 <h1 class="fade">Preview — The Rambunctious River</h1>
+
 <img src="buddy-sir-book-opening-river.png" class="fade">
 
 <div class="fade" style="text-align:left;max-width:600px;margin:auto;">
 <p>The morning started wrong.<br>The pump coughed.<br>The ladder slipped.<br>The bush fought back.<br>Buddy Bootz landed flat on her dignity and blamed the squirrel.</p>
+
+<p>It doesn’t stop there.</p>
+
 <br>
 <p>Sir Drinks-A’Lot didn’t argue...</p>
 <br>
+
+<h2 style="margin-top:2rem;">It didn’t.</h2>
+
 <p>The raft creaked.<br>The water shifted.<br><strong>the river opened.</strong></p>
 </div>
+
+<h2 class="fade">It gets worse from here.</h2>
+<p class="fade">This was the easy part.</p>
+
+<a href="#signup" class="btn fade">Keep Going</a>
+
 </div>
 </section>
 
+<!-- SIGNUP -->
+<section id="signup" class="section-dark">
+<div class="container">
+
+<h1 class="fade">You made it this far.</h1>
+<p class="fade">Most people don’t.</p>
+
+<p class="fade">
+The river doesn’t show everything at once.<br>
+But you can stay ahead of it.
+</p>
+
+<form class="fade">
+<input type="email" placeholder="Enter your email">
+<br><br>
+<button class="btn">Stay Ahead</button>
+</form>
+
+<p class="fade">
+You’ll know before anyone else<br>
+when something shifts.
+</p>
+
+</div>
+</section>
+
+<!-- LAUNCH -->
+<section id="launch" class="section-light">
+<div class="container">
+
+<h1 class="fade">The Rambunctious River</h1>
+
+<p class="fade">Book One is coming.</p>
+
+<p class="fade">
+Buddy Bootz and Sir Drinks-A’Lot didn’t mean to start anything.<br>
+But the river doesn’t wait for permission.
+</p>
+
+<img src="buddy-sir-book-opening-river.png" class="fade">
+
+<h2 class="fade">It already started.</h2>
+
+<a href="#signup" class="btn fade">Get Notified First</a>
+
+</div>
+</section>
+
+<!-- MOMENTS -->
 <section id="moments" class="section-dark">
 <div class="container">
 <h1 class="fade">Moments of Chaos</h1>
 <img src="buddy-sir-pump-chaos.png" class="fade">
 <img src="frog-chaos.png" class="fade">
-<p class="fade">It doesn't slow down.</p>
+<p class="fade">It doesn’t slow down.</p>
 </div>
 </section>
 
+<!-- DUO -->
 <section id="duo" class="section-light">
 <div class="container">
 <h1 class="fade">The Duo</h1>
@@ -173,17 +249,23 @@ iframe{
 </div>
 </section>
 
+<!-- COFFEE -->
 <section id="coffee" class="section-dark">
 <div class="container">
 <h1 class="fade">Coffee Time</h1>
 <h3 class="fade">The Podcast</h3>
 <img src="raft_coffeetime.png" class="fade">
-<p class="fade">Conversations between the chaos.</p>
+
+<p class="fade"><strong>It’s quieter here.</strong></p>
+<p class="fade">Not for long.</p>
+
 <p class="fade">Some things are easier to see than explain.</p>
 <a href="#youtube" class="btn fade">Watch It Happen</a>
+
 </div>
 </section>
 
+<!-- YOUTUBE -->
 <section id="youtube" class="section-light">
 <div class="container">
 <h1 class="fade">Watch the River</h1>
@@ -192,23 +274,38 @@ iframe{
 </div>
 </section>
 
+<!-- WORLD -->
 <section id="world" class="section-dark">
 <div class="container">
 <h1 class="fade">The World</h1>
 <img src="map.png" class="fade">
 <p class="fade">You’re not seeing all of it yet.</p>
+<p class="fade">It doesn’t stay like this.</p>
 </div>
 </section>
 
+<!-- BLOG -->
 <section id="blogs" class="section-light">
 <div class="container">
 <h1 class="fade">From the Riverbank</h1>
 <img src="buddy-sir-story-page-river-creature.png" class="fade">
+
 <p class="fade">There’s more to this one.</p>
 <a href="#coffee" class="btn fade">Listen In</a>
+
 </div>
 </section>
 
+<!-- LOOP -->
+<section id="loop" class="section-dark">
+<div class="container">
+<h2 class="fade">You’re not at the beginning anymore.</h2>
+<p class="fade">You’ve already stepped into it.</p>
+<a href="#home" class="btn fade">Go Again</a>
+</div>
+</section>
+
+<!-- FINAL -->
 <section id="stay-close" class="section-dark">
 <div class="container">
 <h2>When the river changes, you’ll know first.</h2>
@@ -222,7 +319,6 @@ iframe{
 </section>
 
 <script>
-/* FADE SYSTEM (UNCHANGED) */
 const faders=document.querySelectorAll('.fade');
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
@@ -231,21 +327,13 @@ if(entry.isIntersecting){entry.target.classList.add('show');}
 },{threshold:0.15});
 faders.forEach(el=>observer.observe(el));
 
-/* 🌊 RIVER MEMORY SYSTEM (NEW) */
 let visits = localStorage.getItem("riverVisits");
+if(!visits){visits=1;}else{visits=parseInt(visits)+1;}
+localStorage.setItem("riverVisits",visits);
 
-if(!visits){
-  visits = 1;
-}else{
-  visits = parseInt(visits) + 1;
-}
-
-localStorage.setItem("riverVisits", visits);
-
-const heroLine = document.getElementById("hero-line");
-
-if(visits > 1 && heroLine){
-  heroLine.innerHTML = "<strong>It remembers you.</strong>";
+const heroLine=document.getElementById("hero-line");
+if(visits>1 && heroLine){
+heroLine.innerHTML="<strong>It remembers you.</strong>";
 }
 </script>
 
