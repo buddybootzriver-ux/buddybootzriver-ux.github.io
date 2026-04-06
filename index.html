@@ -11,12 +11,11 @@
 
     <style>
         :root {
-            --bg-primary: #EAF4F1;
-            --bg-secondary: #F6FBF9;
-            --text-main: #2A2A2A;
-            --text-muted: #5A6B6A;
-            --accent: #B23A48;
-            --gold: #CFAF5A;
+            --bg-primary: #F7F7F7;      /* clean light gray */
+            --bg-secondary: #FFFFFF;    /* white sections */
+            --text-main: #111111;       /* strong black text */
+            --text-muted: #444444;      /* softer gray text */
+            --accent: #C62828;          /* bold red */
             --max-reading: 600px;
             --max-image: 480px;
         }
@@ -62,7 +61,7 @@
         }
 
         nav a:hover {
-            color: var(--gold);
+            opacity: 0.6;
         }
 
         .container {
@@ -87,7 +86,7 @@
         /* Typography Hierarchy */
         h1, h2, h3 {
             text-align: center;
-            color: var(--gold);
+            color: var(--text-main);
         }
 
         h1 { 
@@ -158,7 +157,7 @@
 
         .btn {
             background-color: var(--accent);
-            color: white;
+            color: #FFFFFF;
             padding: 14px 32px;
             border-radius: 999px;
             text-decoration: none;
@@ -171,7 +170,7 @@
 
         .btn:hover { 
             transform: translateY(-2px);
-            background-color: #8E2F3A;
+            background-color: #A61B1B;
         }
 
         #success-msg {
@@ -213,7 +212,7 @@
 <body>
 
     <header>
-        <div style="font-family: 'Outfit'; font-weight: 700; letter-spacing: -1px; color: var(--gold);">BUDDY & SIR</div>
+        <div style="font-family: 'Outfit'; font-weight: 700; letter-spacing: -1px; color: var(--text-main);">BUDDY & SIR</div>
         <nav>
             <a href="#home">Home</a>
             <a href="#buddy">Duo</a>
@@ -480,4 +479,4 @@
         });
     </script>
 </body>
-</html>
+</html>```
