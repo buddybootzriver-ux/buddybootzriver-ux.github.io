@@ -52,7 +52,6 @@ nav a {
   text-decoration: none;
   color: var(--text);
   font-weight: 600;
-  font-size: 0.9rem;
 }
 
 nav a:hover { color: var(--accent); }
@@ -76,6 +75,7 @@ img {
   margin: 30px 0;
 }
 
+/* BUTTON */
 .btn {
   background: var(--accent);
   color: white;
@@ -85,8 +85,33 @@ img {
   display: inline-block;
 }
 
+/* FADE-IN */
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* PRELUDE FIXED (BRIGHT) */
 #prelude {
-  background: linear-gradient(to bottom, #f4faf7, #ffffff);
+  background: linear-gradient(to bottom, #F4FAF7, #FFFFFF);
+}
+
+/* FLOAT CTA */
+.floating-cta {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ef4444;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 999px;
+  text-decoration: none;
 }
 </style>
 </head>
@@ -109,40 +134,42 @@ img {
 <section id="home">
 <div class="container">
 
-<img src="images/title.png" alt="Buddy Bootz Title">
+<img src="images/hero.png" class="fade">
 
-<p><strong>The river doesn’t forget. It reacts.</strong></p>
+<h1 class="fade">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>
 
-<img src="images/hero.png" alt="Buddy Bootz and Sir Drinks-A’Lot on the Rambunctious River">
+<p class="fade"><strong>The river doesn’t forget. It reacts.</strong></p>
 
-<h2>The river reacts.<br>They weren’t ready.</h2>
+<h2 class="fade">The river reacts.<br>They weren’t ready.</h2>
 
-<p>
+<p class="fade">
 It wasn’t supposed to be anything.<br>
 Just a broken pump.<br>
 Just a normal morning.<br><br>
 And then something shifted.
 </p>
 
-<img src="images/arch.png" alt="Gateway to the River">
+<img src="images/arch.png" class="fade">
 
-<a href="#prelude" class="btn">Step Into the River</a>
+<a href="#prelude" class="btn fade">Step Into the River</a>
 
 <!-- EMAIL -->
 <div style="margin-top:60px;">
-<h2>Stay Close</h2>
+<p class="fade"><strong>You don’t find it.<br>It finds you.</strong></p>
 
-<form name="contact" method="POST" data-netlify="true">
+<h2 class="fade">Stay Close</h2>
+
+<form name="contact" method="POST" data-netlify="true" class="fade">
 <input type="hidden" name="form-name" value="contact">
 
-<p>Get first access before public release.</p>
+<p>Get what happens next—before anyone else does.</p>
 
 <input type="email" name="email" placeholder="Enter your email" required><br><br>
 
 <button type="submit" class="btn">Step In</button>
 </form>
 
-<p style="font-size:0.85rem;">No spam. Just story.</p>
+<p style="font-size:0.85rem;">It changes. You’ll want to see it first.</p>
 </div>
 
 </div>
@@ -152,35 +179,27 @@ And then something shifted.
 <section id="prelude">
 <div class="container">
 
-<h1>Prelude — The Rambunctious River</h1>
+<h1 class="fade">Prelude — The Rambunctious River</h1>
 
-<img src="images/buddy-sir-book-opening-river.png" alt="River Opening">
+<img src="images/buddy-sir-book-opening-river.png" class="fade">
 
-<p>The morning started with a broken water pump and a bad idea.</p>
+<p class="fade">The morning started with a broken water pump and a bad idea.</p>
+<p class="fade">Buddy Bootz was halfway up a ladder, arguing with a machine that had already decided otherwise.</p>
+<p class="fade">It should have ended there.</p>
+<p class="fade"><strong>It didn’t.</strong></p>
 
-<p>Buddy Bootz was halfway up a ladder, arguing with a machine that had already decided otherwise.</p>
+<img src="images/prelude.png" class="fade">
 
-<p>It should have ended there.</p>
-
-<p>But something shifted.</p>
-
-<p>
+<p class="fade">
 Not loud.<br>
-Not sudden.<br>
+Not sudden.<br><br>
 Just enough to feel… off.
 </p>
 
-<p>
+<p class="fade">
 The trees didn’t move.<br>
 The wind didn’t change.<br><br>
 But the light—hit the water differently.
-</p>
-
-<img src="images/prelude.png" alt="Shift in the River">
-
-<p>
-And somewhere beyond the trees—<br>
-something had already noticed them.
 </p>
 
 </div>
@@ -190,9 +209,9 @@ something had already noticed them.
 <section id="moments">
 <div class="container">
 
-<h1>Moments</h1>
+<h1 class="fade">Moments</h1>
 
-<p>
+<p class="fade">
 It starts small.<br>
 It always does.<br><br>
 Something breaks.<br>
@@ -200,8 +219,10 @@ Something slips.<br>
 Something doesn’t stop.
 </p>
 
-<img src="images/buddy-sir-pump-chaos.png" alt="Pump Chaos">
-<img src="images/maze.png" alt="The Maze">
+<p class="fade"><strong>It should have stopped.<br>It didn’t.</strong></p>
+
+<img src="images/buddy-sir-pump-chaos.png" class="fade">
+<img src="images/maze.png" class="fade">
 
 </div>
 </section>
@@ -210,18 +231,18 @@ Something doesn’t stop.
 <section id="buddy">
 <div class="container">
 
-<h1>The Duo</h1>
+<h1 class="fade">The Duo</h1>
 
-<p>
+<p class="fade">
 She leans in.<br>
 He steadies the ground.<br><br>
 They’re already in it together.
 </p>
 
-<img src="images/buddy.png" alt="Buddy Bootz">
-<img src="images/sir.png" alt="Sir Drinks-A’Lot">
-<img src="images/buddy_treehouse.png" alt="Buddy Treehouse">
-<img src="images/sirs_place.png" alt="Sir's Place">
+<img src="images/buddy.png" class="fade">
+<img src="images/sir.png" class="fade">
+<img src="images/buddy_treehouse.png" class="fade">
+<img src="images/sirs_place.png" class="fade">
 
 </div>
 </section>
@@ -230,24 +251,16 @@ They’re already in it together.
 <section id="world">
 <div class="container">
 
-<h1>The World</h1>
+<h1 class="fade">The World</h1>
 
-<p>
+<p class="fade">
 This isn’t a place you explore.<br>
 It notices you.
 </p>
 
-<img src="images/map.png" alt="World Map">
-<img src="images/frog-chaos.png" alt="Frog Chaos">
-<img src="images/frog-king.png" alt="Frog King">
-<img src="images/buddy-sir-story-page-river-creature.png" alt="River Creature">
-
-<p>
-<strong>The Day the River Noticed</strong><br>
-It wasn’t the current that changed.<br>
-It was the way the light hit the ripples—<br>
-like it was looking back.
-</p>
+<img src="images/map.png" class="fade">
+<img src="images/frog-chaos.png" class="fade">
+<img src="images/buddy-sir-story-page-river-creature.png" class="fade">
 
 </div>
 </section>
@@ -256,14 +269,14 @@ like it was looking back.
 <section id="coffee">
 <div class="container">
 
-<h1>Coffee Time</h1>
+<h1 class="fade">Coffee Time</h1>
 
-<p>
-The river pauses here.<br>
-Not for long.
+<p class="fade">
+The river doesn’t follow you here.<br>
+It waits.
 </p>
 
-<img src="images/raft_coffeetime.png" alt="Coffee Time Raft">
+<img src="images/raft_coffeetime.png" class="fade">
 
 </div>
 </section>
@@ -272,18 +285,14 @@ Not for long.
 <section id="youtube">
 <div class="container">
 
-<h1>Watch the River</h1>
+<h1 class="fade">Watch the River</h1>
 
-<p>
+<p class="fade">
 It won’t look like this again.<br>
 Watch it while it’s still changing.
 </p>
 
-<iframe src="https://www.youtube.com/embed/p3zV0qvuLVQ" allowfullscreen></iframe>
-
-<a href="https://www.youtube.com/@BuddyBootzAdventure" class="btn">
-Follow the Chaos
-</a>
+<iframe src="https://www.youtube.com/embed/p3zV0qvuLVQ" allowfullscreen class="fade"></iframe>
 
 </div>
 </section>
@@ -292,23 +301,36 @@ Follow the Chaos
 <section id="book">
 <div class="container">
 
-<img src="images/bootz_cover.png" alt="Book Cover">
+<img src="images/bootz_cover.png" class="fade">
 
-<h2>You weren’t supposed to see this.</h2>
+<h2 class="fade">You weren’t supposed to see this.</h2>
 
-<p>But now you have a choice.</p>
-
-<p>
+<p class="fade">
+But now you’re part of it.<br><br>
 Leave it here—<br>
 or see what it does next.
 </p>
 
-<img src="images/cta.png" alt="Call to Action">
-
-<a href="#" class="btn">Start the First Crossing</a>
+<a href="#prelude" class="btn fade">Step Back In</a>
 
 </div>
 </section>
+
+<a href="#book" class="floating-cta">Read</a>
+
+<!-- SCROLL FADE SCRIPT -->
+<script>
+const faders = document.querySelectorAll('.fade');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('show');
+  });
+}, { threshold: 0.2 });
+
+faders.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
