@@ -6,7 +6,7 @@
 
 <title>Buddy Bootz & Sir Drinks-A’Lot</title>
 
-<link rel="icon" href="images/favicon.png">
+<link rel="icon" href="favicon.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700&display=swap" rel="stylesheet">
 
@@ -44,7 +44,7 @@ nav a {
 section {
   padding: 100px 20px;
   scroll-snap-align: start;
-  opacity: 0.55;
+  opacity: 1; /* Fixed: Removed low opacity */
   transition: opacity 0.6s ease;
 }
 
@@ -71,11 +71,9 @@ p {
 }
 
 img {
-  width: 100%;
-  max-width: 700px;
+  max-width: 100%;
   border-radius: 18px;
-  margin: 40px auto;
-  display: block;
+  margin: 40px 0;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
@@ -95,7 +93,6 @@ img {
 input {
   padding: 12px;
   width: 80%;
-  max-width: 300px;
   border-radius: 10px;
   border: 1px solid #ccc;
 }
@@ -126,7 +123,6 @@ iframe {
   color: #16a34a;
   margin-top: 15px;
   font-weight: 600;
-  line-height: 1.6;
 }
 
 .success.show {
@@ -155,8 +151,8 @@ iframe {
 
 <h1 class="fade">The river doesn’t forget.</h1>
 
-<img src="images/hero.png" class="fade" alt="Buddy and Sir Hero">
-<img src="images/arch.png" class="fade" alt="Gateway Arch">
+<img src="hero.png" class="fade">
+<img src="arch.png" class="fade">
 
 <h2 class="fade">It reacts.<br>They weren’t ready.</h2>
 
@@ -202,18 +198,18 @@ One survives it.<br>
 Neither leaves.
 </p>
 
-<img src="images/buddy.png" class="fade" alt="Buddy Bootz">
+<img src="buddy.png" class="fade">
 <h2 class="fade">Buddy Bootz</h2>
 <p class="fade">Bold. Fast. Already doing something she shouldn’t.</p>
 
-<img src="images/sir.png" class="fade" alt="Sir Drinks-A'Lot">
+<img src="sir.png" class="fade">
 <h2 class="fade">Sir Drinks-A’Lot</h2>
 <p class="fade">Steady. Capable. Already tired of this.</p>
 
-<img src="images/buddy_treehouse.png" class="fade" alt="Buddy's Treehouse">
+<img src="buddy_treehouse.png" class="fade">
 <h2 class="fade">Her Place</h2>
 
-<img src="images/sirs_place.png" class="fade" alt="Sir's Place">
+<img src="sirs_place.png" class="fade">
 <h2 class="fade">His Place</h2>
 
 <p class="fade">
@@ -229,7 +225,7 @@ They survive each other.
 
 <h2 class="fade">The river doesn’t forget.</h2>
 
-<img src="images/buddy-sir-book-opening-river.png" class="fade" alt="Book Opening Story">
+<img src="buddy-sir-book-opening-river.png" class="fade">
 
 <p class="fade">The morning started with a broken water pump and a bad idea.</p>
 <p class="fade">It should have stopped.<br>It didn’t.</p>
@@ -244,9 +240,9 @@ They survive each other.
 
 <p class="fade">This is where control slips.</p>
 
-<img src="images/buddy-sir-pump-chaos.png" class="fade" alt="Pump Chaos">
-<img src="images/frog-chaos.png" class="fade" alt="Frog Chaos">
-<img src="images/lantern_2026.png" class="fade" alt="Lantern Light">
+<img src="buddy-sir-pump-chaos.png" class="fade">
+<img src="frog-chaos.png" class="fade">
+<img src="lantern_2026.png" class="fade">
 
 </div>
 </section>
@@ -261,8 +257,8 @@ This is how it looks—<br>
 before you understand it.
 </p>
 
-<img src="images/map.png" class="fade" alt="World Map">
-<img src="images/prelude-maze.png" class="fade" alt="The River Maze">
+<img src="map.png" class="fade">
+<img src="prelude-maze.png" class="fade">
 
 </div>
 </section>
@@ -274,8 +270,8 @@ before you understand it.
 
 <p class="fade">This is where it stops making sense.</p>
 
-<img src="images/prelude.png" class="fade" alt="River Prelude">
-<img src="images/raft_coffeetime.png" class="fade" alt="Coffee on the Raft">
+<img src="prelude.png" class="fade">
+<img src="raft_coffeetime.png" class="fade">
 
 <p class="fade">Once it starts, it doesn’t stop.</p>
 
@@ -284,22 +280,19 @@ before you understand it.
 
 <section id="coffee">
 <div class="container">
-
-<h1 class="fade">Coffee Time with Buddy & Sir</h1>
-
+<h1 class="fade">Coffee Time</h1>
 <p class="fade">
-Stories, chaos, and whatever the river decides next.
+Where the chaos slows down just enough to talk about it.
 </p>
-
-<h2 class="fade">Watch</h2>
-<iframe src="https://www.youtube.com/embed/p3zV0qvuLVQ" title="Buddy Bootz Video" allowfullscreen></iframe>
-
-<h2 class="fade">Read</h2>
-<p class="fade">
-It wasn’t the current that changed.<br>
-It was the way the light hit the ripples.
-</p>
-
+<iframe class="fade"
+src="https://www.youtube.com/embed/p3zV0qvuLVQ"
+allowfullscreen>
+</iframe>
+<a href="https://www.youtube.com/@BuddyBootzAdventure"
+target="_blank"
+class="btn fade">
+Watch More
+</a>
 </div>
 </section>
 
@@ -345,8 +338,9 @@ form.addEventListener("submit", async function(e) {
   if (response.ok) {
     success.classList.add("show");
     form.style.display = "none";
+    form.reset();
   } else {
-    alert("The river is busy. Try again.");
+    alert("Something went wrong. Try again.");
   }
 });
 </script>
