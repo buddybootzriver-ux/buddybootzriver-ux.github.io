@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Buddy Bootz & Sir Drinks-A’Lot</title>
 
+<link rel="icon" type="image/png" href="favicon.png">
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700&display=swap" rel="stylesheet">
 
 <style>
@@ -30,7 +32,7 @@ body.tension { background:#e8f1ec; }
 
 h1,h2 {font-family:'Outfit',sans-serif; line-height: 1.1; margin-bottom: 15px;}
 
-section { padding:60px 20px; text-align:center; }
+section { padding:80px 20px; text-align:center; }
 section:nth-child(even){background:var(--bg-alt);}
 
 .container {max-width:800px; margin:auto;}
@@ -83,25 +85,33 @@ img {
 
 <section id="prelude">
 <div class="container">
-  <h1 class="fade">Prelude</h1>
-  <img src="prelude.png" class="fade" alt="The Prelude">
-  <p class="fade">It should have ended there. <strong>It didn’t.</strong></p>
+  <h1 class="fade">The Journey Begins</h1>
+  <img src="map.png" class="fade" alt="The Map">
+  <p class="fade">It started with a map and a broken pump. It should have ended there. <strong>It didn’t.</strong></p>
 </div>
 </section>
 
 <section>
 <div class="container">
-  <h1 class="fade">Something Shifted</h1>
-  <img src="frog-chaos.png" class="fade" alt="Frog Chaos">
-  <p class="fade">Just a broken pump. Just a normal morning. Then the water started rising.</p>
+  <h1 class="fade">Meet Buddy</h1>
+  <img src="buddy.png" class="fade" alt="Buddy">
+  <p class="fade">Small in stature, but her boots leave a heavy footprint on the riverbanks.</p>
 </div>
 </section>
 
 <section>
 <div class="container">
-  <h1 class="fade">Moments of Calm</h1>
-  <img src="raft_coffeetime.png" class="fade" alt="Coffee on the raft">
-  <p class="fade">Even in the drift, you find a second to breathe.</p>
+  <h1 class="fade">The Shift</h1>
+  <img src="frog-chaos.png" class="fade" alt="Chaos on the river">
+  <p class="fade">Then the water started rising, and the frogs... the frogs were just the beginning.</p>
+</div>
+</section>
+
+<section>
+<div class="container">
+  <h1 class="fade">The Frog King</h1>
+  <img src="frog-king.png" class="fade" alt="The Frog King">
+  <p class="fade">Some things are better left undisturbed in the deep. He is one of them.</p>
 </div>
 </section>
 
@@ -117,6 +127,7 @@ img {
 </section>
 
 <script>
+// SCROLL FADE SCRIPT
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -127,7 +138,7 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade').forEach(el => observer.observe(el));
 
-// TENSION BG CHANGE
+// TENSION BACKGROUND CHANGE
 const prelude = document.querySelector('#prelude');
 const tensionObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -138,6 +149,7 @@ const tensionObserver = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.2 });
+
 tensionObserver.observe(prelude);
 </script>
 
