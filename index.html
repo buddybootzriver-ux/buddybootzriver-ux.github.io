@@ -12,104 +12,108 @@
 
 <style>
 :root {
-  --bg-main: radial-gradient(circle at 20% 20%, #F4FAF7 0%, #EAF6F1 40%, #F8FCFA 100%);
-  --bg-soft: radial-gradient(circle at 80% 30%, #FFFFFF 0%, #F4FAF7 60%, #EEF8F4 100%);
+  --bg: #F4FAF7;
+  --bg-soft: #FFFFFF;
   --text: #2F2F2F;
   --text-soft: #6B7280;
   --accent: #EF4444;
 }
 
+/* BODY */
 body {
   font-family: 'Inter', sans-serif;
-  background: var(--bg-main);
+  background: var(--bg);
   color: var(--text);
   margin: 0;
   text-align: center;
 }
 
+/* SECTIONS */
 section {
-  padding: 100px 20px;
-  background: transparent;
+  padding: 80px 20px;
 }
 
-section:nth-child(even) {
+section:nth-child(even){
   background: var(--bg-soft);
 }
 
+/* NAV */
 nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  background: rgba(244, 250, 247, 0.85);
-  backdrop-filter: blur(8px);
-  position: sticky;
-  top: 0;
+  display:flex;
+  justify-content:space-between;
+  padding:20px;
+  background: var(--bg);
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
 
 .nav-right {
-  display: flex;
-  gap: 20px;
+  display:flex;
+  gap:20px;
 }
 
 nav a {
-  text-decoration: none;
-  color: var(--text);
-  font-weight: 600;
+  text-decoration:none;
+  color:var(--text);
+  font-weight:600;
 }
 
 nav a:hover {
-  opacity: 0.6;
+  opacity:0.6;
 }
 
+/* CONTAINER */
 .container {
-  max-width: 800px;
-  margin: auto;
+  max-width:700px;
+  margin:auto;
 }
 
+/* TEXT */
 h1, h2 {
-  font-family: 'Outfit', sans-serif;
+  font-family:'Outfit', sans-serif;
+  margin-bottom:15px;
 }
 
 p {
-  color: var(--text-soft);
-  line-height: 1.8;
+  color:var(--text-soft);
+  line-height:1.7;
+  margin-bottom:20px;
 }
 
+/* IMAGES (FIXED) */
 img {
-  max-width: 100%;
-  border-radius: 18px;
-  margin: 40px 0;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  max-width:100%;
+  height:auto;
+  border-radius:14px;
+  margin:25px 0;
 }
 
+/* BUTTON */
 .btn {
   background: var(--accent);
-  color: white;
-  padding: 14px 28px;
-  border-radius: 999px;
-  text-decoration: none;
-  display: inline-block;
-  margin: 20px 0;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color:white;
+  padding:12px 26px;
+  border-radius:999px;
+  text-decoration:none;
+  display:inline-block;
+  margin-top:10px;
 }
 
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.3);
-}
-
+/* FORM */
 input {
-  padding: 12px;
-  width: 80%;
-  border-radius: 10px;
-  border: 1px solid #ccc;
+  padding:12px;
+  width:80%;
+  border-radius:8px;
+  border:1px solid #ccc;
 }
 
+/* SUCCESS */
 #success {
-  display: none;
-  color: #16a34a;
-  font-weight: 600;
-  margin-top: 20px;
+  display:none;
+  color:#16a34a;
+  font-weight:600;
+  margin-top:15px;
 }
 </style>
 </head>
@@ -122,9 +126,6 @@ input {
 <a href="#home">Home</a>
 <a href="#buddy">Duo</a>
 <a href="#book">Book</a>
-<a href="#moments">Moments</a>
-<a href="#world">World</a>
-<a href="#river">River</a>
 <a href="#coffee">Podcast</a>
 <a href="#blog">Blog</a>
 </div>
@@ -135,12 +136,14 @@ input {
 <div class="container">
 
 <h1>The river doesn’t forget.</h1>
-<p>It keeps track.</p>
+<p>
+It keeps track.<br>
+And it already noticed you.
+</p>
 
 <img src="images/hero.png">
-<img src="images/arch.png">
 
-<h2>It reacts.<br>They weren’t ready.</h2>
+<h2>They weren’t ready.</h2>
 
 <p>
 Buddy makes it happen.<br>
@@ -154,10 +157,7 @@ Sir deals with what follows.
 </form>
 
 <div id="success">
-You’re in.<br><br>
-It already noticed you.<br><br>
-Scroll.<br><br>
-Something changed.
+You’re in.<br>Something changed.
 </div>
 
 </div>
@@ -201,60 +201,15 @@ They survive each other.
 <section id="book">
 <div class="container">
 
-<h2>The Rambunctious River</h2>
+<h1>The Rambunctious River</h1>
 
-<img src="images/buddy-sir-book-opening-river.png">
-
-<p>The morning started with a broken water pump.</p>
-<p>It should have stopped.<br>It didn’t.</p>
-<p>That was the first mistake.</p>
+<p>The morning started with a broken pump.</p>
 
 <img src="images/prelude.png">
+
+<p>It should have stopped. It didn’t.</p>
+
 <img src="images/prelude-maze.png">
-
-</div>
-</section>
-
-<!-- MOMENTS -->
-<section id="moments">
-<div class="container">
-
-<h1>Moments</h1>
-
-<p>This is where control slips.</p>
-
-<img src="images/buddy-sir-pump-chaos.png">
-<img src="images/frog-chaos.png">
-<img src="images/lantern_2026.png">
-
-<p>It doesn’t slow down.</p>
-
-</div>
-</section>
-
-<!-- WORLD -->
-<section id="world">
-<div class="container">
-
-<h1>The World</h1>
-
-<img src="images/map.png">
-
-<p>You’re not seeing all of it.</p>
-
-</div>
-</section>
-
-<!-- RIVER -->
-<section id="river">
-<div class="container">
-
-<h1>The River</h1>
-
-<img src="images/prelude.png">
-
-<p>It doesn’t ask.</p>
-<p>Once it starts, it doesn’t stop.</p>
 
 </div>
 </section>
@@ -272,19 +227,9 @@ Not for long.
 
 <img src="images/raft_coffeetime.png">
 
-<iframe 
-width="100%" 
-height="315"
+<iframe width="100%" height="300"
 src="https://www.youtube.com/embed?listType=user_uploads&list=BuddyBootzAdventure"
-frameborder="0" 
-allowfullscreen>
-</iframe>
-
-<a href="https://www.youtube.com/@BuddyBootzAdventure" 
-target="_blank" 
-class="btn">
-Watch More
-</a>
+allowfullscreen></iframe>
 
 </div>
 </section>
@@ -302,10 +247,6 @@ Watch More
 <p>
 It wasn’t the current that changed.<br>
 It was the way it looked back.
-</p>
-
-<p>
-Something had already decided.
 </p>
 
 </div>
