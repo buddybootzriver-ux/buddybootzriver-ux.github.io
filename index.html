@@ -41,10 +41,14 @@ nav a {
   font-weight: 600;
 }
 
+nav a:hover {
+  opacity: 0.6;
+}
+
 section {
   padding: 100px 20px;
   scroll-snap-align: start;
-  opacity: 1; /* Fixed: Removed low opacity */
+  opacity: 1;
   transition: opacity 0.6s ease;
 }
 
@@ -150,6 +154,7 @@ iframe {
 <div class="container">
 
 <h1 class="fade">The river doesn’t forget.</h1>
+<p class="fade">It keeps track.</p>
 
 <img src="hero.png" class="fade">
 <img src="arch.png" class="fade">
@@ -157,8 +162,8 @@ iframe {
 <h2 class="fade">It reacts.<br>They weren’t ready.</h2>
 
 <p class="fade">
-Buddy makes things happen.<br>
-Sir survives them.
+Buddy makes it happen.<br>
+Sir deals with what follows.
 </p>
 
 <a href="#book" class="btn fade">Step In</a>
@@ -188,36 +193,24 @@ Something changed.
 </section>
 
 <section id="buddy">
-<div class="container">
-
-<h1 class="fade">The Duo</h1>
-
-<p class="fade">
+<div class="container"><h1 class="fade">The Duo</h1><p class="fade">
 One starts it.<br>
 One survives it.<br>
 Neither leaves.
-</p>
-
-<img src="buddy.png" class="fade">
+</p><img src="buddy.png" class="fade">
 <h2 class="fade">Buddy Bootz</h2>
 <p class="fade">Bold. Fast. Already doing something she shouldn’t.</p>
-
-<img src="sir.png" class="fade">
+<p class="fade">She doesn’t wait.<br>She makes things happen.</p><img src="sir.png" class="fade">
 <h2 class="fade">Sir Drinks-A’Lot</h2>
 <p class="fade">Steady. Capable. Already tired of this.</p>
-
-<img src="buddy_treehouse.png" class="fade">
-<h2 class="fade">Her Place</h2>
-
-<img src="sirs_place.png" class="fade">
-<h2 class="fade">His Place</h2>
-
-<p class="fade">
+<p class="fade">He doesn’t get a choice.<br>He just keeps going anyway.</p><img src="buddy_treehouse.png" class="fade">
+<h2 class="fade">Buddy’s Treehouse</h2>
+<p class="fade">It leans. It creaks.<br>It holds anyway.</p><img src="sirs_place.png" class="fade">
+<h2 class="fade">Sir’s Place</h2>
+<p class="fade">Built to hold.<br>Not built for what’s coming.</p><p class="fade">
 They don’t balance each other.<br>
 They survive each other.
-</p>
-
-</div>
+</p></div>
 </section>
 
 <section id="book">
@@ -229,6 +222,8 @@ They survive each other.
 
 <p class="fade">The morning started with a broken water pump and a bad idea.</p>
 <p class="fade">It should have stopped.<br>It didn’t.</p>
+<p class="fade">That was the first mistake.</p>
+<a href="#" class="btn fade">Step Into It</a>
 
 </div>
 </section>
@@ -237,12 +232,13 @@ They survive each other.
 <div class="container">
 
 <h1 class="fade">Moments</h1>
-
 <p class="fade">This is where control slips.</p>
 
 <img src="buddy-sir-pump-chaos.png" class="fade">
 <img src="frog-chaos.png" class="fade">
 <img src="lantern_2026.png" class="fade">
+
+<p class="fade">It doesn’t slow down.</p>
 
 </div>
 </section>
@@ -260,6 +256,8 @@ before you understand it.
 <img src="map.png" class="fade">
 <img src="prelude-maze.png" class="fade">
 
+<p class="fade">You’re not seeing all of it.</p>
+
 </div>
 </section>
 
@@ -273,6 +271,7 @@ before you understand it.
 <img src="prelude.png" class="fade">
 <img src="raft_coffeetime.png" class="fade">
 
+<p class="fade">It doesn’t ask.</p>
 <p class="fade">Once it starts, it doesn’t stop.</p>
 
 </div>
@@ -284,6 +283,7 @@ before you understand it.
 <p class="fade">
 Where the chaos slows down just enough to talk about it.
 </p>
+<p class="fade">It’s quieter here.</p>
 <iframe class="fade"
 src="https://www.youtube.com/embed/p3zV0qvuLVQ"
 allowfullscreen>
@@ -293,6 +293,7 @@ target="_blank"
 class="btn fade">
 Watch More
 </a>
+<p class="fade">Not for long.</p>
 </div>
 </section>
 
@@ -346,4 +347,4 @@ form.addEventListener("submit", async function(e) {
 </script>
 
 </body>
-</html>
+</html>```
