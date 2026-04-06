@@ -27,7 +27,7 @@ body{
   overflow-x:hidden;
 }
 
-/* 🌊 RIVER DEPTH SYSTEM (NO WHITE) */
+/* 🌊 RIVER DEPTH SYSTEM */
 .section-light{
   background:linear-gradient(to bottom,#5AB0DD,#4FA3D1);
 }
@@ -36,7 +36,6 @@ body{
   background:linear-gradient(to bottom,#4FA3D1,#3F95C4);
 }
 
-/* subtle divider (feels like current shift) */
 section{
   padding:80px 20px;
   text-align:center;
@@ -48,7 +47,6 @@ section{
   margin:auto;
 }
 
-/* TYPOGRAPHY */
 h1{
   font-family:'Outfit',sans-serif;
   font-size:clamp(2.5rem,5vw,3.5rem);
@@ -75,7 +73,6 @@ p{
   color:var(--text-soft);
 }
 
-/* MEDIA */
 img{
   width:100%;
   max-width:700px;
@@ -93,7 +90,6 @@ iframe{
   margin:30px 0;
 }
 
-/* BUTTON */
 .btn{
   background:var(--accent);
   color:#fff;
@@ -105,7 +101,6 @@ iframe{
   overflow:hidden;
 }
 
-/* GOLD SHIMMER */
 .btn::after{
   content:"";
   position:absolute;
@@ -125,7 +120,6 @@ iframe{
   box-shadow:0 0 20px rgba(242,201,76,0.4);
 }
 
-/* FADE */
 .fade{opacity:0;transform:translateY(30px);transition:.8s ease;}
 .fade.show{opacity:1;transform:translateY(0);}
 </style>
@@ -137,7 +131,7 @@ iframe{
 <div class="container">
 <img src="hero.png" class="fade show">
 <h1 class="fade show">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>
-<p class="fade show"><strong>The river doesn’t forget. It reacts.</strong></p>
+<p id="hero-line" class="fade show"><strong>The river doesn’t forget. It reacts.</strong></p>
 <h2 class="fade show">They weren’t ready.</h2>
 <a href="#prelude" class="btn fade show">Step Into the River</a>
 </div>
@@ -228,6 +222,7 @@ iframe{
 </section>
 
 <script>
+/* FADE SYSTEM (UNCHANGED) */
 const faders=document.querySelectorAll('.fade');
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
@@ -235,7 +230,24 @@ if(entry.isIntersecting){entry.target.classList.add('show');}
 });
 },{threshold:0.15});
 faders.forEach(el=>observer.observe(el));
+
+/* 🌊 RIVER MEMORY SYSTEM (NEW) */
+let visits = localStorage.getItem("riverVisits");
+
+if(!visits){
+  visits = 1;
+}else{
+  visits = parseInt(visits) + 1;
+}
+
+localStorage.setItem("riverVisits", visits);
+
+const heroLine = document.getElementById("hero-line");
+
+if(visits > 1 && heroLine){
+  heroLine.innerHTML = "<strong>It remembers you.</strong>";
+}
 </script>
 
 </body>
-</html> 
+</html>
