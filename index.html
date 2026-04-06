@@ -3,115 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buddy Bootz & Sir Drinks-A’Lot | The Loop</title>
+    <title>Buddy Bootz & Sir Drinks-A’Lot | The River Reacts</title>
     <style>
         /* Base Styling */
-        body { margin: 0; padding: 0; font-family: 'Garamond', Georgia, serif; color: #1a1a1a; line-height: 1.8; background-color: #FFFFFF; scroll-behavior: smooth; }
-        h1, h2, h3 { font-family: 'Segoe UI', sans-serif; letter-spacing: 1px; margin-top: 0; }
-        .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Garamond', Georgia, serif; /* Serifs lend to the story-telling vibe */
+            color: #1a1a1a;
+            line-height: 1.8;
+            background-color: #FFFFFF;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Segoe UI', sans-serif;
+            letter-spacing: 1px;
+            margin-top: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
         /* Gold glow on images */
-        img { display: block; max-width: 100%; height: auto; margin: 40px auto; border-radius: 4px; box-shadow: 0 10px 30px rgba(242, 201, 76, 0.2); }
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 40px auto;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(242, 201, 76, 0.2);
+        }
 
         /* Soft gold section tint */
-        section:nth-child(even) { background: linear-gradient(to bottom, #FFFFFF, #FFF9E6); }
-        section { padding: 100px 0; text-align: center; border-bottom: 1px solid rgba(242, 201, 76, 0.1); }
+        section:nth-child(even) {
+            background: linear-gradient(to bottom, #FFFFFF, #FFF9E6);
+        }
+
+        section {
+            padding: 100px 0;
+            text-align: center;
+        }
 
         /* Rich red buttons */
-        .btn { display: inline-block; background: linear-gradient(135deg, #D92D2D, #FF3B3B); color: #FFFFFF; padding: 16px 35px; text-decoration: none; font-family: sans-serif; font-weight: bold; border-radius: 50px; margin-top: 20px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(217, 45, 45, 0.3); font-size: 0.9rem; }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(217, 45, 45, 0.5); }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #D92D2D, #FF3B3B);
+            color: #FFFFFF;
+            padding: 18px 40px;
+            text-decoration: none;
+            font-family: sans-serif;
+            font-weight: bold;
+            border-radius: 50px;
+            margin-top: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(217, 45, 45, 0.3);
+        }
 
-        /* Loop Accents */
-        .loop-text { font-style: italic; color: #555; margin-top: 30px; display: block; }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(217, 45, 45, 0.5);
+        }
+
+        /* Typography Accents */
+        .hero-title { font-size: 3rem; margin-bottom: 10px; }
+        .tagline { font-style: italic; color: #666; font-size: 1.2rem; }
+        .prelude-text { text-align: left; max-width: 600px; margin: 0 auto; font-size: 1.1rem; }
         .short-burst { display: block; margin-bottom: 8px; font-weight: 500; }
-        .newsletter-box { border: 1px solid #F2C94C; padding: 40px; border-radius: 8px; background: #fff; margin-top: 40px; }
+        
+        .footer {
+            padding: 100px 0;
+            background: #1a1a1a;
+            color: #FFF9E6;
+            text-align: center;
+        }
+
+        /* Newsletter Box */
+        .newsletter {
+            border: 1px solid #F2C94C;
+            padding: 40px;
+            border-radius: 8px;
+            background: #fff;
+        }
     </style>
 </head>
 <body>
 
-    <section id="top">
+    <section>
         <div class="container">
-            <h1 style="font-size: 2.5rem;">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>
-            <p style="font-style: italic; font-size: 1.2rem;">The river doesn’t forget. It reacts.</p>
+            <h1 class="hero-title">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>
+            <p class="tagline">The river doesn’t forget. It reacts.</p>
             <div style="margin: 40px 0;">
                 <span class="short-burst">The river reacts.</span>
                 <span class="short-burst">They weren’t ready.</span>
                 <span class="short-burst">It wasn’t supposed to be anything.</span>
                 <span class="short-burst">Just a broken pump.</span>
+                <span class="short-burst">Just a normal morning.</span>
                 <span class="short-burst">And then something shifted.</span>
             </div>
             <a href="#prelude" class="btn">Step Into the River</a>
         </div>
     </section>
 
+    <section>
+        <div class="container">
+            <div class="newsletter">
+                <h2>✉️ STAY CLOSE</h2>
+                <p>You don’t find it. It finds you.<br>Get what happens next—before anyone else does.</p>
+                <a href="#" class="btn">Step In</a>
+                <p style="font-size: 0.9rem; margin-top: 15px;">It changes. You’ll want to see it first.<br>No spam. Just story.</p>
+            </div>
+        </div>
+    </section>
+
     <section id="prelude">
         <div class="container">
-            <h2>Prelude — The Rambunctious River</h2>
-            <p>The morning started with a broken water pump and a bad idea...</p>
-            <p>The trees didn’t move. The wind didn’t change. But the light—hit the water differently.</p>
-            <p>And somewhere beyond the trees—something had already noticed them.</p>
-            
-            <p class="loop-text">If you want to see what happens next—stay close.</p>
-            <a href="#stay-close" class="btn">Stay Close</a>
+            <h2>🌊 PRELUDE</h2>
+            <h3>The Rambunctious River</h3>
+            <div class="prelude-text">
+                <p>The morning started with a broken water pump and a bad idea.</p>
+                <p>Buddy Bootz was halfway up a ladder, arguing with a machine that had already decided otherwise.</p>
+                <p>It should have ended there. It didn’t.</p>
+                <p>Not loud. Not sudden. Just enough to feel… off.</p>
+                <p>The trees didn’t move. The wind didn’t change. But the light—hit the water differently.</p>
+                <p>And somewhere beyond the trees—something had already noticed them.</p>
+            </div>
         </div>
     </section>
 
-    <section id="blog">
+    <section>
         <div class="container">
-            <h2>From the Riverbank</h2>
+            <h2>⚡ MOMENTS</h2>
+            <p>It starts small. It always does. Something breaks. Something slips. Something doesn’t stop. It should have stopped. It didn’t.</p>
+            
+            <hr style="border: 0; border-top: 1px solid #F2C94C; margin: 60px 0;">
+            
+            <h2>Bootz & Sir</h2>
+            <p>She leans in. He steadies the ground. They’re already in it together.</p>
+            
+            <hr style="border: 0; border-top: 1px solid #F2C94C; margin: 60px 0;">
+
+            <h2>🌍 THE WORLD</h2>
+            <p>This isn’t a place you explore. It notices you. And once it does—it doesn’t forget.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>📓 FROM THE RIVERBANK</h2>
             <p>It wasn’t the current that changed. It was the way the light hit the ripples—like it was looking back.</p>
-            
-            <div style="margin-top: 40px; padding: 20px; border-top: 1px dashed #D92D2D;">
-                <p>There’s more to this one. We talked about it—before it changed again.</p>
-                <a href="#podcast" class="btn">👉 Listen In</a>
-            </div>
+            <a href="#" class="btn">Read from the Riverbank</a>
         </div>
     </section>
 
-    <section id="podcast">
+    <section>
         <div class="container">
-            <h2>Coffee Time</h2>
-            <p>The river doesn’t follow you here. It waits. Conversations between the chaos.</p>
-            
-            <div style="margin-top: 40px; padding: 20px; border-top: 1px dashed #D92D2D;">
-                <p>Some things are easier to see than explain. This one… you’ll want to watch.</p>
-                <a href="#youtube" class="btn">👉 Watch It Happen</a>
-            </div>
+            <h2>☕ COFFEE TIME</h2>
+            <p>The river doesn’t follow you here. It waits. Conversations between the chaos. Things said out loud—before the current changes again.</p>
+            <a href="#" class="btn">Listen In</a>
         </div>
     </section>
 
-    <section id="youtube">
+    <section>
         <div class="container">
-            <h2>Watch the River</h2>
-            <p>Moments don’t repeat here. What you’re seeing—won’t stay like this.</p>
-            
-            <div style="margin-top: 40px; padding: 20px; border-top: 1px dashed #D92D2D;">
-                <p>That’s not even the full story. It didn’t start there.</p>
-                <a href="#prelude" class="btn">👉 Go Back to the Beginning</a>
-            </div>
+            <h2>🎥 WATCH THE RIVER</h2>
+            <p>It won’t look like this again. Watch it while it’s still changing. Moments don’t repeat here. What you’re seeing—won’t stay like this.</p>
+            <a href="#" class="btn">Follow the Chaos</a>
         </div>
     </section>
 
-    <section id="stay-close">
+    <div class="footer">
         <div class="container">
-            <div class="newsletter-box">
-                <h2>Stay Close</h2>
-                <p>You don’t find it. It finds you. Get what happens next—before anyone else does.</p>
-                <a href="#" class="btn">Step In</a>
-                <p style="font-size: 0.8rem; margin-top: 15px; color: #888;">It changes. You’ll want to see it first.</p>
-            </div>
+            <h2>You weren’t supposed to see this.</h2>
+            <p>But now you’re part of it. Leave it here—or see what it does next.</p>
+            <a href="#" class="btn" style="background: transparent; border: 2px solid #D92D2D;">Step Back In</a>
         </div>
-    </section>
-
-    <section style="background: #1a1a1a; color: #FFF9E6; border: none;">
-        <div class="container">
-            <p>You weren’t supposed to see this.</p>
-            <p>But now you’re part of it.</p>
-            <p>Leave it here—</p>
-            <p>or follow it back to where it started.</p>
-            <a href="#top" class="btn" style="background: transparent; border: 2px solid #D92D2D;">👉 Start Again</a>
-        </div>
-    </section>
+    </div>
 
 </body>
 </html>
