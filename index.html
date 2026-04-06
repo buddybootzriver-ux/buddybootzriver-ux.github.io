@@ -12,9 +12,7 @@
   --bg: #F4FAF7;
   --bg-alt: #FFFFFF;
   --text: #2F2F2F;
-  --text-soft: #6B7280;
   --accent: #FF3B3B;
-  --gold: #F2C94C;
 }
 
 * {margin:0;padding:0;box-sizing:border-box;}
@@ -25,74 +23,46 @@ body {
   color:var(--text);
   line-height:1.8;
   transition:background 1s ease;
+  overflow-x: hidden;
 }
 
-body.tension {
-  background:#eef7f2;
-}
+body.tension { background:#e8f1ec; }
 
-h1,h2 {font-family:'Outfit',sans-serif; line-height: 1.2; margin-bottom: 10px;}
+h1,h2 {font-family:'Outfit',sans-serif; line-height: 1.1; margin-bottom: 15px;}
 
-section {
-  padding:80px 20px;
-  text-align:center;
-}
-
+section { padding:60px 20px; text-align:center; }
 section:nth-child(even){background:var(--bg-alt);}
 
-.container {max-width:800px;margin:auto;}
+.container {max-width:800px; margin:auto;}
 
 img {
   width:100%;
-  max-width:700px;
-  min-height: 200px; /* Ensures the page has height even if image fails to load */
-  background: #eee; /* Placeholder color */
+  max-width:600px;
   border-radius:16px;
-  margin:30px 0;
+  margin:20px 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* BUTTON */
 .btn {
   background:var(--accent);
   color:#fff;
-  padding:14px 28px;
+  padding:16px 32px;
   border-radius:10px;
   text-decoration:none;
   display:inline-block;
-  position:relative;
-  overflow:hidden;
-  border: none;
-  cursor: pointer;
   font-weight: 600;
+  transition: transform 0.3s ease;
 }
 
-.btn::after {
-  content:"";
-  position:absolute;
-  top:0;
-  left:-150%;
-  width:50%;
-  height:100%;
-  background:linear-gradient(120deg,transparent,rgba(242,201,76,0.4),transparent);
-  transform:skewX(-20deg);
-}
+.btn:hover { transform: scale(1.05); }
 
-.btn:hover::after {
-  animation:shimmer 1.2s ease;
-}
-
-@keyframes shimmer {
-  100% { left:150%; }
-}
-
-/* FADE ANIMATION */
+/* FADE LOGIC */
 .fade {
   opacity:0;
-  transform:translateY(20px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transform:translateY(30px);
+  transition: all 0.8s ease-out;
 }
 
-/* This class makes things visible */
 .fade.show {
   opacity:1;
   transform:translateY(0);
@@ -104,74 +74,60 @@ img {
 
 <section>
 <div class="container">
-  <img src="images/hero.png" class="fade show" alt="Hero Image">
-  <h1 class="fade show">Buddy Bootz & Sir Drinks-A’Lot</h1>
+  <img src="hero.png" class="fade show" alt="Buddy and Sir">
+  <h1 class="fade show">Buddy Bootz & <br>Sir Drinks-A’Lot</h1>
   <p class="fade show"><strong>The river doesn’t forget. It reacts.</strong></p>
-  <h2 class="fade show">They weren’t ready.</h2>
-  
-  <p class="fade show">
-    Just a broken pump.<br>
-    Just a normal morning.<br><br>
-    Then something shifted.
-  </p>
-
-  <a href="#prelude" class="btn fade show">Step In</a>
+  <a href="#prelude" class="btn fade show" style="margin-top:20px;">Step In</a>
 </div>
 </section>
 
 <section id="prelude">
 <div class="container">
   <h1 class="fade">Prelude</h1>
-  <p class="fade">It should have ended there.<br><strong>It didn’t.</strong></p>
-  <p class="fade">Not loud.<br>Not sudden.<br>Just enough to feel off.</p>
+  <img src="prelude.png" class="fade" alt="The Prelude">
+  <p class="fade">It should have ended there. <strong>It didn’t.</strong></p>
 </div>
 </section>
 
 <section>
 <div class="container">
-  <h1 class="fade">Moments</h1>
-  <p class="fade">Something breaks.<br>Something slips.<br>Something doesn’t stop.</p>
-  <p class="fade"><strong>It should have stopped.<br>It didn’t.</strong></p>
+  <h1 class="fade">Something Shifted</h1>
+  <img src="frog-chaos.png" class="fade" alt="Frog Chaos">
+  <p class="fade">Just a broken pump. Just a normal morning. Then the water started rising.</p>
+</div>
+</section>
+
+<section>
+<div class="container">
+  <h1 class="fade">Moments of Calm</h1>
+  <img src="raft_coffeetime.png" class="fade" alt="Coffee on the raft">
+  <p class="fade">Even in the drift, you find a second to breathe.</p>
 </div>
 </section>
 
 <section>
 <div class="container">
   <h2 class="fade">Stay Close</h2>
-  <p class="fade">Get what happens next—before anyone else.</p>
-  <form class="fade" style="margin-top: 20px;">
-    <input type="email" placeholder="Email" style="padding:12px;border-radius:8px;border:1px solid #ccc; width: 100%; max-width: 300px;">
-    <br><br>
-    <button type="submit" class="btn">Step In</button>
+  <p class="fade">Get the next chapter before the tide comes in.</p>
+  <form class="fade" style="margin-top:20px;">
+    <input type="email" placeholder="Enter your email" style="padding:12px; border-radius:8px; border:1px solid #ccc; width:250px;">
+    <button type="submit" class="btn" style="padding:10px 20px; margin-left:10px;">Join</button>
   </form>
 </div>
 </section>
 
 <script>
-// Select all elements with the 'fade' class
-const faders = document.querySelectorAll('.fade');
-
-const appearOptions = {
-  threshold: 0.15, // Trigger when 15% of the element is visible
-  rootMargin: "0px 0px -50px 0px"
-};
-
-const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (!entry.isIntersecting) {
-      return;
-    } else {
+    if (entry.isIntersecting) {
       entry.target.classList.add('show');
-      appearOnScroll.unobserve(entry.target); // Stop watching once it's shown
     }
   });
-}, appearOptions);
+}, { threshold: 0.1 });
 
-faders.forEach(fader => {
-  appearOnScroll.observe(fader);
-});
+document.querySelectorAll('.fade').forEach(el => observer.observe(el));
 
-// TENSION EFFECT
+// TENSION BG CHANGE
 const prelude = document.querySelector('#prelude');
 const tensionObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -181,8 +137,7 @@ const tensionObserver = new IntersectionObserver(entries => {
       document.body.classList.remove('tension');
     }
   });
-}, { threshold: 0.3 });
-
+}, { threshold: 0.2 });
 tensionObserver.observe(prelude);
 </script>
 
