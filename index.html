@@ -22,70 +22,83 @@
 
 body{
   font-family:'Inter',sans-serif;
-  background:linear-gradient(
-    to bottom,
-    #4FA3D1 0%,
-    #5AB0DD 40%,
-    #3F95C4 100%
-  );
+  background:linear-gradient(to bottom,#4FA3D1,#3F95C4);
   color:var(--text);
   line-height:1.8;
-  transition:background 1s ease;
-  overflow-x: hidden;
+  overflow-x:hidden;
 }
 
-/* subtle water movement */
-body::before{
-  content:"";
-  position:fixed;
-  top:0;
-  left:0;
-  width:200%;
-  height:200%;
-  background:radial-gradient(circle at 30% 30%, rgba(255,255,255,0.08), transparent 60%);
-  animation:waterMove 25s linear infinite;
-  z-index:-1;
+/* REMOVE auto alternating */
+/* section:nth-child(even){background:var(--bg-alt);} */
+
+/* CONTROLLED SECTIONS */
+.section-light{
+  background:#FFFFFF;
+  color:#2F2F2F;
 }
 
-@keyframes waterMove{
-  0%{transform:translate(0,0);}
-  50%{transform:translate(-5%,-5%);}
-  100%{transform:translate(0,0);}
+.section-dark{
+  background:transparent;
 }
 
-body.tension{background:#3F95C4;}
+/* Fix text inside dark sections */
+.section-dark p{
+  color:rgba(255,255,255,0.9);
+}
 
-h1,h2,h3{
+.section-dark h1,
+.section-dark h2,
+.section-dark h3{
+  color:#F2C94C;
+}
+
+h1{
   font-family:'Outfit',sans-serif;
-  line-height:1.2;
-  margin-bottom:10px;
-  color:var(--gold);
+  font-size:clamp(2.5rem,5vw,3.5rem);
+  letter-spacing:-1px;
+}
+
+h2{
+  font-family:'Outfit',sans-serif;
+  font-size:clamp(1.8rem,3vw,2.5rem);
+}
+
+h3{
+  font-family:'Outfit',sans-serif;
+  font-size:1.2rem;
+  text-transform:uppercase;
 }
 
 p{
+  max-width:600px;
+  margin:0 auto 1.5rem;
   color:var(--text-soft);
 }
 
-section{padding:80px 20px;text-align:center;}
-section:nth-child(even){background:var(--bg-alt);}
+section{
+  padding:80px 20px;
+  text-align:center;
+}
 
-.container{max-width:800px;margin:auto;}
+.container{
+  max-width:800px;
+  margin:auto;
+}
 
 img{
   width:100%;
   max-width:700px;
   border-radius:16px;
   margin:30px 0;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-iframe {
-  width: 100%;
-  max-width: 700px;
-  height: 394px;
-  border-radius: 16px;
-  border: none;
-  margin: 30px 0;
+iframe{
+  width:100%;
+  max-width:700px;
+  height:394px;
+  border-radius:16px;
+  border:none;
+  margin:30px 0;
 }
 
 .btn{
@@ -97,10 +110,9 @@ iframe {
   display:inline-block;
   position:relative;
   overflow:hidden;
-  font-weight:600;
 }
 
-/* gold shimmer */
+/* shimmer */
 .btn::after{
   content:"";
   position:absolute;
@@ -115,22 +127,14 @@ iframe {
 .btn:hover::after{animation:shimmer 1.2s ease;}
 @keyframes shimmer{100%{left:150%;}}
 
-/* stronger hover presence */
-.btn:hover{
-  box-shadow:0 0 20px rgba(242,201,76,0.4);
-  transform:translateY(-2px);
-}
-
-.fade{opacity:0;transform:translateY(30px);transition:all .8s ease;}
+.fade{opacity:0;transform:translateY(30px);transition:.8s ease;}
 .fade.show{opacity:1;transform:translateY(0);}
 </style>
 </head>
 
 <body>
 
-<!-- YOUR ENTIRE HTML BELOW REMAINS 100% UNCHANGED -->
-
-<section id="home">
+<section id="home" class="section-dark">
 <div class="container">
 <img src="hero.png" class="fade show">
 <h1 class="fade show">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>
@@ -140,7 +144,7 @@ iframe {
 </div>
 </section>
 
-<section id="prelude">
+<section id="prelude" class="section-light">
 <div class="container">
 <h1 class="fade">Preview — The Rambunctious River</h1>
 <img src="buddy-sir-book-opening-river.png" class="fade">
@@ -155,7 +159,7 @@ iframe {
 </div>
 </section>
 
-<section id="moments">
+<section id="moments" class="section-dark">
 <div class="container">
 <h1 class="fade">Moments of Chaos</h1>
 <img src="buddy-sir-pump-chaos.png" class="fade">
@@ -164,7 +168,7 @@ iframe {
 </div>
 </section>
 
-<section id="duo">
+<section id="duo" class="section-light">
 <div class="container">
 <h1 class="fade">The Duo</h1>
 <img src="buddy.png" class="fade">
@@ -176,41 +180,26 @@ iframe {
 </div>
 </section>
 
-<!-- COFFEE -->
-<section id="coffee">
+<section id="coffee" class="section-dark">
 <div class="container">
 <h1 class="fade">Coffee Time</h1>
 <h3 class="fade">The Podcast</h3>
 <img src="raft_coffeetime.png" class="fade">
-
-<p class="fade">Conversations between the chaos. It’s quieter here. Not for long.</p>
-
-<p class="fade">Some things are easier to see than explain.<br>This one… you’ll want to watch.</p>
+<p class="fade">Conversations between the chaos.</p>
+<p class="fade">Some things are easier to see than explain.</p>
 <a href="#youtube" class="btn fade">Watch It Happen</a>
-<p class="fade">If you want to see what happens next—stay close.</p>
-
 </div>
 </section>
 
-<!-- YOUTUBE -->
-<section id="youtube">
+<section id="youtube" class="section-light">
 <div class="container">
 <h1 class="fade">Watch the River</h1>
-<p class="fade">Watch what happens next. Before it changes.</p>
-
 <iframe src="https://www.youtube.com/embed/p3zV0qvuLVQ" class="fade"></iframe>
-
-<a href="https://www.youtube.com/@BuddyBootzAdventure" class="btn fade">Watch More</a>
-
-<p class="fade">That’s not even the full story.<br>It didn’t start there.</p>
 <a href="#prelude" class="btn fade">Go Back to the Beginning</a>
-<p class="fade">If you want to see what happens next—stay close.</p>
-
 </div>
 </section>
 
-<!-- WORLD -->
-<section id="world">
+<section id="world" class="section-dark">
 <div class="container">
 <h1 class="fade">The World</h1>
 <img src="map.png" class="fade">
@@ -218,33 +207,23 @@ iframe {
 </div>
 </section>
 
-<!-- BLOG -->
-<section id="blogs">
+<section id="blogs" class="section-light">
 <div class="container">
 <h1 class="fade">From the Riverbank</h1>
 <img src="buddy-sir-story-page-river-creature.png" class="fade">
-
-<p class="fade">It wasn’t the current that changed...</p>
-<p class="fade">The creatures here aren’t just animals...</p>
-
-<p class="fade">There’s more to this one.<br>We talked about it—before it changed again.</p>
+<p class="fade">There’s more to this one.</p>
 <a href="#coffee" class="btn fade">Listen In</a>
-<p class="fade">If you want to see what happens next—stay close.</p>
-
 </div>
 </section>
 
-<!-- FINAL -->
-<section id="stay-close" class="fade">
+<section id="stay-close" class="section-dark">
 <div class="container">
 <h2>When the river changes, you’ll know first.</h2>
-
 <form>
 <input type="email" placeholder="Enter your email">
 <br><br>
 <button class="btn">Step In</button>
 </form>
-
 <a href="#home" class="btn">Start Again</a>
 </div>
 </section>
