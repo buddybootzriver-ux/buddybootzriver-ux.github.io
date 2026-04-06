@@ -3,131 +3,182 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Buddy Bootz & Sir Drinks-A’Lot</title>
+<title>The Adventures of Buddy Bootz & Sir Drinks-A’Lot</title>
 
 <link rel="icon" type="image/png" href="favicon.png">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700&display=swap" rel="stylesheet">
-
 <style>
 :root {
-  --bg: #F4FAF7;
-  --bg-alt: #FFFFFF;
-  --text: #2F2F2F;
-  --accent: #FF3B3B;
+  --bg-primary: #F7F7F7;
+  --bg-secondary: #FFFFFF;
+  --text-main: #111111;
+  --text-muted: #444444;
+  --accent: #C62828;
 }
-
-* {margin:0;padding:0;box-sizing:border-box;}
 
 body {
-  font-family:'Inter',sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.8;
-  transition:background 1s ease;
-  overflow-x: hidden;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-main);
+  transition: background 1.5s ease;
 }
 
-body.tension { background:#e8f1ec; }
+/* Tension effect when they reach the river */
+body.tension {
+  background: #eef7f2;
+}
 
-h1,h2 {font-family:'Outfit',sans-serif; line-height: 1.1; margin-bottom: 15px;}
+section {
+  padding: 100px 20px;
+  text-align: center;
+}
 
-section { padding:80px 20px; text-align:center; }
-section:nth-child(even){background:var(--bg-alt);}
+section:nth-child(even) {
+  background: var(--bg-secondary);
+}
 
-.container {max-width:800px; margin:auto;}
+.container {
+  max-width: 800px;
+  margin: auto;
+}
 
 img {
-  width:100%;
-  max-width:600px;
-  border-radius:16px;
-  margin:20px 0;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 480px;
+  border-radius: 12px;
+  margin: 25px 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+h1, h2 {
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+p {
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.6;
 }
 
 .btn {
-  background:var(--accent);
-  color:#fff;
-  padding:16px 32px;
-  border-radius:10px;
-  text-decoration:none;
-  display:inline-block;
-  font-weight: 600;
-  transition: transform 0.3s ease;
+  background: var(--accent);
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 15px;
+  border-radius: 6px;
+  font-weight: bold;
 }
 
-.btn:hover { transform: scale(1.05); }
-
-/* FADE LOGIC */
+/* FADE ANIMATION */
 .fade {
-  opacity:0;
-  transform:translateY(30px);
+  opacity: 0;
+  transform: translateY(20px);
   transition: all 0.8s ease-out;
 }
 
 .fade.show {
-  opacity:1;
-  transform:translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>
 </head>
 
 <body>
 
-<section>
+<section id="home">
 <div class="container">
-  <img src="hero.png" class="fade show" alt="Buddy and Sir">
-  <h1 class="fade show">Buddy Bootz & <br>Sir Drinks-A’Lot</h1>
-  <p class="fade show"><strong>The river doesn’t forget. It reacts.</strong></p>
-  <a href="#prelude" class="btn fade show" style="margin-top:20px;">Step In</a>
+  <img src="hero.png" alt="Buddy and Sir at the river" class="fade show">
+  <h1 class="fade show">The river doesn’t forget.</h1>
+  <p class="fade show">It keeps track.</p>
+  <p class="fade show">It keeps track of every ripple, every bad idea, and every choice made on the Rambunctious River.</p>
+  <h2 class="fade show">It reacts. They weren’t ready.</h2>
+  <p class="fade show">Buddy makes it happen.<br>Sir deals with what follows.</p>
+</div>
+</section>
+
+<section id="buddy">
+<div class="container">
+  <h1 class="fade">The Duo</h1>
+  <p class="fade">One starts it. One survives it. <strong>Neither leaves.</strong></p>
+  
+  <h2 class="fade">Buddy Bootz</h2>
+  <img src="buddy.png" alt="Buddy Bootz" class="fade">
+
+  <h2 class="fade">Sir Drinks-A’Lot</h2>
+  <img src="sir.png" alt="Sir Drinks-A'Lot" class="fade">
+
+  <h2 class="fade">The Homesteads</h2>
+  <p class="fade"><strong>Buddy’s Treehouse:</strong></p>
+  <img src="buddy_treehouse.png" alt="Buddy's Treehouse" class="fade">
+  
+  <p class="fade"><strong>Sir’s Place:</strong></p>
+  <img src="sirs_place.png" alt="Sir's Place" class="fade">
+  
+  <p class="fade">And somehow… it keeps working.</p>
 </div>
 </section>
 
 <section id="prelude">
 <div class="container">
-  <h1 class="fade">The Journey Begins</h1>
-  <img src="map.png" class="fade" alt="The Map">
-  <p class="fade">It started with a map and a broken pump. It should have ended there. <strong>It didn’t.</strong></p>
+  <h2 class="fade">Prelude — The Rambunctious River</h2>
+  <img src="buddy-sir-book-opening-river.png" alt="Opening river moment" class="fade">
+  
+  <p class="fade">The water pump bolted to the outside of Buddy Bootz’s treehouse was doing its best to come apart in public.</p>
+  <p class="fade">Buddy stood at the top of a ladder... A blast of rusty water hit her straight in the face.</p>
+  <p class="fade">Buddy went still. “…That felt personal.”</p>
+  <p class="fade">Below her, Sir Drinks-A’Lot stepped into view. “I was fine,” he said, “until the forest got involved.”</p>
+  
+  <p class="fade">It should have stopped there. <strong>It didn’t.</strong></p>
+  <p class="fade">Because just beyond the trees—there’s a river.</p>
+  <p class="fade">And it doesn’t behave. It shifts. It watches. It remembers.</p>
 </div>
 </section>
 
-<section>
+<section id="moments">
 <div class="container">
-  <h1 class="fade">Meet Buddy</h1>
-  <img src="buddy.png" class="fade" alt="Buddy">
-  <p class="fade">Small in stature, but her boots leave a heavy footprint on the riverbanks.</p>
+  <h1 class="fade">Moments of Chaos</h1>
+  <img src="buddy-sir-pump-chaos.png" alt="Pump chaos" class="fade">
+  <img src="frog-chaos.png" alt="Frog chaos" class="fade">
+  <p class="fade">It doesn’t slow down.</p>
 </div>
 </section>
 
-<section>
+<section id="coffee">
 <div class="container">
-  <h1 class="fade">The Shift</h1>
-  <img src="frog-chaos.png" class="fade" alt="Chaos on the river">
-  <p class="fade">Then the water started rising, and the frogs... the frogs were just the beginning.</p>
+  <h1 class="fade">Coffee Time</h1>
+  <h3 class="fade">Podcast</h3>
+  <img src="raft_coffeetime.png" alt="Podcast raft" class="fade">
+  <p class="fade"><strong>It’s quieter here.</strong> Not for long.</p>
 </div>
 </section>
 
-<section>
+<section id="youtube">
 <div class="container">
-  <h1 class="fade">The Frog King</h1>
-  <img src="frog-king.png" class="fade" alt="The Frog King">
-  <p class="fade">Some things are better left undisturbed in the deep. He is one of them.</p>
+  <h1 class="fade">YouTube</h1>
+  <p class="fade">Watch what happens next. Before it changes.</p>
+  <iframe class="fade" width="100%" height="315" src="https://www.youtube.com/embed/p3zV0qvuLVQ" allowfullscreen style="border-radius:12px; border:none;"></iframe>
+  <br><br>
+  <a href="https://www.youtube.com/@BuddyBootzAdventure" class="btn fade">Watch More</a>
 </div>
 </section>
 
-<section>
+<section id="world">
 <div class="container">
-  <h2 class="fade">Stay Close</h2>
-  <p class="fade">Get the next chapter before the tide comes in.</p>
-  <form class="fade" style="margin-top:20px;">
-    <input type="email" placeholder="Enter your email" style="padding:12px; border-radius:8px; border:1px solid #ccc; width:250px;">
-    <button type="submit" class="btn" style="padding:10px 20px; margin-left:10px;">Join</button>
-  </form>
+  <h1 class="fade">The World</h1>
+  <img src="map.png" alt="Map" class="fade">
+  <h2 class="fade">Field Notes</h2>
+  <img src="buddy-sir-story-page-river-creature.png" alt="Blog creature" class="fade">
+  <p class="fade">It doesn’t stay like this.</p>
 </div>
 </section>
 
 <script>
-// SCROLL FADE SCRIPT
+// Fade-in script
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -138,7 +189,7 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade').forEach(el => observer.observe(el));
 
-// TENSION BACKGROUND CHANGE
+// Background Tension script
 const prelude = document.querySelector('#prelude');
 const tensionObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
