@@ -11,12 +11,12 @@
 
     <style>
         :root {
-            --bg-primary: #0F2A2E;        /* deep river teal */
-            --bg-secondary: #163A3F;      /* slightly lighter section contrast */
-            --text-main: #F4F1E8;         /* soft warm light text */
-            --text-muted: #C9C3B5;        /* warm muted tone */
-            --accent: #8B1E2D;            /* deep story red */
-            --gold: #D4AF37;              /* warm gold accent */
+            --bg-primary: #EAF4F1;
+            --bg-secondary: #F6FBF9;
+            --text-main: #2A2A2A;
+            --text-muted: #5A6B6A;
+            --accent: #B23A48;
+            --gold: #CFAF5A;
             --max-reading: 600px;
             --max-image: 480px;
         }
@@ -49,7 +49,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
 
         nav a {
@@ -135,7 +135,7 @@
             border-radius: 16px;
             display: block;
             margin: 0 auto;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         /* Form Styling */
@@ -149,8 +149,8 @@
             width: 100%;
             padding: 14px 20px;
             border-radius: 10px;
-            border: 2px solid rgba(255,255,255,0.1);
-            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(0,0,0,0.1);
+            background: #FFFFFF;
             color: var(--text-main);
             margin-bottom: 15px;
             font-family: inherit;
@@ -171,12 +171,12 @@
 
         .btn:hover { 
             transform: translateY(-2px);
-            background-color: #6E1824;
+            background-color: #8E2F3A;
         }
 
         #success-msg {
             display: none;
-            color: var(--gold);
+            color: var(--text-main);
             font-weight: 600;
             padding: 20px;
             line-height: 1.6;
@@ -200,7 +200,7 @@
         footer {
             padding: 60px 0;
             text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid rgba(0,0,0,0.05);
             background: var(--bg-secondary);
         }
 
