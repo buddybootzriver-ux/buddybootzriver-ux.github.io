@@ -12,97 +12,104 @@
 
 <style>
 :root {
-  --bg: #F4FAF7;
-  --bg-alt: #FFFFFF;
+  --bg-main: radial-gradient(circle at 20% 20%, #F4FAF7 0%, #EAF6F1 40%, #F8FCFA 100%);
+  --bg-soft: radial-gradient(circle at 80% 30%, #FFFFFF 0%, #F4FAF7 60%, #EEF8F4 100%);
   --text: #2F2F2F;
   --text-soft: #6B7280;
-  --accent: #ef4444;
+  --accent: #EF4444;
 }
 
 body {
   font-family: 'Inter', sans-serif;
-  background: var(--bg);
+  background: var(--bg-main);
   color: var(--text);
   margin: 0;
   text-align: center;
 }
 
-section:nth-child(even){
-  background: var(--bg-alt);
+section {
+  padding: 100px 20px;
+  background: transparent;
+}
+
+section:nth-child(even) {
+  background: var(--bg-soft);
 }
 
 nav {
-  display:flex;
-  justify-content:space-between;
-  padding:20px;
-  background:var(--bg);
-  position:sticky;
-  top:0;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: rgba(244, 250, 247, 0.85);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
 }
 
-.nav-right{
-  display:flex;
-  gap:20px;
+.nav-right {
+  display: flex;
+  gap: 20px;
 }
 
-nav a{
-  text-decoration:none;
-  color:var(--text);
-  font-weight:600;
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
 }
 
-nav a:hover{
-  opacity:0.6;
+nav a:hover {
+  opacity: 0.6;
 }
 
-section{
-  padding:100px 20px;
+.container {
+  max-width: 800px;
+  margin: auto;
 }
 
-.container{
-  max-width:800px;
-  margin:auto;
+h1, h2 {
+  font-family: 'Outfit', sans-serif;
 }
 
-h1,h2{
-  font-family:'Outfit',sans-serif;
+p {
+  color: var(--text-soft);
+  line-height: 1.8;
 }
 
-p{
-  color:var(--text-soft);
-  line-height:1.8;
+img {
+  max-width: 100%;
+  border-radius: 18px;
+  margin: 40px 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-img{
-  max-width:100%;
-  border-radius:18px;
-  margin:40px 0;
-  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+.btn {
+  background: var(--accent);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 20px 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.btn{
-  background:var(--accent);
-  color:white;
-  padding:14px 28px;
-  border-radius:999px;
-  text-decoration:none;
-  display:inline-block;
-  margin:20px 0;
-  border:none;
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.3);
 }
 
-input{
-  padding:12px;
-  width:80%;
-  border-radius:10px;
-  border:1px solid #ccc;
+input {
+  padding: 12px;
+  width: 80%;
+  border-radius: 10px;
+  border: 1px solid #ccc;
 }
 
-#success{
-  display:none;
-  color:#16a34a;
-  font-weight:600;
-  margin-top:20px;
+#success {
+  display: none;
+  color: #16a34a;
+  font-weight: 600;
+  margin-top: 20px;
 }
 </style>
 </head>
@@ -118,7 +125,7 @@ input{
 <a href="#moments">Moments</a>
 <a href="#world">World</a>
 <a href="#river">River</a>
-<a href="#coffee">Coffee</a>
+<a href="#coffee">Podcast</a>
 <a href="#blog">Blog</a>
 </div>
 </nav>
@@ -171,20 +178,16 @@ Neither leaves.
 <img src="images/buddy.png">
 <h2>Buddy Bootz</h2>
 <p>Bold. Fast. Already doing something she shouldn’t.</p>
-<p>She doesn’t wait.<br>She makes things happen.</p>
 
 <img src="images/sir.png">
 <h2>Sir Drinks-A’Lot</h2>
 <p>Steady. Capable. Already tired of this.</p>
-<p>He doesn’t get a choice.<br>He just keeps going anyway.</p>
 
 <img src="images/buddy_treehouse.png">
 <h2>Buddy’s Treehouse</h2>
-<p>It leans. It creaks.<br>It holds anyway.</p>
 
 <img src="images/sirs_place.png">
 <h2>Sir’s Place</h2>
-<p>Built to hold.<br>Not built for what’s coming.</p>
 
 <p>
 They don’t balance each other.<br>
@@ -205,8 +208,6 @@ They survive each other.
 <p>The morning started with a broken water pump.</p>
 <p>It should have stopped.<br>It didn’t.</p>
 <p>That was the first mistake.</p>
-
-<a href="#" class="btn">Step Into It</a>
 
 <img src="images/prelude.png">
 <img src="images/prelude-maze.png">
@@ -238,7 +239,6 @@ They survive each other.
 <h1>The World</h1>
 
 <img src="images/map.png">
-<img src="images/prelude-maze.png">
 
 <p>You’re not seeing all of it.</p>
 
@@ -252,7 +252,6 @@ They survive each other.
 <h1>The River</h1>
 
 <img src="images/prelude.png">
-<img src="images/raft_coffeetime.png">
 
 <p>It doesn’t ask.</p>
 <p>Once it starts, it doesn’t stop.</p>
@@ -260,7 +259,7 @@ They survive each other.
 </div>
 </section>
 
-<!-- COFFEE / YOUTUBE -->
+<!-- PODCAST -->
 <section id="coffee">
 <div class="container">
 
@@ -280,11 +279,6 @@ src="https://www.youtube.com/embed?listType=user_uploads&list=BuddyBootzAdventur
 frameborder="0" 
 allowfullscreen>
 </iframe>
-
-<p>
-Watch what happens next.<br>
-Before it changes.
-</p>
 
 <a href="https://www.youtube.com/@BuddyBootzAdventure" 
 target="_blank" 
