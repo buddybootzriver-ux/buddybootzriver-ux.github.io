@@ -47,6 +47,7 @@
         .fade{opacity:0;transform:translateY(30px);transition:.8s ease;}
         .fade.show{opacity:1;transform:translateY(0);}
         input[type="email"] { padding: 12px; border-radius: 8px; border: none; width: 100%; max-width: 300px; }
+        button:disabled { opacity: 0.6; cursor: not-allowed; }
     </style>
 </head>
 <body>
@@ -88,7 +89,7 @@
         <form class="fade" id="emailForm" action="https://formspree.io/f/xdapyaar" method="POST">    
             <input type="email" name="email" placeholder="Enter your email" id="emailInput" required>    
             <br><br>    
-            <button type="submit" class="btn">Stay Ahead</button>    
+            <button type="submit" class="btn" data-fs-submit-btn>Stay Ahead</button>    
         </form>  
         <p id="successMsg" style="display:none; color:var(--gold); font-weight:bold;">You're in. Watch the river.</p>
         
@@ -139,7 +140,7 @@
         <form class="fade" id="footerForm" action="https://formspree.io/f/xdapyaar" method="POST">    
             <input type="email" name="email" placeholder="Enter your email" required>    
             <br><br>    
-            <button type="submit" class="btn">Step In</button>    
+            <button type="submit" class="btn" data-fs-submit-btn>Step In</button>    
         </form>
         <p id="footerSuccess" style="display:none; color:var(--gold); font-weight:bold;">You're in. Watch the river.</p>
         <br>
@@ -148,6 +149,7 @@
 </section>
 
 <script>    
+    // Intersection Observer for animations
     const faders = document.querySelectorAll('.fade');    
     const observer = new IntersectionObserver(entries => {    
         entries.forEach(entry => {    
@@ -156,6 +158,7 @@
     }, {threshold: 0.15});    
     faders.forEach(el => observer.observe(el));
 
+    // Visit Tracking
     let visits = localStorage.getItem("riverVisits") || 0;
     visits = parseInt(visits) + 1;
     localStorage.setItem("riverVisits", visits);
@@ -165,56 +168,41 @@
         heroLine.innerHTML = "<strong>It remembers you.</strong>";
     }
 
-    const form = document.getElementById("emailForm");
-    const msg = document.getElementById("successMsg");
-
-    if(form){
-      form.addEventListener("submit", async function(e){
-        e.preventDefault(); 
+    // Consolidated AJAX Form Handling
+    async function handleFormSubmit(event, successId) {
+        event.preventDefault();
+        const form = event.target;
+        const btn = form.querySelector('[data-fs-submit-btn]');
+        const msg = document.getElementById(successId);
         
-        const data = new FormData(e.target);
+        if (btn) btn.disabled = true;
+
+        const data = new FormData(form);
         
         try {
-          const response = await fetch(e.target.action, {
-            method: 'POST',
-            body: data,
-            headers: { 'Accept': 'application/json' }
-          });
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            });
 
-          if (response.ok) {
-            msg.style.display = "block";
-            form.style.display = "none"; 
-          } else {
-            alert("The river is turbulent. Please try again.");
-          }
+            if (response.ok) {
+                msg.style.display = "block";
+                form.style.display = "none";
+                form.reset();
+            } else {
+                alert("The river is blocked. Try again later.");
+                if (btn) btn.disabled = false;
+            }
         } catch (error) {
-          alert("Lost connection to the riverbank.");
+            alert("Connection lost. The river is wild today.");
+            if (btn) btn.disabled = false;
         }
-      });
     }
 
-    // Applying same logic to the footer form
-    const fForm = document.getElementById("footerForm");
-    const fMsg = document.getElementById("footerSuccess");
-    if(fForm){
-      fForm.addEventListener("submit", async function(e){
-        e.preventDefault();
-        const data = new FormData(e.target);
-        try {
-          const response = await fetch(e.target.action, {
-            method: 'POST',
-            body: data,
-            headers: { 'Accept': 'application/json' }
-          });
-          if (response.ok) {
-            fMsg.style.display = "block";
-            fForm.style.display = "none";
-          }
-        } catch (error) {
-          console.error(error);
-        }
-      });
-    }
+    // Attach listeners
+    document.getElementById("emailForm")?.addEventListener("submit", (e) => handleFormSubmit(e, "successMsg"));
+    document.getElementById("footerForm")?.addEventListener("submit", (e) => handleFormSubmit(e, "footerSuccess"));
 </script>
 
 </body>
