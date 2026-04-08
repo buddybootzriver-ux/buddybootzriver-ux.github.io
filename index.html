@@ -1,253 +1,221 @@
-<!DOCTYPE html>  <html lang="en">    <head><!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-T6C7B7WCS5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T6C7B7WCS5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-T6C7B7WCS5');
+    </script>    
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>The Adventures of Buddy Bootz & Sir Drinks-A’Lot</title>
+    <link rel="icon" type="image/png" href="favicon.png">    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700&display=swap" rel="stylesheet">
+    <style>    
+        :root {    
+          --bg:#4FA3D1;    
+          --text:#FFFFFF;    
+          --text-soft:rgba(255,255,255,0.9);    
+          --accent:#C62828;    
+          --gold:#F2C94C;    
+        }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{
+            font-family:'Inter',sans-serif;
+            background:linear-gradient(to bottom,#4FA3D1,#3F95C4);
+            color:var(--text);
+            line-height:1.8;
+            overflow-x:hidden;
+        }
+        .section-light{ background:linear-gradient(to bottom,#5AB0DD,#4FA3D1); }
+        .section-dark{ background:linear-gradient(to bottom,#4FA3D1,#3F95C4); }
+        section{ padding:80px 20px; text-align:center; border-top:1px solid rgba(255,255,255,0.08); }
+        .container{ max-width:800px; margin:auto; }
+        h1{ font-family:'Outfit',sans-serif; font-size:clamp(2.5rem,5vw,3.5rem); letter-spacing:-1px; color:var(--gold); }
+        h2{ font-family:'Outfit',sans-serif; font-size:clamp(1.8rem,3vw,2.5rem); color:var(--gold); }
+        h3{ font-family:'Outfit',sans-serif; font-size:1.2rem; text-transform:uppercase; color:var(--gold); }
+        p{ max-width:600px; margin:0 auto 1.5rem; color:var(--text-soft); }
+        img{ width:100%; max-width:700px; border-radius:16px; margin:30px 0; box-shadow:0 10px 30px rgba(0,0,0,0.15); }
+        iframe{ width:100%; max-width:700px; height:394px; border-radius:16px; border:none; margin:30px 0; }
+        .btn{ background:var(--accent); color:#fff; padding:14px 28px; border-radius:10px; text-decoration:none; display:inline-block; position:relative; overflow:hidden; border:none; cursor:pointer; font-size:1rem; }
+        .btn::after{ content:""; position:absolute; top:0; left:-150%; width:50%; height:100%; background:linear-gradient(120deg,transparent,rgba(242,201,76,0.5),transparent); transform:skewX(-20deg); }
+        .btn:hover::after{animation:shimmer 1.2s ease;}
+        @keyframes shimmer{100%{left:150%;}}
+        .btn:hover{ transform:translateY(-2px); box-shadow:0 0 20px rgba(242,201,76,0.4); }
+        .fade{opacity:0;transform:translateY(30px);transition:.8s ease;}
+        .fade.show{opacity:1;transform:translateY(0);}
+        input[type="email"] { padding: 12px; border-radius: 8px; border: none; width: 100%; max-width: 300px; }
+    </style>
+</head>
+<body>
 
-  gtag('config', 'G-T6C7B7WCS5');
-</script>    
-<meta charset="UTF-8">    
-<meta name="viewport" content="width=device-width, initial-scale=1.0">    
-<title>The Adventures of Buddy Bootz & Sir Drinks-A’Lot</title>  <link rel="icon" type="image/png" href="favicon.png">    
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700&display=swap" rel="stylesheet">  <style>    
-:root {    
-  --bg:#4FA3D1;    
-  --text:#FFFFFF;    
-  --text-soft:rgba(255,255,255,0.9);    
-  --accent:#C62828;    
-  --gold:#F2C94C;    
-}    *{margin:0;padding:0;box-sizing:border-box;}
+<section id="home" class="section-dark">
+    <div class="container">    
+        <img src="hero.png" class="fade show">    
+        <h1 class="fade show">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>    
+        <p class="fade show">A story about chaos, loyalty, and a river that doesn’t behave.</p>
+        <p id="hero-line" class="fade show"><strong>The river doesn’t forget. It reacts.</strong></p>    
+        <h2 class="fade show">They weren’t ready.</h2>    
+        <a href="#prelude" class="btn fade show">Step Into the River</a>
+    </div>    
+</section>
 
-body{
-font-family:'Inter',sans-serif;
-background:linear-gradient(to bottom,#4FA3D1,#3F95C4);
-color:var(--text);
-line-height:1.8;
-overflow-x:hidden;
-}
+<section id="prelude" class="section-light">    
+    <div class="container">    
+        <h1 class="fade">Preview — The Rambunctious River</h1>
+        <img src="buddy-sir-book-opening-river.png" class="fade">
+        <div class="fade" style="text-align:left;max-width:600px;margin:auto;">    
+            <p>The morning started wrong.<br>The pump coughed.<br>The ladder slipped.<br>The bush fought back.<br>Buddy Bootz landed flat on her dignity and blamed the squirrel.</p>
+            <p>It doesn’t stop there.</p>
+            <p>Sir Drinks-A’Lot didn’t argue...</p>
+            <h2 style="margin-top:2rem;">It didn’t.</h2>
+            <p>The raft creaked.<br>The water shifted.<br><strong>the river opened.</strong></p>    
+        </div>
+        <h2 class="fade">It gets worse from here.</h2>    
+        <p class="fade">This was the easy part.</p>
+        <a href="#signup" class="btn fade">Keep Going</a>
+    </div>    
+</section>
 
-.section-light{
-background:linear-gradient(to bottom,#5AB0DD,#4FA3D1);
-}
+<section id="signup" class="section-dark">    
+    <div class="container">
+        <h1 class="fade">You made it this far.</h1>    
+        <p class="fade">Most people don’t.</p>
+        <p class="fade">The river doesn’t show everything at once.<br>But you can stay ahead of it.</p>
+        
+        <form class="fade" id="emailForm" action="https://formspree.io/f/xdapyaar" method="POST">    
+            <input type="email" name="email" placeholder="Enter your email" id="emailInput" required>    
+            <br><br>    
+            <button type="submit" class="btn">Stay Ahead</button>    
+        </form>  
+        <p id="successMsg" style="display:none; color:var(--gold); font-weight:bold;">You're in. Watch the river.</p>
+        
+        <p class="fade">You’ll know before anyone else<br>when something shifts.</p>
+    </div>    
+</section>
 
-.section-dark{
-background:linear-gradient(to bottom,#4FA3D1,#3F95C4);
-}
+<section id="launch" class="section-light">    
+    <div class="container">
+        <h1 class="fade">The Rambunctious River</h1>
+        <p class="fade">Book One is coming.</p>
+        <img src="buddy-sir-book-opening-river.png" class="fade">
+        <h2 class="fade">It already started.</h2>
+        <a href="#signup" class="btn fade">Get Notified First</a>
+    </div>    
+</section>
 
-section{
-padding:80px 20px;
-text-align:center;
-border-top:1px solid rgba(255,255,255,0.08);
-}
+<section id="moments" class="section-dark">    
+    <div class="container">    
+        <h1 class="fade">Moments of Chaos</h1>    
+        <img src="buddy-sir-pump-chaos.png" class="fade">    
+        <img src="frog-chaos.png" class="fade">    
+        <p class="fade">It doesn’t slow down.</p>    
+    </div>    
+</section>
 
-.container{
-max-width:800px;
-margin:auto;
-}
+<section id="coffee" class="section-dark">    
+    <div class="container">    
+        <h1 class="fade">Coffee Time</h1>    
+        <h3 class="fade">The Podcast</h3>    
+        <img src="raft_coffeetime.png" class="fade">
+        <p class="fade"><strong>It’s quieter here.</strong> Not for long.</p>
+        <a href="#youtube" class="btn fade">Watch It Happen</a>
+    </div>    
+</section>
 
-h1{
-font-family:'Outfit',sans-serif;
-font-size:clamp(2.5rem,5vw,3.5rem);
-letter-spacing:-1px;
-color:var(--gold);
-}
+<section id="youtube" class="section-light">    
+    <div class="container">    
+        <h1 class="fade">Watch the River</h1>    
+        <iframe src="https://www.youtube.com/embed/p3zV0qvuLVQ" class="fade"></iframe>    
+        <a href="#prelude" class="btn fade">Go Back to the Beginning</a>    
+    </div>    
+</section>
 
-h2{
-font-family:'Outfit',sans-serif;
-font-size:clamp(1.8rem,3vw,2.5rem);
-color:var(--gold);
-}
+<section id="stay-close" class="section-dark">    
+    <div class="container">    
+        <h2>When the river changes, you’ll know first.</h2>    
+        <form class="fade" id="footerForm" action="https://formspree.io/f/xdapyaar" method="POST">    
+            <input type="email" name="email" placeholder="Enter your email" required>    
+            <br><br>    
+            <button type="submit" class="btn">Step In</button>    
+        </form>
+        <p id="footerSuccess" style="display:none; color:var(--gold); font-weight:bold;">You're in. Watch the river.</p>
+        <br>
+        <a href="#home" class="btn">Start Again</a>    
+    </div>    
+</section>
 
-h3{
-font-family:'Outfit',sans-serif;
-font-size:1.2rem;
-text-transform:uppercase;
-color:var(--gold);
-}
+<script>    
+    const faders = document.querySelectorAll('.fade');    
+    const observer = new IntersectionObserver(entries => {    
+        entries.forEach(entry => {    
+            if(entry.isIntersecting){ entry.target.classList.add('show'); }    
+        });    
+    }, {threshold: 0.15});    
+    faders.forEach(el => observer.observe(el));
 
-p{
-max-width:600px;
-margin:0 auto 1.5rem;
-color:var(--text-soft);
-}
+    let visits = localStorage.getItem("riverVisits") || 0;
+    visits = parseInt(visits) + 1;
+    localStorage.setItem("riverVisits", visits);
 
-img{
-width:100%;
-max-width:700px;
-border-radius:16px;
-margin:30px 0;
-box-shadow:0 10px 30px rgba(0,0,0,0.15);
-}
+    const heroLine = document.getElementById("hero-line");
+    if(visits > 1 && heroLine){
+        heroLine.innerHTML = "<strong>It remembers you.</strong>";
+    }
 
-iframe{
-width:100%;
-max-width:700px;
-height:394px;
-border-radius:16px;
-border:none;
-margin:30px 0;
-}
+    const form = document.getElementById("emailForm");
+    const msg = document.getElementById("successMsg");
 
-.btn{
-background:var(--accent);
-color:#fff;
-padding:14px 28px;
-border-radius:10px;
-text-decoration:none;
-display:inline-block;
-position:relative;
-overflow:hidden;
-}
+    if(form){
+      form.addEventListener("submit", async function(e){
+        e.preventDefault(); 
+        
+        const data = new FormData(e.target);
+        
+        try {
+          const response = await fetch(e.target.action, {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          });
 
-.btn::after{
-content:"";
-position:absolute;
-top:0;
-left:-150%;
-width:50%;
-height:100%;
-background:linear-gradient(120deg,transparent,rgba(242,201,76,0.5),transparent);
-transform:skewX(-20deg);
-}
+          if (response.ok) {
+            msg.style.display = "block";
+            form.style.display = "none"; 
+          } else {
+            alert("The river is turbulent. Please try again.");
+          }
+        } catch (error) {
+          alert("Lost connection to the riverbank.");
+        }
+      });
+    }
 
-.btn:hover::after{animation:shimmer 1.2s ease;}
-@keyframes shimmer{100%{left:150%;}}
+    // Applying same logic to the footer form
+    const fForm = document.getElementById("footerForm");
+    const fMsg = document.getElementById("footerSuccess");
+    if(fForm){
+      fForm.addEventListener("submit", async function(e){
+        e.preventDefault();
+        const data = new FormData(e.target);
+        try {
+          const response = await fetch(e.target.action, {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          });
+          if (response.ok) {
+            fMsg.style.display = "block";
+            fForm.style.display = "none";
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      });
+    }
+</script>
 
-.btn:hover{
-transform:translateY(-2px);
-box-shadow:0 0 20px rgba(242,201,76,0.4);
-}
-
-.fade{opacity:0;transform:translateY(30px);transition:.8s ease;}
-.fade.show{opacity:1;transform:translateY(0);}
-</style>  </head>  <body>  <section id="home" class="section-dark">
-
-<div class="container">    
-<img src="hero.png" class="fade show">    
-<h1 class="fade show">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>    
-<p class="fade show">A story about chaos, loyalty, and a river that doesn’t behave.</p>
-<p id="hero-line" class="fade show"><strong>The river doesn’t forget. It reacts.</strong></p>    
-<h2 class="fade show">They weren’t ready.</h2>    
-<a href="#prelude" class="btn fade show">Step Into the River</a>  <p class="fade show">    
-Start here.<br>    
-Then decide if you’re leaving.    
-</p>  <p class="fade show">    
-Buddy makes it happen.<br>    
-Sir deals with what follows.    
-</p>  </div>    
-</section>  <section id="prelude" class="section-light">    
-<div class="container">    
-<h1 class="fade">Preview — The Rambunctious River</h1>  <img src="buddy-sir-book-opening-river.png" class="fade">  <div class="fade" style="text-align:left;max-width:600px;margin:auto;">    
-<p>The morning started wrong.<br>The pump coughed.<br>The ladder slipped.<br>The bush fought back.<br>Buddy Bootz landed flat on her dignity and blamed the squirrel.</p>  <p>It doesn’t stop there.</p>  <br>    
-<p>Sir Drinks-A’Lot didn’t argue...</p>    
-<br>  <h2 style="margin-top:2rem;">It didn’t.</h2>  <p>The raft creaked.<br>The water shifted.<br><strong>the river opened.</strong></p>    
-</div>  <h2 class="fade">It gets worse from here.</h2>    
-<p class="fade">This was the easy part.</p>  <a href="#signup" class="btn fade">Keep Going</a>  </div>    
-</section>  <section id="signup" class="section-dark">    
-<div class="container">  <h1 class="fade">You made it this far.</h1>    
-<p class="fade">Most people don’t.</p>  <p class="fade">    
-The river doesn’t show everything at once.<br>    
-But you can stay ahead of it.    
-</p>  <form class="fade" id="emailForm">    
-<input type="email" placeholder="Enter your email" id="emailInput">    
-<br><br>    
-<button class="btn">Stay Ahead</button>    
-</form>  
-<p id="successMsg" style="display:none;">You're in. Watch the river.</p>
-<p class="fade">    
-You’ll know before anyone else<br>    
-when something shifts.    
-</p>  </div>    
-</section>  <section id="launch" class="section-light">    
-<div class="container">  <h1 class="fade">The Rambunctious River</h1>  <p class="fade">Book One is coming.</p>  <p class="fade">    
-Buddy Bootz and Sir Drinks-A’Lot didn’t mean to start anything.<br>    
-But the river doesn’t wait for permission.    
-</p>  <img src="buddy-sir-book-opening-river.png" class="fade">  <h2 class="fade">It already started.</h2>  <a href="#signup" class="btn fade">Get Notified First</a>  </div>    
-</section>  <section id="moments" class="section-dark">    
-<div class="container">    
-<h1 class="fade">Moments of Chaos</h1>    
-<img src="buddy-sir-pump-chaos.png" class="fade">    
-<img src="frog-chaos.png" class="fade">    
-<p class="fade">It doesn’t slow down.</p>    
-</div>    
-</section>  <section id="duo" class="section-light">    
-<div class="container">    
-<h1 class="fade">The Duo</h1>    
-<img src="buddy.png" class="fade">    
-<img src="sir.png" class="fade">    
-<h2 class="fade">The Homesteads</h2>    
-<img src="buddy_treehouse.png" class="fade">    
-<img src="sirs_place.png" class="fade">    
-<p class="fade">And somehow… it keeps working.</p>    
-</div>    
-</section>  <section id="coffee" class="section-dark">    
-<div class="container">    
-<h1 class="fade">Coffee Time</h1>    
-<h3 class="fade">The Podcast</h3>    
-<img src="raft_coffeetime.png" class="fade">  <p class="fade"><strong>It’s quieter here.</strong></p>    
-<p class="fade">Not for long.</p>  <p class="fade">Some things are easier to see than explain.</p>    
-<a href="#youtube" class="btn fade">Watch It Happen</a>  </div>    
-</section>  <section id="youtube" class="section-light">    
-<div class="container">    
-<h1 class="fade">Watch the River</h1>    
-<iframe src="https://www.youtube.com/embed/p3zV0qvuLVQ" class="fade"></iframe>    
-<a href="#prelude" class="btn fade">Go Back to the Beginning</a>    
-</div>    
-</section>  <section id="world" class="section-dark">    
-<div class="container">    
-<h1 class="fade">The World</h1>    
-<img src="map.png" class="fade">    
-<p class="fade">You’re not seeing all of it yet.</p>    
-<p class="fade">It doesn’t stay like this.</p>    
-</div>    
-</section>  <section id="blogs" class="section-light">    
-<div class="container">    
-<h1 class="fade">From the Riverbank</h1>    
-<img src="buddy-sir-story-page-river-creature.png" class="fade">  <p class="fade">There’s more to this one.</p>    
-<a href="#coffee" class="btn fade">Listen In</a>  </div>    
-</section>  <section id="loop" class="section-dark">    
-<div class="container">    
-<h2 class="fade">You’re not at the beginning anymore.</h2>    
-<p class="fade">You’ve already stepped into it.</p>    
-<a href="#home" class="btn fade">Go Again</a>    
-</div>    
-</section>  <section id="stay-close" class="section-dark">    
-<div class="container">    
-<h2>When the river changes, you’ll know first.</h2>    
-<form>    
-<input type="email" placeholder="Enter your email">    
-<br><br>    
-<button class="btn">Step In</button>    
-</form>    
-<a href="#home" class="btn">Start Again</a>    
-</div>    
-</section>  <script>    
-const faders=document.querySelectorAll('.fade');    
-const observer=new IntersectionObserver(entries=>{    
-entries.forEach(entry=>{    
-if(entry.isIntersecting){entry.target.classList.add('show');}    
-});    
-},{threshold:0.15});    
-faders.forEach(el=>observer.observe(el));    let visits = localStorage.getItem("riverVisits");
-if(!visits){visits=1;}else{visits=parseInt(visits)+1;}
-localStorage.setItem("riverVisits",visits);
-
-const heroLine=document.getElementById("hero-line");
-if(visits>1 && heroLine){
-heroLine.innerHTML="<strong>It remembers you.</strong>";
-}
-
-const form = document.getElementById("emailForm");
-const msg = document.getElementById("successMsg");
-
-if(form){
-form.addEventListener("submit", function(e){
-e.preventDefault();
-msg.style.display = "block";
-form.reset();
-});
-}
-</script>  </body>
-
-</html>```
+</body>
+</html>
