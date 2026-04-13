@@ -382,7 +382,12 @@
         const heroSub = document.querySelector(".hero-sub");
 
         if (heroImg) {
-          heroImg.style.transform = "translateY(" + (scrollY * 0.12) + "px)";
+          const baseY = scrollY * 0.12;
+          // store value globally
+          heroImg.dataset.scrollY = baseY;
+          heroImg.style.transform =
+            "translateY(" + baseY + "px) " +
+            (heroImg.dataset.rotate || "");
         }
         if (heroTitle) {
           heroTitle.style.transform = "translateY(" + (scrollY * 0.06) + "px)";
@@ -396,17 +401,21 @@
     document.addEventListener("mousemove", (e) => {
       if (window.innerWidth <= 768) return;
 
+      const heroImg = document.querySelector(".hero-img");
+      if (!heroImg) return;
+
       const x = (e.clientX / window.innerWidth - 0.5) * 2;
       const y = (e.clientY / window.innerHeight - 0.5) * 2;
 
-      const heroImg = document.querySelector(".hero-img");
+      const rotate =
+        "rotateX(" + (-y * 2) + "deg) " +
+        "rotateY(" + (x * 2) + "deg)";
 
-      if (heroImg) {
-        // We append the rotation to the existing translateY from scroll
-        const scrollY = window.scrollY;
-        const currentTranslateY = scrollY * 0.12;
-        heroImg.style.transform = "translateY(" + currentTranslateY + "px) rotateX(" + (-y * 2) + "deg) rotateY(" + (x * 2) + "deg)";
-      }
+      heroImg.dataset.rotate = rotate;
+      const baseY = heroImg.dataset.scrollY || 0;
+
+      heroImg.style.transform =
+        "translateY(" + baseY + "px) " + rotate;
     });
 </script>
 
