@@ -44,6 +44,8 @@
         section {
           padding: 80px 20px;
           text-align: center;
+          position: relative;
+          overflow: hidden;
         }
 
         .container{ max-width:1100px; margin:auto; }
@@ -156,29 +158,61 @@
           transform: translateY(0);
         }
 
-        @keyframes gentleFloat {
-          0% { transform: translateY(0px); }
-          50% { transform: translateY(-6px); }
-          100% { transform: translateY(0px); }
-        }
-
+        /* Unified Motion System */
         .hero-img {
-          transition: transform 0.25s ease-out;
+          transition: transform 0.2s ease-out;
           will-change: transform;
-          animation: gentleFloat 6s ease-in-out infinite;
         }
 
         .hero-title, .hero-sub {
-          transition: transform 0.25s ease-out;
+          transition: transform 0.2s ease-out;
           will-change: transform;
         }
 
+        /* GPU Performance Lock */
+        .hero-img,
+        .hero-title,
+        .hero-sub {
+          transform: translateZ(0);
+          backface-visibility: hidden;
+        }
+
+        /* Cinematic Overlays */
         #home {
           transition: filter 0.4s ease, opacity 0.4s ease;
         }
 
         #prelude {
           transition: filter 0.4s ease, opacity 0.4s ease;
+        }
+
+        /* River Shimmer */
+        .section-light::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -60%;
+          width: 200%;
+          height: 100%;
+          background: linear-gradient(
+            120deg,
+            transparent,
+            rgba(255,255,255,0.08),
+            transparent
+          );
+          transform: skewX(-20deg);
+          opacity: 0;
+          pointer-events: none;
+        }
+
+        .section-light.active-river::before {
+          animation: riverFlow 2.5s ease forwards;
+        }
+
+        @keyframes riverFlow {
+          0% { left: -60%; opacity: 0; }
+          30% { opacity: 0.25; }
+          100% { left: 60%; opacity: 0; }
         }
     </style>
 </head>
@@ -383,7 +417,7 @@
         scrollBar.style.width = scrollPercent + "%";
       }
 
-      // Hero movement (desktop only)
+      // HERO MOTION (DESKTOP ONLY)
       if (window.innerWidth > 768) {
         const heroImg = document.querySelector(".hero-img");
         const heroTitle = document.querySelector(".hero-title");
@@ -391,21 +425,25 @@
 
         if (heroImg) {
           const baseY = scrollY * 0.12;
-          // store value globally
+          const floatOffset = Math.sin(Date.now() * 0.002) * 4;
+
           heroImg.dataset.scrollY = baseY;
+
           heroImg.style.transform =
-            "translateY(" + baseY + "px) " +
+            "translateY(" + (baseY + floatOffset) + "px) " +
             (heroImg.dataset.rotate || "");
         }
+
         if (heroTitle) {
           heroTitle.style.transform = "translateY(" + (scrollY * 0.06) + "px)";
         }
+
         if (heroSub) {
           heroSub.style.transform = "translateY(" + (scrollY * 0.03) + "px)";
         }
       }
 
-      // Cinematic focus shift
+      // CINEMATIC FOCUS SHIFT
       const prelude = document.getElementById("prelude");
       const home = document.getElementById("home");
 
@@ -426,6 +464,21 @@
           prelude.style.opacity = "0.95";
         }
       }
+
+      // RIVER REACTION
+      document.querySelectorAll(".section-light").forEach(section => {
+        const rect = section.getBoundingClientRect();
+
+        if (rect.top < window.innerHeight * 0.6 && rect.bottom > 0) {
+          if (!section.classList.contains("active-river")) {
+            section.classList.add("active-river");
+
+            setTimeout(() => {
+              section.classList.remove("active-river");
+            }, 2500);
+          }
+        }
+      });
     });
 
     document.addEventListener("mousemove", (e) => {
@@ -442,7 +495,8 @@
         "rotateY(" + (x * 2) + "deg)";
 
       heroImg.dataset.rotate = rotate;
-      const baseY = heroImg.dataset.scrollY || 0;
+
+      const baseY = parseFloat(heroImg.dataset.scrollY) || 0;
 
       heroImg.style.transform =
         "translateY(" + baseY + "px) " + rotate;
