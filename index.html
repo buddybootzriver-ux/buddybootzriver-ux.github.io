@@ -172,6 +172,14 @@
           transition: transform 0.25s ease-out;
           will-change: transform;
         }
+
+        #home {
+          transition: filter 0.4s ease, opacity 0.4s ease;
+        }
+
+        #prelude {
+          transition: filter 0.4s ease, opacity 0.4s ease;
+        }
     </style>
 </head>
 <body>
@@ -394,6 +402,28 @@
         }
         if (heroSub) {
           heroSub.style.transform = "translateY(" + (scrollY * 0.03) + "px)";
+        }
+      }
+
+      // Cinematic focus shift
+      const prelude = document.getElementById("prelude");
+      const home = document.getElementById("home");
+
+      if (prelude && home) {
+        const triggerPoint = window.innerHeight * 0.3;
+
+        if (scrollY > triggerPoint) {
+          home.style.filter = "blur(2px) brightness(0.85)";
+          home.style.opacity = "0.9";
+
+          prelude.style.filter = "blur(0px) brightness(1)";
+          prelude.style.opacity = "1";
+        } else {
+          home.style.filter = "blur(0px) brightness(1)";
+          home.style.opacity = "1";
+
+          prelude.style.filter = "blur(0.5px) brightness(0.95)";
+          prelude.style.opacity = "0.95";
         }
       }
     });
