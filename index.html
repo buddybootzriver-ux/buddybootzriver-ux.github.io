@@ -74,7 +74,7 @@
         .split-row {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: space-between;    
             gap: 40px;
             text-align: left;
             margin: 40px 0;
@@ -312,14 +312,6 @@
     }, {threshold: 0.15});    
     faders.forEach(el => observer.observe(el));
 
-    window.addEventListener("scroll", () => {
-      const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-      const scrollBar = document.getElementById("scroll-bar");
-      if (scrollBar) {
-          scrollBar.style.width = scrollPercent + "%";
-      }
-    });
-
     // Story Reveal Logic
     const storyLines = document.querySelectorAll('.story-block .line');
     const revealObserver = new IntersectionObserver(entries => {
@@ -367,24 +359,35 @@
     document.getElementById("emailForm")?.addEventListener("submit", (e) => handleFormSubmit(e, "successMsg"));
 
     window.addEventListener("scroll", () => {
-      if (window.innerWidth <= 768) return;
 
       const scrollY = window.scrollY;
 
-      const heroImg = document.querySelector(".hero-img");
-      const heroTitle = document.querySelector(".hero-title");
-      const heroSub = document.querySelector(".hero-sub");
-
-      if (heroImg) {
-        heroImg.style.transform = "translateY(" + (scrollY * 0.15) + "px)";
+      // Scroll bar
+      const scrollPercent = (scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+      const scrollBar = document.getElementById("scroll-bar");
+      if (scrollBar) {
+        scrollBar.style.width = scrollPercent + "%";
       }
 
-      if (heroTitle) {
-        heroTitle.style.transform = "translateY(" + (scrollY * 0.08) + "px)";
-      }
+      // Hero movement (disable on mobile)
+      if (window.innerWidth > 768) {
 
-      if (heroSub) {
-        heroSub.style.transform = "translateY(" + (scrollY * 0.05) + "px)";
+        const heroImg = document.querySelector(".hero-img");
+        const heroTitle = document.querySelector(".hero-title");
+        const heroSub = document.querySelector(".hero-sub");
+
+        if (heroImg) {
+          heroImg.style.transform = "translateY(" + (scrollY * 0.12) + "px)";
+        }
+
+        if (heroTitle) {
+          heroTitle.style.transform = "translateY(" + (scrollY * 0.06) + "px)";
+        }
+
+        if (heroSub) {
+          heroSub.style.transform = "translateY(" + (scrollY * 0.03) + "px)";
+        }
+
       }
     });
 </script>
