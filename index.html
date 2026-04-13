@@ -30,6 +30,15 @@
             line-height:1.8;
             overflow-x:hidden;
         }
+        #scroll-bar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          height: 4px;
+          width: 0%;
+          background: linear-gradient(to right, #F2C94C, #C62828);
+          z-index: 9999;
+        }
         .section-light{ background:linear-gradient(to bottom,#5AB0DD,#4FA3D1); }
         .section-dark{ background:linear-gradient(to bottom,#4FA3D1,#3F95C4); }
         section{ padding:80px 20px; text-align:center; border-top:1px solid rgba(255,255,255,0.08); }
@@ -40,10 +49,15 @@
         p{ max-width:600px; margin:0 auto 1.5rem; color:var(--text-soft); }
         img{ width:100%; max-width:700px; border-radius:16px; margin:30px 0; box-shadow:0 10px 30px rgba(0,0,0,0.15); }
         iframe{ width:100%; max-width:700px; height:394px; border-radius:16px; border:none; margin:30px 0; }
-        .btn{ background:var(--accent); color:#fff; padding:14px 28px; border-radius:10px; text-decoration:none; display:inline-block; position:relative; overflow:hidden; border:none; cursor:pointer; font-size:1rem; }
+        .btn{ background:var(--accent); color:#fff; padding:14px 28px; border-radius:10px; text-decoration:none; display:inline-block; position:relative; overflow:hidden; border:none; cursor:pointer; font-size:1rem; animation: pulse 3s infinite; }
         .btn::after{ content:""; position:absolute; top:0; left:-150%; width:50%; height:100%; background:linear-gradient(120deg,transparent,rgba(242,201,76,0.5),transparent); transform:skewX(-20deg); }
         .btn:hover::after{animation:shimmer 1.2s ease;}
         @keyframes shimmer{100%{left:150%;}}
+        @keyframes pulse {
+          0% { box-shadow: 0 0 0 0 rgba(242,201,76,0.5); }
+          70% { box-shadow: 0 0 0 10px rgba(242,201,76,0); }
+          100% { box-shadow: 0 0 0 0 rgba(242,201,76,0); }
+        }
         .btn:hover{ transform:translateY(-2px); box-shadow:0 0 20px rgba(242,201,76,0.4); }
         .fade{opacity:0;transform:translateY(30px);transition:.8s ease;}
         .fade.show{opacity:1;transform:translateY(0);}
@@ -52,6 +66,7 @@
     </style>
 </head>
 <body>
+<div id="scroll-bar"></div>
 
 <section id="home" class="section-dark">
     <div class="container">    
@@ -86,7 +101,7 @@
         <p class="fade">
         You’ve seen how it begins. Don’t miss what comes next.
         </p>
-        <a href="#signup" class="btn fade">Follow the Current</a>
+        <a href="#stay-close" class="btn fade">Follow the Current</a>
     </div>    
 </section>
 
@@ -96,7 +111,7 @@
         <p class="fade">Book One is surfacing.</p>
         <img src="buddy-sir-book-opening-river.png" class="fade">
         <h2 class="fade">The bank is crumbling.</h2>
-        <a href="#signup" class="btn fade">Claim Your Spot</a>
+        <a href="#stay-close" class="btn fade">Claim Your Spot</a>
     </div>    
 </section>
 
@@ -106,6 +121,7 @@
         <img src="buddy-sir-pump-chaos.png" class="fade">    
         <img src="frog-chaos.png" class="fade">    
         <p class="fade">It doesn’t slow down. Neither does Buddy.</p>    
+        <p class="fade"><strong>The river is getting louder.</strong></p>
     </div>    
 </section>
 
@@ -138,6 +154,7 @@
 <section id="stay-close" class="section-dark">    
     <div class="container">    
         <h2>When the river changes, you’ll hear the roar first.</h2>    
+        <p class="fade"><strong>You made it this far. Most don’t.</strong></p>
         <form class="fade" id="emailForm" action="https://formspree.io/f/xdapyaar" method="POST">    
             <input type="email" name="email" placeholder="Enter your email" required>    
             <br><br>    
@@ -175,6 +192,10 @@
       Stories from the Rambunctious River
     </p>
 
+    <p style="font-size:0.8rem; opacity:0.6; margin-top:20px;">
+    It’s still moving.
+    </p>
+
   </div>
 </section>
 
@@ -197,6 +218,17 @@
     if(visits > 1 && heroLine){
         heroLine.innerHTML = "<strong>It remembers you.</strong>";
     }
+    if(visits > 3 && heroLine){
+        heroLine.innerHTML = "<strong>You came back.</strong>";
+    }
+
+    // Progress Bar
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      document.getElementById("scroll-bar").style.width = scrollPercent + "%";
+    });
 
     // Consolidated AJAX Form Handling
     async function handleFormSubmit(event, successId) {
