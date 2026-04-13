@@ -139,6 +139,22 @@
         .fade{opacity:0;transform:translateY(30px);transition:.8s ease;}
         .fade.show{opacity:1;transform:translateY(0);}
         input[type="email"] { padding: 14px; border-radius: 8px; border: none; width: 100%; max-width: 350px; font-size: 1rem; }
+
+        /* Story Reveal Styles */
+        .story-block .line {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: all 0.6s ease;
+          max-width: 600px;
+          text-align: left;
+          margin: 0 auto 1rem;
+          font-size: 1.05rem;
+        }
+
+        .story-block .line.show {
+          opacity: 1;
+          transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -172,16 +188,16 @@
         <h2 class="fade" style="margin-bottom:15px;">Begin with The Rambunctious River</h2>
         <img src="buddy-sir-book-opening-river.png" class="fade" style="max-width: 800px;">
         
-        <p class="fade" style="max-width:600px; text-align:left; margin:auto; font-size:1.05rem;">
-            The water pump bolted to the outside of Buddy Bootz’s treehouse was doing its best to come apart in public.<br><br>
-            The little metal box rattled hard against the oak boards. Pipes knocked. A loose valve buzzed. Something inside snapped…<br><br>
-            Buddy Bootz stood on the top step of a tall ladder, one hand steadying the metal housing while the other worked a screwdriver into a stubborn seam.<br><br>
-            The pump coughed.<br><br>
-            A blast of rusty water shot straight into her face.<br><br>
-            Buddy went still.<br><br>
-            Water dripped off her nose.<br><br>
-            “…That was personal.”
-        </p>
+        <div class="story-block fade">
+            <p class="line">The water pump bolted to the outside of Buddy Bootz’s treehouse was doing its best to come apart in public.</p>
+            <p class="line">The little metal box rattled hard against the oak boards. Pipes knocked. A loose valve buzzed. Something inside snapped…</p>
+            <p class="line">Buddy Bootz stood on the top step of a tall ladder, one hand steadying the metal housing while the other worked a screwdriver into a stubborn seam.</p>
+            <p class="line">The pump coughed.</p>
+            <p class="line">A blast of rusty water shot straight into her face.</p>
+            <p class="line">Buddy went still.</p>
+            <p class="line">Water dripped off her nose.</p>
+            <p class="line">“…That was personal.”</p>
+        </div>
 
         <p class="fade" style="margin-top:20px; font-style:italic;">
             And that was before the river noticed them.
@@ -294,6 +310,24 @@
       }
     });
 
+    // Story Reveal Logic
+    const storyLines = document.querySelectorAll('.story-block .line');
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          storyLines.forEach((line, index) => {
+            setTimeout(() => {
+              line.classList.add('show');
+            }, index * 200);
+          });
+        }
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.story-block').forEach(block => {
+      revealObserver.observe(block);
+    });
+
     async function handleFormSubmit(event, successId) {
         event.preventDefault();
         const form = event.target;
@@ -324,4 +358,4 @@
 </script>
 
 </body>
-</html>```
+</html>
