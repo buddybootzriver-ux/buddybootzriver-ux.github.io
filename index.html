@@ -44,7 +44,6 @@
         section {
           padding: 80px 20px;
           text-align: center;
-          border-top: 1px solid rgba(255,255,255,0.08);
         }
 
         .container{ max-width:1100px; margin:auto; }
@@ -156,7 +155,7 @@
             <a href="/blog.html" class="btn" style="background:transparent;border:1px solid white;">Blog</a>
         </div>
 
-        <p class="fade show" style="margin-top: 30px;">
+        <p class="fade show" style="margin-top: 20px;">
           The river has already started moving.<br>
           The stories are finding their way to the surface.<br><br>
           The Adventures of Buddy Bootz & Sir Drinks-A’Lot<br>
@@ -168,12 +167,12 @@
     </div>    
 </section>
 
-<section id="prelude" class="section-light">
+<section id="prelude" class="section-light" style="padding-top:40px;">
     <div class="container">
-        <h2 class="fade">Begin with The Rambunctious River</h2>
+        <h2 class="fade" style="margin-bottom:15px;">Begin with The Rambunctious River</h2>
         <img src="buddy-sir-book-opening-river.png" class="fade" style="max-width: 800px;">
         
-        <p class="fade" style="max-width:650px; text-align:left; margin:auto;">
+        <p class="fade" style="max-width:600px; text-align:left; margin:auto; font-size:1.05rem;">
             The water pump bolted to the outside of Buddy Bootz’s treehouse was doing its best to come apart in public.<br><br>
             The little metal box rattled hard against the oak boards. Pipes knocked. A loose valve buzzed. Something inside snapped…<br><br>
             Buddy Bootz stood on the top step of a tall ladder, one hand steadying the metal housing while the other worked a screwdriver into a stubborn seam.<br><br>
@@ -289,7 +288,10 @@
 
     window.addEventListener("scroll", () => {
       const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-      document.getElementById("scroll-bar").style.width = scrollPercent + "%";
+      const scrollBar = document.getElementById("scroll-bar");
+      if (scrollBar) {
+          scrollBar.style.width = scrollPercent + "%";
+      }
     });
 
     async function handleFormSubmit(event, successId) {
