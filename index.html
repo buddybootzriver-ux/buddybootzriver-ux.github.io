@@ -156,13 +156,20 @@
           transform: translateY(0);
         }
 
+        @keyframes gentleFloat {
+          0% { transform: translateY(0px); }
+          50% { transform: translateY(-6px); }
+          100% { transform: translateY(0px); }
+        }
+
         .hero-img {
-          transition: transform 0.2s ease-out;
+          transition: transform 0.25s ease-out;
           will-change: transform;
+          animation: gentleFloat 6s ease-in-out infinite;
         }
 
         .hero-title, .hero-sub {
-          transition: transform 0.2s ease-out;
+          transition: transform 0.25s ease-out;
           will-change: transform;
         }
     </style>
@@ -359,7 +366,6 @@
     document.getElementById("emailForm")?.addEventListener("submit", (e) => handleFormSubmit(e, "successMsg"));
 
     window.addEventListener("scroll", () => {
-
       const scrollY = window.scrollY;
 
       // Scroll bar
@@ -369,9 +375,8 @@
         scrollBar.style.width = scrollPercent + "%";
       }
 
-      // Hero movement (disable on mobile)
+      // Hero movement (desktop only)
       if (window.innerWidth > 768) {
-
         const heroImg = document.querySelector(".hero-img");
         const heroTitle = document.querySelector(".hero-title");
         const heroSub = document.querySelector(".hero-sub");
@@ -379,15 +384,28 @@
         if (heroImg) {
           heroImg.style.transform = "translateY(" + (scrollY * 0.12) + "px)";
         }
-
         if (heroTitle) {
           heroTitle.style.transform = "translateY(" + (scrollY * 0.06) + "px)";
         }
-
         if (heroSub) {
           heroSub.style.transform = "translateY(" + (scrollY * 0.03) + "px)";
         }
+      }
+    });
 
+    document.addEventListener("mousemove", (e) => {
+      if (window.innerWidth <= 768) return;
+
+      const x = (e.clientX / window.innerWidth - 0.5) * 2;
+      const y = (e.clientY / window.innerHeight - 0.5) * 2;
+
+      const heroImg = document.querySelector(".hero-img");
+
+      if (heroImg) {
+        // We append the rotation to the existing translateY from scroll
+        const scrollY = window.scrollY;
+        const currentTranslateY = scrollY * 0.12;
+        heroImg.style.transform = "translateY(" + currentTranslateY + "px) rotateX(" + (-y * 2) + "deg) rotateY(" + (x * 2) + "deg)";
       }
     });
 </script>
