@@ -85,6 +85,13 @@
 
         .split-text { flex: 1; }
         .split-img { flex: 1; }
+        
+        .split-img img {
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .split-img img:last-child { margin-bottom: 0; }
 
         @media (max-width: 768px) {
             .split-row, .split-row.reverse { flex-direction: column; text-align: center; }
@@ -168,6 +175,7 @@
             </div>
             <div class="split-img fade">
                 <img src="buddy.png" alt="Buddy Bootz">
+                <img src="buddy_treehouse.png" alt="Buddy's Treehouse">
             </div>
         </div>
     </div>
@@ -184,6 +192,7 @@
             </div>
             <div class="split-img fade">
                 <img src="sir.png" alt="Sir Drinks-A’Lot">
+                <img src="sirs_place.png" alt="Sir's Place">
             </div>
         </div>
     </div>
