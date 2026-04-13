@@ -223,20 +223,26 @@
     document.getElementById("footerForm")?.addEventListener("submit", (e) => handleFormSubmit(e, "footerSuccess"));
 </script>
 
-<section id="footer" class="section-dark">
+<section id="footer" style="
+  background:#2f6f8f;
+  padding:80px 20px;
+  text-align:center;
+  border-top:2px solid rgba(255,255,255,0.2);
+">
   <div class="container">
 
-    <img src="bootz_cover.png" style="max-width:200px; margin-bottom:20px;">
+    <img src="bootz_cover.png"
+         style="max-width:180px; margin-bottom:20px;">
 
-    <p style="font-size:0.9rem; opacity:0.9;">
+    <p style="font-size:0.9rem; opacity:0.95;">
       © 2026 Buddy Bootz. All rights reserved.
     </p>
 
-    <p style="font-size:0.9rem;">
+    <p style="font-size:1rem; font-weight:600;">
       The Adventures of Buddy Bootz & Sir Drinks-A’Lot
     </p>
 
-    <p style="font-size:0.9rem; opacity:0.85;">
+    <p style="font-size:0.85rem; opacity:0.8;">
       Stories from the Rambunctious River
     </p>
 
@@ -244,4 +250,4 @@
 </section>
 
 </body>
-</html>```
+</html>
