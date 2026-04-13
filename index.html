@@ -86,7 +86,6 @@
         .split-text { flex: 1; }
         .split-img { flex: 1; }
 
-        /* Clean Image Stacking Logic */
         .split-img img {
           display: block;
           width: 100%;
@@ -148,15 +147,24 @@
 
 <section id="home" class="section-dark">
     <div class="container">    
-        <img src="hero.png" class="fade show" style="max-width: 600px;">    
+        <img src="hero.png" class="fade show" style="max-width: 700px; margin-bottom: 30px;">    
         <h1 class="fade show">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>    
-        <h3>Chaos doesn’t ask permission. It just shows up.</h3>
-        <p class="fade show">A whimsical, chaos-kissed adventure series where laughter trips over danger, and loyalty is the only thing that doesn’t.</p>
+        <h3 class="fade show">Chaos doesn’t ask permission. It just shows up.</h3>
+
         <div class="btn-group fade show">
-            <a href="#prelude" class="btn">Start the Adventure</a>
-            <a href="#buddy" class="btn">Meet Buddy & Sir</a>
-            <a href="/blog.html" class="btn">Blog</a>
+          <a href="#prelude" class="btn">Step Into the Adventure</a>
+          <a href="/blog.html" class="btn" style="background:transparent;border:1px solid white;">Blog</a>
         </div>
+
+        <p class="fade show" style="margin-top: 30px;">
+          The river has already started moving.<br>
+          The stories are finding their way to the surface.<br><br>
+          The Adventures of Buddy Bootz & Sir Drinks-A’Lot<br>
+          are just beginning.
+        </p>
+        <p class="fade show" style="font-weight:600; color:var(--gold);">
+          First adventures arriving soon.
+        </p>
     </div>    
 </section>
 
@@ -172,13 +180,13 @@
         <div class="split-row">
             <div class="split-text fade">
                 <h2>Meet Buddy Bootz</h2>
-                <p>She doesn’t cause chaos. That would suggest intention. Chaos simply… arrives when she does.</p>
+                <p>She doesn’t cause chaos.<br>That would suggest intention.<br>Chaos simply… arrives when she does.</p>
                 <p>Barefoot brave in spirit (never in boots), Buddy Bootz lives above the river in a treehouse that has seen things it refuses to explain.</p>
                 <p>She laughs first, questions later, and somehow always lands exactly where she’s needed… even if it’s not where she meant to be.</p>
             </div>
             <div class="split-img fade">
                 <img src="buddy.png" alt="Buddy Bootz">
-                <img src="buddy_treehouse.png" alt="Buddy's Treehouse" style="margin-top:20px;">
+                <img src="buddy_treehouse.png" alt="Buddy's Treehouse" style="margin-top:20px; transform:scale(0.95); opacity:0.95;">
             </div>
         </div>
     </div>
@@ -191,11 +199,12 @@
                 <h2>Meet Sir Drinks-A’Lot</h2>
                 <p>If Buddy is the spark, Sir is the steady hand that keeps the world from catching fire.</p>
                 <p>A builder, a fixer, and an accidental hero more often than he’d prefer, Sir doesn’t chase chaos. He walks beside it.</p>
+                <p>He doesn’t lead her into chaos.<br>He’s the reason they make it back out.</p>
                 <p>And when things go wrong (they will), he’s the one who gets her back on her feet… usually while trying not to fall himself.</p>
             </div>
             <div class="split-img fade">
                 <img src="sir.png" alt="Sir Drinks-A’Lot">
-                <img src="sirs_place.png" alt="Sir's Place" style="margin-top:20px;">
+                <img src="sirs_place.png" alt="Sir's Place" style="margin-top:20px; transform:scale(0.95); opacity:0.95;">
             </div>
         </div>
     </div>
