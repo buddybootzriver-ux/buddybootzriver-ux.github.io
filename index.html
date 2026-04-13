@@ -90,24 +90,6 @@
     </div>    
 </section>
 
-<section id="signup" class="section-dark">    
-    <div class="container">
-        <h1 class="fade">You’re still here.</h1>    
-        <p class="fade"><strong>That means the river chose you.</strong></p>
-        <p class="fade">Most people turn back at the tree line.</p>
-        <p class="fade">The river doesn’t give up its secrets for free.<br>Stay one step ahead of the splash.</p>
-        
-        <form class="fade" id="emailForm" action="https://formspree.io/f/xdapyaar" method="POST">    
-            <input type="email" name="email" placeholder="Enter your email" id="emailInput" required>    
-            <br><br>    
-            <button type="submit" class="btn" data-fs-submit-btn>Stay Ahead</button>    
-        </form>  
-        <p id="successMsg" style="display:none; color:var(--gold); font-weight:bold;">You're in. Watch the banks.</p>
-        
-        <p class="fade">You’ll be the first to know<br>when the tide shifts.</p>
-    </div>    
-</section>
-
 <section id="launch" class="section-light">    
     <div class="container">
         <h1 class="fade">The Rambunctious River</h1>
@@ -156,12 +138,15 @@
 <section id="stay-close" class="section-dark">    
     <div class="container">    
         <h2>When the river changes, you’ll hear the roar first.</h2>    
-        <form class="fade" id="footerForm" action="https://formspree.io/f/xdapyaar" method="POST">    
+        <form class="fade" id="emailForm" action="https://formspree.io/f/xdapyaar" method="POST">    
             <input type="email" name="email" placeholder="Enter your email" required>    
             <br><br>    
-            <button type="submit" class="btn" data-fs-submit-btn>Step In</button>    
+            <button type="submit" class="btn" data-fs-submit-btn>Stay Ahead</button>    
         </form>
-        <p id="footerSuccess" style="display:none; color:var(--gold); font-weight:bold;">You're in. Watch the river.</p>
+
+        <p id="successMsg" style="display:none; color:var(--gold); font-weight:bold;">
+        You're in. Watch the river.
+        </p>
         <br>
         <a href="#home" class="btn">Return to Shore</a>    
     </div>    
@@ -247,7 +232,6 @@
 
     // Attach listeners
     document.getElementById("emailForm")?.addEventListener("submit", (e) => handleFormSubmit(e, "successMsg"));
-    document.getElementById("footerForm")?.addEventListener("submit", (e) => handleFormSubmit(e, "footerSuccess"));
 </script>
 
 </body>
