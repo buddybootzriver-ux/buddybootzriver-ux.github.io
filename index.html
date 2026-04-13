@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,15 +40,58 @@
         }
         .section-light{ background:linear-gradient(to bottom,#5AB0DD,#4FA3D1); }
         .section-dark{ background:linear-gradient(to bottom,#4FA3D1,#3F95C4); }
-        section{ padding:80px 20px; text-align:center; border-top:1px solid rgba(255,255,255,0.08); }
+        
+        section {
+          padding: 100px 20px;
+          text-align: center;
+          border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
         .container{ max-width:800px; margin:auto; }
-        h1{ font-family:'Outfit',sans-serif; font-size:clamp(2.5rem,5vw,3.5rem); letter-spacing:-1px; color:var(--gold); }
-        h2{ font-family:'Outfit',sans-serif; font-size:clamp(1.8rem,3vw,2.5rem); color:var(--gold); }
+
+        h1 {
+          font-family:'Outfit',sans-serif;
+          font-size:clamp(2.5rem,5vw,3.5rem);
+          letter-spacing:-1px;
+          color:var(--gold);
+          margin-bottom: 20px;
+        }
+
+        h2 {
+          font-family:'Outfit',sans-serif;
+          font-size:clamp(1.8rem,3vw,2.5rem);
+          color:var(--gold);
+          margin-top: 40px;
+          margin-bottom: 15px;
+        }
+
         h3{ font-family:'Outfit',sans-serif; font-size:1.2rem; text-transform:uppercase; color:var(--gold); }
-        p{ max-width:600px; margin:0 auto 1.5rem; color:var(--text-soft); }
+        
+        p {
+          max-width: 520px;
+          margin: 0 auto 1.2rem;
+          line-height: 1.7;
+          color: var(--text-soft);
+        }
+
         img{ width:100%; max-width:700px; border-radius:16px; margin:30px 0; box-shadow:0 10px 30px rgba(0,0,0,0.15); }
         iframe{ width:100%; max-width:700px; height:394px; border-radius:16px; border:none; margin:30px 0; }
-        .btn{ background:var(--accent); color:#fff; padding:14px 28px; border-radius:10px; text-decoration:none; display:inline-block; position:relative; overflow:hidden; border:none; cursor:pointer; font-size:1rem; }
+        
+        .btn { 
+          background:var(--accent); 
+          color:#fff; 
+          padding:14px 28px; 
+          border-radius:10px; 
+          text-decoration:none; 
+          display:inline-block; 
+          position:relative; 
+          overflow:hidden; 
+          border:none; 
+          cursor:pointer; 
+          font-size:1rem; 
+          margin-top: 25px;
+        }
+
         #stay-close .btn { animation: pulse 3s infinite; }
         .btn::after{ content:""; position:absolute; top:0; left:-150%; width:50%; height:100%; background:linear-gradient(120deg,transparent,rgba(242,201,76,0.5),transparent); transform:skewX(-20deg); }
         .btn:hover::after{animation:shimmer 1.2s ease;}
@@ -64,6 +106,21 @@
         .fade.show{opacity:1;transform:translateY(0);}
         input[type="email"] { padding: 12px; border-radius: 8px; border: none; width: 100%; max-width: 300px; }
         button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+        .story-block {
+          text-align: left;
+          max-width: 520px;
+          margin: 40px auto;
+        }
+
+        .story-block p {
+          margin-bottom: 1.2rem;
+        }
+
+        .micro {
+          font-size: 0.9rem;
+          opacity: 0.75;
+        }
     </style>
 </head>
 <body>
@@ -78,7 +135,7 @@
         <p id="hero-line" class="fade show"><strong>The river doesn’t forget. It reacts.</strong></p>    
         <h2 class="fade show">It's about to get complicated.</h2>    
         <a href="#prelude" class="btn fade show">Step Into the Flow</a>
-        <p class="fade show" style="margin-top:10px; opacity:0.9;">
+        <p class="fade show micro" style="margin-top:10px;">
         Start where everything goes wrong.
         </p>
         <a href="/blog.html" class="btn fade show" style="margin-top:15px;">Read the Blog</a>
@@ -90,7 +147,7 @@
         <h1 class="fade">The Morning Everything Broke</h1>
         <img src="buddy-sir-book-opening-river.png" class="fade">
         <p class="fade"><strong>From Book One: The Rambunctious River</strong></p>
-        <div class="fade" style="text-align:left;max-width:600px;margin:auto;">    
+        <div class="fade story-block">    
             <p>The pump coughed. The ladder slipped. The box fought back.<br>Buddy Bootz landed flat on her dignity and blamed a nearby squirrel.<br>Buddy was ready for a fight.</p>
             <p>Sir Drinks-A’Lot, predictably, was just ready for a nap.</p>
             <p>He didn’t argue. He never does. He just waited for the inevitable shift in the current...</p>
@@ -174,7 +231,7 @@
 
 <section id="footer" style="
   background:#2f6f8f;
-  padding:80px 20px;
+  padding:100px 20px;
   text-align:center;
   border-top:2px solid rgba(255,255,255,0.2);
 ">
@@ -183,7 +240,7 @@
     <img src="bootz_cover.png"
          style="max-width:180px; margin-bottom:20px;">
 
-    <p style="font-size:0.9rem; opacity:0.95;">
+    <p class="micro">
       © 2026 Buddy Bootz. All rights reserved.
     </p>
 
@@ -191,11 +248,11 @@
       The Adventures of Buddy Bootz & Sir Drinks-A’Lot
     </p>
 
-    <p style="font-size:0.85rem; opacity:0.8;">
+    <p class="micro" style="opacity:0.8;">
       Stories from the Rambunctious River
     </p>
 
-    <p style="font-size:0.8rem; opacity:0.6; margin-top:20px;">
+    <p class="micro" style="opacity:0.6; margin-top:20px;">
     It’s still moving.
     </p>
 
@@ -230,7 +287,8 @@
       const scrollTop = window.scrollY;
       const docHeight = document.body.scrollHeight - window.innerHeight;
       const scrollPercent = (scrollTop / docHeight) * 100;
-      document.getElementById("scroll-bar").style.width = scrollPercent + "%";
+      const bar = document.getElementById("scroll-bar");
+      if(bar) bar.style.width = scrollPercent + "%";
     });
 
     // Consolidated AJAX Form Handling
@@ -271,5 +329,3 @@
 
 </body>
 </html>
-
-```
