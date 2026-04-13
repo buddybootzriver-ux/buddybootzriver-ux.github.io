@@ -155,6 +155,16 @@
           opacity: 1;
           transform: translateY(0);
         }
+
+        .hero-img {
+          transition: transform 0.2s ease-out;
+          will-change: transform;
+        }
+
+        .hero-title, .hero-sub {
+          transition: transform 0.2s ease-out;
+          will-change: transform;
+        }
     </style>
 </head>
 <body>
@@ -162,9 +172,9 @@
 
 <section id="home" class="section-dark">
     <div class="container">    
-        <img src="hero.png" class="fade show" style="max-width: 700px; margin-bottom: 30px;">    
-        <h1 class="fade show">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>    
-        <h3 class="fade show">Chaos doesn’t ask permission. It just shows up.</h3>
+        <img src="hero.png" class="fade show hero-img" style="max-width: 700px; margin-bottom: 30px;">    
+        <h1 class="fade show hero-title">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>    
+        <h3 class="fade show hero-sub">Chaos doesn’t ask permission. It just shows up.</h3>
 
         <div class="btn-group fade show">
             <a href="#prelude" class="btn">Step Into the Adventure</a>
@@ -355,6 +365,28 @@
         }
     }
     document.getElementById("emailForm")?.addEventListener("submit", (e) => handleFormSubmit(e, "successMsg"));
+
+    window.addEventListener("scroll", () => {
+      if (window.innerWidth <= 768) return;
+
+      const scrollY = window.scrollY;
+
+      const heroImg = document.querySelector(".hero-img");
+      const heroTitle = document.querySelector(".hero-title");
+      const heroSub = document.querySelector(".hero-sub");
+
+      if (heroImg) {
+        heroImg.style.transform = "translateY(" + (scrollY * 0.15) + "px)";
+      }
+
+      if (heroTitle) {
+        heroTitle.style.transform = "translateY(" + (scrollY * 0.08) + "px)";
+      }
+
+      if (heroSub) {
+        heroSub.style.transform = "translateY(" + (scrollY * 0.05) + "px)";
+      }
+    });
 </script>
 
 </body>
