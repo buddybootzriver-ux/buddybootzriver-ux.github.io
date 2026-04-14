@@ -10,6 +10,7 @@
     </script>    
     <meta charset="UTF-8">    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <meta name="description" content="Enter the world of The Adventures of Buddy Bootz & Sir Drinks-A’Lot — a whimsical fantasy of chaos, loyalty, and a river that refuses to behave.">
     <title>The Adventures of Buddy Bootz & Sir Drinks-A’Lot</title>
     <link rel="icon" type="image/png" href="favicon.png">    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700&display=swap" rel="stylesheet">
@@ -28,6 +29,7 @@
             color:var(--text);
             line-height:1.6;
             overflow-x:hidden;
+            padding-top:60px;
         }
         #scroll-bar {
           position: fixed;
@@ -222,17 +224,30 @@
     </style>
 </head>
 <body>
+<nav style="position:fixed; top:0; width:100%; background:rgba(0,0,0,0.2); backdrop-filter:blur(6px); z-index:9998; padding:10px 20px;">
+  <div style="max-width:1100px; margin:auto; display:flex; justify-content:space-between; align-items:center;">
+    <div style="font-weight:600;">Buddy Bootz</div>
+    <div style="display:flex; gap:20px;">
+      <a href="#prelude" style="color:white; text-decoration:none;">Start</a>
+      <a href="#buddy" style="color:white; text-decoration:none;">Characters</a>
+      <a href="#world" style="color:white; text-decoration:none;">World</a>
+      <a href="#youtube" style="color:white; text-decoration:none;">Media</a>
+      <a href="#about" style="color:white; text-decoration:none;">About</a>
+    </div>
+  </div>
+</nav>
+
 <div id="scroll-bar"></div>
 
 <section id="home" class="section-dark">
     <div class="container">    
-        <img src="hero.png" class="fade show hero-img" style="max-width: 700px; margin-bottom: 30px;">    
+        <img src="hero.png" alt="Buddy Bootz standing on a wooden bridge above the Rambunctious River" class="fade show hero-img" style="max-width: 700px; margin-bottom: 30px;" loading="lazy">    
         <h1 class="fade show hero-title">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>    
         <h3 class="fade show hero-sub">Buddy Bootz fixes things that weren’t broken until she touched them.<br>Sir Drinks-A’Lot knows how things are supposed to work.<br>The river doesn’t care about either of them.</h3>
 
         <div class="btn-group fade show">
             <a href="#prelude" class="btn">Start the Adventure</a>
-            <a href="/blog.html" class="btn" style="background:transparent;border:1px solid white;">Blog</a>
+            <a href="/blog.html" class="btn" style="background:transparent;border:1px solid white; opacity:0.85;">Blog</a>
         </div>
 
         <p class="fade show" style="margin-top: 20px;">
@@ -244,7 +259,7 @@
 <section id="prelude" class="section-light" style="padding-top:40px;">
     <div class="container">
         <h2 class="fade" style="margin-bottom:15px;">Begin with The Rambunctious River</h2>
-        <img src="buddy-sir-book-opening-river.png" class="fade" style="max-width: 800px;">
+        <img src="buddy-sir-book-opening-river.png" class="fade" style="max-width: 800px;" loading="lazy">
         
         <div class="story-block fade">
             <p class="line">The water pump bolted to the outside of Buddy Bootz’s treehouse was trying to come apart in public.</p>
@@ -260,6 +275,11 @@
         <p class="fade" style="margin-top:20px; font-style:italic;">
             And that was before the river changed direction.
         </p>
+
+        <div class="btn-group fade">
+          <a href="#" class="btn">Read Preview</a>
+          <a href="#" class="btn">Get the Book</a>
+        </div>
 
         <a href="#stay-close" class="btn fade">Keep Going</a>
     </div>
@@ -282,8 +302,8 @@
                 <p>She keeps going anyway.</p>
             </div>
             <div class="split-img fade">
-                <img src="buddy.png" alt="Buddy Bootz">
-                <img src="buddy_treehouse.png" alt="Buddy's Treehouse" style="margin-top:20px; transform:scale(0.95); opacity:0.95;">
+                <img src="buddy.png" alt="Buddy Bootz" loading="lazy">
+                <img src="buddy_treehouse.png" alt="Buddy's Treehouse" style="margin-top:20px; transform:scale(0.95); opacity:0.95;" loading="lazy">
             </div>
         </div>
     </div>
@@ -299,8 +319,8 @@
                 <p>And he stays—when he probably shouldn’t.</p>
             </div>
             <div class="split-img fade">
-                <img src="sir.png" alt="Sir Drinks-A’Lot">
-                <img src="sirs_place.png" alt="Sir's Place" style="margin-top:20px; transform:scale(0.95); opacity:0.95;">
+                <img src="sir.png" alt="Sir Drinks-A’Lot" loading="lazy">
+                <img src="sirs_place.png" alt="Sir's Place" style="margin-top:20px; transform:scale(0.95); opacity:0.95;" loading="lazy">
             </div>
         </div>
     </div>
@@ -315,15 +335,15 @@
 
 <section id="chaos" class="section-dark">
     <div class="container">
-        <img src="buddy-sir-pump-chaos.png" class="fade" alt="Chaos on the river">
+        <img src="buddy-sir-pump-chaos.png" class="fade" alt="Chaos on the river" loading="lazy">
     </div>
 </section>
 
 <section id="youtube" class="section-light">
     <div class="container">
         <h2 class="fade">From the Riverbank</h2>
-        <p class="fade">Sometimes it doesn’t stop at the river.</p>
-        <iframe src="https://www.youtube.com/embed/p3zV0qvuLVQ" class="fade"></iframe>
+        <p class="fade">Some of it escapes. Some of it gets recorded. None of it stays quiet for long.</p>
+        <iframe src="https://www.youtube.com/embed/p3zV0qvuLVQ" class="fade" title="Buddy Bootz and Sir Drinks-A’Lot video"></iframe>
     </div>
 </section>
 
@@ -345,10 +365,14 @@
         Her stories follow two unlikely companions navigating a river that refuses to stay predictable—where plans fail fast, fixes don’t hold, and something always shifts when it shouldn’t.
         </p>
 
+        <p>
+        Not everything is planned. Most of it isn’t. That’s where the stories start.
+        </p>
+
         <div class="divider"></div>
 
         <p style="font-size:14px; opacity:0.7;">
-        For inquiries, contact through the main site.
+        For inquiries, collaborations, or media requests, use the contact page.
         </p>
     </div>
 </section>
