@@ -44,13 +44,13 @@
         .section-dark{ background:linear-gradient(to bottom,#4FA3D1,#3F95C4); }
         
         section {
-          padding: 80px 20px;
+          padding: 100px 20px;
           text-align: center;
           position: relative;
           overflow: hidden;
         }
 
-        .container{ max-width:1100px; margin:auto; }
+        .container{ max-width:1000px; margin:auto; }
 
         h1 {
           font-family:'Outfit',sans-serif;
@@ -70,9 +70,11 @@
         h3{ font-family:'Outfit',sans-serif; font-size:1.4rem; text-transform:uppercase; color:var(--gold); margin-bottom: 15px;}
         
         p {
-          max-width: 700px;
-          margin: 0 auto 1.5rem;
+          max-width: 650px;
+          margin: 0 auto 1.2rem;
           color: var(--text-soft);
+          font-size: 1.05rem;
+          line-height: 1.7;
         }
 
         .split-row {
@@ -92,6 +94,7 @@
         .split-img img {
           display: block;
           width: 100%;
+          max-width: 100%;
           margin-bottom: 15px;
         }
         .split-img img:last-child {
@@ -102,7 +105,15 @@
             .split-row, .split-row.reverse { flex-direction: column; text-align: center; }
         }
 
-        img{ width:100%; height: auto; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.15); }
+        img{ 
+            width:100%; 
+            height: auto; 
+            max-width: 600px;
+            margin: 20px auto;
+            display: block;
+            border-radius:16px; 
+            box-shadow:0 10px 30px rgba(0,0,0,0.15); 
+        }
         iframe{ width:100%; max-width:800px; height:450px; border-radius:16px; border:none; margin:30px 0; }
         
         .btn-group {
@@ -151,7 +162,7 @@
           max-width: 600px;
           text-align: left;
           margin: 0 auto 1rem;
-          font-size: 1.05rem;
+          font-size: 1.1rem;
         }
 
         .story-block .line.show {
@@ -256,10 +267,9 @@
     </div>    
 </section>
 
-<section id="prelude" class="section-light" style="padding-top:40px;">
+<section id="prelude" class="section-light">
     <div class="container">
-        <h2 class="fade" style="margin-bottom:15px;">Begin with The Rambunctious River</h2>
-        <img src="buddy-sir-book-opening-river.png" class="fade" style="max-width: 800px;" loading="lazy">
+        <h2 class="fade">Begin with The Rambunctious River</h2>
         
         <div class="story-block fade">
             <p class="line">The water pump bolted to the outside of Buddy Bootz’s treehouse was trying to come apart in public.</p>
@@ -275,10 +285,10 @@
         <img src="buddy-sir-pump-chaos.png" 
         alt="Broken water pump spraying chaos outside Buddy Bootz’s treehouse" 
         class="fade" 
-        style="max-width:600px; margin:40px auto 0; display:block;" 
+        style="max-width:700px; margin:30px auto; display:block;" 
         loading="lazy">
 
-        <p class="fade" style="margin-top:20px; font-style:italic;">
+        <p class="fade" style="font-style:italic;">
             And that was before the river changed direction.
         </p>
 
@@ -308,7 +318,6 @@
                 <img src="buddy.png" alt="Buddy Bootz" loading="lazy">
                 <img src="buddy_treehouse.png" 
                      alt="Buddy Bootz's treehouse above the Rambunctious River" 
-                     style="margin-top:20px;" 
                      loading="lazy">
             </div>
         </div>
@@ -328,7 +337,6 @@
                 <img src="sir.png" alt="Sir Drinks-A’Lot" loading="lazy">
                 <img src="sirs_place.png" 
                      alt="Sir Drinks-A’Lot's place by the river" 
-                     style="margin-top:20px;" 
                      loading="lazy">
             </div>
         </div>
