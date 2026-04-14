@@ -29,7 +29,7 @@
             color:var(--text);
             line-height:1.6;
             overflow-x:hidden;
-            padding-top:60px;
+            padding-top:60px; /* Account for fixed nav */
         }
         #scroll-bar {
           position: fixed;
@@ -40,35 +40,45 @@
           background: linear-gradient(to right, #F2C94C, #C62828);
           z-index: 9999;
         }
-        .section-light{ background:linear-gradient(to bottom,#5AB0DD,#4FA3D1); }
-        .section-dark{ background:linear-gradient(to bottom,#4FA3D1,#3F95C4); }
-        
+
+        /* 1. CONTAINER SYSTEM */
+        .container { 
+          max-width: 900px; 
+          margin: 0 auto; 
+        }
+
+        /* 3. VERTICAL RHYTHM SYSTEM */
         section {
-          padding: 100px 20px;
+          padding: 80px 20px;
           text-align: center;
           position: relative;
           overflow: hidden;
         }
-
-        .container{ max-width:1000px; margin:auto; }
+        .section-light{ background:linear-gradient(to bottom,#5AB0DD,#4FA3D1); }
+        .section-dark{ background:linear-gradient(to bottom,#4FA3D1,#3F95C4); }
 
         h1 {
           font-family:'Outfit',sans-serif;
           font-size:clamp(2.5rem,5vw,3.5rem);
           letter-spacing:-1px;
           color:var(--gold);
-          margin-bottom: 30px;
+          margin-bottom: 20px;
         }
-
         h2 {
           font-family:'Outfit',sans-serif;
           font-size:clamp(1.8rem,3vw,2.5rem);
           color:var(--gold);
-          margin-bottom: 25px;
+          margin-bottom: 20px;
         }
-
-        h3{ font-family:'Outfit',sans-serif; font-size:1.4rem; text-transform:uppercase; color:var(--gold); margin-bottom: 15px;}
+        h3{ 
+          font-family:'Outfit',sans-serif; 
+          font-size:1.4rem; 
+          text-transform:uppercase; 
+          color:var(--gold); 
+          margin-bottom: 20px;
+        }
         
+        /* 2. TEXT SYSTEM */
         p {
           max-width: 600px;
           margin: 0 auto 20px;
@@ -77,51 +87,49 @@
           line-height: 1.7;
         }
 
+        /* 4. IMAGE SYSTEM */
+        img { 
+          display: block;
+          width: 100%; 
+          height: auto; 
+          margin: 40px auto;
+          border-radius: 16px; 
+          box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+        }
+        .major-img { max-width: 700px; }
+        .secondary-img { max-width: 500px; }
+        .pump-img { max-width: 650px; }
+
+        /* 4. CHARACTER SECTIONS (SPLIT LAYOUT) */
         .split-row {
             display: flex;
             align-items: center;
             justify-content: space-between;    
-            gap: 60px;
+            gap: 40px;
             text-align: left;
             margin: 40px 0;
         }
-
         .split-row.reverse { flex-direction: row-reverse; }
-
         .split-text { flex: 1; }
         .split-img { flex: 1; }
-
-        .split-img img {
-          display: block;
-          width: 100%;
-          max-width: 500px;
-          margin: 0 auto;
-        }
+        .split-img img { margin: 0; max-width: 100%; } /* Overwrite global img margin for split layout */
 
         @media (max-width: 768px) {
             .split-row, .split-row.reverse { flex-direction: column; text-align: center; }
-        }
-
-        img{ 
-            width:100%; 
-            height: auto; 
-            max-width: 700px;
-            margin: 40px auto;
-            display: block;
-            border-radius:16px; 
-            box-shadow:0 10px 30px rgba(0,0,0,0.15); 
+            .split-text p { margin-left: auto; margin-right: auto; }
+            .split-img img { margin: 20px auto; }
         }
 
         iframe{ width:100%; max-width:800px; height:450px; border-radius:16px; border:none; margin:40px auto; display: block; }
         
+        /* 5. BUTTON SYSTEM */
         .btn-group {
             display: flex;
             justify-content: center;
             gap: 20px;
-            flex-wrap: wrap;
             margin-top: 30px;
+            flex-wrap: wrap;
         }
-
         .btn { 
           background:var(--accent); 
           color:#fff; 
@@ -136,18 +144,7 @@
           font-size:1rem;
           transition: transform 0.3s ease;
         }
-
-        .btn::after{ content:""; position:absolute; top:0; left:-150%; width:50%; height:100%; background:linear-gradient(120deg,transparent,rgba(242,201,76,0.5),transparent); transform:skewX(-20deg); }
-        .btn:hover::after{animation:shimmer 1.2s ease;}
-        @keyframes shimmer{100%{left:150%;}}
         .btn:hover{ transform:translateY(-2px); box-shadow:0 0 20px rgba(242,201,76,0.4); }
-
-        #stay-close .btn { animation: pulse 3s infinite; }
-        @keyframes pulse {
-          0% { box-shadow: 0 0 0 0 rgba(242,201,76,0.5); }
-          70% { box-shadow: 0 0 0 10px rgba(242,201,76,0); }
-          100% { box-shadow: 0 0 0 0 rgba(242,201,76,0); }
-        }
 
         .fade{opacity:0;transform:translateY(30px);transition:.8s ease;}
         .fade.show{opacity:1;transform:translateY(0);}
@@ -155,9 +152,8 @@
 
         .story-block {
             max-width: 600px;
-            margin: 0 auto;
+            margin: 0 auto 20px;
         }
-
         .story-block .line {
           opacity: 0;
           transform: translateY(20px);
@@ -166,64 +162,29 @@
           margin: 0 auto 1rem;
           font-size: 1.1rem;
         }
-
         .story-block .line.show {
           opacity: 1;
           transform: translateY(0);
         }
 
-        .hero-img {
-          transition: transform 0.2s ease-out;
-          will-change: transform;
-        }
-
-        .hero-title, .hero-sub {
-          transition: transform 0.2s ease-out;
-          will-change: transform;
-        }
-
-        #home {
-          transition: filter 0.4s ease, opacity 0.4s ease;
-        }
-
-        #prelude {
-          transition: filter 0.4s ease, opacity 0.4s ease;
-        }
+        .hero-img { transition: transform 0.2s ease-out; margin: 0 auto 30px; }
+        .hero-title, .hero-sub { transition: transform 0.2s ease-out; }
 
         .section-light::before {
           content: "";
-          position: absolute;
-          top: 0;
-          left: -60%;
-          width: 200%;
-          height: 100%;
-          background: linear-gradient(
-            120deg,
-            transparent,
-            rgba(255,255,255,0.08),
-            transparent
-          );
-          transform: skewX(-20deg);
-          opacity: 0;
-          pointer-events: none;
+          position: absolute; top: 0; left: -60%; width: 200%; height: 100%;
+          background: linear-gradient(120deg, transparent, rgba(255,255,255,0.08), transparent);
+          transform: skewX(-20deg); opacity: 0; pointer-events: none;
         }
+        .section-light.active-river::before { animation: riverFlow 2.5s ease forwards; }
+        @keyframes riverFlow { 0% { left: -60%; opacity: 0; } 30% { opacity: 0.25; } 100% { left: 60%; opacity: 0; } }
 
-        .section-light.active-river::before {
-          animation: riverFlow 2.5s ease forwards;
-        }
-
-        @keyframes riverFlow {
-          0% { left: -60%; opacity: 0; }
-          30% { opacity: 0.25; }
-          100% { left: 60%; opacity: 0; }
-        }
-
-        .divider { height: 1px; background: rgba(255,255,255,0.2); margin: 40px auto; max-width: 700px; }
+        .divider { height: 1px; background: rgba(255,255,255,0.2); margin: 30px auto; max-width: 700px; }
     </style>
 </head>
 <body>
 <nav style="position:fixed; top:0; width:100%; background:rgba(0,0,0,0.35); backdrop-filter:blur(6px); z-index:9998; padding:15px 20px;">
-  <div style="max-width:1100px; margin:auto; display:flex; justify-content:space-between; align-items:center;">
+  <div style="max-width:900px; margin:auto; display:flex; justify-content:space-between; align-items:center;">
     <div style="font-weight:600;">Buddy Bootz</div>
     <div style="display:flex; gap:30px;">
       <a href="#prelude" style="color:white; text-decoration:none;">Start</a>
@@ -239,15 +200,13 @@
 
 <section id="home" class="section-dark">
     <div class="container">    
-        <img src="hero.png" alt="Buddy Bootz standing on a wooden bridge above the Rambunctious River" class="fade show hero-img" style="max-width: 700px; margin-bottom: 30px;" loading="lazy">    
+        <img src="hero.png" alt="Buddy Bootz standing on a wooden bridge above the Rambunctious River" class="fade show hero-img major-img" loading="lazy">    
         <h1 class="fade show hero-title">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>    
         <h3 class="fade show hero-sub">Buddy Bootz fixes things that weren’t broken until she touched them.<br>Sir Drinks-A’Lot knows how things are supposed to work.<br>The river doesn’t care about either of them.</h3>
-
         <div class="btn-group fade show">
             <a href="#prelude" class="btn">Start the Adventure</a>
             <a href="/blog.html" class="btn" style="background:transparent;border:1px solid white; opacity:0.85;">Blog</a>
         </div>
-
         <p class="fade show" style="margin-top: 30px;">
           Something breaks. The world responds. And somehow—they make it back anyway.
         </p>
@@ -258,7 +217,7 @@
     <div class="container">
         <h2 class="fade">Begin with The Rambunctious River</h2>
         
-        <img src="buddy-sir-book-opening-river.png" alt="Book opening showing the river" class="fade" style="max-width: 700px;" loading="lazy">
+        <img src="buddy-sir-book-opening-river.png" alt="Book opening showing the river" class="fade major-img" loading="lazy">
 
         <div class="story-block fade">
             <p class="line">The water pump bolted to the outside of Buddy Bootz’s treehouse was trying to come apart in public.</p>
@@ -271,17 +230,13 @@
             <p class="line">“…That was personal.”</p>
         </div>
 
-        <img src="buddy-sir-pump-chaos.png" 
-        alt="Broken water pump spraying chaos outside Buddy Bootz’s treehouse" 
-        class="fade" 
-        style="max-width:650px; margin-top:40px;" 
-        loading="lazy">
+        <img src="buddy-sir-pump-chaos.png" alt="Broken water pump spraying chaos outside Buddy Bootz’s treehouse" class="fade pump-img" style="margin-top: 40px;" loading="lazy">
 
-        <p class="fade" style="margin-top: 20px; font-style:italic;">
+        <p class="fade" style="font-style:italic;">
             And that was before the river changed direction.
         </p>
 
-        <div class="btn-group fade" style="margin-top: 30px;">
+        <div class="btn-group fade">
           <a href="#" class="btn">Read Preview</a>
           <a href="#" class="btn">Get the Book</a>
         </div>
@@ -306,7 +261,7 @@
             </div>
             <div class="split-img fade">
                 <img src="buddy.png" alt="Buddy Bootz" loading="lazy">
-                <img src="buddy_treehouse.png" alt="Buddy's Treehouse" loading="lazy">
+                <img src="buddy_treehouse.png" alt="Buddy Bootz's treehouse above the Rambunctious River" loading="lazy">
             </div>
         </div>
     </div>
@@ -346,31 +301,14 @@
 
 <section id="about" class="section-dark">
     <div class="container">
-        <img src="authorbuddy.png" alt="Buddy Bootz Author" class="author-image" style="max-width: 500px;" loading="lazy">
-
-        <p style="opacity:0.8; font-size:14px; margin-bottom:30px;">
-        She didn’t mean for it to turn out this way.
-        </p>
-
+        <img src="authorbuddy.png" alt="Buddy Bootz Author" class="secondary-img" loading="lazy">
+        <p style="opacity:0.8; font-size:14px;">She didn’t mean for it to turn out this way.</p>
         <h2>About the Author</h2>
-
-        <p>
-        Buddy Bootz is the author of The Adventures of Buddy Bootz & Sir Drinks-A’Lot, a character-driven fantasy series built on chaos, loyalty, and the kind of trouble that doesn’t wait for permission.
-        </p>
-
-        <p>
-        Her stories follow two unlikely companions navigating a river that refuses to stay predictable—where plans fail fast, fixes don’t hold, and something always shifts when it shouldn’t.
-        </p>
-
-        <p>
-        Not everything is planned. Most of it isn’t. That’s where the stories start.
-        </p>
-
+        <p>Buddy Bootz is the author of The Adventures of Buddy Bootz & Sir Drinks-A’Lot, a character-driven fantasy series built on chaos, loyalty, and the kind of trouble that doesn’t wait for permission.</p>
+        <p>Her stories follow two unlikely companions navigating a river that refuses to stay predictable—where plans fail fast, fixes don’t hold, and something always shifts when it shouldn’t.</p>
+        <p>Not everything is planned. Most of it isn’t. That’s where the stories start.</p>
         <div class="divider"></div>
-
-        <p style="font-size:14px; opacity:0.7;">
-        For inquiries, collaborations, or media requests, use the contact page.
-        </p>
+        <p style="font-size:14px; opacity:0.7;">For inquiries, collaborations, or media requests, use the contact page.</p>
     </div>
 </section>
 
@@ -451,47 +389,25 @@
 
     window.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
-
       const scrollPercent = (scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
       const scrollBar = document.getElementById("scroll-bar");
-      if (scrollBar) {
-        scrollBar.style.width = scrollPercent + "%";
-      }
+      if (scrollBar) { scrollBar.style.width = scrollPercent + "%"; }
 
       if (window.innerWidth > 768) {
         const heroImg = document.querySelector(".hero-img");
         const heroTitle = document.querySelector(".hero-title");
         const heroSub = document.querySelector(".hero-sub");
-
         if (heroImg) {
           const baseY = scrollY * 0.12;
           const floatOffset = Math.sin(Date.now() * 0.002) * 4;
           heroImg.dataset.scrollY = baseY;
-          heroImg.style.transform = "translateY(" + (baseY + floatOffset) + "px) " + (heroImg.dataset.rotate || "");
+          const x = (heroImg.dataset.mouseX || 0);
+          const y = (heroImg.dataset.mouseY || 0);
+          const rotate = "rotateX(" + (-y * 2) + "deg) " + "rotateY(" + (x * 2) + "deg)";
+          heroImg.style.transform = "translateY(" + (baseY + floatOffset) + "px) " + rotate;
         }
-        if (heroTitle) {
-          heroTitle.style.transform = "translateY(" + (scrollY * 0.06) + "px)";
-        }
-        if (heroSub) {
-          heroSub.style.transform = "translateY(" + (scrollY * 0.03) + "px)";
-        }
-      }
-
-      const prelude = document.getElementById("prelude");
-      const home = document.getElementById("home");
-      if (prelude && home) {
-        const triggerPoint = window.innerHeight * 0.3;
-        if (scrollY > triggerPoint) {
-          home.style.filter = "blur(2px) brightness(0.85)";
-          home.style.opacity = "0.9";
-          prelude.style.filter = "blur(0px) brightness(1)";
-          prelude.style.opacity = "1";
-        } else {
-          home.style.filter = "blur(0px) brightness(1)";
-          home.style.opacity = "1";
-          prelude.style.filter = "blur(0.5px) brightness(0.95)";
-          prelude.style.opacity = "0.95";
-        }
+        if (heroTitle) { heroTitle.style.transform = "translateY(" + (scrollY * 0.06) + "px)"; }
+        if (heroSub) { heroSub.style.transform = "translateY(" + (scrollY * 0.03) + "px)"; }
       }
 
       document.querySelectorAll(".section-light").forEach(section => {
@@ -499,9 +415,7 @@
         if (rect.top < window.innerHeight * 0.6 && rect.bottom > 0) {
           if (!section.classList.contains("active-river")) {
             section.classList.add("active-river");
-            setTimeout(() => {
-              section.classList.remove("active-river");
-            }, 2500);
+            setTimeout(() => { section.classList.remove("active-river"); }, 2500);
           }
         }
       });
@@ -513,8 +427,9 @@
       if (!heroImg) return;
       const x = (e.clientX / window.innerWidth - 0.5) * 2;
       const y = (e.clientY / window.innerHeight - 0.5) * 2;
+      heroImg.dataset.mouseX = x;
+      heroImg.dataset.mouseY = y;
       const rotate = "rotateX(" + (-y * 2) + "deg) " + "rotateY(" + (x * 2) + "deg)";
-      heroImg.dataset.rotate = rotate;
       const baseY = parseFloat(heroImg.dataset.scrollY) || 0;
       heroImg.style.transform = "translateY(" + baseY + "px) " + rotate;
     });
