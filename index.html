@@ -36,18 +36,18 @@
         .container {
           max-width: 1000px;
           margin: 0 auto;
-          padding: 0 20px;
+          padding: 0 40px;
         }
 
         section {
-          padding: 90px 20px;
+          padding: 100px 20px;
           text-align: center;
           position: relative;
           overflow: hidden;
         }
 
         p {
-          max-width: 620px;
+          max-width: 650px;
           margin: 0 auto 24px;
           color: var(--text-soft);
           font-size: 18px;
@@ -57,6 +57,7 @@
         h1, h2, h3 {
           font-family:'Outfit',sans-serif;
           color:var(--gold);
+          line-height: 1.2;
         }
 
         h1 { 
@@ -67,12 +68,13 @@
         h2 { 
           font-size:clamp(2rem,3.5vw,2.8rem); 
           margin-top: 10px;
-          margin-bottom: 20px;
+          margin-bottom: 32px;
         }
         h3 { 
           font-size:1.4rem; 
           text-transform:uppercase; 
           margin-bottom: 16px;
+          letter-spacing: 1px;
         }
 
         img {
@@ -100,17 +102,18 @@
             display: flex;
             align-items: center;
             justify-content: center;    
-            gap: 60px;
+            gap: 80px;
             text-align: left;
-            margin: 60px 0;
+            margin: 80px 0;
         }
         .split-row.reverse { flex-direction: row-reverse; }
-        .split-text { flex: 1; }
-        .split-img { flex: 1; }
-        .split-img img { margin: 20px 0; max-width: 100%; }
+        .split-text { flex: 1; max-width: 500px; }
+        .split-img { flex: 1; display: flex; flex-direction: column; align-items: center; }
+        .split-img img { margin: 20px 0; max-width: 100%; width: 100%; }
 
         @media (max-width: 850px) {
             .split-row, .split-row.reverse { flex-direction: column; text-align: center; gap: 40px; }
+            .split-text { max-width: 650px; }
             .split-img img { max-width: 500px; }
         }
 
@@ -133,20 +136,28 @@
         .fade{opacity:0;transform:translateY(30px);transition:.8s ease;}
         .fade.show{opacity:1;transform:translateY(0);}
 
+        .story-block { margin: 40px auto; }
         .story-block .line {
           opacity: 0; transform: translateY(20px); transition: all 0.6s ease;
           text-align: left; margin: 0 auto 1.2rem; font-size: 1.15rem; max-width: 620px;
         }
         .story-block .line.show { opacity: 1; transform: translateY(0); }
 
-        iframe{ width:100%; max-width:800px; height:450px; border-radius:16px; border:none; margin:60px auto; display:block; }
+        iframe{ width:100%; max-width:800px; height:450px; border-radius:16px; border:none; margin:60px auto; display:block; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
         input[type="email"] { padding: 16px; border-radius: 8px; border: none; width: 100%; max-width: 400px; font-size: 1.1rem; margin-bottom: 20px; }
         .divider { height: 1px; background: rgba(255,255,255,0.2); margin: 60px auto; max-width: 700px; }
         
         .nav-link { color:white; text-decoration:none; font-weight: 600; transition: opacity 0.2s; }
         .nav-link:hover { opacity: 0.7; }
         
-        .hero-supporting { font-size: 1.1rem; opacity: 0.7; margin-bottom: 30px; }
+        .hero-supporting { 
+            font-size: 1.2rem; 
+            opacity: 0.85; 
+            margin-top: -10px; 
+            margin-bottom: 30px;
+            font-weight: 600;
+            color: var(--gold);
+        }
 
         .active-river::before {
             content: "";
@@ -160,8 +171,8 @@
 <body>
 <nav style="position:fixed; top:0; width:100%; background:rgba(0,0,0,0.5); backdrop-filter:blur(10px); z-index:9998; padding:18px 20px;">
   <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
-    <div style="font-family:'Outfit',sans-serif; font-size: 1.4rem; color: var(--gold);">Buddy Bootz</div>
-    <div style="display:flex; gap:30px;">
+    <div style="font-family:'Outfit',sans-serif; font-size: 1.4rem; color: var(--gold); letter-spacing: -0.5px;">Buddy Bootz</div>
+    <div style="display:flex; gap:32px;">
       <a href="#prelude" class="nav-link">Start</a>
       <a href="#buddy" class="nav-link">Characters</a>
       <a href="#world" class="nav-link">World</a>
@@ -175,12 +186,12 @@
 
 <section id="home" class="section-dark" style="padding-top: 140px;">
     <div class="container">    
-        <img src="hero.png" alt="Buddy Bootz and Sir Drinks-A’Lot" class="fade show image-large">    
+        <img src="hero.png" alt="Buddy Bootz and Sir Drinks-A’Lot" class="fade show image-large" style="margin-top: 0;">    
         <h1 class="fade show">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>
-        <p class="fade show hero-supporting">A story-driven fantasy unfolding along the Rambunctious River.</p>
-        <h3 class="fade show">Buddy Bootz fixes things that weren’t broken until she touched them.<br>Sir Drinks-A’Lot knows how things are supposed to work.<br>The river doesn’t care about either of them.</h3>
+        <p class="fade show hero-supporting">A chaotic river story where the only thing that stays fixed is the trouble.</p>
+        <h3 class="fade show" style="color: white; opacity: 0.9;">Buddy Bootz fixes things that weren’t broken until she touched them.<br>Sir Drinks-A’Lot knows how things are supposed to work.<br>The river doesn’t care about either of them.</h3>
         <div class="btn-group fade show">
-            <a href="#prelude" class="btn">Start the Adventure</a>
+            <a href="#prelude" class="btn">Read the Beginning</a>
             <a href="/blog.html" class="btn btn-secondary">Blog</a>
         </div>
         <p class="fade show" style="margin-top: 40px;">
@@ -207,21 +218,20 @@
 
         <img src="buddy-sir-pump-chaos.png" alt="Pump chaos" class="fade image-feature">
         
-        <p class="fade" style="font-style:italic;">
+        <p class="fade" style="font-style:italic; margin-bottom: 40px;">
             And that was before the river changed direction.
         </p>
         
         <div class="btn-group fade">
-          <a href="#" class="btn">Read Preview</a>
-          <a href="#" class="btn btn-secondary">Get the Book</a>
+          <a href="#stay-close" class="btn">Read the Beginning</a>
         </div>
     </div>
 </section>
 
-<section id="intro" class="section-light" style="padding: 120px 20px;">
+<section id="intro" class="section-light" style="padding: 140px 20px;">
     <div class="container">
         <p class="fade">You don’t go looking for this river. You end up on it.</p>
-        <h2 class="fade">And it doesn’t take you where you planned.</h2>
+        <h2 class="fade" style="margin-bottom: 0;">And it doesn’t take you where you planned.</h2>
     </div>
 </section>
 
@@ -259,10 +269,13 @@
     </div>
 </section>
 
-<section id="world" class="section-dark">
+<section id="world" class="section-dark" style="padding: 120px 20px;">
     <div class="container">
         <h2 class="fade">The Rambunctious River</h2>
         <p class="fade">The river doesn’t stay a river. It changes direction. It corrects things that weren’t wrong. And sometimes—it builds something where there wasn’t anything before.</p>
+        <div class="btn-group fade">
+            <a href="#buddy" class="btn">Meet Buddy & Sir</a>
+        </div>
     </div>
 </section>
 
@@ -277,7 +290,7 @@
 <section id="about" class="section-dark">
     <div class="container">
         <img src="authorbuddy.png" alt="Buddy Bootz Author" class="fade image-medium">
-        <p style="opacity:0.8; font-size:16px;">She didn’t mean for it to turn out this way.</p>
+        <p style="opacity:0.8; font-size:16px; margin-bottom: 8px;">She didn’t mean for it to turn out this way.</p>
         <h2 class="fade">About the Author</h2>
         <p class="fade">Buddy Bootz is the author of The Adventures of Buddy Bootz & Sir Drinks-A’Lot, a character-driven fantasy series built on chaos, loyalty, and the kind of trouble that doesn’t wait for permission.</p>
         <p class="fade">Her stories follow two unlikely companions navigating a river that refuses to stay predictable—where plans fail fast, fixes don’t hold, and something always shifts when it shouldn’t.</p>
@@ -286,12 +299,12 @@
     </div>
 </section>
 
-<section id="stay-close" class="section-dark" style="border-top: 1px solid rgba(255,255,255,0.1);">
+<section id="stay-close" class="section-dark" style="padding-top: 140px; border-top: 1px solid rgba(255,255,255,0.1);">
     <div class="container">
-        <h2 class="fade">Stay Close</h2>
+        <h2 class="fade">Stay Close to the River</h2>
         <p class="fade">Start at the beginning. Then decide if you’re staying.</p>
-        <form class="fade" id="emailForm" action="https://formspree.io/f/xdapyaar" method="POST">    
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+        <form class="fade" id="emailForm" action="https://formspree.io/f/xdapyaar" method="POST" style="margin-top: 40px;">    
+            <div style="display: flex; flex-direction: column; align-items: center;">
                 <input type="email" name="email" placeholder="Enter your email" required>    
                 <button type="submit" class="btn" data-fs-submit-btn>Start Here</button>    
             </div>
@@ -300,11 +313,11 @@
     </div>    
 </section>
 
-<footer style="background:#1d4c63; padding:60px 20px; text-align:center; border-top:2px solid rgba(255,255,255,0.1);">
+<footer style="background:#1d4c63; padding:80px 20px; text-align:center; border-top:2px solid rgba(255,255,255,0.1);">
   <div class="container">
-    <p style="margin-bottom: 10px;">© 2026 Buddy Bootz. All rights reserved.</p>
-    <p style="font-weight:600; font-family: 'Outfit', sans-serif;">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</p>
-    <p style="opacity:0.8; font-size:0.9rem;">Stories from The Rambunctious River</p>
+    <p style="margin-bottom: 12px; font-size: 16px;">© 2026 Buddy Bootz. All rights reserved.</p>
+    <p style="font-weight:600; font-family: 'Outfit', sans-serif; color: var(--gold);">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</p>
+    <p style="opacity:0.8; font-size:0.95rem; margin-top: 8px;">Stories from The Rambunctious River</p>
   </div>
 </footer>
 
@@ -350,4 +363,4 @@
     });
 </script>
 </body>
-</html>```
+</html>
