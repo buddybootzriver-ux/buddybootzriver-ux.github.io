@@ -224,7 +224,7 @@
     </style>
 </head>
 <body>
-<nav style="position:fixed; top:0; width:100%; background:rgba(0,0,0,0.2); backdrop-filter:blur(6px); z-index:9998; padding:10px 20px;">
+<nav style="position:fixed; top:0; width:100%; background:rgba(0,0,0,0.35); backdrop-filter:blur(6px); z-index:9998; padding:10px 20px;">
   <div style="max-width:1100px; margin:auto; display:flex; justify-content:space-between; align-items:center;">
     <div style="font-weight:600;">Buddy Bootz</div>
     <div style="display:flex; gap:20px;">
@@ -272,6 +272,12 @@
             <p class="line">“…That was personal.”</p>
         </div>
 
+        <img src="buddy-sir-pump-chaos.png" 
+        alt="Broken water pump spraying chaos outside Buddy Bootz’s treehouse" 
+        class="fade" 
+        style="max-width:600px; margin:40px auto 0; display:block;" 
+        loading="lazy">
+
         <p class="fade" style="margin-top:20px; font-style:italic;">
             And that was before the river changed direction.
         </p>
@@ -281,7 +287,7 @@
           <a href="#" class="btn">Get the Book</a>
         </div>
 
-        <a href="#stay-close" class="btn fade">Keep Going</a>
+        <a href="#stay-close" class="btn fade" style="margin-top:30px;">Keep Going</a>
     </div>
 </section>
 
@@ -303,7 +309,10 @@
             </div>
             <div class="split-img fade">
                 <img src="buddy.png" alt="Buddy Bootz" loading="lazy">
-                <img src="buddy_treehouse.png" alt="Buddy's Treehouse" style="margin-top:20px; transform:scale(0.95); opacity:0.95;" loading="lazy">
+                <img src="buddy_treehouse.png" 
+                     alt="Buddy Bootz's treehouse above the Rambunctious River" 
+                     style="margin-top:20px;" 
+                     loading="lazy">
             </div>
         </div>
     </div>
@@ -320,7 +329,10 @@
             </div>
             <div class="split-img fade">
                 <img src="sir.png" alt="Sir Drinks-A’Lot" loading="lazy">
-                <img src="sirs_place.png" alt="Sir's Place" style="margin-top:20px; transform:scale(0.95); opacity:0.95;" loading="lazy">
+                <img src="sirs_place.png" 
+                     alt="Sir Drinks-A’Lot's place by the river" 
+                     style="margin-top:20px;" 
+                     loading="lazy">
             </div>
         </div>
     </div>
@@ -330,12 +342,6 @@
     <div class="container">
         <h2 class="fade">The Rambunctious River</h2>
         <p class="fade">The river doesn’t stay a river. It changes direction. It corrects things that weren’t wrong. And sometimes—it builds something where there wasn’t anything before.</p>
-    </div>
-</section>
-
-<section id="chaos" class="section-dark">
-    <div class="container">
-        <img src="buddy-sir-pump-chaos.png" class="fade" alt="Chaos on the river" loading="lazy">
     </div>
 </section>
 
@@ -519,8 +525,4 @@
       const rotate = "rotateX(" + (-y * 2) + "deg) " + "rotateY(" + (x * 2) + "deg)";
       heroImg.dataset.rotate = rotate;
       const baseY = parseFloat(heroImg.dataset.scrollY) || 0;
-      heroImg.style.transform = "translateY(" + baseY + "px) " + rotate;
-    });
-</script>
-</body>
-</html>
+      heroImg.style.transform = "translateY(" + baseY + "px)
