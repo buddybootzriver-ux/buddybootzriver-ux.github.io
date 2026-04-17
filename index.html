@@ -16,222 +16,252 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700&display=swap" rel="stylesheet">
     <style>    
         :root {    
-          --bg:#4FA3D1;    
-          --text:#FFFFFF;    
-          --text-soft:rgba(255,255,255,0.9);    
-          --accent:#C62828;    
-          --gold:#F2C94C;    
+          --bg-turquoise: #00ced1;
+          --bg-light-blue: #4FA3D1;
+          --bg-dark-blue: #3F95C4;
+          --nav-bg: rgba(29, 76, 99, 0.9);
+          --text: #FFFFFF;    
+          --text-soft: rgba(255,255,255,0.92);    
+          --gold: #F2C94C;
+          --gold-hover: #ffdf80;
+          --gold-glow: rgba(242, 201, 76, 0.3);
+          --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
-        *{margin:0;padding:0;box-sizing:border-box;}
-        body{
-            font-family:'Inter',sans-serif;
-            background:linear-gradient(to bottom,#4FA3D1,#3F95C4);
-            color:var(--text);
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-light-blue);
+            color: var(--text);
             font-size: 18px;
-            line-height: 1.8;
-            overflow-x:hidden;
-            padding-top:70px;
+            line-height: 1.7;
+            overflow-x: hidden;
+            padding-top: 70px;
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
-          max-width: 1000px;
+          max-width: 1050px;
           margin: 0 auto;
           padding: 0 40px;
         }
 
         section {
-          padding: 100px 20px;
+          padding: 140px 20px;
           text-align: center;
           position: relative;
           overflow: hidden;
         }
 
         p {
-          max-width: 650px;
-          margin: 0 auto 24px;
+          max-width: 680px;
+          margin: 0 auto 28px;
           color: var(--text-soft);
-          font-size: 18px;
-          line-height: 1.8;
+          font-size: 1.15rem;
+          white-space: pre-line;
         }
 
         h1, h2, h3 {
-          font-family:'Outfit',sans-serif;
-          color:var(--gold);
-          line-height: 1.2;
+          font-family: 'Outfit', sans-serif;
+          color: var(--gold);
+          line-height: 1.1;
+          text-shadow: 0 3px 15px rgba(0,0,0,0.15);
         }
 
         h1 { 
-          font-size:clamp(2.5rem,5vw,3.5rem); 
-          letter-spacing:-1px; 
-          margin-bottom: 24px;
-        }
-        h2 { 
-          font-size:clamp(2rem,3.5vw,2.8rem); 
-          margin-top: 10px;
+          font-size: clamp(2.8rem, 6vw, 4.2rem); 
+          letter-spacing: -1.5px; 
           margin-bottom: 32px;
         }
-        h3 { 
-          font-size:1.4rem; 
-          text-transform:uppercase; 
-          margin-bottom: 16px;
-          letter-spacing: 1px;
+
+        h2 { 
+          font-size: clamp(2.4rem, 4.5vw, 3.2rem); 
+          margin-bottom: 40px;
+          letter-spacing: -0.5px;
         }
 
-        img {
-          display: block;
-          margin: 40px auto;
-          max-width: 100%;
-          height: auto;
-          border-radius: 16px;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        /* Themed Backgrounds */
+        .section-light { 
+            background: linear-gradient(160deg, #5AB0DD 0%, var(--bg-turquoise) 100%); 
+            box-shadow: inset 0 0 100px rgba(255,255,255,0.1);
+        }
+        .section-dark { 
+            background: linear-gradient(160deg, var(--bg-light-blue) 0%, var(--bg-dark-blue) 100%); 
+            box-shadow: inset 0 0 100px rgba(0,0,0,0.05);
+        }
+        
+        /* Gold Buttons */
+        .btn { 
+          background: var(--gold); 
+          color: #1d4c63; 
+          padding: 20px 42px; 
+          border-radius: 14px; 
+          text-decoration: none; 
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          transition: var(--transition-smooth);
+          border: none; 
+          cursor: pointer; 
+          font-size: 1.1rem; 
+          font-weight: 700;
+          box-shadow: 0 6px 20px var(--gold-glow);
+          letter-spacing: 0.2px;
         }
 
-        .image-large { max-width: 700px; }
-        .image-medium { max-width: 500px; }
-        .image-feature { max-width: 650px; margin: 60px auto; }
+        .btn:hover { 
+          transform: translateY(-4px) scale(1.02); 
+          background: var(--gold-hover);
+          box-shadow: 0 10px 30px var(--gold-glow);
+        }
+
+        .btn-secondary { 
+          background: rgba(255, 255, 255, 0.05); 
+          border: 2px solid var(--gold); 
+          color: var(--gold); 
+        }
+
+        .btn-secondary:hover { 
+          background: var(--gold);
+          color: #1d4c63;
+        }
 
         .btn-group {
           display: flex;
           justify-content: center;
           gap: 20px;
-          margin-top: 40px;
+          margin-top: 50px;
           flex-wrap: wrap;
         }
 
+        /* Split Layouts */
         .split-row {
             display: flex;
             align-items: center;
-            justify-content: center;    
-            gap: 80px;
+            justify-content: space-between;    
+            gap: 60px;
             text-align: left;
-            margin: 80px 0;
+            margin: 60px 0;
         }
         .split-row.reverse { flex-direction: row-reverse; }
-        .split-text { flex: 1; max-width: 500px; }
-        .split-img { flex: 1; display: flex; flex-direction: column; align-items: center; }
-        .split-img img { margin: 20px 0; max-width: 100%; width: 100%; }
+        .split-text { flex: 1; }
+        .split-img { flex: 1; display: flex; justify-content: center; }
 
-        @media (max-width: 850px) {
-            .split-row, .split-row.reverse { flex-direction: column; text-align: center; gap: 40px; }
-            .split-text { max-width: 650px; }
-            .split-img img { max-width: 500px; }
+        img {
+          display: block;
+          max-width: 100%;
+          height: auto;
+          border-radius: 24px;
+          box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+          border: 1px solid rgba(255,255,255,0.15);
+          transition: var(--transition-smooth);
         }
+        
+        img:hover { transform: scale(1.01); }
+
+        .image-large { max-width: 800px; margin: 0 auto 50px; }
+        .image-medium { max-width: 520px; }
+
+        /* Animations */
+        .fade { opacity:0; transform:translateY(25px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade.show { opacity:1; transform:translateY(0); }
+
+        iframe { 
+            width:100%; max-width:850px; height:480px; border-radius:24px; border:none; 
+            margin:60px auto; display:block; box-shadow: 0 30px 60px rgba(0,0,0,0.2); 
+        }
+
+        /* Form Improvement */
+        input[type="email"] { 
+            padding: 20px 24px; 
+            border-radius: 12px; 
+            border: 2px solid rgba(255,255,255,0.2); 
+            background: rgba(0,0,0,0.15);
+            color: white;
+            width: 100%; 
+            max-width: 420px; 
+            font-size: 1.1rem; 
+            margin-bottom: 24px;
+            transition: var(--transition-smooth);
+            backdrop-filter: blur(5px);
+        }
+        
+        input[type="email"]::placeholder { color: rgba(255,255,255,0.6); }
+        input[type="email"]:focus { outline: none; border-color: var(--gold); background: rgba(0,0,0,0.25); }
 
         #scroll-bar {
           position: fixed; top: 0; left: 0; height: 4px; width: 0%;
-          background: linear-gradient(to right, #F2C94C, #C62828); z-index: 9999;
-        }
-        .section-light{ background:linear-gradient(to bottom,#5AB0DD,#4FA3D1); }
-        .section-dark{ background:linear-gradient(to bottom,#4FA3D1,#3F95C4); }
-        
-        .btn { 
-          background:var(--accent); color:#fff; padding: 16px 32px; border-radius:10px; 
-          text-decoration:none; display:inline-block; transition: all 0.3s ease;
-          border:none; cursor:pointer; font-size:1.1rem; font-weight: 600;
-        }
-        .btn:hover{ transform:translateY(-3px); box-shadow:0 8px 25px rgba(198,40,40,0.4); }
-        .btn-secondary { background:transparent; border:1px solid white; }
-        .btn-secondary:hover { background: rgba(255,255,255,0.1); }
-
-        .fade{opacity:0;transform:translateY(30px);transition:.8s ease;}
-        .fade.show{opacity:1;transform:translateY(0);}
-
-        .story-block { margin: 40px auto; }
-        .story-block .line {
-          opacity: 0; transform: translateY(20px); transition: all 0.6s ease;
-          text-align: left; margin: 0 auto 1.2rem; font-size: 1.15rem; max-width: 620px;
-        }
-        .story-block .line.show { opacity: 1; transform: translateY(0); }
-
-        iframe{ width:100%; max-width:800px; height:450px; border-radius:16px; border:none; margin:60px auto; display:block; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
-        input[type="email"] { padding: 16px; border-radius: 8px; border: none; width: 100%; max-width: 400px; font-size: 1.1rem; margin-bottom: 20px; }
-        .divider { height: 1px; background: rgba(255,255,255,0.2); margin: 60px auto; max-width: 700px; }
-        
-        .nav-link { color:white; text-decoration:none; font-weight: 600; transition: opacity 0.2s; }
-        .nav-link:hover { opacity: 0.7; }
-        
-        .hero-supporting { 
-            font-size: 1.2rem; 
-            opacity: 0.85; 
-            margin-top: -10px; 
-            margin-bottom: 30px;
-            font-weight: 600;
-            color: var(--gold);
+          background: linear-gradient(to right, var(--gold), #FFF); z-index: 9999;
+          box-shadow: 0 0 15px var(--gold-glow);
         }
 
-        .active-river::before {
-            content: "";
-            position: absolute; top: 0; left: -100%; width: 200%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
-            animation: flow 4s infinite; pointer-events: none;
+        /* Atmosphere Overlay */
+        section::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 0%, transparent 70%);
+            pointer-events: none;
         }
-        @keyframes flow { to { left: 100%; } }
+
+        @media (max-width: 850px) {
+            section { padding: 100px 20px; }
+            .split-row, .split-row.reverse { flex-direction: column; text-align: center; gap: 40px; }
+            .btn-group { flex-direction: column; width: 100%; max-width: 320px; margin-left: auto; margin-right: auto; }
+            .btn { width: 100%; }
+            .container { padding: 0 25px; }
+        }
     </style>
 </head>
 <body>
-<nav style="position:fixed; top:0; width:100%; background:rgba(0,0,0,0.5); backdrop-filter:blur(10px); z-index:9998; padding:18px 20px;">
+
+<div id="scroll-bar"></div>
+
+<nav style="position:fixed; top:0; width:100%; background:var(--nav-bg); backdrop-filter:blur(15px); -webkit-backdrop-filter:blur(15px); z-index:9998; padding:16px 20px; border-bottom: 1px solid rgba(255,255,255,0.08);">
   <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
-    <div style="font-family:'Outfit',sans-serif; font-size: 1.4rem; color: var(--gold); letter-spacing: -0.5px;">Buddy Bootz</div>
-    <div style="display:flex; gap:32px;">
-      <a href="#prelude" class="nav-link">Start</a>
-      <a href="#buddy" class="nav-link">Characters</a>
-      <a href="#world" class="nav-link">World</a>
-      <a href="#youtube" class="nav-link">Media</a>
-      <a href="#about" class="nav-link">About</a>
+    <div style="font-family:'Outfit',sans-serif; font-size: 1.5rem; color: var(--gold); font-weight: bold; letter-spacing: -0.5px;">Buddy & Sir</div>
+    <div style="display:flex; gap:28px;">
+      <a href="#home" style="color:white; text-decoration:none; font-weight: 600; font-size: 0.95rem; opacity: 0.9; transition: var(--transition-smooth);" onmouseover="this.style.opacity=1;this.style.color='var(--gold)'" onmouseout="this.style.opacity=0.9;this.style.color='white'">Home</a>
+      <a href="#buddy" style="color:white; text-decoration:none; font-weight: 600; font-size: 0.95rem; opacity: 0.9; transition: var(--transition-smooth);" onmouseover="this.style.opacity=1;this.style.color='var(--gold)'" onmouseout="this.style.opacity=0.9;this.style.color='white'">Characters</a>
+      <a href="#book" style="color:white; text-decoration:none; font-weight: 600; font-size: 0.95rem; opacity: 0.9; transition: var(--transition-smooth);" onmouseover="this.style.opacity=1;this.style.color='var(--gold)'" onmouseout="this.style.opacity=0.9;this.style.color='white'">The Book</a>
     </div>
   </div>
 </nav>
 
-<div id="scroll-bar"></div>
-
-<section id="home" class="section-dark" style="padding-top: 140px;">
+<section id="home" class="section-dark" style="padding-top: 180px;">
     <div class="container">    
-        <img src="hero.png" alt="Buddy Bootz and Sir Drinks-A’Lot" class="fade show image-large" style="margin-top: 0;">    
-        <h1 class="fade show">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>
-        <p class="fade show hero-supporting">A chaotic river story where the only thing that stays fixed is the trouble.</p>
-        <h3 class="fade show" style="color: white; opacity: 0.9;">Buddy Bootz fixes things that weren’t broken until she touched them.<br>Sir Drinks-A’Lot knows how things are supposed to work.<br>The river doesn’t care about either of them.</h3>
+        <img src="hero.png" alt="Buddy Bootz and Sir Drinks-A’Lot" class="fade show image-large">
+        <h1 class="fade show">The river doesn’t wait.<br>It decides.</h1>
+        <p class="fade show">Buddy Bootz and Sir Drinks-A’Lot weren’t looking for an adventure.
+        The river disagreed.</p>
         <div class="btn-group fade show">
-            <a href="#prelude" class="btn">Read the Beginning</a>
-            <a href="/blog.html" class="btn btn-secondary">Blog</a>
+            <a href="#book" class="btn">Step onto the raft</a>
+            <a href="#buddy" class="btn btn-secondary">Meet Buddy & Sir</a>
         </div>
-        <p class="fade show" style="margin-top: 40px;">
-          Something breaks. The world responds. And somehow—they make it back anyway.
-        </p>
     </div>    
 </section>
 
-<section id="prelude" class="section-light">
+<section id="intro" class="section-light">
     <div class="container">
-        <h2 class="fade">Begin with The Rambunctious River</h2>
-        <img src="buddy-sir-book-opening-river.png" alt="Book opening" class="fade image-large">
-        
-        <div class="story-block fade">
-            <p class="line">The water pump bolted to the outside of Buddy Bootz’s treehouse was trying to come apart in public.</p>
-            <p class="line">The little metal box rattled hard against the oak boards. Pipes knocked. A loose valve buzzed. Something inside snapped…</p>
-            <p class="line">Buddy Bootz stood on the top step of a tall ladder, one hand steadying the metal housing while the other worked a screwdriver into a stubborn seam.</p>
-            <p class="line">The pump coughed.</p>
-            <p class="line">A blast of rusty water shot straight into her face.</p>
-            <p class="line">Buddy went still.</p>
-            <p class="line">Water dripped off her nose.</p>
-            <p class="line">“…That was personal.”</p>
-        </div>
+        <p class="fade">It starts small.
+        A broken pump. A bad decision. A splash of whiskey where it definitely doesn’t belong.
 
-        <img src="buddy-sir-pump-chaos.png" alt="Pump chaos" class="fade image-feature">
-        
-        <p class="fade" style="font-style:italic; margin-bottom: 40px;">
-            And that was before the river changed direction.
-        </p>
-        
-        <div class="btn-group fade">
-          <a href="#stay-close" class="btn">Read the Beginning</a>
-        </div>
-    </div>
-</section>
+        And then something shifts.
 
-<section id="intro" class="section-light" style="padding: 140px 20px;">
-    <div class="container">
-        <p class="fade">You don’t go looking for this river. You end up on it.</p>
-        <h2 class="fade" style="margin-bottom: 0;">And it doesn’t take you where you planned.</h2>
+        The water listens.
+        The current corrects.
+        The quiet stops behaving like quiet.
+
+        Buddy Bootz doesn’t follow rules.
+        Sir Drinks-A’Lot tries to.
+
+        It has never mattered.
+
+        Because once the river decides where you’re going—
+        you’re already on your way.</p>
     </div>
 </section>
 
@@ -239,14 +269,18 @@
     <div class="container">
         <div class="split-row">
             <div class="split-text fade">
-                <h2>Meet Buddy Bootz</h2>
-                <p>She fixes problems that weren’t hers until she got involved.</p>
-                <p>The treehouse leans. The pump breaks. The ladder slips.</p>
-                <p>She keeps going anyway.</p>
+                <h2>Buddy Bootz</h2>
+                <p>She fixes things that don’t want to be fixed.
+                Names things that don’t agree.
+                Wins arguments with objects.
+
+                Red dress. Glitter-brown boots. Crown slightly crooked.
+
+                Chaos doesn’t follow her.
+                It adjusts around her.</p>
             </div>
             <div class="split-img fade">
                 <img src="buddy.png" alt="Buddy Bootz" class="image-medium">
-                <img src="buddy_treehouse.png" alt="Buddy's treehouse" class="image-medium">
             </div>
         </div>
     </div>
@@ -256,111 +290,120 @@
     <div class="container">
         <div class="split-row reverse">
             <div class="split-text fade">
-                <h2>Meet Sir Drinks-A’Lot</h2>
-                <p>He knows how things are supposed to work.</p>
-                <p>He fixes what breaks.</p>
-                <p>And he stays—when he probably shouldn’t.</p>
+                <h2>Sir Drinks-A’Lot</h2>
+                <p>He knows how things are supposed to work.
+                This has not helped him.
+
+                Steady hands. Sharp timing. Flask always accounted for.
+
+                He doesn’t start trouble.
+                He just happens to be standing next to it.</p>
             </div>
             <div class="split-img fade">
                 <img src="sir.png" alt="Sir Drinks-A’Lot" class="image-medium">
-                <img src="sirs_place.png" alt="Sir's place" class="image-medium">
             </div>
         </div>
     </div>
 </section>
 
-<section id="world" class="section-dark" style="padding: 120px 20px;">
+<section id="world" class="section-dark">
     <div class="container">
         <h2 class="fade">The Rambunctious River</h2>
-        <p class="fade">The river doesn’t stay a river. It changes direction. It corrects things that weren’t wrong. And sometimes—it builds something where there wasn’t anything before.</p>
+        <p class="fade">It looks like water.
+        It behaves like intention.
+
+        It pulls.
+        It corrects.
+        It decides.
+
+        And sometimes—
+        it builds things that weren’t there a moment ago.
+
+        If the surface goes still,
+        you’re already too late.</p>
+    </div>
+</section>
+
+<section id="book" class="section-light">
+    <div class="container">
+        <h2 class="fade">Book One: The Rambunctious River</h2>
+        <p class="fade">A morning repair turns into a moving current.
+
+        A drifting raft turns into direction.
+
+        And what waits ahead—
+        isn’t waiting by accident.
+
+        This is where it begins.
+        Not with a choice.
+        With a shift.</p>
         <div class="btn-group fade">
-            <a href="#buddy" class="btn">Meet Buddy & Sir</a>
+          <a href="#" class="btn">Read the beginning</a>
         </div>
     </div>
 </section>
 
-<section id="youtube" class="section-light">
+<section id="podcast" class="section-dark">
     <div class="container">
-        <h2 class="fade">From the Riverbank</h2>
-        <p class="fade">Sometimes it doesn’t stop at the river. Some of it escapes. Some of it gets recorded. None of it stays quiet for long.</p>
+        <h2 class="fade">Coffee Time on the Raft</h2>
+        <p class="fade">They talk.
+        They argue.
+        They absolutely should not be trusted near a microphone.
+
+        It’s less of a plan and more of a situation.
+
+        Like everything else.</p>
+        <div class="btn-group fade">
+            <a href="#" class="btn">Listen in</a>
+        </div>
         <iframe src="https://www.youtube.com/embed/p3zV0qvuLVQ" title="Media Player" class="fade"></iframe>
     </div>
 </section>
 
-<section id="about" class="section-dark">
+<section id="signup" class="section-light" style="border-bottom: 3px solid var(--gold);">
     <div class="container">
-        <img src="authorbuddy.png" alt="Buddy Bootz Author" class="fade image-medium">
-        <p style="opacity:0.8; font-size:16px; margin-bottom: 8px;">She didn’t mean for it to turn out this way.</p>
-        <h2 class="fade">About the Author</h2>
-        <p class="fade">Buddy Bootz is the author of The Adventures of Buddy Bootz & Sir Drinks-A’Lot, a character-driven fantasy series built on chaos, loyalty, and the kind of trouble that doesn’t wait for permission.</p>
-        <p class="fade">Her stories follow two unlikely companions navigating a river that refuses to stay predictable—where plans fail fast, fixes don’t hold, and something always shifts when it shouldn’t.</p>
-        <div class="divider"></div>
-        <p class="fade" style="font-size:16px; opacity:0.7;">For inquiries, collaborations, or media requests, use the contact page.</p>
-    </div>
-</section>
+        <h2 class="fade">Don’t miss the next turn.</h2>
+        <p class="fade">The river moves whether you’re ready or not.
 
-<section id="stay-close" class="section-dark" style="padding-top: 140px; border-top: 1px solid rgba(255,255,255,0.1);">
-    <div class="container">
-        <h2 class="fade">Stay Close to the River</h2>
-        <p class="fade">Start at the beginning. Then decide if you’re staying.</p>
-        <form class="fade" id="emailForm" action="https://formspree.io/f/xdapyaar" method="POST" style="margin-top: 40px;">    
-            <div style="display: flex; flex-direction: column; align-items: center;">
-                <input type="email" name="email" placeholder="Enter your email" required>    
-                <button type="submit" class="btn" data-fs-submit-btn>Start Here</button>    
-            </div>
+        You might as well know where it goes next.</p>
+        <form class="fade" id="emailForm" action="https://formspree.io/f/xdapyaar" method="POST" style="margin-top: 40px; display: flex; flex-direction: column; align-items: center;">    
+            <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address">    
+            <button type="submit" class="btn">Stay with the current</button>    
         </form>
-        <p id="successMsg" style="display:none; color:var(--gold); font-weight:bold; margin-top: 30px;">You're in. Watch the river.</p>
     </div>    
 </section>
 
-<footer style="background:#1d4c63; padding:80px 20px; text-align:center; border-top:2px solid rgba(255,255,255,0.1);">
+<footer style="background:#15394a; padding:100px 20px; text-align:center; position: relative;">
   <div class="container">
-    <p style="margin-bottom: 12px; font-size: 16px;">© 2026 Buddy Bootz. All rights reserved.</p>
-    <p style="font-weight:600; font-family: 'Outfit', sans-serif; color: var(--gold);">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</p>
-    <p style="opacity:0.8; font-size:0.95rem; margin-top: 8px;">Stories from The Rambunctious River</p>
+    <p style="margin-bottom: 16px; font-size: 1rem; opacity: 0.7;">© 2026 Buddy Bootz. All rights reserved.</p>
+    <p style="font-weight:700; font-family: 'Outfit', sans-serif; color: var(--gold); font-size: 1.3rem; letter-spacing: -0.2px;">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</p>
   </div>
 </footer>
 
 <script>    
     const faders = document.querySelectorAll('.fade');    
+    const observerOptions = { 
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
     const observer = new IntersectionObserver(entries => {    
-        entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('show'); } });    
-    }, {threshold: 0.1});    
+        entries.forEach(entry => { 
+            if(entry.isIntersecting){ 
+                entry.target.classList.add('show'); 
+            } 
+        });    
+    }, observerOptions);    
+    
     faders.forEach(el => observer.observe(el));
-
-    const storyLines = document.querySelectorAll('.story-block .line');
-    const revealObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          storyLines.forEach((line, index) => {
-            setTimeout(() => { line.classList.add('show'); }, index * 300);
-          });
-        }
-      });
-    }, { threshold: 0.4 });
-    document.querySelectorAll('.story-block').forEach(block => revealObserver.observe(block));
-
-    async function handleFormSubmit(event, successId) {
-        event.preventDefault();
-        const form = event.target;
-        const btn = form.querySelector('[data-fs-submit-btn]');
-        const msg = document.getElementById(successId);
-        if (btn) btn.disabled = true;
-        const data = new FormData(form);
-        try {
-            const response = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
-            if (response.ok) { msg.style.display = "block"; form.style.display = "none"; form.reset(); } 
-            else { alert("The river is blocked."); if (btn) btn.disabled = false; }
-        } catch (error) { alert("Connection lost."); if (btn) btn.disabled = false; }
-    }
-    document.getElementById("emailForm")?.addEventListener("submit", (e) => handleFormSubmit(e, "successMsg"));
 
     window.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
-      const scrollPercent = (scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+      const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollY / scrollTotal) * 100;
       const scrollBar = document.getElementById("scroll-bar");
       if (scrollBar) scrollBar.style.width = scrollPercent + "%";
-    });
+    }, { passive: true });
 </script>
 </body>
 </html>
