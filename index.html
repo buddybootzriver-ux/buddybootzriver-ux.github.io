@@ -15,20 +15,21 @@
     <link rel="icon" type="image/png" href="favicon.png">    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700&display=swap" rel="stylesheet">
     <style>    
-        :root {    
-          --river-main: #6FD3F5;
-          --river-soft: #AEE8FF;
-          --river-light: #DFF7FF;
+        :root {
+            --river-deep: #1F4E5F;
+            --river-main: #3FA7D6;
+            --river-light: #E6F7FF;
 
-          --gold: #F2C94C;
-          --gold-soft: #FFE27A;
-          --gold-glow: rgba(242, 201, 76, 0.35);
+            --gold: #F2C94C;
+            --gold-soft: #FFE27A;
 
-          --text: #0f2a33;
-          --text-soft: #2f4f5a;
+            --text-dark: #0B1F26;
+            --text-body: #2A4A55;
 
-          --nav-bg: rgba(255, 255, 255, 0.6);
-          --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            --nav-bg: rgba(255, 255, 255, 0.85);
+            --shadow-soft: 0 20px 40px rgba(0,0,0,0.08);
+
+            --transition-smooth: all 0.3s ease;
         }
 
         * { margin:0; padding:0; box-sizing:border-box; }
@@ -38,7 +39,7 @@
         body {
             font-family: 'Inter', sans-serif;
             background: var(--river-light);
-            color: var(--text);
+            color: var(--text-dark);
             font-size: 18px;
             line-height: 1.7;
             overflow-x: hidden;
@@ -49,11 +50,11 @@
         .container {
           max-width: 1050px;
           margin: 0 auto;
-          padding: 0 40px;
+          padding: 0 25px;
         }
 
         section {
-          padding: 140px 20px;
+          padding: 120px 20px;
           text-align: center;
           position: relative;
           overflow: hidden;
@@ -62,25 +63,27 @@
         p {
           max-width: 680px;
           margin: 0 auto 28px;
-          color: var(--text-soft);
-          font-size: 1.15rem;
+          color: var(--text-body);
+          font-size: 1.1rem;
+          line-height: 1.75;
           white-space: pre-line;
         }
 
         h1, h2, h3 {
           font-family: 'Outfit', sans-serif;
-          color: var(--gold);
+          color: var(--text-dark);
           line-height: 1.1;
         }
 
         h1 { 
-          font-size: clamp(2.8rem, 6vw, 4.2rem); 
+          font-size: clamp(3rem, 6vw, 4.5rem); 
+          line-height: 1.05;
           letter-spacing: -1.5px; 
           margin-bottom: 32px;
         }
 
         h2 { 
-          font-size: clamp(2.4rem, 4.5vw, 3.2rem); 
+          font-size: clamp(2.2rem, 4vw, 3rem); 
           margin-bottom: 40px;
           letter-spacing: -0.5px;
         }
@@ -90,43 +93,51 @@
             background: var(--river-light);
         }
         .section-dark { 
-            background: linear-gradient(to bottom, var(--river-main), var(--river-soft));
+            background: linear-gradient(to bottom, var(--river-deep), var(--river-main));
+            color: white;
+        }
+
+        .section-dark h1, .section-dark h2, .section-dark h3 {
+            color: var(--gold);
+        }
+
+        .section-dark p {
+            color: rgba(255, 255, 255, 0.9);
         }
         
         /* Gold Buttons */
         .btn { 
           background: var(--gold); 
-          color: var(--text); 
-          padding: 20px 42px; 
-          border-radius: 14px; 
+          color: var(--text-dark); 
+          padding: 18px 36px; 
+          border-radius: 12px; 
           text-decoration: none; 
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          transition: var(--transition-smooth);
           border: none; 
           cursor: pointer; 
-          font-size: 1.1rem; 
           font-weight: 700;
-          box-shadow: 0 6px 20px var(--gold-glow);
-          letter-spacing: 0.2px;
+          font-size: 1rem; 
+          box-shadow: 0 8px 20px rgba(242, 201, 76, 0.35);
+          transition: var(--transition-smooth);
         }
 
         .btn:hover { 
-          transform: translateY(-4px) scale(1.02); 
+          transform: translateY(-2px); 
           background: var(--gold-soft);
-          box-shadow: 0 10px 30px var(--gold-glow);
         }
 
         .btn-secondary { 
-          background: rgba(255, 255, 255, 0.3); 
+          background: rgba(255, 255, 255, 0.1); 
           border: 2px solid var(--gold); 
-          color: var(--text); 
+          color: var(--gold); 
+          box-shadow: none;
         }
 
         .btn-secondary:hover { 
           background: var(--gold);
-          color: var(--text);
+          color: var(--text-dark);
         }
 
         .btn-group {
@@ -142,7 +153,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;    
-            gap: 60px;
+            gap: 80px;
             text-align: left;
             margin: 60px 0;
         }
@@ -169,7 +180,13 @@
 
         /* Story Block Styles */
         .story-block { margin: 40px auto; text-align: left; max-width: 680px; }
-        .story-block p { margin: 0 0 1.2rem; text-align: left; max-width: 100%; }
+        .story-block p { 
+            margin: 0 0 1.2rem; 
+            text-align: left; 
+            max-width: 100%; 
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
 
         /* Animations */
         .fade { opacity:0; transform:translateY(25px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
@@ -181,7 +198,7 @@
             border-radius: 12px; 
             border: 2px solid rgba(15, 42, 51, 0.1); 
             background: rgba(255, 255, 255, 0.5);
-            color: var(--text);
+            color: var(--text-dark);
             width: 100%; 
             max-width: 420px; 
             font-size: 1.1rem; 
@@ -190,12 +207,12 @@
             backdrop-filter: blur(5px);
         }
         
-        input[type="email"]::placeholder { color: var(--text-soft); opacity: 0.6; }
+        input[type="email"]::placeholder { color: var(--text-body); opacity: 0.6; }
         input[type="email"]:focus { outline: none; border-color: var(--gold); background: rgba(255, 255, 255, 0.8); }
 
         #scroll-bar {
           position: fixed; top: 0; left: 0; height: 4px; width: 0%;
-          background: linear-gradient(to right, var(--gold), var(--river-soft)); z-index: 9999;
+          background: linear-gradient(to right, var(--gold), var(--river-main)); z-index: 9999;
         }
 
         /* Atmosphere Overlay */
@@ -212,8 +229,12 @@
             .split-row, .split-row.reverse { flex-direction: column; text-align: center; gap: 40px; }
             .btn-group { flex-direction: column; width: 100%; max-width: 320px; margin-left: auto; margin-right: auto; }
             .btn { width: 100%; }
-            .container { padding: 0 25px; }
             .split-img img { margin: 20px auto; }
+        }
+
+        #home {
+            padding-top: 200px;
+            padding-bottom: 140px;
         }
     </style>
 </head>
@@ -223,16 +244,16 @@
 
 <nav style="position:fixed; top:0; width:100%; background:var(--nav-bg); backdrop-filter:blur(15px); -webkit-backdrop-filter:blur(15px); z-index:9998; padding:16px 20px; border-bottom: 1px solid rgba(15, 42, 51, 0.05);">
   <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
-    <div style="font-family:'Outfit',sans-serif; font-size: 1.5rem; color: var(--text); font-weight: bold; letter-spacing: -0.5px;">Buddy & Sir</div>
+    <div style="font-family:'Outfit',sans-serif; font-size: 1.5rem; color: var(--text-dark); font-weight: bold; letter-spacing: -0.5px;">Buddy & Sir</div>
     <div style="display:flex; gap:28px;">
-      <a href="#home" style="color:var(--text); text-decoration:none; font-weight: 600; font-size: 0.95rem; opacity: 0.8; transition: var(--transition-smooth);" onmouseover="this.style.opacity=1;this.style.color='var(--gold)'" onmouseout="this.style.opacity=0.8;this.style.color='var(--text)'">Home</a>
-      <a href="#buddy" style="color:var(--text); text-decoration:none; font-weight: 600; font-size: 0.95rem; opacity: 0.8; transition: var(--transition-smooth);" onmouseover="this.style.opacity=1;this.style.color='var(--gold)'" onmouseout="this.style.opacity=0.8;this.style.color='var(--text)'">Characters</a>
-      <a href="#book" style="color:var(--text); text-decoration:none; font-weight: 600; font-size: 0.95rem; opacity: 0.8; transition: var(--transition-smooth);" onmouseover="this.style.opacity=1;this.style.color='var(--gold)'" onmouseout="this.style.opacity=0.8;this.style.color='var(--text)'">The Book</a>
+      <a href="#home" style="color:var(--text-dark); text-decoration:none; font-weight: 600; font-size: 0.95rem; opacity: 0.8; transition: var(--transition-smooth);" onmouseover="this.style.opacity=1;this.style.color='var(--river-deep)'" onmouseout="this.style.opacity=0.8;this.style.color='var(--text-dark)'">Home</a>
+      <a href="#buddy" style="color:var(--text-dark); text-decoration:none; font-weight: 600; font-size: 0.95rem; opacity: 0.8; transition: var(--transition-smooth);" onmouseover="this.style.opacity=1;this.style.color='var(--river-deep)'" onmouseout="this.style.opacity=0.8;this.style.color='var(--text-dark)'">Characters</a>
+      <a href="#excerpt" style="color:var(--text-dark); text-decoration:none; font-weight: 600; font-size: 0.95rem; opacity: 0.8; transition: var(--transition-smooth);" onmouseover="this.style.opacity=1;this.style.color='var(--river-deep)'" onmouseout="this.style.opacity=0.8;this.style.color='var(--text-dark)'">The Story</a>
     </div>
   </div>
 </nav>
 
-<section id="home" class="section-dark" style="padding-top: 180px;">
+<section id="home" class="section-dark">
     <div class="container">    
         <img src="hero.png" alt="Buddy Bootz and Sir Drinks-A’Lot" class="fade show image-large">
         <h1 class="fade show">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>
@@ -241,7 +262,7 @@
 Buddy doesn’t either.
 Sir is stuck managing both.</p>
         <div class="btn-group fade show">
-            <a href="#excerpt" class="btn">Read the First Chapter</a>
+            <a href="#excerpt" class="btn">Read the Beginning</a>
         </div>
     </div>    
 </section>
@@ -350,47 +371,17 @@ Once you’re in it, you don’t control where it takes you.</p>
     </div>
 </section>
 
-<section id="coffeetime" class="section-light">
-    <div class="container">
-        <h2>Coffee Time</h2>
-        <p class="fade">
-        Somewhere between strong coffee and a bad decision—
-        the talking started.
-
-        Not planned.
-        Not structured.
-        Not particularly helpful.
-
-        Still… consistent.
-
-        Buddy says what she means.
-        Sir says what he can manage.
-
-        The river listens anyway.
-
-        This is Coffee Time.
-        </p>
-        <img src="coffee-time-raft.png" alt="Coffee Time on the raft" class="fade image-large">
-        <div class="btn-group fade">
-            <a href="#" class="btn">Step onto the Raft</a>
-        </div>
-        <p class="fade" style="font-style: italic; opacity: 0.85;">
-        Episodes drift in soon.
-        </p>
-    </div>
-</section>
-
-<section id="signup" class="section-dark">
+<section id="signup" class="section-light">
     <div class="container">
         <h2>Start the Story</h2>
         <p class="fade">The river has already started moving.
 You can catch up—or get pulled in.</p>
         <div class="btn-group fade">
-            <a href="#excerpt" class="btn">Read the First Chapter</a>
+            <a href="#excerpt" class="btn">Read the Beginning</a>
         </div>
         <form class="fade" id="emailForm" action="https://formspree.io/f/xdapyaar" method="POST" style="margin-top: 60px; display: flex; flex-direction: column; align-items: center;">    
             <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address">    
-            <button type="submit" class="btn">Stay with the current</button>    
+            <button type="submit" class="btn">Get Book Updates</button>    
         </form>
     </div>    
 </section>
@@ -398,7 +389,7 @@ You can catch up—or get pulled in.</p>
 <footer style="background:var(--river-main); padding:100px 20px; text-align:center; position: relative; border-top: 1px solid rgba(15, 42, 51, 0.05);">
   <div class="container">
     <p style="margin-bottom: 16px; font-size: 1rem; opacity: 0.7;">© 2026 Buddy Bootz. All rights reserved.</p>
-    <p style="font-weight:700; font-family: 'Outfit', sans-serif; color: var(--text); font-size: 1.3rem; letter-spacing: -0.2px;">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</p>
+    <p style="font-weight:700; font-family: 'Outfit', sans-serif; color: var(--text-dark); font-size: 1.3rem; letter-spacing: -0.2px;">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</p>
   </div>
 </footer>
 
