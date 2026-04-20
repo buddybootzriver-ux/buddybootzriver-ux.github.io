@@ -148,7 +148,7 @@
         }
         .split-row.reverse { flex-direction: row-reverse; }
         .split-text { flex: 1; }
-        .split-img { flex: 1; display: flex; justify-content: center; }
+        .split-img { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 40px; }
 
         img {
           display: block;
@@ -158,12 +158,18 @@
           box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
           border: 1px solid rgba(255,255,255,0.15);
           transition: var(--transition-smooth);
+          margin: 40px auto;
         }
         
         img:hover { transform: scale(1.01); }
 
-        .image-large { max-width: 800px; margin: 0 auto 50px; }
-        .image-medium { max-width: 520px; }
+        .image-large { max-width: 800px; }
+        .image-medium { max-width: 500px; }
+        .image-feature { max-width: 650px; }
+
+        /* Story Block Styles */
+        .story-block { margin: 40px auto; text-align: left; max-width: 680px; }
+        .story-block p { margin: 0 0 1.2rem; text-align: left; max-width: 100%; }
 
         /* Animations */
         .fade { opacity:0; transform:translateY(25px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
@@ -213,6 +219,7 @@
             .btn-group { flex-direction: column; width: 100%; max-width: 320px; margin-left: auto; margin-right: auto; }
             .btn { width: 100%; }
             .container { padding: 0 25px; }
+            .split-img img { margin: 20px auto; }
         }
     </style>
 </head>
@@ -265,6 +272,33 @@
     </div>
 </section>
 
+<section id="prelude" class="section-light">
+  <div class="container">
+    <h2 class="fade">Begin with The Rambunctious River</h2>
+    
+    <img src="buddy-sir-book-opening-river.png" alt="Book opening" class="fade image-large">
+    
+    <div class="story-block fade">
+      <p>The water pump bolted to the outside of Buddy Bootz’s treehouse was trying to come apart in public.</p>
+      <p>The little metal box rattled hard against the oak boards. Pipes knocked. A loose valve buzzed. Something inside snapped…</p>
+      <p>Buddy Bootz stood on the top step of a tall ladder, one hand steadying the metal housing while the other worked a screwdriver into a stubborn seam.</p>
+      <p>The pump coughed.</p>
+      <p>A blast of rusty water shot straight into her face.</p>
+      <p>Buddy went still.</p>
+      <p>Water dripped off her nose.</p>
+      <p>“…That was personal.”</p>
+    </div>
+
+    <img src="buddy-sir-pump-chaos.png" alt="Pump chaos" class="fade image-feature">
+    
+    <p class="fade" style="font-style: italic;">And that was before the river changed direction.</p>
+    
+    <div class="btn-group fade">
+      <a href="#book" class="btn">Read the Beginning</a>
+    </div>
+  </div>
+</section>
+
 <section id="buddy" class="section-dark">
     <div class="container">
         <div class="split-row">
@@ -301,6 +335,7 @@
             </div>
             <div class="split-img fade">
                 <img src="sir.png" alt="Sir Drinks-A’Lot" class="image-medium">
+                <img src="sirs_place.png" alt="Sir's place" class="image-medium">
             </div>
         </div>
     </div>
@@ -406,5 +441,4 @@
     }, { passive: true });
 </script>
 </body>
-</html>
-
+</html>```
