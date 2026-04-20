@@ -137,15 +137,16 @@
 
         .btn-secondary:hover { 
           background: var(--gold);
-          color: var(--text-dark);
+          color: #fff;
         }
 
         .btn-group {
           display: flex;
+          flex-direction: column;
+          align-items: center;
           justify-content: center;
-          gap: 20px;
+          gap: 0;
           margin-top: 50px;
-          flex-wrap: wrap;
         }
 
         /* Split Layouts */
@@ -227,7 +228,7 @@
         @media (max-width: 850px) {
             section { padding: 100px 20px; }
             .split-row, .split-row.reverse { flex-direction: column; text-align: center; gap: 40px; }
-            .btn-group { flex-direction: column; width: 100%; max-width: 320px; margin-left: auto; margin-right: auto; }
+            .btn-group { width: 100%; max-width: 320px; margin-left: auto; margin-right: auto; }
             .btn { width: 100%; }
             .split-img img { margin: 20px auto; }
         }
@@ -244,7 +245,7 @@
 
 <nav style="position:fixed; top:0; width:100%; background:var(--nav-bg); backdrop-filter:blur(15px); -webkit-backdrop-filter:blur(15px); z-index:9998; padding:16px 20px; border-bottom: 1px solid rgba(15, 42, 51, 0.05);">
   <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
-    <div style="font-family:'Outfit',sans-serif; font-size: 1.5rem; color: var(--text-dark); font-weight: bold; letter-spacing: -0.5px;">Buddy & Sir</div>
+    <div style="font-family:'Outfit',sans-serif; font-size: 1.5rem; color: var(--text-dark); font-weight: bold; letter-spacing: -0.5px;">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</div>
     <div style="display:flex; gap:28px;">
       <a href="#home" style="color:var(--text-dark); text-decoration:none; font-weight: 600; font-size: 0.95rem; opacity: 0.8; transition: var(--transition-smooth);" onmouseover="this.style.opacity=1;this.style.color='var(--river-deep)'" onmouseout="this.style.opacity=0.8;this.style.color='var(--text-dark)'">Home</a>
       <a href="#buddy" style="color:var(--text-dark); text-decoration:none; font-weight: 600; font-size: 0.95rem; opacity: 0.8; transition: var(--transition-smooth);" onmouseover="this.style.opacity=1;this.style.color='var(--river-deep)'" onmouseout="this.style.opacity=0.8;this.style.color='var(--text-dark)'">Characters</a>
@@ -258,11 +259,14 @@
         <img src="hero.png" alt="Buddy Bootz and Sir Drinks-A’Lot" class="fade show image-large">
         <h1 class="fade show">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>
         <p class="fade show">A chaotic fantasy adventure about a girl, a man, and a river that refuses to behave.</p>
-        <p class="fade show" style="font-weight: 600;">The river doesn’t follow rules.
+        <p class="fade show" style="font-weight:600; font-size:1.2rem;">
+The river doesn’t follow rules.
 Buddy doesn’t either.
-Sir is stuck managing both.</p>
+Sir is stuck managing both.
+</p>
         <div class="btn-group fade show">
             <a href="#excerpt" class="btn">Read the Beginning</a>
+            <p style="margin-top:12px; font-size:0.9rem; opacity:0.7;">No signup required.</p>
         </div>
     </div>    
 </section>
@@ -327,6 +331,9 @@ Once you’re in it, you don’t control where it takes you.</p>
 <section id="excerpt" class="section-dark">
     <div class="container">
         <h2>Read a Moment from the River</h2>
+        <p class="fade" style="font-style: italic; max-width: 600px;">
+This is where it starts going wrong.
+</p>
         <img src="buddy-sir-book-opening-river.png" alt="Book opening" class="fade image-large">
         <div class="story-block fade">
             <p>The pump coughed.</p>
@@ -376,10 +383,13 @@ Once you’re in it, you don’t control where it takes you.</p>
         <h2>Start the Story</h2>
         <p class="fade">The river has already started moving.
 You can catch up—or get pulled in.</p>
-        <div class="btn-group fade">
+        <p class="fade" style="font-size:0.95rem; opacity:0.8;">
+Get updates when Book One is released.
+</p>
+        <div class="btn-group fade" style="margin-bottom: 40px;">
             <a href="#excerpt" class="btn">Read the Beginning</a>
         </div>
-        <form class="fade" id="emailForm" action="https://formspree.io/f/xdapyaar" method="POST" style="margin-top: 60px; display: flex; flex-direction: column; align-items: center;">    
+        <form class="fade" id="emailForm" action="https://formspree.io/f/xdapyaar" method="POST" style="display: flex; flex-direction: column; align-items: center;">    
             <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address">    
             <button type="submit" class="btn">Get Book Updates</button>    
         </form>
@@ -410,4 +420,4 @@ You can catch up—or get pulled in.</p>
     }, { passive: true });
 </script>
 </body>
-</html>
+</html>```
