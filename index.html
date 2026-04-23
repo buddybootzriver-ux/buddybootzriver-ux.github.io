@@ -32,13 +32,20 @@
           "@type": "Person",
           "name": "Buddy Bootz",
           "url": "https://buddybootz.com/about",
-          "description": "Author of a humorous fantasy series focused on character-driven storytelling."
+          "description": "Author of a humorous fantasy series focused on character-driven storytelling.",
+          "sameAs": [
+            "https://buddybootz.com"
+          ]
         },
         {
           "@type": "Book",
           "name": "The Adventures of Buddy Bootz & Sir Drinks-A’Lot",
           "author": {
             "@type": "Person",
+            "name": "Buddy Bootz"
+          },
+          "publisher": {
+            "@type": "Organization",
             "name": "Buddy Bootz"
           },
           "genre": ["Fantasy", "Humorous Fantasy", "Adventure"],
@@ -77,7 +84,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Accessibility: Skip Link */
         .skip-link {
             position: absolute;
             top: -40px;
@@ -224,7 +230,7 @@
           <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
             <div style="font-family:'Outfit',sans-serif; font-size: 1.5rem; color: var(--text-dark); font-weight: bold; letter-spacing: -0.5px;">Buddy & Sir</div>
             <div style="display:flex; gap:28px;">
-              <a href="/" style="color:var(--text-dark); text-decoration:none; font-weight: 600; font-size: 0.95rem;">Home</a>
+              <a href="https://buddybootz.com/" style="color:var(--text-dark); text-decoration:none; font-weight: 600; font-size: 0.95rem;">Home</a>
               <a href="/characters" style="color:var(--text-dark); text-decoration:none; font-weight: 600; font-size: 0.95rem;">Characters</a>
               <a href="/read" style="color:var(--text-dark); text-decoration:none; font-weight: 600; font-size: 0.95rem;">Read</a>
               <a href="/world" style="color:var(--text-dark); text-decoration:none; font-weight: 600; font-size: 0.95rem;">World</a>
@@ -236,11 +242,14 @@
     <main id="main-content" role="main">
         <section id="home" class="section-dark">
             <div class="container">    
-                <img src="hero.webp" alt="Buddy Bootz and Sir Drinks-A’Lot standing by the river" width="800" height="450" class="fade show">
+                <picture class="fade show">
+                  <source srcset="hero.webp" type="image/webp">
+                  <img src="hero.png" alt="Buddy Bootz and Sir Drinks-A’Lot standing by the river" width="800" height="450" loading="eager">
+                </picture>
                 <h1 class="fade show">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>
                 <p class="fade show" style="font-weight:600; font-size:1.25rem; color: var(--gold);">A wildly funny, slightly dangerous, emotionally grounded fantasy series about chaos, loyalty, and the strange magic waiting in the middle of nowhere.</p>
                 <div class="btn-group fade show">
-                    <a href="/read" class="btn">Start the Adventure</a>
+                    <a href="/read" class="btn">Start the First Adventure (No Map Required)</a>
                     <a href="/characters" class="btn btn-secondary" style="background:none; border:2px solid var(--gold); color:var(--gold); box-shadow:none;">Meet Buddy & Sir</a>
                 </div>
             </div>    
@@ -248,20 +257,20 @@
 
         <section id="intro" class="section-light">
             <div class="container">
-                <h2 class="fade">The Plan is the Problem</h2>
+                <h2 class="fade">The Plan is the Problem (A Character-Driven Fantasy Story)</h2>
                 <p class="fade">There are stories where everything goes according to plan. This is not one of them.
                 
                 Buddy Bootz lives in a treehouse above a river that behaves like it has opinions. Sir Drinks-A’Lot comes from the marsh with just enough sense to survive her ideas and just enough loyalty to follow them anyway.
                 
                 Together, they build plans that collapse beautifully. Rafts drift where they shouldn’t. Maps don’t stay honest. And somewhere between bad decisions and better intentions, something real begins to form.
                 
-                This is a whimsical fantasy adventure series built on humor, movement, and character-driven storytelling.</p>
+                This is a whimsical, humorous fantasy adventure series built on humor, movement, and character-driven storytelling.</p>
             </div>
         </section>
 
         <section id="different" class="section-dark">
             <div class="container">
-                <h2 class="fade">What Makes This Different</h2>
+                <h2 class="fade">What Makes This Different from Traditional Fantasy</h2>
                 <p class="fade">Most fantasy asks: “What is the quest?” This one asks: “What happens when the people matter more than the plan?”</p>
                 <ul class="fade" style="list-style:none; max-width:600px; margin:0 auto; text-align:left;">
                     <li style="margin-bottom:15px;">✨ <strong>Character-driven storytelling</strong> over exposition</li>
@@ -312,7 +321,7 @@
                 <h2 class="fade">Start the Story</h2>
                 <p class="fade">If you enjoy character-driven fantasy, humor with emotional weight, and stories that move: Catch up before you get pulled in.</p>
                 <div class="btn-group fade" style="margin-bottom: 40px;">
-                    <a href="/read" class="btn">Start the First Adventure</a>
+                    <a href="/read" class="btn">Take Me to the First Adventure</a>
                 </div>
                 <form class="fade" id="emailForm" action="https://formspree.io/f/xdapyaar" method="POST" style="display: flex; flex-direction: column; align-items: center;">    
                     <label for="email" style="margin-bottom:10px; font-weight:600;">Get notified of Book Releases:</label>
