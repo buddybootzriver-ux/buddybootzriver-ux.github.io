@@ -10,8 +10,8 @@
     </script>    
     <meta charset="UTF-8">    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <meta name="description" content="A wildly funny, grounded fantasy series for adult readers who like their adventures loud and their logic broken. Book One arrives Summer 2026.">
-    <title>Buddy Bootz & Sir Drinks-A’Lot | Humorous Fantasy Series</title>
+    <meta name="description" content="A witty, grounded fantasy series for adults. Follow the chaos of Buddy Bootz and Sir Drinks-A’Lot as they navigate a river that has finally had enough.">
+    <title>Buddy Bootz & Sir Drinks-A’Lot | Grounded Humorous Fantasy</title>
     
     <link rel="canonical" href="https://buddybootz.com/" />
     <link rel="icon" type="image/png" href="favicon.png">    
@@ -80,22 +80,8 @@
         .card { background: white; padding: 40px; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; }
         .card-img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin-bottom: 25px; border: 6px solid var(--river-light); }
 
-        .social-proof { background: #fff; padding: 30px 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
-        .proof-flex { display: flex; justify-content: center; align-items: center; gap: 50px; flex-wrap: wrap; }
-        .proof-link { font-weight: 800; font-family: 'Outfit'; color: var(--river-deep); text-decoration: none; opacity: 0.6; transition: 0.3s; }
-        .proof-link:hover { opacity: 1; color: var(--river-main); }
-
-        .world-section {
-            position: relative;
-        }
-
-        .world-section > div:first-child {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
+        .world-section { position: relative; }
+        .world-section > div:first-child { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
         .fade { opacity:0; transform:translateY(30px); transition: 0.8s ease-out; }
         .fade.show { opacity:1; transform:translateY(0); }
@@ -103,9 +89,7 @@
         input[type="email"] { padding: 22px; border-radius: 14px; border: 2px solid #ddd; width: 100%; max-width: 450px; margin-bottom: 20px; font-size: 1.1rem; }
         
         @media (max-width: 900px) {
-            .container {
-                text-align: center;
-            }
+            .container { text-align: center; }
             .hero-grid { grid-template-columns: 1fr; text-align: center; }
             .book-cover { max-width: 350px; margin: 0 auto 40px; }
             section { padding: 70px 20px; }
@@ -117,188 +101,123 @@
     <nav>
         <div class="container nav-content">
             <div style="font-family:'Outfit',sans-serif; font-size: 1.5rem; font-weight: 800; display:flex; align-items:center;">
-                <img src="favicon.png" style="height:35px; margin-right:12px;" alt=""> Buddy Bootz
+                <img src="favicon.png" style="height:35px; margin-right:12px;" alt="Buddy Bootz Logo"> Buddy Bootz
             </div>
             <div class="nav-links">
-                <a href="#story">The Story</a>
-                <a href="#signup" class="btn btn-nav">Send Me the Opening</a>
+                <a href="#story">The Mess</a>
+                <a href="#world">The Map</a>
+                <a href="#signup" class="btn btn-nav">Read the Prologue</a>
             </div>
         </div>
     </nav>
 
     <main>
-        <section class="section-dark">
+        <section class="section-dark" style="padding-bottom: 60px;">
             <div class="container hero-grid">
                 <div class="fade show">
-                    <p style="text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: var(--gold); margin-bottom: 15px;">Book One · Humorous Fantasy</p>
+                    <p style="text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: var(--gold); margin-bottom: 15px;">A New Series for Adult Readers</p>
                     <h1>The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>
-                    <p style="font-weight:600; font-size:1.5rem; line-height: 1.4; margin-bottom: 25px;">
-                        For readers who like their adventures loud, their logic broken, and their rivers deeply uncooperative.
+                    <p style="font-weight:600; font-size:1.4rem; line-height: 1.3; margin-bottom: 20px; color: #fff;">
+                        A witty, grounded fantasy for those who know that "fixing it" is usually just the opening act of a disaster.
                     </p>
-                    <div style="margin-top: 35px;">
-                        <a href="#signup" class="btn">Get the Opening</a>
-                        <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">One email. No noise. Just the story when it's ready.</p>
-                        <p style="margin-top:20px; font-size:0.9rem; opacity:0.7;">
-                        For readers of Terry Pratchett, Douglas Adams, and character-driven humorous fantasy.
-                        </p>
+                    <p style="font-style: italic; opacity: 0.9; margin-bottom: 30px;">
+                        "For readers who appreciate the sharp wit of Terry Pratchett and the heart of grounded, character-driven chaos."
+                    </p>
+                    <div>
+                        <a href="#signup" class="btn">Read Chapter One Now</a>
+                        <p style="margin-top: 20px; font-size: 0.85rem; opacity: 0.7;">Book One Arriving Summer 2026. Join the early-access list.</p>
                     </div>
                 </div>
                 <div class="fade show">
-                    <img src="bootz_cover.png" alt="Book Cover: The Adventures of Buddy Bootz" class="book-cover">
+                    <img src="bootz_cover.png" alt="Book One: The Rambunctious River" class="book-cover">
                 </div>
             </div>    
         </section>
 
-        <div class="social-proof">
-            <div class="container proof-flex">
-                <span class="proof-link" style="opacity:0.4; cursor: default;">
-                Coming to Goodreads
-                </span>
-            </div>
-        </div>
-
-        <section id="story" class="section-light">
+        <section id="story" class="section-light" style="background: #fff;">
             <div class="container">
                 <div class="split-row">
                     <div class="fade">
-                        <h2 style="text-align: left;">A river trip turns into a civic disaster in progress.</h2>
-                        <p>Buddy Bootz doesn't plan badly — she doesn't plan at all, which has the same result but more momentum.</p>
-                        <p>Sir Drinks-A'Lot would prefer a responsible itinerary, functioning equipment, and a river that stays where rivers are supposed to stay.</p>
-                        <p><strong>Book One</strong> begins with a broken town pump and ends significantly wetter than it started.</p>
+                        <h2 style="color: var(--river-deep);">The River has stopped behaving.</h2>
+                        <p style="font-size: 1.2rem; font-weight: 600; color: var(--river-main);">Buddy Bootz doesn't plan. She has momentum.</p>
+                        <p>When the town pump fails, it should be a plumbing issue. But with Buddy involved, it escalates into a civic catastrophe involving uncooperative gravity and a river that seems to be developing a very specific personality.</p>
+                        <p>Accompanied by Sir Drinks-A'Lot—a man whose wrench is as steady as his exhausted patience—this isn't a quest. It's a high-stakes effort to survive the consequences of a world that has finally decided to hit back.</p>
+                        <a href="#signup" style="color: var(--river-main); font-weight: 700; text-decoration: none;">Get the first three chapters →</a>
                     </div>
                     <div class="img-wrap fade">
-                        <img src="buddy-sir-pump-chaos.png" alt="A broken town pump causing chaos">
+                        <img src="buddy-sir-pump-chaos.png" alt="Chaos at the Town Pump">
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="section-dark">
-            <div class="container">
-                <p style="margin-bottom:20px; font-weight:600;">
-                Don’t take our word for it. Here’s where it starts.
-                </p>
-                <h2 class="fade">"I am fixing it into a different problem."</h2>
-                <div class="excerpt-box fade">
-                    <p>Buddy Bootz solved most problems the way other people stepped over puddles: by putting one boot squarely in the middle of them.</p>
+            <div class="container" style="text-align: center;">
+                <h2 class="fade" style="margin-bottom: 10px;">"I am fixing it into a different problem."</h2>
+                <p class="fade" style="margin-bottom: 40px; opacity: 0.8;">A First Look at <em>The Rambunctious River</em></p>
+                
+                <div class="excerpt-box fade" style="border-left: 4px solid var(--gold); background: rgba(0,0,0,0.2);">
+                    <p>Buddy Bootz solved most problems the way other people stepped over puddles: <strong>by putting one boot squarely in the middle of them.</strong></p>
                     <p>The town pump had stopped pumping, which was the sort of crisis that made a person look important without necessarily making them useful.</p>
                     <p>"It is, technically, still a pump," Sir Drinks-A'Lot said, peering at it with the grave expression of a man who had already seen a worse day before breakfast.</p>
                     <p>"Then why is the handle smoking?" Buddy asked.</p>
-                    <p>"Because," he said, "the handle appears to be fighting the water."</p>
+                    <p><strong>"Because,"</strong> he said, <strong>"the handle appears to be fighting the water."</strong></p>
                 </div>
-                <a href="#signup" class="btn fade">Keep Reading</a>
-                <p style="margin-top: 20px;" class="fade">Full Book arriving Summer 2026.</p>
+                
+                <a href="#signup" class="btn fade">Finish the Chapter</a>
             </div>
         </section>
 
         <section class="section-light">
             <div class="container">
-                <p style="font-weight:600; margin-bottom:20px;">
-                This is where it stops behaving.
-                </p>
-                <h2 class="fade">Meet the Chaos</h2>
+                <h2 class="fade" style="text-align: center;">The Duo vs. The Consequences</h2>
                 <div class="character-grid">
                     <div class="card fade">
                         <img src="buddy.png" class="card-img" alt="Buddy Bootz">
                         <h3>Buddy Bootz</h3>
-                        <p>Fixes problems by making new ones—usually more interesting ones. She has a different relationship with consequences than most.</p>
+                        <p>Impulsive, brave, and operates on the firm belief that if you move fast enough, the laws of cause and effect might simply lose track of you.</p>
                     </div>
                     <div class="card fade">
                         <img src="sir.png" class="card-img" alt="Sir Drinks-A'Lot">
                         <h3>Sir Drinks-A'Lot</h3>
-                        <p>Competent, cautious, and constitutionally opposed to half-flooded town squares. He carries a wrench, a spoon, and a contingency prayer.</p>
+                        <p>A grounded strategist who carries the heavy burden of being right. He provides the tools, the steady hand, and the contingency prayers required to survive Buddy's momentum.</p>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section class="section-light">
-          <div class="container">
-        
-            <h2 class="fade">Where They Come Back To</h2>
-        
-            <div class="split-row">
-        
-              <div class="fade">
-                <img src="buddy_treehouse.png" alt="Buddy Bootz Treehouse" style="border-radius: 24px; box-shadow: var(--shadow-strong);">
-              </div>
-        
-              <div class="fade">
-                <h3>Buddy’s Place</h3>
-                <p>A treehouse built on the kind of decisions that should have been stopped halfway through—but weren’t.</p>
-                <p>It leans. It creaks. It somehow works anyway. And no matter what goes wrong out there, this is where she ends up standing like it all made sense.</p>
-              </div>
-        
-            </div>
-        
-            <div class="split-row" style="margin-top: 60px;">
-        
-              <div class="fade">
-                <h3>Sir’s Place</h3>
-                <p>Everything here has a place. Everything works. Nothing leaks unless it absolutely has to.</p>
-                <p>It is, by all reasonable standards, a safe environment—which is exactly why it never stays that way for long.</p>
-              </div>
-        
-              <div class="fade">
-                <img src="sirs_place.png" alt="Sir Drinks-A’Lot Workshop" style="border-radius: 24px; box-shadow: var(--shadow-strong);">
-              </div>
-        
-            </div>
-        
-          </div>
         </section>
 
         <section id="world" class="world-section" style="background: url('prelude-maze.png') center/cover no-repeat; padding: 120px 20px;">
-            <div style="background: rgba(11, 31, 38, 0.85);"></div>
-            <div class="container" style="position: relative; color: white;">
-                <h2 class="fade" style="color: var(--gold);">Explore the Rambunctious River</h2>
-                <p class="fade" style="max-width: 650px; margin: 0 auto 40px; font-size: 1.2rem;">From the treehouse built on wrong ideas to the maze of hidden paths—this is a world built to be returned to.</p>
+            <div style="background: rgba(11, 31, 38, 0.9); position: absolute; top:0; left:0; width:100%; height:100%;"></div>
+            <div class="container" style="position: relative; color: white; text-align: center;">
+                <h2 class="fade" style="color: var(--gold);">Navigate the Chaos</h2>
+                <p class="fade" style="max-width: 700px; margin: 0 auto 40px; font-size: 1.1rem;">From the precarious heights of Buddy’s Treehouse to the precision of Sir’s Workshop, explore a world built on the edge of a beautiful, breaking logic.</p>
                 <div class="fade">
-                    <img src="map-table.png" alt="The River Map" style="max-width: 900px; border: 8px solid #222; border-radius: 10px; box-shadow: 0 30px 60px rgba(0,0,0,0.5);">
+                    <img src="map-table.png" alt="The River Map" style="max-width: 100%; border-radius: 15px; box-shadow: 0 40px 80px rgba(0,0,0,0.6); margin-bottom: 40px;">
                 </div>
-                <a href="#signup" class="btn">Send Me the Opening</a>
+                <a href="#signup" class="btn">Get the Digital Map</a>
             </div>
         </section>
 
-        <section class="section-light">
+        <section id="signup" class="section-dark" style="background: var(--text-dark); text-align: center;">
             <div class="container">
-                <div class="split-row" style="align-items: flex-start;">
-                    <div class="fade" style="flex: 0.7;">
-                        <img src="authorbuddy.png" alt="Buddy Bootz" style="border-radius: 50%; border: 10px solid white;">
-                    </div>
-                    <div class="fade" style="flex: 1.3; text-align: left;">
-                        <h2>About the Author</h2>
-                        <p><strong>Buddy Bootz</strong> is a pen name. The person behind it is a writer.</p>
-                        <p>Most of what she writes lives somewhere between humor and something heavier—because that's where real things tend to live. Things don’t stay one thing for long, and neither do her stories. The chaos is real. So is the loyalty underneath it.</p>
-                        <p>She started writing as a way through difficult moments. It wasn’t planned, wasn’t structured. It turned into something she didn’t want to let go of.</p>
-                        <p><em>The Adventures of Buddy Bootz & Sir Drinks-A’Lot</em> came out of that—the same mix of mess and meaning, told through a different lens.</p>
-                        <p>She’s still writing. Still building. Still figuring it out as she goes, but with intention now.</p>
-                    </div>
+                <div style="max-width: 600px; margin: 0 auto;">
+                    <h2 class="fade">Don't Get Swept Away.</h2>
+                    <p class="fade" style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.9;">Join the inner circle to receive <strong>The Opening Act</strong> and stay updated on the Summer 2026 launch.</p>
+                    
+                    <form action="https://formspree.io/f/xdapyaar" method="POST" class="fade">    
+                        <input type="email" name="email" placeholder="Your best email address" required 
+                               style="width: 100%; padding: 20px; border-radius: 10px; border: none; margin-bottom: 20px; font-size: 1.1rem;">    
+                        <button type="submit" class="btn" style="width: 100%;">Send Me Chapter One</button>
+                        <p style="margin-top: 15px; font-size: 0.8rem; opacity: 0.5;">No spam. Just the story. Unsubscribe anytime.</p>
+                    </form>
                 </div>
-            </div>
-        </section>
-
-        <section id="signup" class="section-dark" style="background: var(--text-dark); padding: 120px 20px;">
-            <div class="container">
-                <h2 class="fade">Get the Opening When It Drops</h2>
-                <p class="fade" style="font-size: 1.25rem; margin-bottom: 40px;">One email. No noise. Just the story when it's ready.</p>
-                <form action="https://formspree.io/f/xdapyaar" method="POST" class="fade">    
-                    <input type="email" name="email" placeholder="Enter your email address" required>    
-                    <br>
-                    <button type="submit" class="btn">Send Me the Opening</button>
-                    <p style="margin-top:10px; font-size:0.85rem; opacity:0.6;">
-                    Takes 2 seconds. Worth it.
-                    </p>
-                    <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.6;">No spam. No noise. Unsubscribe any time.</p>
-                </form>
             </div>    
         </section>
     </main>
 
-    <footer style="background: #000; color: white; padding: 60px 20px; text-align: center; opacity: 0.8;">
+    <footer style="background: #050c0e; color: white; padding: 40px 20px; text-align: center;">
         <div class="container">
-            <p style="margin-bottom: 10px;">© 2026 Buddy Bootz. All rights reserved.</p>
-            <p style="font-size: 0.8rem; opacity: 0.5;">Humorous Fantasy · Adult Fiction · Book One</p>
+            <p>© 2026 Buddy Bootz · Humorous Fantasy for Adults</p>
         </div>
     </footer>
 
