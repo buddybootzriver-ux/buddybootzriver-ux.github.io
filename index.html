@@ -114,6 +114,8 @@
           white-space: pre-line;
         }
 
+        .meta { font-weight: 600; opacity: 0.8; margin-top: -10px; margin-bottom: 20px; }
+
         h1, h2, h3 {
           font-family: 'Outfit', sans-serif;
           color: var(--text-dark);
@@ -209,11 +211,6 @@
         }
         input[type="email"]:focus { border-color: var(--gold); background: rgba(255, 255, 255, 0.8); outline: 2px solid var(--gold); }
 
-        /* Custom spacing for added blocks */
-        .clarity-block { margin-top: -20px; margin-bottom: 40px; }
-        .entry-line { margin-bottom: 10px; font-weight: 600; }
-        .urgency-line { margin-top: 10px; font-size: 0.95rem; opacity: 0.8; }
-
         @media (max-width: 850px) {
             section { padding: 80px 20px; }
             .split-row, .split-row.reverse { flex-direction: column; text-align: center; gap: 40px; }
@@ -248,17 +245,11 @@
                   <img src="hero.png" alt="Buddy Bootz and Sir Drinks-A’Lot standing by the river" width="800" height="450">
                 </picture>
                 <h1 class="fade show">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>
+                <p class="meta fade show">Book One · Humorous Fantasy · Adult Fiction</p>
                 <p class="fade show" style="font-weight:600; font-size:1.25rem; color: var(--gold);">A wildly funny, slightly dangerous, emotionally grounded fantasy series about chaos, loyalty, and the strange magic waiting in the middle of nowhere.</p>
-                
-                <section class="clarity-block fade show">
-                  <p><strong>What this is:</strong></p>
-                  <p>A chaotic, funny, slightly dangerous river adventure where nothing behaves… except their loyalty.</p>
-                </section>
-
+                <p class="fade show">For readers of Terry Pratchett, Douglas Adams, and character-driven fantasy.</p>
                 <div class="btn-group fade show">
-                    <p class="entry-line">You don’t have to decide anything yet. Just step on.</p>
-                    <a href="#read" class="btn">Step onto the raft</a>
-                    <p class="urgency-line">The river already made its choice.</p>
+                    <a href="#signup" class="btn">Send Me Chapter One</a>
                 </div>
             </div>    
         </section>
@@ -276,79 +267,42 @@
             </div>
         </section>
 
-        <section id="read" class="fade" style="margin-top: 80px;">
+        <section id="read" class="fade section-dark">
             <div class="container">
                 <h2>The Rambunctious River</h2>
+                <p><strong>This is where it starts going wrong.</strong></p>
                 <p><em>You stepped on. That’s enough.</em></p>
                 <p>The river didn’t wait.</p>
                 <p>It decided.</p>
                 <p>A broken pump. A bad decision. A splash of whiskey where it definitely doesn’t belong. And then something shifts. The water listens. The current corrects. The quiet stops behaving like quiet.</p>
-            </div>
-        </section>
-
-        <section id="different" class="section-dark">
-            <div class="container">
-                <h2 class="fade">What Makes This Different</h2>
-                <p class="fade">Most fantasy asks: “What is the quest?” This one asks: “What happens when the people matter more than the plan?”</p>
-                <ul class="fade" style="list-style:none; max-width:600px; margin:0 auto; text-align:left;">
-                    <li style="margin-bottom:15px;">✨ <strong>Character-driven storytelling</strong> over exposition</li>
-                    <li style="margin-bottom:15px;">🎭 <strong>Humor</strong> that escalates into chaos</li>
-                    <li style="margin-bottom:15px;">❤️ <strong>Emotional depth</strong> without slowing pacing</li>
-                    <li style="margin-bottom:15px;">🌊 <strong>A reactive, unpredictable world</strong></li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="characters" class="section-light">
-            <div class="container">
-                <div class="split-row">
-                    <div class="split-text fade">
-                        <h2>Buddy Bootz</h2>
-                        <p>A chaotic, brave spark who creates momentum instead of waiting for it. She acts first, thinks later, and fixes problems by making new ones.</p>
-                        <a href="/buddy-bootz" style="color:var(--river-deep); font-weight:700;">More about Buddy →</a>
-                    </div>
-                    <div class="split-img fade">
-                        <img src="buddy.png" alt="Buddy Bootz" width="500" height="500" loading="lazy">
-                    </div>
+                <div class="btn-group">
+                    <a href="/read" class="btn">Read the Full Chapter</a>
+                    <p style="margin-top: 10px;">Book One arrives Summer 2026.</p>
                 </div>
-                <div class="split-row reverse">
-                    <div class="split-text fade">
-                        <h2>Sir Drinks-A’Lot</h2>
-                        <p>A steady, loyal, quietly capable companion who balances chaos with instinct. He keeps things running, keeps Buddy alive, and fails at stopping either.</p>
-                        <a href="/sir-drinks-a-lot" style="color:var(--river-deep); font-weight:700;">More about Sir →</a>
-                    </div>
-                    <div class="split-img fade">
-                        <img src="sir.png" alt="Sir Drinks-A’Lot" width="500" height="500" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="world" class="section-dark">
-            <div class="container">
-                <h2 class="fade">The Rambunctious River</h2>
-                <p class="fade">The Rambunctious River shifts, reacts, and reveals things when it wants to. 
-                
-                Rafts carry bad ideas. Lanterns glow with intent. The further you go, the less certain anything becomes. Once you’re in it, you don’t control where it takes you.</p>
-                <a href="/world" class="btn">Explore the World</a>
             </div>
         </section>
 
         <section id="signup" class="section-light">
             <div class="container">
-                <h2 class="fade">Start the Story</h2>
-                <p class="fade">If you enjoy character-driven fantasy, humor with emotional weight, and stories that move: Catch up before you get pulled in.</p>
-                <div class="btn-group fade" style="margin-bottom: 40px;">
-                    <p class="entry-line">You don’t have to decide anything yet. Just step on.</p>
-                    <a href="#read" class="btn">Step onto the raft</a>
-                    <p class="urgency-line">The river already made its choice.</p>
-                </div>
-                <form class="fade" id="emailForm" action="https://formspree.io/f/xdapyaar" method="POST" style="display: flex; flex-direction: column; align-items: center;">    
-                    <label for="email" style="margin-bottom:10px; font-weight:600;">Get notified of Book Releases:</label>
+                <h2 class="fade">Get Chapter One the day it drops.</h2>
+                <p class="fade">One email when the book is ready to buy. That's the whole offer.</p>
+                <form class="fade" id="emailForm" action="https://formspree.io/f/xdapyaar" method="POST" style="margin-top: 40px; display: flex; flex-direction: column; align-items: center;">    
                     <input type="email" id="email" name="email" placeholder="Enter your email" required aria-label="Email address">    
-                    <button type="submit" class="btn">Get Book Updates</button>    
+                    <button type="submit" class="btn">Send Me Chapter One</button>    
+                    <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">No spam. No noise. Just the book when it's ready.</p>
                 </form>
             </div>    
+        </section>
+
+        <section class="author section-dark">
+            <div class="container">
+                <h2>About the Author</h2>
+                <p><strong>Buddy Bootz</strong> is a pen name. The person behind it is a writer.</p>
+                <p>Most of what she writes lives somewhere between humor and something heavier — because that's where real things tend to live. Things don't stay one thing for long, and neither do her stories. The chaos is real. So is the loyalty underneath it.</p>
+                <p>She started writing as a way through difficult moments. It wasn't planned, wasn't structured. It turned into something she didn't want to let go of.</p>
+                <p><em>The Adventures of Buddy Bootz & Sir Drinks-A'Lot</em> came out of that — the same mix of mess and meaning, told through a different lens.</p>
+                <p>She's still writing. Still building. Still figuring it out as she goes, but with intention now.</p>
+            </div>
         </section>
     </main>
 
