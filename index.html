@@ -44,18 +44,29 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--gold);
+            color: var(--text-dark);
+            padding: 8px;
+            z-index: 10000;
+            transition: top 0.3s;
+        }
+        .skip-link:focus { top: 0; }
+
         .container {
-          max-width: 750px; /* Optimized for long-form reading */
+          max-width: 750px; 
           margin: 0 auto;
           padding: 0 25px;
         }
 
         section {
           padding: 80px 0;
-          text-align: left; /* Story-focused alignment */
+          text-align: left;
         }
 
-        /* Typography Refinement */
         h1, h2 {
           font-family: 'Outfit', sans-serif;
           color: var(--text-dark);
@@ -67,7 +78,7 @@
         h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); margin-top: 60px; }
 
         p {
-          margin-bottom: 2rem; /* Generous paragraph spacing */
+          margin-bottom: 2rem;
           color: var(--text-body);
           font-size: 1.15rem;
         }
@@ -113,8 +124,15 @@
             justify-content: center;
         }
 
-        .fade { opacity:0; transform:translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-        .fade.show { opacity:1; transform:translateY(0); }
+        .fade { 
+            opacity: 0; 
+            transform: translateY(20px); 
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out; 
+        }
+        .fade.show { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
 
         @media (max-width: 850px) {
             .chapter-content { padding: 30px 20px; }
@@ -170,7 +188,9 @@
                 <p class="fade">
                     Buddy nodded as if this were a normal sentence to hear in a civic emergency. She grabbed the crank, gave it a heroic shove, and immediately discovered two things: the wheel was jammed, and the river was now audible from the square.
                 </p>
+                
                 <img src="buddy-sir-pump-chaos.png" alt="Buddy and Sir dealing with the chaotic town pump" style="width:100%; margin:40px 0; border-radius:16px;">
+                
                 <p class="fade">
                     Somewhere downstream, water roared back as if offended by being invited into public service.
                 </p>
@@ -207,12 +227,35 @@
     </footer>
 
     <script>    
-        const faders = document.querySelectorAll('.fade');    
-        const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
-        const observer = new IntersectionObserver(entries => {    
-            entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('show'); } });    
-        }, observerOptions);    
+        const faders = document.querySelectorAll('.fade');
+
+        // Improved IntersectionObserver options for higher reliability
+        const observerOptions = {
+            threshold: 0.05,
+            rootMargin: "0px 0px -20px 0px"
+        };
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
         faders.forEach(el => observer.observe(el));
+
+        /**
+         * FALLBACK SYSTEM
+         * Ensures all content is visible after the page has fully loaded,
+         * protecting against IntersectionObserver failures or slow triggers.
+         */
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.fade').forEach(el => {
+                el.classList.add('show');
+            });
+        });
     </script>
 </body>
 </html>
