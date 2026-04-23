@@ -10,48 +10,13 @@
     </script>    
     <meta charset="UTF-8">    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <meta name="description" content="A wildly funny, slightly dangerous, emotionally grounded fantasy series about chaos, loyalty, and the strange magic of the Rambunctious River.">
-    <title>The Adventures of Buddy Bootz & Sir Drinks-A’Lot | Character-Driven Fantasy</title>
+    <meta name="description" content="Funny, grounded fantasy about Buddy Bootz, Sir Drinks-A’Lot, and a river trip that becomes a civic disaster.">
+    <title>The Adventures of Buddy Bootz & Sir Drinks-A’Lot | Humorous Fantasy</title>
     
     <link rel="canonical" href="https://buddybootz.com/" />
     <link rel="icon" type="image/png" href="favicon.png">    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700&display=swap" rel="stylesheet">
     
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebSite",
-          "name": "The Adventures of Buddy Bootz & Sir Drinks-A’Lot",
-          "url": "https://buddybootz.com",
-          "description": "A whimsical fantasy adventure series blending humor, chaos, and emotionally grounded storytelling.",
-          "inLanguage": "en"
-        },
-        {
-          "@type": "Person",
-          "name": "Buddy Bootz",
-          "url": "https://buddybootz.com/about",
-          "description": "Author of a humorous fantasy series focused on character-driven storytelling.",
-          "sameAs": [
-            "https://buddybootz.com"
-          ]
-        },
-        {
-          "@type": "Book",
-          "name": "The Adventures of Buddy Bootz & Sir Drinks-A’Lot",
-          "author": {
-            "@type": "Person",
-            "name": "Buddy Bootz"
-          },
-          "genre": ["Fantasy", "Humorous Fantasy", "Adventure"],
-          "description": "A whimsical fantasy series following Buddy Bootz and Sir Drinks-A’Lot through chaotic and emotionally grounded adventures.",
-          "url": "https://buddybootz.com"
-        }
-      ]
-    }
-    </script>
-
     <style>    
         :root {
             --river-deep: #1F4E5F;
@@ -61,272 +26,180 @@
             --gold-soft: #FFE27A;
             --text-dark: #0B1F26;
             --text-body: #2A4A55;
-            --nav-bg: rgba(255, 255, 255, 0.85);
-            --shadow-soft: 0 20px 40px rgba(0,0,0,0.08);
-            --transition-smooth: all 0.3s ease;
+            --nav-bg: rgba(255, 255, 255, 0.95);
         }
 
         * { margin:0; padding:0; box-sizing:border-box; }
         html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--river-light); color: var(--text-dark); line-height: 1.7; overflow-x: hidden; padding-top: 70px; }
+        
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
+        section { padding: 100px 20px; text-align: center; position: relative; }
+        
+        h1, h2, h3 { font-family: 'Outfit', sans-serif; line-height: 1.1; }
+        h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 24px; }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 30px; }
+        h3 { font-size: 1.5rem; margin: 15px 0; color: var(--river-deep); }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--river-light);
-            color: var(--text-dark);
-            font-size: 18px;
-            line-height: 1.7;
-            overflow-x: hidden;
-            padding-top: 70px;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: var(--gold);
-            color: var(--text-dark);
-            padding: 8px;
-            z-index: 10000;
-            transition: top 0.3s;
-        }
-        .skip-link:focus { top: 0; }
-
-        .container {
-          max-width: 1050px;
-          margin: 0 auto;
-          padding: 0 25px;
-        }
-
-        section {
-          padding: 120px 20px;
-          text-align: center;
-          position: relative;
-          overflow: hidden;
-        }
-
-        p {
-          max-width: 680px;
-          margin: 0 auto 28px;
-          color: var(--text-body);
-          font-size: 1.1rem;
-          line-height: 1.75;
-          white-space: pre-line;
-        }
-
-        .meta { font-weight: 600; opacity: 0.8; margin-top: -10px; margin-bottom: 20px; }
-
-        h1, h2, h3 {
-          font-family: 'Outfit', sans-serif;
-          color: var(--text-dark);
-          line-height: 1.1;
-        }
-
-        h1 { 
-          font-size: clamp(3rem, 6vw, 4.5rem); 
-          line-height: 1.05;
-          letter-spacing: -1.5px; 
-          margin-bottom: 32px;
-        }
-
-        h2 { 
-          font-size: clamp(2.2rem, 4vw, 3rem); 
-          margin-bottom: 40px;
-          letter-spacing: -0.5px;
-        }
-
-        .section-light { background: var(--river-light); }
-        .section-dark { 
-            background: linear-gradient(to bottom, var(--river-deep), var(--river-main));
-            color: white;
-        }
-
-        .section-dark h1, .section-dark h2, .section-dark h3 { color: var(--gold); }
-        .section-dark p { color: rgba(255, 255, 255, 0.9); }
+        .section-dark { background: linear-gradient(to bottom, var(--river-deep), var(--river-main)); color: white; }
+        .section-dark h1, .section-dark h2 { color: var(--gold); }
+        .section-dark p { color: rgba(255, 255, 255, 0.95); }
         
         .btn { 
-          background: var(--gold); 
-          color: var(--text-dark); 
-          padding: 18px 36px; 
-          border-radius: 12px; 
-          text-decoration: none; 
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          border: none; 
-          cursor: pointer; 
-          font-weight: 700;
-          font-size: 1rem; 
-          box-shadow: 0 8px 20px rgba(242, 201, 76, 0.35);
-          transition: var(--transition-smooth);
+          background: var(--gold); color: var(--text-dark); padding: 18px 36px; border-radius: 12px; 
+          text-decoration: none; display: inline-flex; font-weight: 700; font-size: 1.1rem; 
+          box-shadow: 0 8px 20px rgba(242, 201, 76, 0.3); transition: 0.3s ease; border: none; cursor: pointer;
         }
         .btn:hover { transform: translateY(-2px); background: var(--gold-soft); }
 
-        .btn-group {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          gap: 15px;
-          margin-top: 50px;
-        }
-
-        .split-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;    
-            gap: 80px;
-            text-align: left;
-            margin: 60px 0;
-        }
-        .split-row.reverse { flex-direction: row-reverse; }
-        .split-text { flex: 1; }
-        .split-img { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 40px; }
-
-        img {
-          display: block;
-          max-width: 100%;
-          height: auto;
-          border-radius: 24px;
-          box-shadow: 0 15px 35px rgba(15, 42, 51, 0.1);
-          border: 1px solid rgba(255,255,255,0.4);
-          transition: var(--transition-smooth);
-          margin: 40px auto;
-        }
+        .split-row { display: flex; align-items: center; gap: 60px; text-align: left; flex-wrap: wrap; margin-top: 40px; }
+        .split-row > div { flex: 1; min-width: 320px; }
         
-        .fade { opacity:0; transform:translateY(25px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        img { max-width: 100%; height: auto; border-radius: 20px; transition: 0.3s ease; }
+        .img-shadow { box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
+        
+        .excerpt-box { text-align: left; background: rgba(255,255,255,0.08); padding: 40px; border-radius: 24px; border-left: 6px solid var(--gold); margin: 40px auto; max-width: 850px; backdrop-filter: blur(10px); }
+        .excerpt-box p { margin-bottom: 1.2rem; color: white; font-size: 1.1rem; }
+
+        .character-card { text-align: center; background: white; padding: 30px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .character-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 5px solid var(--river-light); margin-bottom: 20px; }
+
+        .fade { opacity:0; transform:translateY(30px); transition: 0.8s ease-out; }
         .fade.show { opacity:1; transform:translateY(0); }
 
-        input[type="email"] { 
-            padding: 20px 24px; 
-            border-radius: 12px; 
-            border: 2px solid rgba(15, 42, 51, 0.1); 
-            background: rgba(255, 255, 255, 0.5);
-            color: var(--text-dark);
-            width: 100%; 
-            max-width: 420px; 
-            font-size: 1.1rem; 
-            margin-bottom: 24px;
-            transition: var(--transition-smooth);
-        }
-        input[type="email"]:focus { border-color: var(--gold); background: rgba(255, 255, 255, 0.8); outline: 2px solid var(--gold); }
-
-        @media (max-width: 850px) {
-            section { padding: 80px 20px; }
-            .split-row, .split-row.reverse { flex-direction: column; text-align: center; gap: 40px; }
-            .btn-group { flex-direction: column; width: 100%; max-width: 320px; margin: 0 auto; }
-        }
-
-        #home { padding-top: 200px; padding-bottom: 140px; }
+        input[type="email"] { padding: 20px; border-radius: 12px; border: 2px solid #ddd; width: 100%; max-width: 400px; margin-bottom: 20px; font-size: 1rem; }
+        
+        @media (max-width: 768px) { section { padding: 60px 20px; } .split-row { gap: 30px; } }
     </style>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header role="banner">
-        <nav style="position:fixed; top:0; width:100%; background:var(--nav-bg); backdrop-filter:blur(15px); -webkit-backdrop-filter:blur(15px); z-index:9998; padding:16px 20px; border-bottom: 1px solid rgba(15, 42, 51, 0.05);">
+    <header>
+        <nav style="position:fixed; top:0; width:100%; background:var(--nav-bg); z-index:999; padding:12px 20px; border-bottom: 1px solid rgba(0,0,0,0.05); backdrop-filter: blur(10px);">
           <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
-            <div style="font-family:'Outfit',sans-serif; font-size: 1.5rem; color: var(--text-dark); font-weight: bold; letter-spacing: -0.5px;">Buddy & Sir</div>
-            <div style="display:flex; gap:28px;">
-              <a href="https://buddybootz.com/" style="color:var(--text-dark); text-decoration:none; font-weight: 600; font-size: 0.95rem;">Home</a>
-              <a href="/characters" style="color:var(--text-dark); text-decoration:none; font-weight: 600; font-size: 0.95rem;">Characters</a>
-              <a href="/read" style="color:var(--text-dark); text-decoration:none; font-weight: 600; font-size: 0.95rem;">Read</a>
-              <a href="/world" style="color:var(--text-dark); text-decoration:none; font-weight: 600; font-size: 0.95rem;">World</a>
+            <div style="font-family:'Outfit',sans-serif; font-size: 1.4rem; font-weight: bold; display:flex; align-items:center;">
+                <img src="favicon.png" style="height:35px; margin-right:10px;" alt=""> Buddy & Sir
+            </div>
+            <div style="display:flex; gap:20px; align-items:center;">
+                <a href="#world" style="text-decoration:none; color:var(--text-dark); font-weight:600; font-size:0.9rem;">World Map</a>
+                <a href="#signup" class="btn" style="padding: 10px 18px; font-size: 0.85rem;">Get Chapter One</a>
             </div>
           </div>
         </nav>
     </header>
 
-    <main id="main-content" role="main">
-        <section id="home" class="section-dark">
-            <div class="container">    
-                <picture class="fade show">
-                  <source srcset="hero.webp" type="image/webp">
-                  <img src="hero.png" alt="Buddy Bootz and Sir Drinks-A’Lot standing by the river" width="800" height="450">
-                </picture>
-                <h1 class="fade show">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>
-                <p class="meta fade show">Book One · Humorous Fantasy · Adult Fiction</p>
-                <p class="fade show" style="font-weight:600; font-size:1.25rem; color: var(--gold);">A wildly funny, slightly dangerous, emotionally grounded fantasy series about chaos, loyalty, and the strange magic waiting in the middle of nowhere.</p>
-                <p class="fade show">For readers of Terry Pratchett, Douglas Adams, and character-driven fantasy.</p>
-                <div class="btn-group fade show">
-                    <a href="#signup" class="btn">Send Me Chapter One</a>
+    <main>
+        <section class="section-dark" id="home">
+            <div class="container">
+                <div style="max-width: 500px; margin: 0 auto 40px;">
+                    <img src="bootz_cover.png" alt="Book Cover" class="img-shadow" style="border: 4px solid rgba(255,255,255,0.1);">
                 </div>
+                <h1 class="fade show">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>
+                <p class="fade show" style="font-weight:600; font-size:1.6rem; color: var(--gold); margin-bottom: 10px;">Funny, grounded, and going wrong from the first page.</p>
+                <p class="fade show" style="opacity: 0.9;">For readers of Terry Pratchett, Douglas Adams, and character-driven fantasy.</p>
             </div>    
         </section>
 
-        <section id="intro" class="section-light">
+        <section class="section-light">
             <div class="container">
-                <h2 class="fade">The Plan is the Problem</h2>
-                <p class="fade">There are stories where everything goes according to plan. This is not one of them.
-                
-                Buddy Bootz lives in a treehouse above a river that behaves like it has opinions. Sir Drinks-A’Lot comes from the marsh with just enough sense to survive her ideas and just enough loyalty to follow them anyway.
-                
-                Together, they build plans that collapse beautifully. Rafts drift where they shouldn’t. Maps don’t stay honest. And somewhere between bad decisions and better intentions, something real begins to form.
-                
-                This is a whimsical fantasy adventure series built on humor, movement, and character-driven storytelling.</p>
-            </div>
-        </section>
-
-        <section id="read" class="fade section-dark">
-            <div class="container">
-                <h2>The Rambunctious River</h2>
-                <p><strong>This is where it starts going wrong.</strong></p>
-                <p><em>You stepped on. That’s enough.</em></p>
-                <p>The river didn’t wait.</p>
-                <p>It decided.</p>
-                <p>A broken pump. A bad decision. A splash of whiskey where it definitely doesn’t belong. And then something shifts. The water listens. The current corrects. The quiet stops behaving like quiet.</p>
-                <div class="btn-group">
-                    <a href="/read" class="btn">Read the Full Chapter</a>
-                    <p style="margin-top: 10px;">Book One arrives Summer 2026.</p>
+                <div class="split-row">
+                    <div class="fade">
+                        <h2>The Plan is the Problem</h2>
+                        <p>The town pump stopped pumping. Buddy Bootz decided this was her problem to fix. <strong>It was not her problem to fix.</strong></p>
+                        <p>Sir Drinks-A'Lot had a working plan, a wrench, and a deeply reasonable objection to everything that happened next. The river had other ideas.</p>
+                        <p>Book One is a civic disaster in progress, two people who should not have left the dock, and a water supply that has decided to express itself.</p>
+                    </div>
+                    <div class="fade">
+                        <img src="buddy-sir-pump-chaos.png" alt="Pump Chaos" class="img-shadow">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="signup" class="section-light">
+        <section class="section-dark">
             <div class="container">
-                <h2 class="fade">Get Chapter One the day it drops.</h2>
-                <p class="fade">One email when the book is ready to buy. That's the whole offer.</p>
-                <form class="fade" id="emailForm" action="https://formspree.io/f/xdapyaar" method="POST" style="margin-top: 40px; display: flex; flex-direction: column; align-items: center;">    
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required aria-label="Email address">    
+                <h2 class="fade">"I am fixing it into a different problem."</h2>
+                <div class="excerpt-box fade">
+                    <p>Buddy Bootz solved most problems the way other people stepped over puddles: by putting one boot squarely in the middle of them.</p>
+                    <p>“You’re not fixing it, Buddy,” Sir said, watching another bolt vanish into the froth of the Rambunctious River. “You’re just making the breaking more expensive.”</p>
+                    <p>Buddy wiped a smear of axle grease across her forehead. “It’s a process, Sir. Progress is rarely tidy.”</p>
+                    <p>“Progress involves a result,” Sir countered. “This is just enthusiastic disassembly.”</p>
+                    <p><strong>“I am fixing it into a different problem,”</strong> Buddy insisted, and then the river decided to join the conversation.</p>
+                </div>
+                <a href="#signup" class="btn fade">Send Me the Disaster</a>
+            </div>
+        </section>
+
+        <section class="section-light">
+            <div class="container">
+                <h2 class="fade">Meet the Chaos</h2>
+                <div class="split-row" style="justify-content: center;">
+                    <div class="character-card fade">
+                        <img src="buddy.png" class="character-img" alt="Buddy">
+                        <h3>Buddy Bootz</h3>
+                        <p>Lives in a treehouse. Owns gold boots. Believes everything can be fixed with enough momentum.</p>
+                    </div>
+                    <div class="character-card fade">
+                        <img src="sir.png" class="character-img" alt="Sir">
+                        <h3>Sir Drinks-A'Lot</h3>
+                        <p>The voice of reason. Unfortunately, nobody is listening to that voice right now.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="world" style="background: url('prelude-maze.png') center/cover no-repeat; padding: 150px 20px;">
+            <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(11, 31, 38, 0.85);"></div>
+            <div class="container" style="position: relative; color: white;">
+                <h2 class="fade" style="color: var(--gold);">Explore the Rambunctious River</h2>
+                <p class="fade" style="max-width: 600px; margin: 0 auto 30px;">From Buddy's Treehouse to the marshy depths of Sir's Place, the river doesn't just flow—it conspires.</p>
+                <div class="fade">
+                    <img src="map-table.png" alt="World Map" class="img-shadow" style="max-width: 800px; border: 10px solid #222;">
+                </div>
+            </div>
+        </section>
+
+        <section class="section-light">
+            <div class="container">
+                <div class="split-row" style="align-items: flex-start;">
+                    <div class="fade" style="flex: 0.8;">
+                        <img src="authorbuddy.png" alt="Author Buddy" style="border-radius: 50%;">
+                    </div>
+                    <div class="fade" style="flex: 1.2;">
+                        <h2>About the Author</h2>
+                        <p><strong>Buddy Bootz</strong> is a pen name. The person behind it is a writer.</p>
+                        <p>She started writing as a way through difficult moments. It wasn't planned, wasn't structured. It turned into something she didn't want to let go of.</p>
+                        <p>Most of what she writes lives somewhere between humor and something heavier—because that's where real things tend to live.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="signup" class="section-dark">
+            <div class="container">
+                <h2 class="fade">Ready for the splash?</h2>
+                <p class="fade">Get Chapter One the day it drops. No noise. Just the book.</p>
+                <form action="https://formspree.io/f/xdapyaar" method="POST" class="fade" style="margin-top: 30px;">    
+                    <input type="email" name="email" placeholder="Your email address" required>    
+                    <br>
                     <button type="submit" class="btn">Send Me Chapter One</button>    
-                    <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">No spam. No noise. Just the book when it's ready.</p>
                 </form>
             </div>    
         </section>
-
-        <section class="author section-dark">
-            <div class="container">
-                <h2>About the Author</h2>
-                <p><strong>Buddy Bootz</strong> is a pen name. The person behind it is a writer.</p>
-                <p>Most of what she writes lives somewhere between humor and something heavier — because that's where real things tend to live. Things don't stay one thing for long, and neither do her stories. The chaos is real. So is the loyalty underneath it.</p>
-                <p>She started writing as a way through difficult moments. It wasn't planned, wasn't structured. It turned into something she didn't want to let go of.</p>
-                <p><em>The Adventures of Buddy Bootz & Sir Drinks-A'Lot</em> came out of that — the same mix of mess and meaning, told through a different lens.</p>
-                <p>She's still writing. Still building. Still figuring it out as she goes, but with intention now.</p>
-            </div>
-        </section>
     </main>
 
-    <footer style="background:var(--river-main); padding:60px 20px; text-align:center; position: relative;" role="contentinfo">
-      <div class="container">
-        <p style="margin-bottom: 16px; font-size: 1rem; opacity: 0.7;">© 2026 Buddy Bootz. All rights reserved.</p>
-        <p style="font-weight:700; font-family: 'Outfit', sans-serif; color: var(--text-dark); font-size: 1.3rem; letter-spacing: -0.2px;">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</p>
-        <p style="font-size: 0.85rem; margin-top: 20px; max-width: 100%;">
-            The Adventures of Buddy Bootz & Sir Drinks-A’Lot is a humorous fantasy book series blending whimsical storytelling, character-driven adventure, and emotionally grounded narratives for adult readers.
-        </p>
-        <div style="margin-top:20px;">
-            <a href="/about" style="margin:0 10px; color:var(--text-dark); text-decoration:none;">About the Author</a> | 
-            <a href="/sitemap.xml" style="margin:0 10px; color:var(--text-dark); text-decoration:none;">Sitemap</a>
+    <footer style="background: #0B1F26; color: white; padding: 60px 20px; text-align: center; opacity: 0.9;">
+        <div class="container">
+            <img src="favicon.png" style="height: 50px; margin-bottom: 20px;" alt="">
+            <p>© 2026 Buddy Bootz. All rights reserved.</p>
         </div>
-      </div>
     </footer>
 
     <script>    
-        const faders = document.querySelectorAll('.fade');    
-        const observerOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
         const observer = new IntersectionObserver(entries => {    
             entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('show'); } });    
-        }, observerOptions);    
-        faders.forEach(el => observer.observe(el));
+        }, { threshold: 0.1 });    
+        document.querySelectorAll('.fade').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
