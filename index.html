@@ -209,6 +209,11 @@
         }
         input[type="email"]:focus { border-color: var(--gold); background: rgba(255, 255, 255, 0.8); outline: 2px solid var(--gold); }
 
+        /* Custom spacing for added blocks */
+        .clarity-block { margin-top: -20px; margin-bottom: 40px; }
+        .entry-line { margin-bottom: 10px; font-weight: 600; }
+        .urgency-line { margin-top: 10px; font-size: 0.95rem; opacity: 0.8; }
+
         @media (max-width: 850px) {
             section { padding: 80px 20px; }
             .split-row, .split-row.reverse { flex-direction: column; text-align: center; gap: 40px; }
@@ -244,16 +249,23 @@
                 </picture>
                 <h1 class="fade show">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>
                 <p class="fade show" style="font-weight:600; font-size:1.25rem; color: var(--gold);">A wildly funny, slightly dangerous, emotionally grounded fantasy series about chaos, loyalty, and the strange magic waiting in the middle of nowhere.</p>
+                
+                <section class="clarity-block fade show">
+                  <p><strong>What this is:</strong></p>
+                  <p>A chaotic, funny, slightly dangerous river adventure where nothing behaves… except their loyalty.</p>
+                </section>
+
                 <div class="btn-group fade show">
-                    <a href="/read" class="btn">Start the First Adventure (No Map Required)</a>
-                    <a href="/characters" class="btn btn-secondary" style="background:none; border:2px solid var(--gold); color:var(--gold); box-shadow:none;">Meet Buddy & Sir</a>
+                    <p class="entry-line">You don’t have to decide anything yet. Just step on.</p>
+                    <a href="/read" class="btn">Step onto the raft</a>
+                    <p class="urgency-line">The river already made its choice.</p>
                 </div>
             </div>    
         </section>
 
         <section id="intro" class="section-light">
             <div class="container">
-                <h2 class="fade">The Plan is the Problem (A Character-Driven Fantasy Story)</h2>
+                <h2 class="fade">The Plan is the Problem</h2>
                 <p class="fade">There are stories where everything goes according to plan. This is not one of them.
                 
                 Buddy Bootz lives in a treehouse above a river that behaves like it has opinions. Sir Drinks-A’Lot comes from the marsh with just enough sense to survive her ideas and just enough loyalty to follow them anyway.
@@ -266,7 +278,7 @@
 
         <section id="different" class="section-dark">
             <div class="container">
-                <h2 class="fade">What Makes This Different from Traditional Fantasy</h2>
+                <h2 class="fade">What Makes This Different</h2>
                 <p class="fade">Most fantasy asks: “What is the quest?” This one asks: “What happens when the people matter more than the plan?”</p>
                 <ul class="fade" style="list-style:none; max-width:600px; margin:0 auto; text-align:left;">
                     <li style="margin-bottom:15px;">✨ <strong>Character-driven storytelling</strong> over exposition</li>
@@ -286,7 +298,7 @@
                         <a href="/buddy-bootz" style="color:var(--river-deep); font-weight:700;">More about Buddy →</a>
                     </div>
                     <div class="split-img fade">
-                        <img src="buddy.webp" alt="Buddy Bootz" width="500" height="500" loading="lazy">
+                        <img src="buddy.png" alt="Buddy Bootz" width="500" height="500" loading="lazy">
                     </div>
                 </div>
                 <div class="split-row reverse">
@@ -296,7 +308,7 @@
                         <a href="/sir-drinks-a-lot" style="color:var(--river-deep); font-weight:700;">More about Sir →</a>
                     </div>
                     <div class="split-img fade">
-                        <img src="sir.webp" alt="Sir Drinks-A’Lot" width="500" height="500" loading="lazy">
+                        <img src="sir.png" alt="Sir Drinks-A’Lot" width="500" height="500" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -317,7 +329,9 @@
                 <h2 class="fade">Start the Story</h2>
                 <p class="fade">If you enjoy character-driven fantasy, humor with emotional weight, and stories that move: Catch up before you get pulled in.</p>
                 <div class="btn-group fade" style="margin-bottom: 40px;">
-                    <a href="/read" class="btn">Start the First Adventure (No Map Required)</a>
+                    <p class="entry-line">You don’t have to decide anything yet. Just step on.</p>
+                    <a href="/read" class="btn">Step onto the raft</a>
+                    <p class="urgency-line">The river already made its choice.</p>
                 </div>
                 <form class="fade" id="emailForm" action="https://formspree.io/f/xdapyaar" method="POST" style="display: flex; flex-direction: column; align-items: center;">    
                     <label for="email" style="margin-bottom:10px; font-weight:600;">Get notified of Book Releases:</label>
