@@ -44,10 +44,6 @@
             "@type": "Person",
             "name": "Buddy Bootz"
           },
-          "publisher": {
-            "@type": "Organization",
-            "name": "Buddy Bootz"
-          },
           "genre": ["Fantasy", "Humorous Fantasy", "Adventure"],
           "description": "A whimsical fantasy series following Buddy Bootz and Sir Drinks-A’Lot through chaotic and emotionally grounded adventures.",
           "url": "https://buddybootz.com"
@@ -242,8 +238,10 @@
     <main id="main-content" role="main">
         <section id="home" class="section-dark">
             <div class="container">    
-                <img src="hero.png" alt="Buddy Bootz and Sir Drinks-A’Lot standing by the river" width="800" height="450" loading="eager" class="fade show">
-                
+                <picture class="fade show">
+                  <source srcset="hero.webp" type="image/webp">
+                  <img src="hero.png" alt="Buddy Bootz and Sir Drinks-A’Lot standing by the river" width="800" height="450">
+                </picture>
                 <h1 class="fade show">The Adventures of Buddy Bootz & Sir Drinks-A’Lot</h1>
                 <p class="fade show" style="font-weight:600; font-size:1.25rem; color: var(--gold);">A wildly funny, slightly dangerous, emotionally grounded fantasy series about chaos, loyalty, and the strange magic waiting in the middle of nowhere.</p>
                 <div class="btn-group fade show">
@@ -262,7 +260,7 @@
                 
                 Together, they build plans that collapse beautifully. Rafts drift where they shouldn’t. Maps don’t stay honest. And somewhere between bad decisions and better intentions, something real begins to form.
                 
-                This is a whimsical, humorous fantasy adventure series built on humor, movement, and character-driven storytelling.</p>
+                This is a whimsical fantasy adventure series built on humor, movement, and character-driven storytelling.</p>
             </div>
         </section>
 
@@ -288,7 +286,7 @@
                         <a href="/buddy-bootz" style="color:var(--river-deep); font-weight:700;">More about Buddy →</a>
                     </div>
                     <div class="split-img fade">
-                        <img src="buddy.png" alt="Buddy Bootz" width="500" height="500" loading="lazy">
+                        <img src="buddy.webp" alt="Buddy Bootz" width="500" height="500" loading="lazy">
                     </div>
                 </div>
                 <div class="split-row reverse">
@@ -298,7 +296,7 @@
                         <a href="/sir-drinks-a-lot" style="color:var(--river-deep); font-weight:700;">More about Sir →</a>
                     </div>
                     <div class="split-img fade">
-                        <img src="sir.png" alt="Sir Drinks-A’Lot" width="500" height="500" loading="lazy">
+                        <img src="sir.webp" alt="Sir Drinks-A’Lot" width="500" height="500" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -319,7 +317,7 @@
                 <h2 class="fade">Start the Story</h2>
                 <p class="fade">If you enjoy character-driven fantasy, humor with emotional weight, and stories that move: Catch up before you get pulled in.</p>
                 <div class="btn-group fade" style="margin-bottom: 40px;">
-                    <a href="/read" class="btn">Take Me to the First Adventure</a>
+                    <a href="/read" class="btn">Start the First Adventure (No Map Required)</a>
                 </div>
                 <form class="fade" id="emailForm" action="https://formspree.io/f/xdapyaar" method="POST" style="display: flex; flex-direction: column; align-items: center;">    
                     <label for="email" style="margin-bottom:10px; font-weight:600;">Get notified of Book Releases:</label>
