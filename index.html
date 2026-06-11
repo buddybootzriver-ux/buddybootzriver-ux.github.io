@@ -88,46 +88,26 @@
 
         input[type="email"] { padding: 22px; border-radius: 14px; border: 2px solid #ddd; width: 100%; max-width: 450px; margin-bottom: 20px; font-size: 1.1rem; }
         
-        /* Production & Press Hub Styles */
+        /* Series Production & Press Hub Styles */
         .hub-section { background: white; padding: 80px 20px; }
         .hub-container { max-width: 1100px; margin: 0 auto; }
-        .hub-title { text-align: center; font-size: 2.5rem; font-weight: 700; margin-bottom: 60px; color: var(--text-dark); }
+        .hub-title { text-align: center; font-size: 2.5rem; font-weight: 700; margin-bottom: 40px; color: var(--text-dark); }
         
-        .tab-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-bottom: 50px; }
-        .tab-btn { 
-            padding: 14px 28px; border: 2px solid var(--river-main); background: white; color: var(--river-main); 
-            border-radius: 8px; font-weight: 700; cursor: pointer; transition: all 0.3s ease; font-size: 1rem;
-        }
-        .tab-btn.active { background: var(--river-main); color: white; }
-        .tab-btn:hover { background: var(--river-main); color: white; }
-        
-        .tab-content { display: none; }
-        .tab-content.active { display: block; animation: fadeIn 0.4s ease-in; }
-        
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        
-        .hub-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 40px; }
-        .hub-card { background: #f9f9f9; padding: 35px; border-radius: 15px; border-left: 5px solid var(--gold); }
-        .hub-card h3 { color: var(--river-deep); margin-bottom: 12px; }
-        .status-badge { display: inline-block; background: var(--gold); color: var(--text-dark); padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; margin-bottom: 15px; }
-        .hub-card p { color: var(--text-body); line-height: 1.6; }
-        
-        .hook-box { background: linear-gradient(135deg, var(--river-main), var(--river-deep)); color: white; padding: 40px; border-radius: 15px; margin-bottom: 30px; }
-        .hook-box h3 { color: var(--gold); }
-        .hook-box p { margin-bottom: 15px; }
-        
-        .review-box { background: white; padding: 30px; border-radius: 12px; border: 2px solid var(--river-light); margin-bottom: 20px; }
+        .review-box { background: #f9f9f9; padding: 35px; border-radius: 15px; border-left: 5px solid var(--gold); margin-bottom: 30px; }
         .review-stars { color: var(--gold); font-size: 1.2rem; margin-bottom: 10px; }
-        .review-text { font-style: italic; color: var(--text-body); margin-bottom: 10px; }
-        .review-source { font-weight: 700; color: var(--river-main); font-size: 0.9rem; }
+        .review-text { font-style: italic; color: var(--text-body); font-size: 1.1rem; margin-bottom: 15px; line-height: 1.6; }
+        .review-source { font-weight: 700; color: var(--river-main); font-size: 1rem; }
         
+        /* Form Status Styles */
+        #form-status { margin-top: 20px; font-weight: 600; padding: 15px; border-radius: 10px; display: none; }
+        #form-status.success { display: block; background: #d4edda; color: #155724; }
+        #form-status.error { display: block; background: #f8d7da; color: #721c24; }
+
         @media (max-width: 900px) {
             .container { text-align: center; }
             .hero-grid { grid-template-columns: 1fr; text-align: center; }
             .book-cover { max-width: 350px; margin: 0 auto 40px; }
             section { padding: 70px 20px; }
-            .tab-buttons { flex-direction: column; }
-            .tab-btn { width: 100%; }
             .hub-title { font-size: 1.8rem; }
         }
     </style>
@@ -240,10 +220,11 @@
                     <h2 class="fade">Don't Get Swept Away.</h2>
                     <p class="fade" style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.9;">Join the inner circle to receive <strong>The Opening Act</strong> and stay updated on the Summer 2026 launch.</p>
                     
-                    <form action="https://formspree.io/f/xdapyaar" method="POST" class="fade">    
+                    <form id="contact-form" action="https://formspree.io/f/xdapyaar" method="POST" class="fade">    
                         <input type="email" name="email" placeholder="Enter your email address" autocomplete="email" required 
                                style="width: 100%; padding: 20px; border-radius: 10px; border: none; margin-bottom: 20px; font-size: 1.1rem;">    
-                        <button type="submit" class="btn" style="width: 100%;">Send Me Chapter One</button>
+                        <button id="submit-btn" type="submit" class="btn" style="width: 100%;">Send Me Chapter One</button>
+                        <div id="form-status"></div>
                         <p style="margin-top: 15px; font-size: 0.8rem; opacity: 0.5;">No spam. Just the story. Unsubscribe anytime.</p>
                     </form>
                 </div>
@@ -253,68 +234,18 @@
         <!-- Series Production & Press Hub -->
         <section class="hub-section">
             <div class="hub-container">
-                <h2 class="hub-title fade">Series Production & Press Hub</h2>
+                <h2 class="hub-title fade">Series Reviews & ARC Hub</h2>
                 
-                <div class="tab-buttons">
-                    <button class="tab-btn active" onclick="switchTab('editor')">Editor Path</button>
-                    <button class="tab-btn" onclick="switchTab('marketer')">Marketer Path</button>
-                    <button class="tab-btn" onclick="switchTab('publisher')">Publisher Path</button>
-                    <button class="tab-btn" onclick="switchTab('reviews')">Reviews & ARC</button>
+                <div class="review-box fade">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"The physical comedy of Sir Drinks-A'Lot stumbling around with his flask against Buddy's unwavering, chaotic confidence makes the layout fly. A brilliant balance of humor and heart."</p>
+                    <p class="review-source">— ARC Evaluation</p>
                 </div>
                 
-                <!-- Editor Path Tab -->
-                <div id="editor" class="tab-content active">
-                    <div class="hub-cards">
-                        <div class="hub-card fade">
-                            <span class="status-badge">Ruthless Revision</span>
-                            <h3>Book One: The Rambunctious River</h3>
-                            <p>Manuscript tracking through strict line edits. Ensuring rapid pacing, expressively comedic banter, and distinct scene blocks while eliminating abstract narrative drift.</p>
-                        </div>
-                        <div class="hub-card fade">
-                            <span class="status-badge">Developmental Blocking</span>
-                            <h3>Book Two: Welcome to the Maze</h3>
-                            <p>Outlining the landscape conversion where stone walls emerge directly from glass-like water currents.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Marketer Path Tab -->
-                <div id="marketer" class="tab-content">
-                    <div class="hook-box fade">
-                        <h3>Core Alignment</h3>
-                        <p><strong>Target:</strong> Adult humorous-fantasy demographic</p>
-                        <p><strong>Positioning:</strong> Structured for dedicated fans of Terry Pratchett's satire and Douglas Adams' situational absurdity.</p>
-                    </div>
-                    <div class="hub-card fade">
-                        <h3>Visual Continuity</h3>
-                        <p>Maintaining strict asset tracking to eliminate clothing or body drift in media files. Asset library includes the short-form Meltdown Animation sequence.</p>
-                    </div>
-                </div>
-                
-                <!-- Publisher Path Tab -->
-                <div id="publisher" class="tab-content">
-                    <div class="hub-card fade">
-                        <h3>Format Guidelines</h3>
-                        <p>Designed as a short story cycle rather than a chapter novel, with tight single-day adventure formats limited to ~5,000 words per story run.</p>
-                    </div>
-                    <div class="hub-card fade">
-                        <h3>Distribution Targets</h3>
-                        <p>Active traditional publishing tracks and marketplace query positioning locked in for the Summer 2026 window. Global text assets protected under active tracking.</p>
-                    </div>
-                </div>
-                
-                <!-- Reviews & ARC Tab -->
-                <div id="reviews" class="tab-content">
-                    <div class="review-box fade">
-                        <div class="review-stars">★★★★★</div>
-                        <p class="review-text">"The physical comedy of Sir Drinks-A'Lot stumbling around with his flask against Buddy's unwavering, chaotic confidence makes the layout fly. A brilliant balance of humor and heart."</p>
-                        <p class="review-source">— ARC Evaluation</p>
-                    </div>
-                    <div class="review-box fade">
-                        <div class="review-stars">★★★★★</div>
-                        <p class="review-text">"The environmental reactivity of the Rambunctious River acting as an active witness to their arguments sets a refreshing tone for modern comedic fantasy."</p>
-                        <p class="review-source">— Industry Scan</p>
-                    </div>
+                <div class="review-box fade">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"The environmental reactivity of the Rambunctious River acting as an active witness to their arguments sets a refreshing tone for modern comedic fantasy."</p>
+                    <p class="review-source">— Industry Scan</p>
                 </div>
             </div>
         </section>
@@ -338,30 +269,50 @@
         
         document.querySelectorAll('.fade').forEach(el => observer.observe(el));
         
-        // Tab switching function for Production & Press Hub
-        function switchTab(tabName) {
-            // Hide all tab contents
-            const tabContents = document.querySelectorAll('.tab-content');
-            tabContents.forEach(content => content.classList.remove('active'));
+        // Formspree AJAX Submission
+        const form = document.getElementById("contact-form");
+        const status = document.getElementById("form-status");
+        const submitBtn = document.getElementById("submit-btn");
+
+        async function handleSubmit(event) {
+            event.preventDefault();
+            const data = new FormData(event.target);
             
-            // Remove active class from all buttons
-            const tabButtons = document.querySelectorAll('.tab-btn');
-            tabButtons.forEach(btn => btn.classList.remove('active'));
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Sending...";
             
-            // Show selected tab content
-            document.getElementById(tabName).classList.add('active');
-            
-            // Add active class to clicked button
-            event.target.classList.add('active');
-            
-            // Trigger fade-in animation for new content
-            const newContent = document.getElementById(tabName);
-            const fadeElements = newContent.querySelectorAll('.fade');
-            fadeElements.forEach(el => {
-                el.classList.remove('show');
-                setTimeout(() => el.classList.add('show'), 50);
+            fetch(event.target.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    status.innerHTML = "Success! Check your inbox for Chapter One.";
+                    status.className = "success";
+                    form.reset();
+                    submitBtn.style.display = "none";
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                        } else {
+                            status.innerHTML = "Oops! There was a problem submitting your form.";
+                        }
+                        status.className = "error";
+                        submitBtn.disabled = false;
+                        submitBtn.innerText = "Send Me Chapter One";
+                    })
+                }
+            }).catch(error => {
+                status.innerHTML = "Oops! There was a problem submitting your form.";
+                status.className = "error";
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Send Me Chapter One";
             });
         }
+        form.addEventListener("submit", handleSubmit);
     </script>
 <script src="https://chatonbo.com/widget/chatonbo-widget.js" data-bot-id="30bdd513-0123-4809-a3ae-569a66afc0bf"></script>
 </body>
