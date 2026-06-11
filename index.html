@@ -10,7 +10,7 @@
     </script>    
     <meta charset="UTF-8">    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <meta name="description" content="A witty, grounded fantasy series for adults. Follow the chaos of Buddy Bootz and Sir Drinks-A'Lot as they navigate a river that has finally had enough.">
+    <meta name="description" content="Enter the Rambunctious River — where Buddy Bootz and Sir Drinks-A’Lot live in chaos, comedy, and adventure.">
     <title>Buddy Bootz & Sir Drinks-A'Lot | Grounded Humorous Fantasy</title>
     
     <link rel="canonical" href="https://buddybootz.com/" />
@@ -28,12 +28,30 @@
             --text-body: #2A4A55;
             --nav-bg: rgba(255, 255, 255, 0.98);
             --shadow-strong: 0 20px 40px rgba(0,0,0,0.15);
+            --accent-pink: #ff4d6d;
         }
 
         * { margin:0; padding:0; box-sizing:border-box; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background: var(--river-light); color: var(--text-dark); line-height: 1.7; -webkit-font-smoothing: antialiased; padding-top: 80px; }
+        body { font-family: 'Inter', sans-serif; background: var(--river-light); color: var(--text-dark); line-height: 1.7; -webkit-font-smoothing: antialiased; padding-top: 80px; position: relative; }
         
+        /* RIVER BACKGROUND FEEL */
+        .river-flow {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 30%, rgba(63, 167, 214, 0.1), transparent);
+            animation: drift 10s infinite alternate ease-in-out;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        @keyframes drift {
+            from { transform: translateY(0px); }
+            to { transform: translateY(20px); }
+        }
+
         .container { 
             max-width: 1000px; 
             margin: 0 auto; 
@@ -60,6 +78,9 @@
         }
         .btn:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(242, 201, 76, 0.5); background: var(--gold-soft); }
         .btn-nav { padding: 10px 20px; font-size: 0.9rem; }
+        
+        .portal { background: var(--accent-pink); color: white; box-shadow: 0 10px 25px rgba(255, 77, 109, 0.4); }
+        .portal:hover { background: #ff758f; box-shadow: 0 15px 30px rgba(255, 77, 109, 0.5); }
 
         .section-dark { background: linear-gradient(135deg, var(--river-deep), var(--river-main)); color: white; }
         .section-dark h1, .section-dark h2 { color: var(--gold); }
@@ -67,6 +88,28 @@
 
         .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; text-align: left; }
         .book-cover { width: 100%; border-radius: 10px; box-shadow: var(--shadow-strong); border: 1px solid rgba(255,255,255,0.1); }
+
+        .node { 
+            margin: 20px auto; 
+            padding: 25px; 
+            background: rgba(255,255,255,0.08); 
+            border-radius: 16px; 
+            transition: all 0.3s ease; 
+            border: 1px solid rgba(255,255,255,0.1);
+            font-weight: 600;
+            color: white;
+            text-align: center;
+            max-width: 800px;
+        }
+        .node:hover { transform: translateY(-5px); background: rgba(255,255,255,0.15); border-color: var(--gold); }
+        
+        .event-node {
+            background: white;
+            color: var(--text-dark);
+            border-left: 5px solid var(--river-main);
+            text-align: left;
+            margin: 15px auto;
+        }
 
         .split-row { display: flex; align-items: center; gap: 60px; text-align: left; flex-wrap: wrap; margin-top: 40px; }
         .split-row > div { flex: 1; min-width: 320px; }
@@ -77,7 +120,8 @@
         .excerpt-box p { margin-bottom: 1.4rem; color: white; font-size: 1.15rem; font-family: 'Crimson Pro', serif; }
 
         .character-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
-        .card { background: white; padding: 40px; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; }
+        .card { background: white; padding: 40px; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; transition: 0.3s; }
+        .card:hover { transform: scale(1.02); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
         .card-img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin-bottom: 25px; border: 6px solid var(--river-light); }
 
         .world-section { position: relative; }
@@ -124,6 +168,8 @@
 </head>
 <body>
 
+    <div class="river-flow"></div>
+
     <nav>
         <div class="container nav-content">
             <div style="font-family:'Outfit',sans-serif; font-size: 1.5rem; font-weight: 800; display:flex; align-items:center;">
@@ -131,9 +177,9 @@
             </div>
             <div class="nav-links">
                 <a href="#story">The Mess</a>
-                <a href="#world">The Map</a>
+                <a href="#currents">The Currents</a>
                 <a href="#author">The Author</a>
-                <a href="#signup" class="btn btn-nav">Read the Prologue</a>
+                <a href="#signup" class="btn btn-nav portal">Enter the River</a>
             </div>
         </div>
     </nav>
@@ -148,10 +194,10 @@
                         A witty, grounded fantasy for those who know that "fixing it" is usually just the opening act of a disaster.
                     </p>
                     <p style="font-style: italic; opacity: 0.9; margin-bottom: 30px;">
-                        "For readers who appreciate the sharp wit of Terry Pratchett and the heart of grounded, character-driven chaos."
+                        "Enter the Rambunctious River — where Buddy Bootz and Sir Drinks-A’Lot live in chaos, comedy, and adventure."
                     </p>
                     <div>
-                        <a href="#signup" class="btn">Read Chapter One Now</a>
+                        <a href="#signup" class="btn portal">Get Chapter One Now</a>
                         <p style="margin-top: 20px; font-size: 0.85rem; opacity: 0.7;">Book One Arriving Summer 2026. Join the early-access list.</p>
                     </div>
                 </div>
@@ -159,6 +205,19 @@
                     <img src="bootz_cover.png" alt="Book One: The Rambunctious River" class="book-cover">
                 </div>
             </div>    
+        </section>
+
+        <!-- New Navigation Currents Section -->
+        <section id="currents" class="section-dark" style="background: #1b2a3a; border-top: 1px solid rgba(255,255,255,0.1);">
+            <div class="container" style="text-align: center;">
+                <h2 class="fade">Choose Your Current</h2>
+                <div class="fade">
+                    <div class="node">🏠 Home Base — Where chaos resets</div>
+                    <div class="node">🌿 Mayhem Marsh — Sir’s territory</div>
+                    <div class="node">🎭 Buddy’s Chaos Deck — unpredictable events</div>
+                    <div class="node">📖 Story Archive — collected adventures</div>
+                </div>
+            </div>
         </section>
 
         <section id="story" class="section-light" style="background: #fff;">
@@ -174,6 +233,19 @@
                     <div class="img-wrap fade">
                         <img src="buddy-sir-pump-chaos.png" alt="Chaos at the Treehouse Pump">
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic River Events Section -->
+        <section class="section-light" style="background: #f8fbfc;">
+            <div class="container" style="text-align: center;">
+                <h2 class="fade" style="color: var(--river-deep);">River Events</h2>
+                <p class="fade" style="margin-bottom: 30px;">Live updates from the Rambunctious River Universe</p>
+                <div class="fade">
+                    <div class="node event-node">🦆 A duck has stolen the navigation system.</div>
+                    <div class="node event-node">🛶 Sir is negotiating with a suspicious canoe.</div>
+                    <div class="node event-node">📅 Buddy has renamed Tuesday.</div>
                 </div>
             </div>
         </section>
@@ -202,12 +274,14 @@
                     <div class="card fade">
                         <img src="buddy.png" class="card-img" alt="Buddy Bootz">
                         <h3>Buddy Bootz</h3>
-                        <p>Playful, mischievous, and brave. She operates on the firm belief that if you move fast enough, the laws of cause and effect might simply lose track of you. Her mission? To sprinkle joy and unexpected giggles every step of the way.</p>
+                        <p>Chaos magnet. Glamorous disaster. Emotional spark. She operates on the firm belief that if you move fast enough, the laws of cause and effect might simply lose track of you.</p>
+                        <p style="font-style: italic; margin-top: 10px; color: var(--river-main);">“I didn’t mean to do that… probably.”</p>
                     </div>
                     <div class="card fade">
                         <img src="sir.png" class="card-img" alt="Sir Drinks-A'Lot">
                         <h3>Sir Drinks-A'Lot</h3>
-                        <p>A courageous strategist who carries the heavy burden of being right. He provides the tools, the steady hand, and the valiant guardianship required to survive Buddy's momentum. He saves her physically; she saves him emotionally.</p>
+                        <p>Grounded protector. Flask holder. Chaos interpreter. A courageous strategist who provides the tools, the steady hand, and the valiant guardianship required to survive Buddy's momentum.</p>
+                        <p style="font-style: italic; margin-top: 10px; color: var(--river-main);">“This is fine. I have seen worse rivers.”</p>
                     </div>
                 </div>
             </div>
@@ -221,7 +295,7 @@
                 <div class="fade">
                     <img src="map-table.png" alt="The River Map" style="max-width: 100%; border-radius: 15px; box-shadow: 0 40px 80px rgba(0,0,0,0.6); margin-bottom: 40px;">
                 </div>
-                <a href="#signup" class="btn">Get the Digital Map</a>
+                <a href="#signup" class="btn portal">Get the Digital Map</a>
             </div>
         </section>
 
@@ -234,7 +308,7 @@
                     <form id="contact-form" action="https://formspree.io/f/xdapyaar" method="POST" class="fade">    
                         <input type="email" name="email" placeholder="Enter your email address" autocomplete="email" required 
                                style="width: 100%; padding: 20px; border-radius: 10px; border: none; margin-bottom: 20px; font-size: 1.1rem;">    
-                        <button id="submit-btn" type="submit" class="btn" style="width: 100%;">Send Me Chapter One</button>
+                        <button id="submit-btn" type="submit" class="btn portal" style="width: 100%;">Send Me Chapter One</button>
                         <div id="form-status"></div>
                         <p style="margin-top: 15px; font-size: 0.8rem; opacity: 0.5;">No spam. Just the story. Unsubscribe anytime.</p>
                     </form>
@@ -290,7 +364,7 @@
 
     <footer style="background: #050c0e; color: white; padding: 40px 20px; text-align: center;">
         <div class="container">
-            <p>© 2026 Buddy Bootz · Humorous Fantasy for Adults</p>
+            <p>© 2026 Rambunctious River Universe · All Chaos Reserved</p>
         </div>
     </footer>
 
