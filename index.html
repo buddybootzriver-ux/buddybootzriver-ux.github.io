@@ -44,10 +44,12 @@
         section { padding: 90px 0; position: relative; }
         
         h1, h2, h3, h4 { font-family: 'DM Serif Display', serif; font-weight: 400; line-height: 1.1; color: var(--river-deep); }
+        h1 { font-size: clamp(3rem, 6vw, 4.5rem); margin-bottom: 24px; text-align: center; letter-spacing: -1px; }
         h2 { font-size: clamp(2.2rem, 4.5vw, 3.2rem); margin-bottom: 16px; text-align: center; letter-spacing: -0.5px; }
-        h3 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 12px; }
+        h3 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); margin-bottom: 12px; }
 
-        p { font-size: 1.22rem; margin-bottom: 1.5rem; color: var(--text-body); }
+        p { font-size: 1.25rem; margin-bottom: 1.5rem; color: var(--text-body); }
+        .subtext-block p { font-size: 1.35rem; color: var(--text-dark); margin-bottom: 1rem; }
 
         .section-label {
             font-family: 'Outfit', sans-serif;
@@ -90,12 +92,13 @@
 
         /* 1. HERO SECTION */
         .hero { background: linear-gradient(180deg, var(--river-light) 0%, var(--bg-paper) 100%); text-align: center; padding: 130px 0 90px; border-bottom: 2px dashed var(--river-main); }
-        .hero-img { width: 100%; max-width: 900px; border-radius: 20px; box-shadow: 0 25px 55px rgba(31,78,95,0.18); margin-top: 40px; border: 4px solid var(--white); }
+        .hero-img { width: 100%; max-width: 900px; border-radius: 20px; box-shadow: 0 25px 55px rgba(31,78,95,0.18); margin-top: 45px; border: 4px solid var(--white); }
         .title-img { max-width: 420px; width: 100%; height: auto; margin-bottom: 24px; }
+        .hero-text-container { max-width: 720px; margin: 0 auto 30px; }
 
         /* 2. BUDDY & SIR SECTION */
         .duo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 20px; }
-        .char-card { background: var(--white); padding: 24px; border-radius: 20px; border: 1px solid rgba(31,78,95,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.02); transition: transform 0.3s ease; }
+        .char-card { background: var(--white); padding: 32px; border-radius: 20px; border: 1px solid rgba(31,78,95,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.02); transition: transform 0.3s ease; }
         .char-card:hover { transform: translateY(-4px); }
         .char-img { width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 24px rgba(0,0,0,0.05); border: 4px solid white; margin-bottom: 24px; display: block; }
         .char-tag { font-family: 'Outfit', sans-serif; font-size: 0.7rem; font-weight: 700; color: var(--river-main); text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 6px; }
@@ -110,7 +113,7 @@
         .artwork-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 20px; }
         .art-item { background: var(--white); padding: 20px; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.04); text-align: center; border: 1px solid rgba(0,0,0,0.03); }
         .art-item img { width: 100%; height: auto; border-radius: 10px; margin-bottom: 16px; }
-        .art-item p { font-size: 1.1rem; font-style: italic; margin-bottom: 0; color: var(--text-dark); }
+        .art-item p { font-size: 1.15rem; font-style: normal; margin-bottom: 0; color: var(--text-body); }
 
         /* 5. BOOK ONE SECTION */
         .book-section { background: var(--river-light); padding: 90px 0; border-top: 1px solid rgba(0,0,0,0.05); }
@@ -119,7 +122,7 @@
         .book-details h3 { font-size: 2.2rem; margin-bottom: 16px; }
         .pullquote { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 1.45rem; color: var(--river-deep); border-left: 4px solid var(--gold); padding-left: 20px; margin: 24px 0; line-height: 1.4; }
 
-        /* 6. PRODUCTION & PRESS HUB MODULE */
+        /* 6. FROM THE RIVERBANK (UPDATES) MODULE */
         .hub-section { background: var(--white); border-top: 1px solid rgba(0,0,0,0.05); border-bottom: 1px solid rgba(0,0,0,0.05); }
         .tab-container { max-width: 850px; margin: 40px auto 0; }
         .tab-nav { display: flex; justify-content: center; gap: 12px; margin-bottom: 35px; border-bottom: 2px solid rgba(0,0,0,0.05); padding-bottom: 16px; flex-wrap: wrap; }
@@ -141,7 +144,7 @@
         .review-quote::before { content: '“'; position: absolute; left: 0; top: -5px; font-size: 2.5rem; color: var(--gold); font-family: serif; line-height: 1; }
         .review-meta { font-family: 'Outfit', sans-serif; font-size: 0.78rem; font-weight: 700; color: var(--river-main); text-transform: uppercase; letter-spacing: 1px; }
 
-        /* 7. FORMSPREE NEWSLETTER SECTION */
+        /* 7. EMAIL SIGNUP SECTION */
         .newsletter-section { text-align: center; background: var(--river-deep); color: var(--white); padding: 90px 0; }
         .newsletter-section h2 { color: var(--gold); }
         .newsletter-section p { color: rgba(255,255,255,0.85); }
@@ -151,6 +154,7 @@
         input[type="email"]:focus { outline: none; border-color: var(--gold); background: rgba(255,255,255,0.15); }
         input[type="email"]::placeholder { color: rgba(255,255,255,0.5); }
         .form-group .btn { white-space: nowrap; }
+        .form-subtext { font-family: 'Outfit', sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold-soft); margin-top: 16px; display: block; }
 
         /* 8. FOOTER */
         footer { background: #071418; padding: 60px 0; text-align: center; color: rgba(255,255,255,0.4); font-size: 0.95rem; border-top: 4px solid var(--river-deep); }
@@ -176,11 +180,19 @@
     <header role="banner">
         <section class="hero">
             <div class="container">
-                <img src="title.jpg" class="title-img" alt="The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot">
-                <p style="max-width: 680px; margin: 0 auto 30px;">A humor-forward fantasy adventure series where chaos shows up first and the plan never does. No map. No rules. Just two travelers who probably shouldn't have left the dock.</p>
-                <a href="#newsletter" class="btn">Join the Advanced Reader List</a>
+                <img src="title.jpg" class="title-img" alt="The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot Layout Element">
+                <h1>You found Buddy Bootz.</h1>
+                <div class="hero-text-container">
+                    <p>The Adventures of Buddy Bootz &amp; Sir Drinks-A’Lot is a humorous fantasy book series about friendship, chaos, and a world that refuses to behave.</p>
+                    <div class="subtext-block">
+                        <p>Buddy Bootz tries to keep things together.</p>
+                        <p>Sir Drinks-A’Lot tries to keep things moving.</p>
+                        <p style="font-style: italic; color: var(--river-main); margin-top: 15px;">The river has its own opinions.</p>
+                    </div>
+                </div>
+                <a href="#newsletter" class="btn">Send me the next thing</a>
                 <div>
-                    <img src="bookcover.jpg" class="hero-img" alt="The Rambunctious River Series Cover Image">
+                    <img src="bookcover.jpg" class="hero-img" alt="The Rambunctious River Series Cover Image Visual Asset">
                 </div>
             </div>
         </section>
@@ -189,38 +201,53 @@
     <main id="main-content">
         <section id="characters">
             <div class="container">
-                <span class="section-label">The Wanderers</span>
-                <h2>Meet the Crew</h2>
+                <span class="section-label">The Companions</span>
+                <h2>Two Friends. One Uncooperative World.</h2>
                 <div class="divider"></div>
                 
+                <div class="hero-text-container" style="text-align: center;">
+                    <p>Buddy Bootz and Sir Drinks-A’Lot do not exactly go on adventures.</p>
+                    <p>They end up in them.</p>
+                </div>
+
                 <div class="duo-grid">
                     <div class="char-card">
                         <img src="title.jpg" class="char-img" alt="Buddy Bootz portrait visual representation">
-                        <span class="char-tag">The Trouble Magnet</span>
+                        <span class="char-tag">The Catalyst</span>
                         <h3>Buddy Bootz</h3>
-                        <p>Curvy, bold, and soft-built, she fills the room with pure mischief. Known for her glitter-brown boots, perfectly tailored red dress, and a crown set at a reckless angle. She uses intentional chaos as a survival skill.</p>
+                        <p>Buddy brings heart, stubborn optimism, and the belief that things can be fixed.</p>
                     </div>
                     <div class="char-card">
                         <img src="buddy-sir-pump-chaos.jpg" class="char-img" alt="Sir Drinks-A'Lot portrait visual representation">
-                        <span class="char-tag">The Loyal Anchor</span>
+                        <span class="char-tag">The Shield</span>
                         <h3>Sir Drinks-A'Lot</h3>
-                        <p>Ruggedly handsome with a messy hero charm, he carries a sword, a flask, and deep protective instincts. Clumsy yet valiant, he stems from a background as a mechanic-tinkerer in Mayhem Marsh. He serves as Buddy's physical shield.</p>
+                        <p>Sir brings confidence, direction, and the strange certainty that everything is already unfolding correctly.</p>
                     </div>
+                </div>
+
+                <div class="hero-text-container" style="text-align: center; margin-top: 40px; padding: 20px; background: var(--white); border-radius: 16px; border: 1px solid rgba(0,0,0,0.03);">
+                    <p style="margin-bottom: 0; font-weight: 600; color: var(--text-dark);">Together, they form a working system. Not stable. Not predictable. But working.</p>
                 </div>
             </div>
         </section>
 
         <section id="world" class="world-section">
             <div class="container">
-                <span class="section-label">The Environmental Landscape</span>
-                <h2>Explore the Kingdom</h2>
+                <span class="section-label">The Environment</span>
+                <h2>A World That Refuses to Stay Still</h2>
                 <div class="divider"></div>
+                
+                <div style="text-align: center; max-width: 680px; margin: 0 auto 50px;">
+                    <p>Their world is small enough to walk across, but strange enough to never walk it the same way twice.</p>
+                </div>
 
                 <div class="world-grid">
                     <div>
-                        <span class="char-tag">Permanent Mythic Spine</span>
-                        <h3>The Rambunctious River</h3>
-                        <p>A wild magical river that glows subtly and behaves in completely unexpected ways. It acts as both a pathway and an unpredictable companion-witness—observing, remembering, and reacting entirely to bad decisions, arguments, and laughter.</p>
+                        <h3 style="color: var(--river-main);">The Foundational Infrastructure</h3>
+                        <p>A treehouse that remembers everything.</p>
+                        <p>A cabin that pretends it is calmer than it is.</p>
+                        <p>A river that refuses to behave like scenery.</p>
+                        <p>A map that is never fully finished.</p>
                     </div>
                     <div>
                         <img src="buddy-sir-book-opening-river.jpg" class="location-img" alt="Art asset showcasing the flowing magical river environment">
@@ -229,9 +256,10 @@
 
                 <div class="world-grid" style="direction: rtl;">
                     <div style="direction: ltr;">
-                        <span class="char-tag">Hidden Water Borders</span>
-                        <h3>The Hedge Maze</h3>
-                        <p>An impossible, towering labyrinth of living greenery emerging straight from glass-smooth water coordinates downstream. The corridors shift silently, offering the unnerving courtesy of showing travelers exactly enough to invite them inside and absolutely nothing more.</p>
+                        <h3 style="color: var(--river-deep);">The Water Coordinates</h3>
+                        <p>And somewhere beyond all of it… the Maze.</p>
+                        <p style="font-style: italic;">No one agrees on what it is.</p>
+                        <p style="font-weight: 700;">Not even the Maze.</p>
                     </div>
                     <div>
                         <img src="maze.jpg" class="location-img" alt="Art asset displaying the towering greenery of the hedge maze maze">
@@ -242,38 +270,49 @@
 
         <section id="gallery">
             <div class="container">
-                <span class="section-label">Production Library</span>
-                <h2>Featured Series Assets</h2>
+                <span class="section-label">The Curated Archive</span>
+                <h2>Things That Probably Shouldn’t Be Alive (But Are)</h2>
                 <div class="divider"></div>
+
+                <div style="text-align: center; max-width: 640px; margin: 0 auto 40px;">
+                    <p>Not everything in this world follows rules.</p>
+                    <p style="font-style: italic; font-weight: 600; color: var(--river-main);">Some things follow moods.</p>
+                </div>
 
                 <div class="artwork-grid">
                     <div class="art-item">
-                        <img src="frog-king.jpg" alt="The Royal Amphibian Ruler">
-                        <p>The Frog King inspecting the travelers' credentials.</p>
+                        <img src="frog-king.jpg" alt="The Royal Amphibian Ruler Asset">
+                        <p>A frog king with too much dignity for the situation.</p>
                     </div>
                     <div class="art-item">
-                        <img src="buddy-sir-back-cover-gerald.jpg" alt="Gerald the mechanical engineer squirrel">
-                        <p>Gerald calculating an optimization loop strategy.</p>
+                        <img src="buddy-sir-back-cover-gerald.jpg" alt="Gerald the mechanical engineer squirrel asset">
+                        <p>A moss-covered guardian who rarely explains himself.</p>
                     </div>
                     <div class="art-item">
-                        <img src="frog-chaos.jpg" alt="Sticky swamp amphibians triggering a chaotic scene layout">
-                        <p>Navigating the unexpected boundaries of Sticky Frog Forest.</p>
+                        <img src="frog-chaos.jpg" alt="Sticky swamp amphibians triggering a chaotic scene layout asset">
+                        <p>A raft that has developed opinions about teamwork.</p>
                     </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 40px;">
+                    <p style="font-family: 'DM Serif Display', serif; font-size: 1.35rem; color: var(--river-deep);">These are not background details. They are part of the story.</p>
                 </div>
             </div>
         </section>
         <section id="book-one" class="book-section">
             <div class="container book-layout">
                 <div>
-                    <img src="buddy-sir-story-page-river-creature.jpg" class="location-img" alt="The mechanical water pump incident at Buddy's treehouse platform">
+                    <img src="buddy-sir-story-page-river-creature.jpg" class="location-img" alt="The mechanical water pump incident volume one visual framework">
                 </div>
                 <div class="book-details">
-                    <span class="section-label" style="text-align: left;">Volume One Cycle</span>
-                    <h3>The Rambunctious River</h3>
-                    <p>The water pump bolted to the outside of Buddy Bootz's treehouse was doing its best to come apart in public. The little metal box attached to the side of the platform rattled violently as if the entire concept of plumbing had personally insulted it.</p>
-                    <p>Pipes clanked. A loose valve vibrated. Buddy Bootz stood on the very top step of a tall ladder, working a screwdriver into a stubborn seam when the pump coughed and released a mechanical BURP—releasing an environmental landscape of pure, unhinged magic.</p>
+                    <span class="section-label" style="text-align: left;">Volume One</span>
+                    <h2>Book One: The Beginning of Something Questionable</h2>
+                    <p>It starts, as most bad decisions do, near the river.</p>
+                    <p>Buddy Bootz and Sir Drinks-A’Lot are not searching for a legend.</p>
+                    <p>They are just trying to get through the day.</p>
+                    <p style="font-style: italic; font-weight: 700; color: var(--river-deep);">Unfortunately, the day has other plans.</p>
                     <div class="pullquote">
-                        "And this is where the real adventure begins. The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot."
+                        The Adventures of Buddy Bootz &amp; Sir Drinks-A’Lot is a humorous fantasy series built on friendship, chaos, and a world that reacts to curiosity.
                     </div>
                 </div>
             </div>
@@ -281,48 +320,53 @@
 
         <section id="hub" class="hub-section">
             <div class="container">
-                <span class="section-label">Series Lifecycle</span>
-                <h2>Production &amp; Publishing Hub</h2>
+                <span class="section-label">Log Tracker</span>
+                <h2>From the Riverbank</h2>
                 <div class="divider"></div>
-                <p style="text-align: center; max-width: 640px; margin: 0 auto 30px;">Track manuscript metrics, structural guidelines, target traditional platform deployment vectors, and early reader evaluation documentation loops.</p>
+                
+                <div style="text-align: center; max-width: 640px; margin: 0 auto 30px;">
+                    <p style="font-weight: 700; color: var(--river-deep);">Small updates from the edge of the story.</p>
+                    <p>New pages. New artwork. New trouble forming quietly in the background.</p>
+                    <p style="font-style: italic; color: var(--text-body);">Nothing stays still for long. Not even this section.</p>
+                </div>
                 
                 <div class="tab-container">
                     <div class="tab-nav">
-                        <button class="tab-btn active" onclick="switchTab(event, 'editor')">Editor</button>
-                        <button class="tab-btn" onclick="switchTab(event, 'marketer')">Marketer</button>
-                        <button class="tab-btn" onclick="switchTab(event, 'publisher')">Publisher</button>
-                        <button class="tab-btn" onclick="switchTab(event, 'reviews')">Reviews</button>
+                        <button class="tab-btn active" onclick="switchTab(event, 'editor')">Production Manifest</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'marketer')">Audience Matrix</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'publisher')">Structural Benchmarks</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'reviews')">Evaluation Loop</button>
                     </div>
 
                     <div id="editor" class="tab-content active">
                         <div class="audit-card">
-                            <h4>Book One: The Rambunctious River <span class="status-badge gold">Ruthless Revision</span></h4>
+                            <h4>Book One Tracking Vector <span class="status-badge gold">Ruthless Revision</span></h4>
                             <p>Manuscript text tracking through strict line edits. Ensuring rapid pacing, expressively comedic banter, and distinct scene blocks while eliminating abstract narrative drift.</p>
                         </div>
                         <div class="audit-card">
-                            <h4>Book Two: Welcome to the Maze <span class="status-badge river">Developmental Blocking</span></h4>
+                            <h4>Book Two Strategy Layout <span class="status-badge river">Developmental Blocking</span></h4>
                             <p>Outlining the landscape conversion properties where stone hedge borders emerge directly from glass-like water currents.</p>
                         </div>
                     </div>
 
                     <div id="marketer" class="tab-content">
                         <div class="audit-card">
-                            <h4>Demographic Demands &amp; Audience Core</h4>
+                            <h4>Demographic Demands &amp; Core Audience Reach</h4>
                             <p>Targeted squarely at adult humorous-fantasy readers. Positioned directly for dedicated fans of Terry Pratchett's satire and Douglas Adams' situational absurdity.</p>
                         </div>
                         <div class="audit-card">
-                            <h4>Asset Library Consistency Tracking</h4>
+                            <h4>Asset Consistency Architecture Framework</h4>
                             <p>Maintaining strict visual tracking rules to eliminate clothing or proportion drift across promotional channels. Content files include the short-form forest path Meltdown Animation sequence.</p>
                         </div>
                     </div>
 
                     <div id="publisher" class="tab-content">
                         <div class="audit-card">
-                            <h4>Structural Guidelines &amp; Word Counts</h4>
+                            <h4>Structural Guidelines &amp; Word Count Targets</h4>
                             <p>Structured explicitly as a short story cycle rather than a chapter novel, with tight single-day adventure formats limited to ~5,000 words per story run to preserve episodic readability mechanics.</p>
                         </div>
                         <div class="audit-card">
-                            <h4>Rights Framework &amp; Traditional Tracks</h4>
+                            <h4>Rights Protection &amp; Distribution Pipelines</h4>
                             <p>Global text assets protected under active tracking. Commercial distribution tracking handles aligned with traditional queries locked into the Summer 2026 window.</p>
                         </div>
                     </div>
@@ -343,18 +387,23 @@
 
         <section id="newsletter" class="newsletter-section">
             <div class="container">
-                <span class="section-label" style="color: var(--gold-soft);">Advance Access Tracker</span>
-                <h2>Get on the Raft</h2>
+                <span class="section-label" style="color: var(--gold-soft);">Nexus Access</span>
+                <h2>Stay Close to the River</h2>
                 <div class="divider" style="background: var(--gold-soft);"></div>
-                <p style="max-width: 580px; margin: 0 auto 24px;">No spam. No nonsense. Get immediate production updates, secure advanced reader copy slots, and follow the layout development cycles before Book One leaves the dock.</p>
+                
+                <div style="max-width: 600px; margin: 0 auto 30px;">
+                    <p>If you want new stories, updates, and glimpses of what is forming next, you can leave your name by the riverbank.</p>
+                    <p style="font-style: italic; color: var(--gold-soft);">We will not overwhelm your inbox. The river prefers a slower pace.</p>
+                </div>
                 
                 <div class="form-container">
                     <form action="https://formspree.io/f/xdapyaar" method="POST">
                         <div class="form-group">
                             <input type="email" name="email" placeholder="Enter your email address" autocomplete="email" required>
-                            <button type="submit" class="btn">Join the List</button>
+                            <button type="submit" class="btn">Send me the next thing</button>
                         </div>
                     </form>
+                    <span class="form-subtext">Stories. Poems. Occasional chaos.</span>
                 </div>
             </div>
         </section>
