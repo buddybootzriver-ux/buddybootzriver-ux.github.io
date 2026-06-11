@@ -29,6 +29,7 @@
             --text-body: #2A4A55;
             --accent-pink: #ff4d6d;
             --white: #ffffff;
+            --shadow-strong: 0 20px 40px rgba(0,0,0,0.1);
         }
 
         * { margin:0; padding:0; box-sizing:border-box; }
@@ -53,31 +54,18 @@
             overflow: hidden;
         }
         .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; }
-        .hero-sub { font-size: 1.4rem; opacity: 0.9; margin-bottom: 35px; max-width: 600px; font-weight: 400; line-height: 1.4; }
+        .hero-sub { font-size: 1.4rem; opacity: 0.95; margin-bottom: 35px; max-width: 600px; font-weight: 400; line-height: 1.4; }
         .hero-tag { text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: var(--gold); margin-bottom: 15px; display: block; font-size: 0.9rem; }
         
         .btn { 
             background: var(--gold); color: var(--text-dark); padding: 18px 36px; border-radius: 8px; 
             text-decoration: none; display: inline-block; font-weight: 700; font-size: 1.1rem; 
             transition: all 0.3s ease; border: none; cursor: pointer;
+            text-align: center;
         }
         .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); background: var(--gold-soft); }
         .btn-secondary { background: transparent; border: 2px solid var(--white); color: var(--white); margin-left: 15px; }
         .btn-secondary:hover { background: var(--white); color: var(--river-deep); }
-
-        /* CHARACTER SECTION */
-        .character-section { background: var(--white); }
-        .character-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 50px; }
-        .char-card { background: var(--river-light); padding: 40px; border-radius: 16px; border: 1px solid rgba(0,0,0,0.05); }
-        .char-card h3 { color: var(--river-accent); font-size: 1.8rem; margin-bottom: 10px; }
-        .char-meta { font-style: italic; color: var(--text-body); margin-bottom: 20px; display: block; font-weight: 600; }
-
-        /* INDUSTRY SECTION */
-        .industry-section { background: var(--river-deep); color: var(--white); padding: 80px 0; }
-        .industry-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
-        .industry-item { border-left: 2px solid var(--gold); padding-left: 20px; }
-        .industry-item h4 { font-family: 'Outfit', sans-serif; color: var(--gold); margin-bottom: 5px; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
-        .industry-item p { font-size: 1.1rem; opacity: 0.9; }
 
         /* SIGNUP SECTION */
         .signup-box { 
@@ -95,6 +83,35 @@
         input[type="email"] { padding: 18px; border-radius: 8px; border: 2px solid #eee; width: 100%; max-width: 400px; margin-bottom: 15px; font-size: 1.1rem; outline: none; transition: 0.3s; }
         input[type="email"]:focus { border-color: var(--river-accent); }
 
+        /* CHARACTER SECTION */
+        .character-section { background: var(--white); }
+        .character-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 50px; }
+        .char-card { background: var(--river-light); padding: 40px; border-radius: 16px; border: 1px solid rgba(0,0,0,0.05); }
+        .char-card h3 { color: var(--river-accent); font-size: 1.8rem; margin-bottom: 10px; }
+        .char-meta { font-style: italic; color: var(--text-body); margin-bottom: 20px; display: block; font-weight: 600; }
+
+        /* DISPATCHES SECTION */
+        .dispatches-section { background: var(--white); border-top: 1px solid rgba(0,0,0,0.05); }
+        .dispatch-list { margin-top: 40px; }
+        .dispatch-item { 
+            padding: 25px; 
+            border-bottom: 1px solid #eee; 
+            display: block; 
+            text-decoration: none; 
+            color: inherit;
+            transition: 0.3s;
+        }
+        .dispatch-item:hover { background: var(--river-light); padding-left: 35px; }
+        .dispatch-item h4 { font-family: 'Outfit', sans-serif; color: var(--river-main); margin-bottom: 5px; }
+        .dispatch-item p { font-style: italic; opacity: 0.8; font-size: 0.95rem; }
+
+        /* INDUSTRY SECTION */
+        .industry-section { background: var(--river-deep); color: var(--white); padding: 80px 0; }
+        .industry-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
+        .industry-item { border-left: 2px solid var(--gold); padding-left: 20px; }
+        .industry-item h4 { font-family: 'Outfit', sans-serif; color: var(--gold); margin-bottom: 5px; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
+        .industry-item p { font-size: 1.1rem; opacity: 0.9; }
+
         /* FOOTER */
         footer { background: #000; color: white; padding: 80px 0 40px; text-align: center; }
         .footer-links { display: flex; justify-content: center; gap: 30px; margin: 30px 0; }
@@ -103,6 +120,11 @@
 
         .fade { opacity:0; transform:translateY(20px); transition: 0.6s ease-out; }
         .fade.show { opacity:1; transform:translateY(0); }
+
+        .author-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: start; }
+        .author-img { width: 100%; border-radius: 20px; box-shadow: var(--shadow-strong); border: 8px solid white; }
+        .author-bio { font-family: 'Crimson Pro', serif; font-size: 1.25rem; color: var(--text-body); }
+        .author-bio p { margin-bottom: 1.5rem; }
 
         #form-status { margin-top: 15px; font-weight: 600; display: none; }
         #form-status.success { display: block; color: #27ae60; }
@@ -115,6 +137,7 @@
             .signup-box { padding: 40px 20px; margin-top: -50px; }
             .btn-secondary { margin-left: 0; margin-top: 15px; width: 100%; }
             .btn { width: 100%; }
+            .author-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -128,11 +151,11 @@
                     <span class="hero-tag">Arriving Summer 2026</span>
                     <h1>Chaos has a new favorite duo.</h1>
                     <p class="hero-sub">
-                        Meet Buddy Bootz and Sir Drinks-A'Lot—the reluctant guardians of a world that has finally decided to hit back. A grounded humorous fantasy series for readers who know that "fixing it" is usually the start of a disaster.
+                        Meet Buddy Bootz and Sir Drinks-A'Lot—the reluctant guardians of a world that has finally decided to hit back. A character-driven humorous fantasy series where "fixing it" is usually the start of a disaster.
                     </p>
                     <div style="display: flex; flex-wrap: wrap;">
                         <a href="#signup" class="btn">Join the Pre-Launch List</a>
-                        <a href="#series" class="btn btn-secondary">Series Overview</a>
+                        <a href="#series" class="btn btn-secondary">Meet the Duo</a>
                     </div>
                 </div>
                 <div class="fade show" style="text-align: center;">
@@ -146,7 +169,7 @@
             <div class="container">
                 <div class="signup-box fade show">
                     <h3>Get the Opening Act</h3>
-                    <p style="margin-bottom: 30px; color: var(--text-body);">Join the inner circle for exclusive updates, character reveals, and the first look at <strong>Book One: The Rambunctious River.</strong></p>
+                    <p style="margin-bottom: 30px; color: var(--text-body);">Join the inner circle for exclusive dispatches, character reveals, and the first look at <strong>Book One: The Rambunctious River.</strong></p>
                     <form id="contact-form" action="https://formspree.io/f/xdapyaar" method="POST">
                         <input type="email" name="email" placeholder="your@email.com" required autocomplete="email">
                         <button id="submit-btn" type="submit" class="btn" style="background: var(--river-accent); color: white;">Send Me Book One Updates</button>
@@ -162,20 +185,41 @@
             <div class="container">
                 <div style="text-align: center; max-width: 800px; margin: 0 auto 60px;">
                     <h2 class="fade">Two Contrasting Souls. One Breaking World.</h2>
-                    <p class="fade" style="font-size: 1.2rem; color: var(--text-body);">The series explores the tension between chaos and order, humor and heartbreak. It's a story about surviving loudly and choosing to stay when things get still.</p>
+                    <p class="fade" style="font-size: 1.2rem; color: var(--text-body);">The Adventures of Buddy Bootz & Sir Drinks-A'Lot is a series of standalone books built on witty observations, bad decisions, and the emotional truth of a world that doesn't sit still.</p>
                 </div>
                 
                 <div class="character-grid">
                     <div class="char-card fade">
                         <h3>Buddy Bootz</h3>
-                        <span class="char-meta">The Chaos Magnet</span>
-                        <p>A glamorous disaster with a gold crown and glitter-brown boots. Buddy operates on the firm belief that if you move fast enough, the laws of cause and effect might simply lose track of you.</p>
+                        <span class="char-meta">Bold. Impulsive. Confident Chaos.</span>
+                        <p>A glamorous disaster with a gold crown and a frequent habit of turning small problems into much larger ones. Buddy operates on the firm belief that if you move fast enough, the laws of cause and effect might simply lose track of you.</p>
                     </div>
                     <div class="char-card fade">
                         <h3>Sir Drinks-A'Lot</h3>
-                        <span class="char-meta">The Grounded Protector</span>
-                        <p>A courageous strategist with a steady wrench and a full flask. He provides the tools, the logic, and the valiant guardianship required to survive Buddy's momentum.</p>
+                        <span class="char-meta">Loyal. Practical. Dependable.</span>
+                        <p>A courageous strategist forced to survive Buddy's solutions. With a steady wrench and a full flask, he provides the logic and the valiant guardianship required to survive her momentum.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DISPATCHES SECTION: ENGAGEMENT & SEO -->
+        <section id="dispatches" class="dispatches-section">
+            <div class="container">
+                <h2 class="fade" style="text-align: center;">Dispatches From the Rambunctious River</h2>
+                <div class="dispatch-list">
+                    <a href="blog.html#transmission-03" class="dispatch-item fade">
+                        <h4>The Quiet Parts</h4>
+                        <p>"Do you ever get the feeling being around you has damaged my ability to trust a quiet morning?" Sir asked...</p>
+                    </a>
+                    <a href="blog.html#transmission-02" class="dispatch-item fade">
+                        <h4>Gerald’s Heist</h4>
+                        <p>A squirrel stole my screwdriver today. He didn't just pick it up—he looked me dead in the eye...</p>
+                    </a>
+                    <a href="blog.html#transmission-01" class="dispatch-item fade">
+                        <h4>The Pump’s Opinion</h4>
+                        <p>The water pump bolted to the treehouse was doing its best to come apart in public today...</p>
+                    </a>
                 </div>
             </div>
         </section>
@@ -224,14 +268,15 @@
 
     <footer>
         <div class="container">
-            <h2 style="font-size: 1.2rem; margin-bottom: 20px; color: var(--gold);">The Adventures of Buddy Bootz & Sir Drinks-A'Lot</h2>
+            <h2 style="font-size: 1.2rem; margin-bottom: 20px; color: var(--gold);">Follow us on</h2>
             <div class="footer-links">
                 <a href="https://facebook.com/buddybootz" target="_blank">Facebook</a>
                 <a href="https://instagram.com/buddybootz" target="_blank">Instagram</a>
                 <a href="https://youtube.com/@buddybootz" target="_blank">YouTube</a>
                 <a href="mailto:hello@buddybootz.com">Contact</a>
             </div>
-            <p style="opacity: 0.5; font-size: 0.8rem; margin-top: 40px;">© 2026 Buddy Bootz Universe · All Rights Reserved</p>
+            <p style="font-style: italic; opacity: 0.6; margin-top: 20px;">Stories don’t only live here.</p>
+            <p style="opacity: 0.4; font-size: 0.8rem; margin-top: 40px;">© 2026 Buddy Bootz Universe · All Rights Reserved</p>
         </div>
     </footer>
 
