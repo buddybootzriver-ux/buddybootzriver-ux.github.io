@@ -1,308 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Stories, chaos, and reflections from The Adventures of Buddy Bootz & Sir Drinks-A’Lot — where the river doesn’t behave and neither do the outcomes.">
-<title>Buddy Bootz Blog</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T6C7B7WCS5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-T6C7B7WCS5');
+    </script>    
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <meta name="description" content="Field Notes from Buddy Bootz — Ongoing transmissions from a world that doesn't sit still.">
+    <title>Field Notes from Buddy Bootz | The Drift Pages</title>
+    
+    <link rel="icon" type="image/png" href="favicon.png">    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700&family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    
+    <style>    
+        :root {
+            --river-deep: #1F4E5F;
+            --river-main: #3FA7D6;
+            --river-light: #E6F7FF;
+            --gold: #F2C94C;
+            --text-dark: #0B1F26;
+            --text-body: #2A4A55;
+            --nav-bg: rgba(255, 255, 255, 0.98);
+        }
 
-<style>
-  body {
-    margin: 0;
-    font-family: Georgia, serif;
-    background: linear-gradient(#4f8fb3, #2f5f7a);
-    color: #ffffff;
-    line-height: 1.6;
-  }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--river-light); color: var(--text-dark); line-height: 1.8; -webkit-font-smoothing: antialiased; padding-top: 80px; }
+        
+        .container { max-width: 800px; margin: 0 auto; padding: 0 25px; }
+        
+        nav { position:fixed; top:0; width:100%; background:var(--nav-bg); z-index:1000; padding:15px 0; border-bottom: 1px solid rgba(0,0,0,0.05); backdrop-filter: blur(10px); }
+        .nav-content { display:flex; justify-content:space-between; align-items:center; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 0.95rem; margin-left: 25px; }
+        
+        header { padding: 80px 0 40px; text-align: center; }
+        h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.5rem, 6vw, 4rem); color: var(--river-deep); margin-bottom: 10px; }
+        .subtitle { font-family: 'Crimson Pro', serif; font-size: 1.3rem; font-style: italic; color: var(--text-body); opacity: 0.8; }
 
-  .container {
-    max-width: 700px;
-    margin: auto;
-    padding: 20px;
-  }
+        .post { background: white; padding: 50px; border-radius: 24px; margin-bottom: 60px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-left: 8px solid var(--river-main); }
+        .post-meta { font-family: 'Outfit', sans-serif; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: var(--river-main); margin-bottom: 15px; display: block; }
+        .post h2 { font-family: 'Outfit', sans-serif; font-size: 2rem; margin-bottom: 25px; color: var(--text-dark); }
+        .post-content { font-family: 'Crimson Pro', serif; font-size: 1.25rem; color: var(--text-body); }
+        .post-content p { margin-bottom: 1.5rem; }
+        .post-content blockquote { border-left: 4px solid var(--gold); padding-left: 25px; margin: 30px 0; font-style: italic; color: var(--river-deep); }
 
-  h1 {
-    text-align: center;
-    color: #f4c542;
-    font-size: 36px;
-  }
+        footer { background: #000; color: white; padding: 60px 20px; text-align: center; font-size: 0.95rem; margin-top: 100px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; margin: 20px 0; }
+        .footer-links a { color: var(--gold); text-decoration: none; font-weight: 600; }
+        .footer-links a:hover { text-decoration: underline; }
 
-  h2 {
-    color: #f4c542;
-    margin-top: 40px;
-  }
-
-  p {
-    font-size: 18px;
-  }
-
-  hr {
-    border: none;
-    height: 1px;
-    background: rgba(255,255,255,0.2);
-    margin: 30px 0;
-  }
-
-  .cta {
-    margin-top: 40px;
-    padding: 20px;
-    background: rgba(0,0,0,0.2);
-    border-radius: 10px;
-    text-align: center;
-  }
-
-  a.button {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 12px 20px;
-    background: #e63946;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-  }
-</style>
-
+        @media (max-width: 600px) {
+            .post { padding: 30px 20px; }
+        }
+    </style>
 </head>
-
 <body>
 
-<nav style="padding:15px 20px; background:rgba(0,0,0,0.2); text-align:center;">
-  <a href="/" style="color:white; text-decoration:none; font-weight:bold;">
-    ← Back to The Rambunctious River
-  </a>
-</nav>
-
-<div class="container">
-
-<h1>The Buddy Bootz Blog</h1>
-
-<p style="text-align:center; opacity:0.8;">
-Stories, chaos, and the river that remembers.
-</p>
-
-<hr>
-
-<h2>How Buddy Bootz and Sir Drinks-A’Lot Accidentally Trap Their Readers</h2>
-<p>
-There are two kinds of stories.<br><br>
-
-The ones you read…<br><br>
-
-…and the ones that quietly grab your sleeve and refuse to let go.<br><br>
-
-Buddy Bootz and Sir Drinks-A’Lot were never meant to be the second kind.<br><br>
-
-In fact, if you asked Buddy, she’d tell you there’s absolutely no plan at all. No structure. No responsible decision-making. Just a treehouse, a questionable water pump, and a series of choices that feel correct in the moment and catastrophic immediately after.<br><br>
-
-Sir would disagree. Calmly. With the patience of a man who has already accepted he will be dragged into nonsense before breakfast.<br><br>
-
-And yet… somehow…<br><br>
-
-People don’t leave.<br><br>
-
-It starts small.<br><br>
-
-A line that hits a little too close.<br>
-A moment that feels a little too real.<br>
-A laugh that shows up where it shouldn’t.<br><br>
-
-Then something shifts.<br><br>
-
-The chaos isn’t just funny anymore.<br>
-It’s familiar.<br><br>
-
-Buddy isn’t just reckless.<br>
-She’s surviving loudly.<br><br>
-
-Sir isn’t just steady.<br>
-He’s choosing to stay.<br><br>
-
-And somewhere between the jokes, the near-disasters, and the quiet pauses where nothing explodes for once…<br><br>
-
-The story stops being something you read.<br><br>
-
-It becomes something you feel.<br><br>
-
-That’s the trap.<br><br>
-
-Not plot.<br>
-Not magic.<br>
-Not even the river.<br><br>
-
-It’s the connection.<br><br>
-
-Because once you recognize a piece of yourself in them…<br><br>
-
-you don’t really get to leave anymore.
-</p>
-
-<hr>
-
-<h2>Why Chaos Feels Safer Than Silence</h2>
-<p>
-There’s a reason some people move fast.<br><br>
-
-Not because they’re careless.<br>
-Not because they don’t think.<br><br>
-
-But because slowing down means feeling everything at once.<br><br>
-
-Buddy Bootz lives like the world might collapse if she pauses too long.<br><br>
-
-Loud. Bright. Moving. Always moving.<br><br>
-
-It looks like chaos.<br><br>
-
-But chaos has structure.<br><br>
-
-It keeps the noise up.<br>
-It keeps the thoughts out.<br>
-It keeps the quiet from getting too loud.<br><br>
-
-Sir Drinks-A’Lot doesn’t stop her.<br><br>
-
-He doesn’t try to fix it.<br>
-He doesn’t ask her to be less.<br><br>
-
-He just stays.<br><br>
-
-Grounded in a way that doesn’t demand anything.<br><br>
-
-And that’s where something rare happens.<br><br>
-
-The chaos doesn’t disappear.<br><br>
-
-But it softens.<br><br>
-
-Because for the first time, it isn’t carrying everything alone.<br><br>
-
-The truth is…<br><br>
-
-A lot of people aren’t afraid of falling apart.<br><br>
-
-They’re afraid of what happens when everything finally gets still.<br><br>
-
-And sometimes the bravest thing a story can do…<br><br>
-
-is sit in that space<br>
-just long enough<br>
-to prove it won’t break you.
-</p>
-
-<hr>
-
-<h2>The Day the River Didn’t Behave</h2>
-<p>
-The river usually has rules.<br><br>
-
-Not written ones.<br>
-Not spoken ones.<br><br>
-
-But the kind you learn by surviving it.<br><br>
-
-It pulls where it pulls.<br>
-It bends where it bends.<br>
-It carries you forward whether you’re ready or not.<br><br>
-
-Buddy doesn’t follow rules.<br><br>
-
-Sir respects them just enough for both of them.<br><br>
-
-So when the river went still…<br><br>
-
-completely still…<br><br>
-
-that was the first sign something was wrong.<br><br>
-
-No current.<br>
-No sound.<br>
-Not even the usual creak of wood against water.<br><br>
-
-Buddy leaned over the edge of the raft, squinting like she could out-stare whatever had decided to break reality.<br><br>
-
-“Do rivers… stop?” she asked.<br><br>
-
-Sir didn’t answer right away.<br><br>
-
-Which was answer enough.<br><br>
-
-Then the water moved.<br><br>
-
-Not forward.<br>
-Not backward.<br><br>
-
-Sideways.<br><br>
-
-Like something underneath had made a decision.<br><br>
-
-The raft shifted with it.<br><br>
-
-Slow at first.<br><br>
-
-Then deliberate.<br><br>
-
-Buddy smiled.<br><br>
-
-Not because it was safe.<br><br>
-
-But because it wasn’t.<br><br>
-
-“Well,” she said, gripping the edge, “this feels important.”<br><br>
-
-Sir sighed, already reaching for balance, already preparing for impact.<br><br>
-
-Because when the river changes…<br><br>
-
-it’s never small.<br><br>
-
-And whatever was waiting beneath them…<br><br>
-
-had just noticed they were there.
-</p>
-
-<p style="text-align:center; opacity:0.85;">
-You can leave… but it doesn’t really let go.
-</p>
-
-<div class="cta">
-  <p><strong>Want more chaos, river adventures, and stories that stay with you?</strong></p>
-  <p>Step into the world of Buddy Bootz & Sir Drinks-A’Lot.</p>
-  <a href="/" class="button">Back to Main Site</a>
-</div>
-
-</div>
-
-<section id="footer" style="
-  background:#2f6f8f;
-  padding:80px 20px;
-  text-align:center;
-  border-top:2px solid rgba(255,255,255,0.2);
-  margin-top:60px;
-">
-  <div class="container">
-
-    <img src="bootz_cover.png" loading="lazy" 
-         style="max-width:160px; margin-bottom:20px;">
-
-    <p style="font-size:0.9rem; opacity:0.95;">
-      © 2026 Buddy Bootz. All rights reserved.
-    </p>
-
-    <p style="font-size:1rem; font-weight:600;">
-      The Adventures of Buddy Bootz & Sir Drinks-A’Lot
-    </p>
-
-    <p style="font-size:0.85rem; opacity:0.8;">
-      Stories from the Rambunctious River
-    </p>
-
-    <p style="font-size:0.8rem; opacity:0.6; margin-top:20px;">
-      It’s still moving.
-    </p>
-
-  </div>
-</section>
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" style="text-decoration: none; font-family:'Outfit',sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--text-dark);">Buddy Bootz</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#stories">Stories</a>
+                <a href="index.html#poetry">Poetry</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Field Notes from Buddy Bootz</h1>
+            <p class="subtitle">Ongoing transmissions from the Drift Pages.</p>
+        </header>
+
+        <article id="transmission-03" class="post">
+            <span class="post-meta">Transmission #03</span>
+            <h2>The Quiet Parts</h2>
+            <div class="post-content">
+                <p>Sometimes the forest holds its breath. It’s not waiting for something to happen. It’s waiting for us to notice it already has.</p>
+                <p>Sir and I were out by the lower bend today. The river was doing that thing where it pretends to be a mirror, reflecting everything so perfectly you forget which way is up. It was so still it felt like a dare.</p>
+                <blockquote>"Do you ever get the feeling being around you has damaged my ability to trust a quiet morning?" Sir asked.</blockquote>
+                <p>He's observant. That's the trouble. He sees straight through the things I haven't even decided to show yet. But he stayed. We both did. Just watching the water pretend to be something else for a while.</p>
+            </div>
+        </article>
+
+        <article id="transmission-02" class="post">
+            <span class="post-meta">Transmission #02</span>
+            <h2>Gerald’s Heist</h2>
+            <div class="post-content">
+                <p>A squirrel stole my screwdriver today. He didn't just pick it up—he looked me dead in the eye, tucked it under his arm like a professional, and launched himself into the oak.</p>
+                <p>Sir says he escalated the situation. I think he was just under pressure. We're all trying to fix something, aren't we? Even the squirrels.</p>
+                <p>I named him Gerald. Sir shut his eyes for a long second and told me not to. But the name is already working. Gerald is a thief, but he's a thief with a name now, and that makes him part of the story.</p>
+            </div>
+        </article>
+
+        <article id="transmission-01" class="post">
+            <span class="post-meta">Transmission #01</span>
+            <h2>The Pump’s Opinion</h2>
+            <div class="post-content">
+                <p>The water pump bolted to the treehouse was doing its best to come apart in public today. It sounded less like machinery and more like a personal objection.</p>
+                <p>I tried logic. I tried a screwdriver. Finally, I tried negotiating with attitude. I poured a small splash of whiskey directly into the intake.</p>
+                <p>Sir stared at me like I'd just renamed the moon. "That is not how plumbing works," he said.</p>
+                <p>It released a deep mechanical BURP and started running clear water immediately. It worked. That’s the only part that ever really matters, isn't it?</p>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <div class="container">
+            <h2 style="font-size: 1.5rem; margin-bottom: 10px; color: var(--gold);">Follow us on</h2>
+            <div class="footer-links">
+                <a href="https://facebook.com/buddybootz" target="_blank">Facebook</a>
+                <a href="https://instagram.com/buddybootz" target="_blank">Instagram</a>
+                <a href="https://youtube.com/@buddybootz" target="_blank">YouTube</a>
+            </div>
+            <p style="font-style: italic; opacity: 0.7; margin-top: 20px;">Stories don’t only live here.</p>
+            <p style="margin-top: 40px; opacity: 0.4; font-size: 0.8rem;">© 2026 Buddy Bootz · All Chaos Reserved</p>
+        </div>
+    </footer>
 
 </body>
 </html>
