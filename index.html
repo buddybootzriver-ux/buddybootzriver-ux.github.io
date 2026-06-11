@@ -197,7 +197,7 @@
                         "Enter the Rambunctious River — where Buddy Bootz and Sir Drinks-A’Lot live in chaos, comedy, and adventure."
                     </p>
                     <div>
-                        <a href="#signup" class="btn portal">Get Chapter One Now</a>
+                        <a href="#signup" class="btn portal">Get Book One Now</a>
                         <p style="margin-top: 20px; font-size: 0.85rem; opacity: 0.7;">Book One Arriving Summer 2026. Join the early-access list.</p>
                     </div>
                 </div>
@@ -228,7 +228,7 @@
                         <p style="font-size: 1.2rem; font-weight: 600; color: var(--river-main);">Buddy Bootz doesn't plan. She has momentum.</p>
                         <p>The water pump bolted to the outside of Buddy Bootz's treehouse was doing its best to come apart in public. It sounded less like machinery and more like a personal objection.</p>
                         <p>Accompanied by Sir Drinks-A'Lot—a man whose wrench is as steady as his exhausted patience—this isn't a quest. It's a high-stakes effort to survive the consequences of a world that has finally decided to hit back.</p>
-                        <a href="#signup" style="color: var(--river-main); font-weight: 700; text-decoration: none;">Get the first three chapters →</a>
+                        <a href="#signup" style="color: var(--river-main); font-weight: 700; text-decoration: none;">Get the first three stories →</a>
                     </div>
                     <div class="img-wrap fade">
                         <img src="buddy-sir-pump-chaos.png" alt="Chaos at the Treehouse Pump">
@@ -308,7 +308,7 @@
                     <form id="contact-form" action="https://formspree.io/f/xdapyaar" method="POST" class="fade">    
                         <input type="email" name="email" placeholder="Enter your email address" autocomplete="email" required 
                                style="width: 100%; padding: 20px; border-radius: 10px; border: none; margin-bottom: 20px; font-size: 1.1rem;">    
-                        <button id="submit-btn" type="submit" class="btn portal" style="width: 100%;">Send Me Chapter One</button>
+                        <button id="submit-btn" type="submit" class="btn portal" style="width: 100%;">Send Me Book One</button>
                         <div id="form-status"></div>
                         <p style="margin-top: 15px; font-size: 0.8rem; opacity: 0.5;">No spam. Just the story. Unsubscribe anytime.</p>
                     </form>
@@ -400,7 +400,7 @@
                 }
             }).then(response => {
                 if (response.ok) {
-                    status.innerHTML = "Success! Check your inbox for Chapter One.";
+                    status.innerHTML = "Success! Check your inbox for Book One.";
                     status.className = "success";
                     form.reset();
                     submitBtn.style.display = "none";
@@ -413,14 +413,14 @@
                         }
                         status.className = "error";
                         submitBtn.disabled = false;
-                        submitBtn.innerText = "Send Me Chapter One";
+                        submitBtn.innerText = "Send Me Book One";
                     })
                 }
             }).catch(error => {
                 status.innerHTML = "Oops! There was a problem submitting your form.";
                 status.className = "error";
                 submitBtn.disabled = false;
-                submitBtn.innerText = "Send Me Chapter One";
+                submitBtn.innerText = "Send Me Book One";
             });
         }
         form.addEventListener("submit", handleSubmit);
