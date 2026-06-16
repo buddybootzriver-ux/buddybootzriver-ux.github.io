@@ -11,7 +11,15 @@
     <meta charset="UTF-8">    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <meta name="description" content="The official whimsical home of Buddy Bootz &amp; Sir Drinks-A'Lot. Explore a world of light chaos, loyal friendship, and the rambunctious river.">
+    <link rel="canonical" href="https://buddybootz.com/">
     <title>The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot</title>
+    
+    <!-- Open Graph Metadata Elements for SEO -->
+    <meta property="og:title" content="The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot">
+    <meta property="og:description" content="Explore a world of light chaos, loyal friendship, and the rambunctious river.">
+    <meta property="og:image" content="hero.png">
+    <meta property="og:url" content="https://buddybootz.com/">
+    <meta property="og:type" content="website">
     
     <link rel="icon" type="image/png" href="favicon.png">    
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&amp;family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet">
@@ -37,7 +45,8 @@
             background: var(--bg-paper); 
             color: var(--text-dark); 
             line-height: 1.75; 
-            -webkit-font-smoothing: antialiased; 
+            -webkit-font-smoothing: antialiased;
+            padding-top: 60px; /* Offset for Sticky CTA Strip */
         }
         
         .container { max-width: 1040px; margin: 0 auto; padding: 0 28px; }
@@ -90,94 +99,80 @@
         }
         .btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--river-deep); background: var(--gold-soft); }
 
-        /* FUNNEL BADGES & METADATA LABELS */
-        .coming-soon-badge {
-            display: inline-block;
+        /* STICKY CTA BAR */
+        .sticky-cta-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
             background: var(--river-deep);
-            color: var(--gold);
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 800;
-            padding: 6px 18px;
-            border-radius: 30px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            border: 1px solid var(--gold);
-        }
-        .product-line {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--river-main);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 20px;
-        }
-        .book-meta-strip {
+            color: var(--white);
+            z-index: 1000;
             display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-bottom: 25px;
+            align-items: center;
+            justify-content: border-between;
+            border-bottom: 2px solid var(--gold);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
-        .meta-tag {
-            background: var(--white);
-            border: 1px solid rgba(31,78,95,0.15);
-            padding: 6px 14px;
-            border-radius: 6px;
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--river-deep);
-        }
+        .sticky-flex { display: flex; width: 100%; align-items: center; justify-content: space-between; }
+        .sticky-text { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.95rem; letter-spacing: 1px; color: var(--gold-soft); }
+        .sticky-btn { background: var(--gold); color: var(--text-dark); border: none; padding: 6px 16px; border-radius: 20px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; text-decoration: none; transition: background 0.2s ease; }
+        .sticky-btn:hover { background: var(--gold-soft); }
 
-        /* 1. HERO ARCHITECTURE */
-        .hero { background: linear-gradient(180deg, var(--river-light) 0%, var(--bg-paper) 100%); text-align: center; padding: 120px 0 80px; border-bottom: 2px dashed var(--river-main); }
+        /* PRE-LAUNCH BADGES AND SPECIFICATION MODULES */
+        .status-badge-container { margin-bottom: 20px; text-align: center; }
+        .prelaunch-badge { background: var(--river-deep); color: var(--gold); font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 800; padding: 6px 18px; border-radius: 30px; letter-spacing: 2px; text-transform: uppercase; border: 1px solid var(--gold); display: inline-block; }
+        .product-identifier { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--river-main); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 15px; }
+        .spec-grid { display: flex; gap: 12px; flex-wrap: wrap; margin: 20px 0; }
+        .spec-tag { background: var(--white); border: 1px solid rgba(31,78,95,0.15); padding: 5px 12px; border-radius: 6px; font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--river-deep); }
+
+        /* START HERE STEP FLOW MODULE */
+        .step-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
+        .step-node { background: var(--white); padding: 30px; border-radius: 16px; border: 1px solid rgba(31,78,95,0.08); position: relative; box-shadow: 0 8px 24px rgba(0,0,0,0.02); }
+        .step-marker { font-family: 'Outfit', sans-serif; font-size: 3rem; font-weight: 800; color: rgba(63,167,214,0.12); position: absolute; top: 15px; right: 25px; line-height: 1; }
+
+        /* SOCIAL PROOF UNIT */
+        .proof-strip { background: var(--river-deep); color: var(--white); padding: 40px 0; border-top: 2px solid var(--gold); border-bottom: 2px solid var(--gold); }
+        .proof-flex { display: flex; justify-content: space-around; gap: 40px; flex-wrap: wrap; }
+        .proof-quote-block { flex: 1; min-width: 260px; max-width: 420px; text-align: center; }
+        .proof-body { font-family: 'Crimson Pro', serif; font-style: italic; font-size: 1.2rem; color: rgba(255,255,255,0.9); }
+        .proof-cite { font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-top: 12px; color: var(--gold-soft); }
+
+        /* HERO & MODULE ARCHITECTURE */
+        .hero { background: linear-gradient(180deg, var(--river-light) 0%, var(--bg-paper) 100%); text-align: center; padding: 100px 0 80px; border-bottom: 2px dashed var(--river-main); }
         .hero-img { width: 100%; max-width: 920px; border-radius: 20px; box-shadow: 0 25px 55px rgba(31,78,95,0.18); margin-top: 50px; border: 4px solid var(--white); }
         .title-img { max-width: 440px; width: 100%; height: auto; margin-bottom: 28px; }
         .hero-text-container { max-width: 760px; margin: 0 auto 35px; }
 
-        /* START HERE / STEP-BY-STEP STRIP */
-        .start-here-section { background: var(--white); padding: 50px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
-        .start-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 20px; }
-        .start-step { background: var(--bg-paper); padding: 25px; border-radius: 12px; border: 1px solid rgba(31,78,95,0.08); position: relative; }
-        .step-num { font-family: 'Outfit', sans-serif; font-size: 3rem; font-weight: 800; color: rgba(63,167,214,0.15); position: absolute; top: 10px; right: 20px; line-height: 1; }
-
-        /* SOCIAL PROOF STRIP */
-        .social-proof-strip { background: var(--river-deep); color: var(--white); padding: 35px 0; border-top: 2px solid var(--gold); border-bottom: 2px solid var(--gold); }
-        .testimonial-container { display: flex; justify-content: space-around; gap: 40px; flex-wrap: wrap; }
-        .testimonial-item { flex: 1; min-width: 250px; max-width: 400px; text-align: center; }
-        .testimonial-text { font-family: 'Crimson Pro', serif; font-style: italic; font-size: 1.2rem; line-height: 1.5; color: rgba(255,255,255,0.9); }
-        .testimonial-author { font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-top: 10px; color: var(--gold-soft); }
-
-        /* 2. CHARACTER MODULES */
+        /* CHARACTER MODULES */
         .duo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 30px; }
         .char-card { background: var(--white); padding: 36px; border-radius: 20px; border: 1px solid rgba(31,78,95,0.08); box-shadow: 0 12px 35px rgba(0,0,0,0.02); }
         .char-img { width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 24px rgba(0,0,0,0.05); border: 4px solid white; margin-bottom: 26px; display: block; }
         .char-tag { font-family: 'Outfit', sans-serif; font-size: 0.75rem; font-weight: 700; color: var(--river-main); text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 8px; }
 
-        /* 3. WORLD EXPLORATION ENGINE */
+        /* WORLD EXPLORATION ENGINE */
         .world-section { background: var(--white); border-bottom: 1px solid rgba(0,0,0,0.05); }
         .world-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center; margin-bottom: 90px; }
         .world-grid.reverse { grid-template-columns: 1.2fr 1fr; }
         .world-grid:last-child { margin-bottom: 0; }
         .location-img { width: 100%; height: auto; border-radius: 18px; box-shadow: 0 15px 40px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.05); display: block; }
 
-        /* 4. BOOK PACKAGING DESIGN */
+        /* BOOK PACKAGING DESIGN */
         .book-section { background: var(--river-light); padding: 100px 0; border-top: 1px solid rgba(0,0,0,0.05); }
         .book-layout { display: grid; grid-template-columns: 1.3fr 1fr; gap: 60px; align-items: center; }
         .book-covers { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .book-details { text-align: left; }
         .pullquote { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 1.5rem; color: var(--river-deep); border-left: 4px solid var(--gold); padding-left: 20px; margin: 26px 0; line-height: 1.45; }
 
-        /* 5. ILLUSTRATION EXPANSION UNIT */
+        /* ILLUSTRATION EXPANSION UNIT */
         .gallery-section { background: var(--bg-paper); border-top: 1px solid rgba(0,0,0,0.05); }
         .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
         .gallery-card { background: var(--white); padding: 20px; border-radius: 16px; border: 1px solid rgba(0,0,0,0.04); box-shadow: 0 8px 24px rgba(0,0,0,0.02); text-align: center; }
         .gallery-img { width: 100%; height: auto; border-radius: 10px; margin-bottom: 16px; border: 2px solid #f0f0f0; }
         .gallery-caption { font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--text-body); text-transform: uppercase; letter-spacing: 1px; }
 
-        /* 6. LOG TRACKER HUB */
+        /* LOG TRACKER HUB */
         .hub-section { background: var(--white); border-top: 1px solid rgba(0,0,0,0.05); border-bottom: 1px solid rgba(0,0,0,0.05); }
         .tab-container { max-width: 850px; margin: 40px auto 0; }
         .tab-nav { display: flex; justify-content: center; gap: 12px; margin-bottom: 35px; border-bottom: 2px solid rgba(0,0,0,0.05); padding-bottom: 16px; flex-wrap: wrap; }
@@ -190,40 +185,42 @@
         
         .audit-card { background: var(--white); padding: 24px; border-radius: 14px; border-left: 4px solid var(--river-main); margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border-top: 1px solid rgba(0,0,0,0.02); }
         .audit-card h4 { font-family: 'Outfit', sans-serif; font-size: 1.15rem; color: var(--text-dark); margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
-        .status-badge { font-size: 0.68rem; padding: 5px 12px; border-radius: 30px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border: 1px solid var(--river-deep); }
-        .status-badge.gold { background: var(--gold); color: var(--text-dark); }
-        .status-badge.river { background: var(--river-light); color: var(--river-deep); }
-
-        /* 7. EMAIL SIGNUP MODULE */
+        
+        /* EMAIL SIGNUP MODULE & ASYNC NOTIFICATION ENGINE */
         .newsletter-section { text-align: center; background: var(--river-deep); color: var(--white); padding: 100px 0; }
         .newsletter-section h2 { color: var(--gold); }
         .newsletter-section p { color: rgba(255,255,255,0.85); }
-        .form-container { max-width: 540px; margin: 30px auto 0; }
+        .form-container { max-width: 540px; margin: 30px auto 0; position: relative; }
         .form-group { display: flex; gap: 12px; }
         input[type="email"] { flex: 1; padding: 18px 24px; border-radius: 50px; border: 2px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); color: var(--white); font-family: 'Crimson Pro', serif; font-size: 1.15rem; }
         input[type="email"]:focus { outline: none; border-color: var(--gold); background: rgba(255,255,255,0.15); }
         input[type="email"]::placeholder { color: rgba(255,255,255,0.5); }
         .form-subtext { font-family: 'Outfit', sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold-soft); margin-top: 16px; display: block; }
+        
+        .lead-magnet-box { background: rgba(255,255,255,0.05); border: 1px dashed rgba(242,201,76,0.4); padding: 20px; border-radius: 14px; margin-bottom: 25px; text-align: left; }
+        .lead-magnet-title { font-family: 'Outfit', sans-serif; font-size: 1rem; font-weight: 700; color: var(--gold); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* 8. FOOTER */
-        .footer-nav { display: flex; justify-content: center; gap: 25px; margin: 20px 0; flex-wrap: wrap; }
-        .footer-nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-family: 'Outfit', sans-serif; font-size: 0.9rem; font-weight: 600; transition: color 0.2s ease; }
-        .footer-nav a:hover { color: var(--gold); }
-        .footer-contact { font-family: 'Outfit', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.5); margin-bottom: 20px; }
+        .submission-status-panel { display: none; padding: 24px; border-radius: 16px; background: var(--white); color: var(--text-dark); border: 2px solid var(--gold); box-shadow: 4px 4px 0 var(--river-deep); margin-top: 20px; animation: tabFade 0.4s var(--ease); }
+        .submission-status-panel.success-state { display: block; }
+        .status-header { font-family: 'DM Serif Display', serif; font-size: 1.75rem; color: var(--river-deep); margin-bottom: 8px; }
+
+        /* FOOTER STRUCTURE ELEMENTS */
+        .footer-navigation-row { display: flex; justify-content: center; gap: 24px; margin: 25px 0; flex-wrap: wrap; }
+        .footer-navigation-row a { color: rgba(255,255,255,0.6); text-decoration: none; font-family: 'Outfit', sans-serif; font-size: 0.95rem; font-weight: 600; transition: color 0.2s ease; }
+        .footer-navigation-row a:hover { color: var(--gold); }
+        .social-outposts-box { margin: 20px 0; font-family: 'Outfit', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.5); }
         footer { background: #071418; padding: 60px 0; text-align: center; color: rgba(255,255,255,0.4); font-size: 0.95rem; border-top: 4px solid var(--river-deep); }
         .footer-logo { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: var(--gold); margin-bottom: 8px; }
         .footer-closing { font-family: 'DM Serif Display', serif; font-style: italic; color: var(--gold-soft); font-size: 1.35rem; margin: 12px 0 24px; }
-
-        @keyframes tabFade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
         @media (max-width: 900px) {
             .gallery-grid { grid-template-columns: 1fr 1fr; }
         }
         @media (max-width: 850px) {
             section { padding: 70px 0; }
-            .duo-grid, .world-grid, .world-grid.reverse, .book-layout, .gallery-grid, .start-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+            .duo-grid, .world-grid, .world-grid.reverse, .book-layout, .gallery-grid, .step-container { grid-template-columns: 1fr; gap: 40px; text-align: center; }
             .book-details { text-align: center; }
-            .book-meta-strip { justify-content: center; }
+            .spec-grid { justify-content: center; }
             .form-group { flex-direction: column; }
             input[type="email"] { width: 100%; border-radius: 30px; text-align: center; }
             .tab-nav { flex-direction: column; gap: 8px; border-bottom: none; }
@@ -232,21 +229,35 @@
 </head>
 <body>
 
-    <!-- 1. HERO SECTION (RESTRENGTHENED FOR PRE-LAUNCH CONVERSION) -->
+    <!-- STICKY CTA BAR CONVERSION ENGINE -->
+    <div class="sticky-cta-bar" role="status">
+        <div class="container" style="width: 100%;">
+            <div class="sticky-flex">
+                <!-- [CONTENT NEEDED] Section: Sticky Conversion CTA Bar Heading -->
+                <span class="sticky-text">The Adventures of Buddy Bootz Series Launch Waitlist Is Active</span>
+                <!-- [CONTENT NEEDED] Section: Sticky Conversion CTA Bar Button Label -->
+                <a href="#newsletter" class="sticky-btn">Secure Entry Slot</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 1. HERO SECTION WITH EMBEDDED CONVERSION ARCHITECTURE -->
     <header role="banner">
         <section class="hero">
             <div class="container">
-                <span class="coming-soon-badge">Coming Soon</span>
+                <div class="status-badge-container">
+                    <span class="prelaunch-badge">Coming Soon</span>
+                </div>
                 
-                <!-- [CONTENT REVIEW NEEDED] - Product Concept Anchor -->
-                <div class="product-line">An Illustrated Cozy Fantasy Book Series</div>
+                <!-- [CONTENT NEEDED] Section: Product Category Identifier Label -->
+                <div class="product-identifier">[Product Identifier Needed]</div>
                 
-                <img src="title.png" class="title-img" alt="The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot">
+                <img src="title.png" class="title-img" alt="The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot Custom Lettering">
                 <h1>Watch Your Step. The Landscape Is Shifting Again.</h1>
                 
-                <!-- Primary Above-The-Fold CTA Link -->
-                <div style="margin-bottom: 40px;">
-                    <a href="#newsletter" class="btn">Join the Waitlist for Book One</a>
+                <!-- Immediate Primary Action Layer Abovefold -->
+                <div style="margin: 35px 0 45px;">
+                    <a href="#newsletter" class="btn">Join the Series Launch Waitlist</a>
                 </div>
 
                 <div class="hero-text-container">
@@ -257,7 +268,7 @@
                     </div>
                 </div>
                 <div>
-                    <img src="hero.png" class="hero-img" alt="The Adventures of Buddy Bootz Series Asset">
+                    <img src="hero.png" class="hero-img" alt="Illustrated landscape showing elements of the shifting valley environment">
                 </div>
             </div>
         </section>
@@ -265,116 +276,80 @@
 
     <main id="main-content">
 
-        <!-- 2. BOOK ONE SHOWCASE (ELEVATED STRUCTURALLY ABOVE THE FOLD AT FLOW ROW #2) -->
-        <section id="book-one" class="book-section">
+        <!-- 2. BOOK ONE SHOWCASE MODULE (ELEVATED STRUCTURALLY TO POSITION TWO) -->
+        <section id="book-one" class="book-section" aria-labelledby="book-one-heading">
             <div class="container book-layout">
                 <div class="book-covers">
-                    <img src="bookcover.png" class="location-img" alt="The Rambunctious River Cover">
-                    <img src="bootz_cover.png" class="location-img" alt="Buddy Bootz Alternate Jacket">
+                    <img src="bookcover.png" class="location-img" alt="Official front jacket illustration of The Rambunctious River">
+                    <img src="bootz_cover.png" class="location-img" alt="Alternate presentation artwork casing for the Buddy Bootz volume layout">
                 </div>
                 <div class="book-details">
-                    <span class="section-label" style="text-align: left;">Volume 1 Launch Preview</span>
-                    <h2>Book One: The Rambunctious River</h2>
+                    <span class="section-label" style="text-align: left;">Volume One Launch Profile</span>
+                    <h2 id="book-one-heading" style="text-align: left;">Book One: The Rambunctious River</h2>
                     
-                    <!-- Structural Metadata Placeholders -->
-                    <div class="book-meta-strip">
-                        <span class="meta-tag">Illustrated Fantasy</span>
-                        
-                        <!-- [CONTENT REVIEW NEEDED] - Meta Elements for Print Format & Geometry -->
-                        <span class="meta-tag">[Format Elements Needed]</span>
-                        <span class="meta-tag">[Page Count Metric]</span>
-                        <span class="meta-tag">[Target Release Window]</span>
-                    </div>
-
-                    <p>Our debut adventure focuses entirely on what happens when a perfectly pleasant afternoon stroll turns into an infrastructure emergency. The river decides to completely ignore its traditional boundaries, a mechanical pump starts exhibiting an attitude, and Sir Drinks-A'Lot manages to lose our lunch rations within twenty minutes.</p>
-                    <p>This is a polished, fully illustrated book that skips the heavy-handed chosen-one tropes and gets straight to the good stuff: snappy banter, escalating logic, and two friends stubborn enough to survive an ecosystem that answers back.</p>
-                    
-                    <div class="pullquote">
-                        "We aren't lost, Buddy," Sir said, chest puffed out proudly as the river began flowing sideways. "We are simply expanding our geographic horizons."
-                    </div>
-                    
-                    <div style="margin-top: 30px;">
-                        <a href="#newsletter" class="btn">Join the Launch List for Book One</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. PRIMARY EMAIL CAPTURE HUB (ELEVATED STRUCTURALLY TO ENTRY ROW #3) -->
-        <section id="newsletter" class="newsletter-section">
+                    <!-- Structured Metadata Container Node -->
+                    <div class="spec-grid">
+                        <!-- [CONTENT NEEDED] Section: Binding Specifications Tag -->
+                        <span class="spec-tag">[Format Label Needed]</span>
+                        <!-- [CONTENT NEEDED] Section: Page Weight Tag -->
+                        <span class="spec-tag">[Page Count Metric]</span>
+                        <!-- [CONTENT NEEDED] Section: Target Delivery Window Tag -->
+                        <span clas        <!-- 4. SOCIAL PROOF ARCHITECTURE UNIT (FLOW POSITION FOUR) -->
+        <section class="proof-strip" aria-label="Reader Endorsements and Critiques">
             <div class="container">
-                <span class="section-label" style="color: var(--gold-soft);">Registry Bank</span>
-                
-                <!-- [CONTENT REVIEW NEEDED] - Benefit-driven Waitlist Headlines -->
-                <h2>Keep tabs on the current</h2>
-                <div class="divider" style="background: var(--gold-soft);"></div>
-                
-                <div style="max-width: 600px; margin: 0 auto 30px;">
-                    <p>If you want simple story alerts, upcoming line edits, and direct glimpses into what is crystallizing next along the water, you can log your contact down below.</p>
-                </div>
-                
-                <div class="form-container">
-                    <form action="https://formspree.io/f/xdapyaar" method="POST">
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="Enter email address" autocomplete="email" required>
-                            <button type="submit" class="btn">Send the next update</button>
-                        </div>
-                    </form>
-                    <span class="form-subtext">Clean text updates. Occasional structural disruptio        <!-- 4. SOCIAL PROOF & DISPATCH STRIP (FLOW ROW #4) -->
-        <section class="social-proof-strip">
-            <div class="container">
-                <div class="testimonial-container">
+                <div class="proof-flex">
                     
-                    <!-- [CONTENT REVIEW NEEDED] - Advanced Notebook Critiques -->
-                    <div class="testimonial-item">
-                        <div class="testimonial-text">"The dry, casual humor between Buddy and Sir makes the entire book feel alive. It skips typical world-ending dread for a cozy, beautifully illustrated neighborhood."</div>
-                        <div class="testimonial-author">— Advance Notebook Review</div>
+                    <!-- [CONTENT NEEDED] Section: Advanced Critique Quote Block One -->
+                    <div class="proof-quote-block">
+                        <div class="proof-body">"The dry, casual humor between Buddy and Sir makes the entire book feel alive. It skips the typical world-ending dread and gives you a cozy, beautifully illustrated neighborhood full of clever banter."</div>
+                        <div class="proof-cite">— Advanced Notebook Review Dispatch</div>
                     </div>
                     
-                    <div class="testimonial-item">
-                        <div class="testimonial-text">"Reading a fantasy story where the main challenge is dealing with uncooperative plumbing and shifting roads is incredibly refreshing."</div>
-                        <div class="testimonial-author">— Logbook Letter Dispatch</div>
+                    <!-- [CONTENT NEEDED] Section: Advanced Critique Quote Block Two -->
+                    <div class="proof-quote-block">
+                        <div class="proof-body">"The mechanical water pump scene made me laugh out loud. Reading a fantasy story where the main challenge is dealing with uncooperative plumbing and shifting roads is incredibly refreshing."</div>
+                        <div class="proof-cite">— Logbook Letter Correspondence</div>
                     </div>
 
                 </div>
             </div>
         </section>
 
-        <!-- 5. START HERE DIRECTIVE ENGINE (FLOW ROW #5) -->
-        <section id="start-here" class="start-here-section">
+        <!-- 5. STRUCTURAL ONBOARDING STEP FLOW DIRECTIVE (POSITION FIVE) -->
+        <section id="start-here" style="background: var(--bg-paper);" aria-labelledby="start-here-heading">
             <div class="container">
                 <span class="section-label">New to the River?</span>
-                <h2>How to Follow the Adventure</h2>
+                <h2 id="start-here-heading">How to Follow the Adventure</h2>
                 <div class="divider"></div>
                 
-                <div class="start-grid">
-                    <div class="start-step">
-                        <div class="step-num">1</div>
+                <div class="step-container">
+                    <div class="step-node">
+                        <div class="step-marker">1</div>
                         <h3>Explore the Cast</h3>
-                        <!-- [CONTENT REVIEW NEEDED] - Instruction Microcopy -->
-                        <p>Meet the team managing the shifting landscape down below.</p>
+                        <!-- [CONTENT NEEDED] Section: Step One Instructional Microcopy -->
+                        <p>[Step 1 Instructions Needed From Content Editor]</p>
                     </div>
-                    <div class="start-step">
-                        <div class="step-num">2</div>
+                    <div class="step-node">
+                        <div class="step-marker">2</div>
                         <h3>Preview Book One</h3>
-                        <!-- [CONTENT REVIEW NEEDED] - Instruction Microcopy -->
-                        <p>Read about our upcoming debut, *The Rambunctious River*.</p>
+                        <!-- [CONTENT NEEDED] Section: Step Two Instructional Microcopy -->
+                        <p>[Step 2 Instructions Needed From Content Editor]</p>
                     </div>
-                    <div class="start-step">
-                        <div class="step-num">3</div>
+                    <div class="step-node">
+                        <div class="step-marker">3</div>
                         <h3>Join the Waitlist</h3>
-                        <!-- [CONTENT REVIEW NEEDED] - Instruction Microcopy -->
-                        <p>Secure your place on the list for launch updates and field logs.</p>
+                        <!-- [CONTENT NEEDED] Section: Step Three Instructional Microcopy -->
+                        <p>[Step 3 Instructions Needed From Content Editor]</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 6. CHARACTER MODULES (FLOW ROW #6) -->
-        <section id="characters">
+        <!-- 6. CHARACTER MODULE ARCHIVES (FLOW POSITION SIX) -->
+        <section id="characters" aria-labelledby="characters-heading">
             <div class="container">
                 <span class="section-label">The Core Dynamic</span>
-                <h2>Two Friends Against Highly Irregular Geography</h2>
+                <h2 id="characters-heading">Two Friends Against Highly Irregular Geography</h2>
                 <div class="divider"></div>
                 
                 <div class="hero-text-container" style="text-align: center;">
@@ -383,13 +358,13 @@
 
                 <div class="duo-grid">
                     <div class="char-card">
-                        <img src="buddy.png" class="char-img" alt="Buddy Bootz portrait">
+                        <img src="buddy.png" class="char-img" alt="Hand-inked profile portrait drawing of Buddy Bootz holding structural plans">
                         <span class="char-tag">The Reluctant Repairman</span>
                         <h3>Buddy Bootz (That's Me)</h3>
                         <p>I possess a notebook full of architectural schematics, a healthy respect for solid ground, and a stubborn belief that if I just tighten enough bolts, the world will eventually make sense. It hasn't happened yet, but I remain optimistic.</p>
                     </div>
                     <div class="char-card">
-                        <img src="sir.png" class="char-img" alt="Sir Drinks-A'Lot portrait">
+                        <img src="sir.png" class="char-img" alt="Whimsical ink illustration portrait of Sir Drinks-A'Lot leaning comfortably near a stream">
                         <span class="char-tag">The Confident Navigator</span>
                         <h3>Sir Drinks-A'Lot</h3>
                         <p>Sir has never met a crisis he couldn’t turn into a comfortable rest stop. He travels with an unshakeable inner peace, a flask that never seems completely empty, and the serene certainty that getting lost is simply an adventure in italics.</p>
@@ -398,15 +373,15 @@
             </div>
         </section>
 
-        <!-- MEET BUDDY BOOTZ AUTHOR SECTION -->
-        <section id="meet-buddy" style="background: var(--white); border-top: 1px solid rgba(0,0,0,0.05);">
+        <!-- MEET BUDDY BOOTZ AUTHOR LOG MODULE -->
+        <section id="meet-buddy" style="background: var(--white); border-top: 1px solid rgba(0,0,0,0.05);" aria-labelledby="author-heading">
             <div class="container" style="display: grid; grid-template-columns: 1fr 1.3fr; gap: 50px; align-items: center;">
                 <div>
-                    <img src="authorbuddy.png" class="location-img" alt="Meet Buddy Bootz Author Image" style="border: 4px solid var(--white); box-shadow: 0 12px 36px rgba(0,0,0,0.08);">
+                    <img src="authorbuddy.png" class="location-img" alt="Buddy Bootz seated at a drafting desk adjusting cross-hatch lines" style="border: 4px solid var(--white); box-shadow: 0 12px 36px rgba(0,0,0,0.08);">
                 </div>
                 <div>
                     <span class="section-label" style="text-align: left;">The Ink-Stained Hands</span>
-                    <h2 style="text-align: left; margin-bottom: 20px;">Meet Buddy Bootz</h2>
+                    <h2 id="author-heading" style="text-align: left; margin-bottom: 20px;">Meet Buddy Bootz</h2>
                     <p>When I am not actively securing my treehouse against sudden local wind storms or making sure Sir Drinks-A'Lot hasn't wandered off into a patch of mischievous brambles, I sit down with my inkpot and write down our adventures.</p>
                     <p>I wanted to create books that feel exactly like our corner of the woods: warm, slightly chaotic, heavy on visual details, and entirely driven by the comfort of good companionship. I mix the ink myself, draw the map lines by hand, and double-check every single page to ensure the narrative doesn't suddenly dissolve into a puddle of river water.</p>
                     <p style="font-weight: 700; color: var(--river-deep);">No corporate teams, no focus groups—just a clean, homemade story straight from my desk to your hands.</p>
@@ -414,28 +389,28 @@
             </div>
         </section>
 
-        <!-- 7. WORLD EXPLORATION ENGINE (FLOW ROW #7) -->
-        <section id="world" class="world-section">
+        <!-- 7. WORLD EXPLORATION ENGINE GEOGRAPHY FILES (POSITION SEVEN) -->
+        <section id="world" class="world-section" aria-labelledby="world-heading">
             <div class="container">
                 <span class="section-label">Tour of the Property</span>
-                <h2>Places That Keep Me Awake At Night</h2>
+                <h2 id="world-heading">Places That Keep Me Awake At Night</h2>
                 <div class="divider"></div>
                 
-                <!-- Buddy's Treehouse -->
+                <!-- Buddy's Treehouse Grid Node -->
                 <div class="world-grid">
                     <div>
                         <h3 style="color: var(--river-deep);">My Treehouse</h3>
                         <p>This is my structural operational headquarters. It is built high into the branches of a tree that, thankfully, has very deep roots. I keep my drafts, my spare tools, and my tea supply up here. It is one of the few places around here that stays exactly where I left it yesterday.</p>
                     </div>
                     <div>
-                        <img src="buddy_treehouse.png" class="location-img" alt="Buddy's Treehouse">
+                        <img src="buddy_treehouse.png" class="location-img" alt="Architectural rendering sketching Buddy's multi-level elevated woodland timber escape">
                     </div>
                 </div>
 
-                <!-- Sir's Place / Cabin -->
+                <!-- Sir's Cabin Grid Node -->
                 <div class="world-grid reverse">
                     <div>
-                        <img src="sirs_place.png" class="location-img" alt="Sir's Cabin">
+                        <img src="sirs_place.png" class="location-img" alt="Cozy exterior view drawing of Sir's cabin down the lane">
                     </div>
                     <div>
                         <h3 style="color: var(--river-main);">Sir's Place</h3>
@@ -443,21 +418,21 @@
                     </div>
                 </div>
 
-                <!-- Rambunctious River & Water Pump -->
+                <!-- Rambunctious River & Water Pump Grid Node -->
                 <div class="world-grid">
                     <div>
                         <h3 style="color: var(--river-deep);">The Rambunctious River &amp; Water Pump</h3>
                         <p>This is the source of my persistent headaches. The river changes direction whenever it feels unappreciated, and this iron water pump is my constant mechanical adversary. If you pull the handle too quickly, it coughs up old poems; if you pull it too slowly, the riverbanks start sliding into the grass.</p>
                     </div>
                     <div>
-                        <img src="rambunctiousriver.png" class="location-img" alt="The Rambunctious River and Water Pump">
+                        <img src="rambunctiousriver.png" class="location-img" alt="Ornate ink drawing profiling an iron pump system set along an active water flow channel">
                     </div>
                 </div>
 
-                <!-- Map Prelude -->
+                <!-- Map Prelude Grid Node -->
                 <div class="world-grid reverse">
                     <div>
-                        <img src="map-prelude.png" class="location-img" alt="Map Prelude">
+                        <img src="map-prelude.png" class="location-img" alt="Topographical map detailing shifting landscape lines and liquid fluid lines">
                     </div>
                     <div>
                         <h3 style="color: var(--river-deep);">The Map Prelude</h3>
@@ -467,41 +442,41 @@
             </div>
         </section>
 
-        <!-- 8. FIELD SKETCHES / ART GALLERY (FLOW ROW #8) -->
-        <section id="adventures" class="gallery-section">
+        <!-- 8. FIELD SKETCHES PORTFOLIO GALLERY MODULE (POSITION EIGHT) -->
+        <section id="adventures" class="gallery-section" aria-labelledby="gallery-heading">
             <div class="container">
                 <span class="section-label">Field Sketches</span>
-                <h2>Evidence from My Notebook</h2>
+                <h2 id="gallery-heading">Evidence from My Notebook</h2>
                 <div class="divider"></div>
                 
                 <div class="gallery-grid">
                     <div class="gallery-card">
-                        <img src="raft_coffeetime.png" class="gallery-img" alt="Raft Coffee Time">
+                        <img src="raft_coffeetime.png" class="gallery-img" alt="Ink line drawing of two figures enjoying hot drinks on an active log raft line">
                         <div class="gallery-caption">Raft Coffee Time</div>
                         <p style="font-size: 1rem; color: var(--text-body); margin: 8px 0 0;">Sir insisted that hot coffee takes priority over fixing the broken rudder. We hit three boulders, but the brew was excellent.</p>
                     </div>
                     <div class="gallery-card">
-                        <img src="Gerald.png" class="gallery-img" alt="Gerald">
+                        <img src="Gerald.png" class="gallery-img" alt="Sketch rendering detailing an unusual stone structure bridge setup managed by a small creature">
                         <div class="gallery-caption">Gerald's Outpost</div>
                         <p style="font-size: 1rem; color: var(--text-body); margin: 8px 0 0;">Gerald told us the bridge was perfectly safe. He omitted the part where the bridge leaves for lunch at noon.</p>
                     </div>
                     <div class="gallery-card">
-                        <img src="frog-king.png" class="gallery-img" alt="The Frog King">
+                        <img src="frog-king.png" class="gallery-img" alt="Regal dynamic drawing outlining a frog crowned king sitting amongst lake grass">
                         <div class="gallery-caption">The Frog King</div>
                         <p style="font-size: 1rem; color: var(--text-body); margin: 8px 0 0;">He rules over the muddy shallows with an absolute iron fist and a very loud, demanding croak. Do not look him in the eye.</p>
                     </div>
                     <div class="gallery-card">
-                        <img src="frog-chaos.png" class="gallery-img" alt="Frog Chaos">
+                        <img src="frog-chaos.png" class="gallery-img" alt="Frenzied landscape movement sketching dozens of small marsh animals swimming rapidly">
                         <div class="gallery-caption">Frog Chaos</div>
                         <p style="font-size: 1rem; color: var(--text-body); margin: 8px 0 0;">This is what happens when someone (Sir) accidentally drops an entire bag of shiny brass buttons into the swamp reeds.</p>
                     </div>
                     <div class="gallery-card">
-                        <img src="lantern_2026.png" class="gallery-img" alt="Lantern Study">
+                        <img src="lantern_2026.png" class="gallery-img" alt="Intricate cross hatch shadow study drawing focusing on an active glass lit iron lantern casing">
                         <div class="gallery-caption">Lantern Study (2026)</div>
                         <p style="font-size: 1rem; color: var(--text-body); margin: 8px 0 0;">My trusty light source. Essential for when the sunset arrives three hours ahead of the official schedule.</p>
                     </div>
                     <div class="gallery-card">
-                        <img src="arch.png" class="gallery-img" alt="The Archways">
+                        <img src="arch.png" class="gallery-img" alt="Mysterious heavy stone gateway positioned out in an open valley clearance">
                         <div class="gallery-caption">The Shifting Archways</div>
                         <p style="font-size: 1rem; color: var(--text-body); margin: 8px 0 0;">An old stone structure we walk through. Sometimes it leads to the forest lane; sometimes it opens directly behind Sir's kitchen.</p>
                     </div>
@@ -509,11 +484,11 @@
             </div>
         </section>
 
-        <!-- 9. LIVE LOGS / BEHIND THE SCENES (FLOW ROW #9) -->
-        <section id="hub" class="hub-section">
+        <!-- 9. PRODUCTION TRACKER & TAB NAVIGATION BENCHMARK (POSITION NINE) -->
+        <section id="hub" class="hub-section" aria-labelledby="tracker-heading">
             <div class="container">
                 <span class="section-label">Live Logs</span>
-                <h2>From the Riverbank</h2>
+                <h2 id="tracker-heading">From the Riverbank</h2>
                 <div class="divider"></div>
                 
                 <div style="text-align: center; max-width: 680px; margin: 0 auto 35px;">
@@ -521,13 +496,14 @@
                 </div>
                 
                 <div class="tab-container">
-                    <div class="tab-nav">
-                        <button class="tab-btn active" onclick="switchTab(event, 'progress')">Book Progress</button>
-                        <button class="tab-btn" onclick="switchTab(event, 'behind')">Behind The Scenes</button>
-                        <button class="tab-btn" onclick="switchTab(event, 'reviews')">Early Reader Words</button>
+                    <div class="tab-nav" role="tablist" aria-label="Production Log Selection Tracks">
+                        <button id="tab-progress" class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-progress" tabindex="0">Book Progress</button>
+                        <button id="tab-behind" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-behind" tabindex="-1">Behind The Scenes</button>
+                        <button id="tab-reviews" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-reviews" tabindex="-1">Early Reader Words</button>
                     </div>
 
-                    <div id="progress" class="tab-content active">
+                    <!-- LOG COMPONENT CONTAINER PANELS -->
+                    <div id="panel-progress" class="tab-content active" role="tabpanel" aria-labelledby="tab-progress">
                         <div class="audit-card">
                             <h4>Volume One Typography Integration <span class="status-badge gold">92% Done</span></h4>
                             <p>I am currently hand-checking the layout lines of *The Rambunctious River*. The print blocks are aligning neatly, ensuring the text panels don't crowd the margins when the book bindings are stitched down.</p>
@@ -538,7 +514,7 @@
                         </div>
                     </div>
 
-                    <div id="behind" class="tab-content">
+                    <div id="panel-behind" class="tab-content" role="tabpanel" aria-labelledby="tab-behind">
                         <div class="audit-card">
                             <h4>Paper Absorption Experiments</h4>
                             <p>Our heavy paper stock drinks ink very quickly on damp afternoons. I spent three days adjusting cross-hatching weights on the riverbank landscape drawings to make sure the shaded lines stay crisp instead of bleeding into a blurry blotch at the press.</p>
@@ -549,14 +525,14 @@
                         </div>
                     </div>
 
-                    <div id="reviews" class="tab-content">
+                    <div id="panel-reviews" class="tab-content" role="tabpanel" aria-labelledby="tab-reviews">
                         <div class="audit-card">
-                            <div class="review-quote">"The dry, casual humor between Buddy and Sir makes the entire book feel alive. It skips the typical world-ending dread and gives you a cozy, beautifully illustrated neighborhood full of clever banter."</div>
-                            <div class="review-meta">Advanced Notebook Review Dispatch &bull; Shared Feedback</div>
+                            <div class="review-quote" style="font-family:'Crimson Pro',serif; font-style:italic; font-size:1.15rem; margin-bottom:8px;">"The dry, casual humor between Buddy and Sir makes the entire book feel alive. It skips the typical world-ending dread and gives you a cozy, beautifully illustrated neighborhood full of clever banter."</div>
+                            <div class="review-meta" style="font-family:'Outfit',sans-serif; font-size:0.8rem; font-weight:700; color:var(--river-main);">Advanced Notebook Review Dispatch &bull; Shared Feedback</div>
                         </div>
                         <div class="audit-card">
-                            <div class="review-quote">"The mechanical water pump scene made me laugh out loud. Reading a fantasy story where the main challenge is dealing with uncooperative plumbing and shifting roads is incredibly refreshing."</div>
-                            <div class="review-meta">Logbook Letter &bull; Reader Correspondence</div>
+                            <div class="review-quote" style="font-family:'Crimson Pro',serif; font-style:italic; font-size:1.15rem; margin-bottom:8px;">"The mechanical water pump scene made me laugh out loud. Reading a fantasy story where the main challenge is dealing with uncooperative plumbing and shifting roads is incredibly refreshing."</div>
+                            <div class="review-meta" style="font-family:'Outfit',sans-serif; font-size:0.8rem; font-weight:700; color:var(--river-main);">Logbook Letter &bull; Reader Correspondence</div>
                         </div>
                     </div>
                 </div>
@@ -564,40 +540,21 @@
         </section>
     </main>
 
-    <!-- 10. MODERNIZED UTILITY FOOTER -->
+    <!-- 10. COMPREHENSIVE UTILITY ROADMAP FOOTER BLOCK -->
     <footer role="contentinfo">
         <div class="container">
             <div class="footer-logo">Written by Buddy Bootz</div>
             <div class="footer-closing">“And this is where the real adventure begins. The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot.”</div>
             
-            <!-- Basic Structural Navigation Links -->
-            <nav class="footer-nav" aria-label="Footer Navigation">
+            <!-- Standard Performance Navigational Matrix -->
+            <nav class="footer-navigation-row" aria-label="Secondary Directory Roadmap">
                 <a href="#book-one">Book One</a>
-                <a href="#characters">Characters</a>
-                <a href="#world">The World</a>
-                <a href="#newsletter">Join Waitlist</a>
+                <a href="#start-here">Start Guide</a>
+                <a href="#characters">The Dynamic Cast</a>
+                <a href="#world">Valley Locations</a>
+                <a href="#newsletter">Join Pre-Launch</a>
             </nav>
 
-            <!-- [CONTENT REVIEW NEEDED] - Contact Point/Social Destination Labels -->
-            <div class="footer-contact">
-                <span>[Contact/Support Placeholder Label]</span>
-            </div>
-
-            <p>&copy; 2026 Buddy Bootz Project. All Rights Reserved. Dedicated to Susan.</p>
-        </div>
-    </footer>
-
-    <script>
-        function switchTab(evt, tabId) {
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => content.classList.remove('active'));
-
-            const buttons = document.querySelectorAll('.tab-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-
-            document.getElementById(tabId).classList.add('active');
-            evt.currentTarget.classList.add('active');
-        }
-    </script>
-</body>
-</html>
+            <!-- [CONTENT NEEDED] Section: Utility Footer Support Directives & Verification Links -->
+            <div class="social-outposts-box">
+                <span>[Verification Links and Outpost Destinat
