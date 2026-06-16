@@ -14,7 +14,6 @@
     <link rel="canonical" href="https://buddybootz.com/">
     <title>The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot</title>
     
-    <!-- Open Graph Metadata Elements for SEO -->
     <meta property="og:title" content="The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot">
     <meta property="og:description" content="Explore a world of light chaos, loyal friendship, and the rambunctious river.">
     <meta property="og:image" content="hero.png">
@@ -111,7 +110,6 @@
             z-index: 1000;
             display: flex;
             align-items: center;
-            justify-content: border-between;
             border-bottom: 2px solid var(--gold);
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
@@ -213,6 +211,8 @@
         .footer-logo { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: var(--gold); margin-bottom: 8px; }
         .footer-closing { font-family: 'DM Serif Display', serif; font-style: italic; color: var(--gold-soft); font-size: 1.35rem; margin: 12px 0 24px; }
 
+        @keyframes tabFade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
         @media (max-width: 900px) {
             .gallery-grid { grid-template-columns: 1fr 1fr; }
         }
@@ -229,19 +229,15 @@
 </head>
 <body>
 
-    <!-- STICKY CTA BAR CONVERSION ENGINE -->
     <div class="sticky-cta-bar" role="status">
         <div class="container" style="width: 100%;">
             <div class="sticky-flex">
-                <!-- [CONTENT NEEDED] Section: Sticky Conversion CTA Bar Heading -->
                 <span class="sticky-text">The Adventures of Buddy Bootz Series Launch Waitlist Is Active</span>
-                <!-- [CONTENT NEEDED] Section: Sticky Conversion CTA Bar Button Label -->
                 <a href="#newsletter" class="sticky-btn">Secure Entry Slot</a>
             </div>
         </div>
     </div>
 
-    <!-- 1. HERO SECTION WITH EMBEDDED CONVERSION ARCHITECTURE -->
     <header role="banner">
         <section class="hero">
             <div class="container">
@@ -249,13 +245,11 @@
                     <span class="prelaunch-badge">Coming Soon</span>
                 </div>
                 
-                <!-- [CONTENT NEEDED] Section: Product Category Identifier Label -->
                 <div class="product-identifier">[Product Identifier Needed]</div>
                 
                 <img src="title.png" class="title-img" alt="The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot Custom Lettering">
                 <h1>Watch Your Step. The Landscape Is Shifting Again.</h1>
                 
-                <!-- Immediate Primary Action Layer Abovefold -->
                 <div style="margin: 35px 0 45px;">
                     <a href="#newsletter" class="btn">Join the Series Launch Waitlist</a>
                 </div>
@@ -273,10 +267,8 @@
             </div>
         </section>
     </header>
-
     <main id="main-content">
 
-        <!-- 2. BOOK ONE SHOWCASE MODULE (ELEVATED STRUCTURALLY TO POSITION TWO) -->
         <section id="book-one" class="book-section" aria-labelledby="book-one-heading">
             <div class="container book-layout">
                 <div class="book-covers">
@@ -287,25 +279,64 @@
                     <span class="section-label" style="text-align: left;">Volume One Launch Profile</span>
                     <h2 id="book-one-heading" style="text-align: left;">Book One: The Rambunctious River</h2>
                     
-                    <!-- Structured Metadata Container Node -->
                     <div class="spec-grid">
-                        <!-- [CONTENT NEEDED] Section: Binding Specifications Tag -->
                         <span class="spec-tag">[Format Label Needed]</span>
-                        <!-- [CONTENT NEEDED] Section: Page Weight Tag -->
                         <span class="spec-tag">[Page Count Metric]</span>
-                        <!-- [CONTENT NEEDED] Section: Target Delivery Window Tag -->
-                        <span clas        <!-- 4. SOCIAL PROOF ARCHITECTURE UNIT (FLOW POSITION FOUR) -->
+                        <span class="spec-tag">[Target Release Window]</span>
+                    </div>
+
+                    <p>Our debut adventure focuses entirely on what happens when a perfectly pleasant afternoon stroll turns into an infrastructure emergency. The river decides to completely ignore its traditional boundaries, a mechanical pump starts exhibiting an attitude, and Sir Drinks-A'Lot manages to lose our lunch rations within twenty minutes.</p>
+                    <p>This is a polished, fully illustrated book that skips the heavy-handed chosen-one tropes and gets straight to the good stuff: snappy banter, escalating logic, and two friends stubborn enough to survive an ecosystem that answers back.</p>
+                    <div class="pullquote">
+                        "We aren't lost, Buddy," Sir said, chest puffed out proudly as the river began flowing sideways. "We are simply expanding our geographic horizons."
+                    </div>
+                    
+                    <div style="margin-top: 35px;">
+                        <a href="#newsletter" class="btn">Join the Launch List for Book One</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="newsletter" class="newsletter-section" aria-labelledby="form-section-title">
+            <div class="container">
+                <span class="section-label" style="color: var(--gold-soft);">Registry Node</span>
+                <h2 id="form-section-title">Keep tabs on the current</h2>
+                <div class="divider" style="background: var(--gold-soft);"></div>
+                
+                <div class="form-container" style="margin-bottom: 20px;">
+                    <div class="lead-magnet-box">
+                        <div class="lead-magnet-title">Exclusive Entry Incentive Pack Included</div>
+                        <p style="font-size: 1.1rem; color: rgba(255,255,255,0.85); margin-bottom: 0;">[Lead Magnet Narrative Hook Description Needed From Content Editor]</p>
+                    </div>
+                </div>
+                
+                <div class="form-container">
+                    <form id="waitlist-submission-form" action="https://formspree.io/f/xdapyaar" method="POST">
+                        <div class="form-group">
+                            <input type="email" name="email" id="subscriber-email-input" placeholder="Enter email address" autocomplete="email" required aria-label="Subscriber Email Field">
+                            <button type="submit" class="btn" id="form-submit-trigger-button">Send the next update</button>
+                        </div>
+                    </form>
+                    <span class="form-subtext">Clean text updates. Occasional structural disruptions.</span>
+                    
+                    <div class="submission-status-panel" id="async-success-display-panel" role="alert">
+                        <div class="status-header">Registration Logged Successfully</div>
+                        <p style="font-size: 1.1rem; margin-bottom: 0; color: var(--text-dark);">Your connection sequence has been fixed into the riverbank logs. You will receive progress reports directly from Buddy's desk without leaving the page.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="proof-strip" aria-label="Reader Endorsements and Critiques">
             <div class="container">
                 <div class="proof-flex">
                     
-                    <!-- [CONTENT NEEDED] Section: Advanced Critique Quote Block One -->
                     <div class="proof-quote-block">
                         <div class="proof-body">"The dry, casual humor between Buddy and Sir makes the entire book feel alive. It skips the typical world-ending dread and gives you a cozy, beautifully illustrated neighborhood full of clever banter."</div>
                         <div class="proof-cite">— Advanced Notebook Review Dispatch</div>
                     </div>
                     
-                    <!-- [CONTENT NEEDED] Section: Advanced Critique Quote Block Two -->
                     <div class="proof-quote-block">
                         <div class="proof-body">"The mechanical water pump scene made me laugh out loud. Reading a fantasy story where the main challenge is dealing with uncooperative plumbing and shifting roads is incredibly refreshing."</div>
                         <div class="proof-cite">— Logbook Letter Correspondence</div>
@@ -315,7 +346,6 @@
             </div>
         </section>
 
-        <!-- 5. STRUCTURAL ONBOARDING STEP FLOW DIRECTIVE (POSITION FIVE) -->
         <section id="start-here" style="background: var(--bg-paper);" aria-labelledby="start-here-heading">
             <div class="container">
                 <span class="section-label">New to the River?</span>
@@ -326,26 +356,21 @@
                     <div class="step-node">
                         <div class="step-marker">1</div>
                         <h3>Explore the Cast</h3>
-                        <!-- [CONTENT NEEDED] Section: Step One Instructional Microcopy -->
                         <p>[Step 1 Instructions Needed From Content Editor]</p>
                     </div>
                     <div class="step-node">
                         <div class="step-marker">2</div>
                         <h3>Preview Book One</h3>
-                        <!-- [CONTENT NEEDED] Section: Step Two Instructional Microcopy -->
                         <p>[Step 2 Instructions Needed From Content Editor]</p>
                     </div>
                     <div class="step-node">
                         <div class="step-marker">3</div>
                         <h3>Join the Waitlist</h3>
-                        <!-- [CONTENT NEEDED] Section: Step Three Instructional Microcopy -->
                         <p>[Step 3 Instructions Needed From Content Editor]</p>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- 6. CHARACTER MODULE ARCHIVES (FLOW POSITION SIX) -->
         <section id="characters" aria-labelledby="characters-heading">
             <div class="container">
                 <span class="section-label">The Core Dynamic</span>
@@ -373,7 +398,6 @@
             </div>
         </section>
 
-        <!-- MEET BUDDY BOOTZ AUTHOR LOG MODULE -->
         <section id="meet-buddy" style="background: var(--white); border-top: 1px solid rgba(0,0,0,0.05);" aria-labelledby="author-heading">
             <div class="container" style="display: grid; grid-template-columns: 1fr 1.3fr; gap: 50px; align-items: center;">
                 <div>
@@ -389,14 +413,12 @@
             </div>
         </section>
 
-        <!-- 7. WORLD EXPLORATION ENGINE GEOGRAPHY FILES (POSITION SEVEN) -->
         <section id="world" class="world-section" aria-labelledby="world-heading">
             <div class="container">
                 <span class="section-label">Tour of the Property</span>
                 <h2 id="world-heading">Places That Keep Me Awake At Night</h2>
                 <div class="divider"></div>
                 
-                <!-- Buddy's Treehouse Grid Node -->
                 <div class="world-grid">
                     <div>
                         <h3 style="color: var(--river-deep);">My Treehouse</h3>
@@ -407,7 +429,6 @@
                     </div>
                 </div>
 
-                <!-- Sir's Cabin Grid Node -->
                 <div class="world-grid reverse">
                     <div>
                         <img src="sirs_place.png" class="location-img" alt="Cozy exterior view drawing of Sir's cabin down the lane">
@@ -418,7 +439,6 @@
                     </div>
                 </div>
 
-                <!-- Rambunctious River & Water Pump Grid Node -->
                 <div class="world-grid">
                     <div>
                         <h3 style="color: var(--river-deep);">The Rambunctious River &amp; Water Pump</h3>
@@ -429,7 +449,6 @@
                     </div>
                 </div>
 
-                <!-- Map Prelude Grid Node -->
                 <div class="world-grid reverse">
                     <div>
                         <img src="map-prelude.png" class="location-img" alt="Topographical map detailing shifting landscape lines and liquid fluid lines">
@@ -442,7 +461,6 @@
             </div>
         </section>
 
-        <!-- 8. FIELD SKETCHES PORTFOLIO GALLERY MODULE (POSITION EIGHT) -->
         <section id="adventures" class="gallery-section" aria-labelledby="gallery-heading">
             <div class="container">
                 <span class="section-label">Field Sketches</span>
@@ -484,7 +502,6 @@
             </div>
         </section>
 
-        <!-- 9. PRODUCTION TRACKER & TAB NAVIGATION BENCHMARK (POSITION NINE) -->
         <section id="hub" class="hub-section" aria-labelledby="tracker-heading">
             <div class="container">
                 <span class="section-label">Live Logs</span>
@@ -502,7 +519,6 @@
                         <button id="tab-reviews" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-reviews" tabindex="-1">Early Reader Words</button>
                     </div>
 
-                    <!-- LOG COMPONENT CONTAINER PANELS -->
                     <div id="panel-progress" class="tab-content active" role="tabpanel" aria-labelledby="tab-progress">
                         <div class="audit-card">
                             <h4>Volume One Typography Integration <span class="status-badge gold">92% Done</span></h4>
@@ -540,13 +556,11 @@
         </section>
     </main>
 
-    <!-- 10. COMPREHENSIVE UTILITY ROADMAP FOOTER BLOCK -->
     <footer role="contentinfo">
         <div class="container">
             <div class="footer-logo">Written by Buddy Bootz</div>
             <div class="footer-closing">“And this is where the real adventure begins. The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot.”</div>
             
-            <!-- Standard Performance Navigational Matrix -->
             <nav class="footer-navigation-row" aria-label="Secondary Directory Roadmap">
                 <a href="#book-one">Book One</a>
                 <a href="#start-here">Start Guide</a>
@@ -555,6 +569,93 @@
                 <a href="#newsletter">Join Pre-Launch</a>
             </nav>
 
-            <!-- [CONTENT NEEDED] Section: Utility Footer Support Directives & Verification Links -->
             <div class="social-outposts-box">
-                <span>[Verification Links and Outpost Destinat
+                <span>[Verification Links and Outpost Destination Slots Needed]</span>
+            </div>
+
+            <p style="font-size:0.85rem; color:rgba(255,255,255,0.3); margin-top:15px;">&copy; 2026 Buddy Bootz Project. All Rights Reserved. Dedicated to Susan.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Tab Interaction Suite with Complete Keyboard Management
+        function switchTab(evt, tabId) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-selected', 'false');
+                btn.setAttribute('tabindex', '-1');
+            });
+
+            const currentContent = document.getElementById(tabId);
+            if(currentContent) currentContent.classList.add('active');
+            
+            const currentTrigger = evt.currentTarget;
+            currentTrigger.classList.add('active');
+            currentTrigger.setAttribute('aria-selected', 'true');
+            currentTrigger.setAttribute('tabindex', '0');
+        }
+
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        tabButtons.forEach((btn, index) => {
+            btn.addEventListener('click', (e) => {
+                const targetPanelId = btn.getAttribute('aria-controls');
+                switchTab(e, targetPanelId);
+            });
+
+            btn.addEventListener('keydown', (e) => {
+                let targetIdx = null;
+                if (e.key === 'ArrowRight') {
+                    targetIdx = (index + 1) % tabButtons.length;
+                } else if (e.key === 'ArrowLeft') {
+                    targetIdx = (index - 1 + tabButtons.length) % tabButtons.length;
+                }
+                
+                if (targetIdx !== null) {
+                    tabButtons[targetIdx].focus();
+                    tabButtons[targetIdx].click();
+                }
+            });
+        });
+
+        // Formspree Anti-Redirect Intercept Engine
+        const waitlistForm = document.getElementById('waitlist-submission-form');
+        const statusPanel = document.getElementById('async-success-display-panel');
+        const submitBtn = document.getElementById('form-submit-trigger-button');
+
+        if(waitlistForm) {
+            waitlistForm.addEventListener('submit', function(event) {
+                event.preventDefault(); 
+                submitBtn.disabled = true;
+                submitBtn.innerText = "Logging sequence...";
+
+                const payload = new FormData(waitlistForm);
+
+                fetch(waitlistForm.action, {
+                    method: 'POST',
+                    body: payload,
+                    headers: { 'Accept': 'application/json' }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        statusPanel.classList.add('success-state');
+                        statusPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        waitlistForm.reset();
+                        submitBtn.innerText = "Logged Entry";
+                    } else {
+                        throw new Error('Network logging mismatch detected');
+                    }
+                })
+                .catch(error => {
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = "Try Connection Again";
+                    alert("The communication stream encountered an obstruction. Please verify your connection address and try pushing the lever again.");
+                });
+            });
+        }
+    </script>
+</body>
+</html>
