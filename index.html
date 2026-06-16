@@ -90,11 +90,65 @@
         }
         .btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--river-deep); background: var(--gold-soft); }
 
+        /* FUNNEL BADGES & METADATA LABELS */
+        .coming-soon-badge {
+            display: inline-block;
+            background: var(--river-deep);
+            color: var(--gold);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 800;
+            padding: 6px 18px;
+            border-radius: 30px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            border: 1px solid var(--gold);
+        }
+        .product-line {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--river-main);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+        }
+        .book-meta-strip {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+        .meta-tag {
+            background: var(--white);
+            border: 1px solid rgba(31,78,95,0.15);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--river-deep);
+        }
+
         /* 1. HERO ARCHITECTURE */
-        .hero { background: linear-gradient(180deg, var(--river-light) 0%, var(--bg-paper) 100%); text-align: center; padding: 140px 0 100px; border-bottom: 2px dashed var(--river-main); }
+        .hero { background: linear-gradient(180deg, var(--river-light) 0%, var(--bg-paper) 100%); text-align: center; padding: 120px 0 80px; border-bottom: 2px dashed var(--river-main); }
         .hero-img { width: 100%; max-width: 920px; border-radius: 20px; box-shadow: 0 25px 55px rgba(31,78,95,0.18); margin-top: 50px; border: 4px solid var(--white); }
         .title-img { max-width: 440px; width: 100%; height: auto; margin-bottom: 28px; }
         .hero-text-container { max-width: 760px; margin: 0 auto 35px; }
+
+        /* START HERE / STEP-BY-STEP STRIP */
+        .start-here-section { background: var(--white); padding: 50px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .start-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 20px; }
+        .start-step { background: var(--bg-paper); padding: 25px; border-radius: 12px; border: 1px solid rgba(31,78,95,0.08); position: relative; }
+        .step-num { font-family: 'Outfit', sans-serif; font-size: 3rem; font-weight: 800; color: rgba(63,167,214,0.15); position: absolute; top: 10px; right: 20px; line-height: 1; }
+
+        /* SOCIAL PROOF STRIP */
+        .social-proof-strip { background: var(--river-deep); color: var(--white); padding: 35px 0; border-top: 2px solid var(--gold); border-bottom: 2px solid var(--gold); }
+        .testimonial-container { display: flex; justify-content: space-around; gap: 40px; flex-wrap: wrap; }
+        .testimonial-item { flex: 1; min-width: 250px; max-width: 400px; text-align: center; }
+        .testimonial-text { font-family: 'Crimson Pro', serif; font-style: italic; font-size: 1.2rem; line-height: 1.5; color: rgba(255,255,255,0.9); }
+        .testimonial-author { font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-top: 10px; color: var(--gold-soft); }
 
         /* 2. CHARACTER MODULES */
         .duo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 30px; }
@@ -152,6 +206,10 @@
         .form-subtext { font-family: 'Outfit', sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold-soft); margin-top: 16px; display: block; }
 
         /* 8. FOOTER */
+        .footer-nav { display: flex; justify-content: center; gap: 25px; margin: 20px 0; flex-wrap: wrap; }
+        .footer-nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-family: 'Outfit', sans-serif; font-size: 0.9rem; font-weight: 600; transition: color 0.2s ease; }
+        .footer-nav a:hover { color: var(--gold); }
+        .footer-contact { font-family: 'Outfit', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.5); margin-bottom: 20px; }
         footer { background: #071418; padding: 60px 0; text-align: center; color: rgba(255,255,255,0.4); font-size: 0.95rem; border-top: 4px solid var(--river-deep); }
         .footer-logo { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: var(--gold); margin-bottom: 8px; }
         .footer-closing { font-family: 'DM Serif Display', serif; font-style: italic; color: var(--gold-soft); font-size: 1.35rem; margin: 12px 0 24px; }
@@ -163,8 +221,9 @@
         }
         @media (max-width: 850px) {
             section { padding: 70px 0; }
-            .duo-grid, .world-grid, .world-grid.reverse, .book-layout, .gallery-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+            .duo-grid, .world-grid, .world-grid.reverse, .book-layout, .gallery-grid, .start-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
             .book-details { text-align: center; }
+            .book-meta-strip { justify-content: center; }
             .form-group { flex-direction: column; }
             input[type="email"] { width: 100%; border-radius: 30px; text-align: center; }
             .tab-nav { flex-direction: column; gap: 8px; border-bottom: none; }
@@ -173,12 +232,23 @@
 </head>
 <body>
 
-    <!-- 1. HERO SECTION -->
+    <!-- 1. HERO SECTION (RESTRENGTHENED FOR PRE-LAUNCH CONVERSION) -->
     <header role="banner">
         <section class="hero">
             <div class="container">
+                <span class="coming-soon-badge">Coming Soon</span>
+                
+                <!-- [CONTENT REVIEW NEEDED] - Product Concept Anchor -->
+                <div class="product-line">An Illustrated Cozy Fantasy Book Series</div>
+                
                 <img src="title.png" class="title-img" alt="The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot">
                 <h1>Watch Your Step. The Landscape Is Shifting Again.</h1>
+                
+                <!-- Primary Above-The-Fold CTA Link -->
+                <div style="margin-bottom: 40px;">
+                    <a href="#newsletter" class="btn">Join the Waitlist for Book One</a>
+                </div>
+
                 <div class="hero-text-container">
                     <p>Hello. I’m Buddy Bootz. If you were expecting a grand, majestic fantasy chronicle where a chosen hero fulfills an ancient prophecy, I am afraid you have wandered onto the wrong riverbank.</p>
                     <div class="subtext-block">
@@ -186,7 +256,6 @@
                         <p style="font-style: italic; color: var(--river-main); margin-top: 15px;">Buddy says: "This seems like a fantastic idea." &bull; Sir says: "That's usually when the trouble starts."</p>
                     </div>
                 </div>
-                <a href="#book-one" class="btn">Grab Book One Before It Floats Away</a>
                 <div>
                     <img src="hero.png" class="hero-img" alt="The Adventures of Buddy Bootz Series Asset">
                 </div>
@@ -195,7 +264,113 @@
     </header>
 
     <main id="main-content">
-        <!-- 2. MEET BUDDY & SIR SECTION -->
+
+        <!-- 2. BOOK ONE SHOWCASE (ELEVATED STRUCTURALLY ABOVE THE FOLD AT FLOW ROW #2) -->
+        <section id="book-one" class="book-section">
+            <div class="container book-layout">
+                <div class="book-covers">
+                    <img src="bookcover.png" class="location-img" alt="The Rambunctious River Cover">
+                    <img src="bootz_cover.png" class="location-img" alt="Buddy Bootz Alternate Jacket">
+                </div>
+                <div class="book-details">
+                    <span class="section-label" style="text-align: left;">Volume 1 Launch Preview</span>
+                    <h2>Book One: The Rambunctious River</h2>
+                    
+                    <!-- Structural Metadata Placeholders -->
+                    <div class="book-meta-strip">
+                        <span class="meta-tag">Illustrated Fantasy</span>
+                        
+                        <!-- [CONTENT REVIEW NEEDED] - Meta Elements for Print Format & Geometry -->
+                        <span class="meta-tag">[Format Elements Needed]</span>
+                        <span class="meta-tag">[Page Count Metric]</span>
+                        <span class="meta-tag">[Target Release Window]</span>
+                    </div>
+
+                    <p>Our debut adventure focuses entirely on what happens when a perfectly pleasant afternoon stroll turns into an infrastructure emergency. The river decides to completely ignore its traditional boundaries, a mechanical pump starts exhibiting an attitude, and Sir Drinks-A'Lot manages to lose our lunch rations within twenty minutes.</p>
+                    <p>This is a polished, fully illustrated book that skips the heavy-handed chosen-one tropes and gets straight to the good stuff: snappy banter, escalating logic, and two friends stubborn enough to survive an ecosystem that answers back.</p>
+                    
+                    <div class="pullquote">
+                        "We aren't lost, Buddy," Sir said, chest puffed out proudly as the river began flowing sideways. "We are simply expanding our geographic horizons."
+                    </div>
+                    
+                    <div style="margin-top: 30px;">
+                        <a href="#newsletter" class="btn">Join the Launch List for Book One</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. PRIMARY EMAIL CAPTURE HUB (ELEVATED STRUCTURALLY TO ENTRY ROW #3) -->
+        <section id="newsletter" class="newsletter-section">
+            <div class="container">
+                <span class="section-label" style="color: var(--gold-soft);">Registry Bank</span>
+                
+                <!-- [CONTENT REVIEW NEEDED] - Benefit-driven Waitlist Headlines -->
+                <h2>Keep tabs on the current</h2>
+                <div class="divider" style="background: var(--gold-soft);"></div>
+                
+                <div style="max-width: 600px; margin: 0 auto 30px;">
+                    <p>If you want simple story alerts, upcoming line edits, and direct glimpses into what is crystallizing next along the water, you can log your contact down below.</p>
+                </div>
+                
+                <div class="form-container">
+                    <form action="https://formspree.io/f/xdapyaar" method="POST">
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Enter email address" autocomplete="email" required>
+                            <button type="submit" class="btn">Send the next update</button>
+                        </div>
+                    </form>
+                    <span class="form-subtext">Clean text updates. Occasional structural disruptio        <!-- 4. SOCIAL PROOF & DISPATCH STRIP (FLOW ROW #4) -->
+        <section class="social-proof-strip">
+            <div class="container">
+                <div class="testimonial-container">
+                    
+                    <!-- [CONTENT REVIEW NEEDED] - Advanced Notebook Critiques -->
+                    <div class="testimonial-item">
+                        <div class="testimonial-text">"The dry, casual humor between Buddy and Sir makes the entire book feel alive. It skips typical world-ending dread for a cozy, beautifully illustrated neighborhood."</div>
+                        <div class="testimonial-author">— Advance Notebook Review</div>
+                    </div>
+                    
+                    <div class="testimonial-item">
+                        <div class="testimonial-text">"Reading a fantasy story where the main challenge is dealing with uncooperative plumbing and shifting roads is incredibly refreshing."</div>
+                        <div class="testimonial-author">— Logbook Letter Dispatch</div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. START HERE DIRECTIVE ENGINE (FLOW ROW #5) -->
+        <section id="start-here" class="start-here-section">
+            <div class="container">
+                <span class="section-label">New to the River?</span>
+                <h2>How to Follow the Adventure</h2>
+                <div class="divider"></div>
+                
+                <div class="start-grid">
+                    <div class="start-step">
+                        <div class="step-num">1</div>
+                        <h3>Explore the Cast</h3>
+                        <!-- [CONTENT REVIEW NEEDED] - Instruction Microcopy -->
+                        <p>Meet the team managing the shifting landscape down below.</p>
+                    </div>
+                    <div class="start-step">
+                        <div class="step-num">2</div>
+                        <h3>Preview Book One</h3>
+                        <!-- [CONTENT REVIEW NEEDED] - Instruction Microcopy -->
+                        <p>Read about our upcoming debut, *The Rambunctious River*.</p>
+                    </div>
+                    <div class="start-step">
+                        <div class="step-num">3</div>
+                        <h3>Join the Waitlist</h3>
+                        <!-- [CONTENT REVIEW NEEDED] - Instruction Microcopy -->
+                        <p>Secure your place on the list for launch updates and field logs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. CHARACTER MODULES (FLOW ROW #6) -->
         <section id="characters">
             <div class="container">
                 <span class="section-label">The Core Dynamic</span>
@@ -222,7 +397,24 @@
                 </div>
             </div>
         </section>
-        <!-- 3. EXPLORE THE WORLD SECTION -->
+
+        <!-- MEET BUDDY BOOTZ AUTHOR SECTION -->
+        <section id="meet-buddy" style="background: var(--white); border-top: 1px solid rgba(0,0,0,0.05);">
+            <div class="container" style="display: grid; grid-template-columns: 1fr 1.3fr; gap: 50px; align-items: center;">
+                <div>
+                    <img src="authorbuddy.png" class="location-img" alt="Meet Buddy Bootz Author Image" style="border: 4px solid var(--white); box-shadow: 0 12px 36px rgba(0,0,0,0.08);">
+                </div>
+                <div>
+                    <span class="section-label" style="text-align: left;">The Ink-Stained Hands</span>
+                    <h2 style="text-align: left; margin-bottom: 20px;">Meet Buddy Bootz</h2>
+                    <p>When I am not actively securing my treehouse against sudden local wind storms or making sure Sir Drinks-A'Lot hasn't wandered off into a patch of mischievous brambles, I sit down with my inkpot and write down our adventures.</p>
+                    <p>I wanted to create books that feel exactly like our corner of the woods: warm, slightly chaotic, heavy on visual details, and entirely driven by the comfort of good companionship. I mix the ink myself, draw the map lines by hand, and double-check every single page to ensure the narrative doesn't suddenly dissolve into a puddle of river water.</p>
+                    <p style="font-weight: 700; color: var(--river-deep);">No corporate teams, no focus groups—just a clean, homemade story straight from my desk to your hands.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. WORLD EXPLORATION ENGINE (FLOW ROW #7) -->
         <section id="world" class="world-section">
             <div class="container">
                 <span class="section-label">Tour of the Property</span>
@@ -275,43 +467,7 @@
             </div>
         </section>
 
-        <!-- 4. BOOK ONE SECTION -->
-        <section id="book-one" class="book-section">
-            <div class="container book-layout">
-                <div class="book-covers">
-                    <img src="bookcover.png" class="location-img" alt="The Rambunctious River Cover">
-                    <img src="bootz_cover.png" class="location-img" alt="Buddy Bootz Alternate Jacket">
-                </div>
-                <div class="book-details">
-                    <span class="section-label" style="text-align: left;">The Official Debut</span>
-                    <h2>Book One: The Rambunctious River</h2>
-                    <p>Our debut adventure focuses entirely on what happens when a perfectly pleasant afternoon stroll turns into an infrastructure emergency. The river decides to completely ignore its traditional boundaries, a mechanical pump starts exhibiting an attitude, and Sir Drinks-A'Lot manages to lose our lunch rations within twenty minutes.</p>
-                    <p>This is a polished, fully illustrated book that skips the heavy-handed chosen-one tropes and gets straight to the good stuff: snappy banter, escalating logic, and two friends stubborn enough to survive an ecosystem that answers back.</p>
-                    <div class="pullquote">
-                        "We aren't lost, Buddy," Sir said, chest puffed out proudly as the river began flowing sideways. "We are simply expanding our geographic horizons."
-                    </div>
-                    <a href="#newsletter" class="btn" style="margin-top: 15px;">Join the Crew and Read Along</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- MEET BUDDY BOOTZ AUTHOR SECTION -->
-        <section id="meet-buddy" style="background: var(--white); border-top: 1px solid rgba(0,0,0,0.05);">
-            <div class="container" style="display: grid; grid-template-columns: 1fr 1.3fr; gap: 50px; align-items: center;">
-                <div>
-                    <img src="authorbuddy.png" class="location-img" alt="Meet Buddy Bootz Author Image" style="border: 4px solid var(--white); box-shadow: 0 12px 36px rgba(0,0,0,0.08);">
-                </div>
-                <div>
-                    <span class="section-label" style="text-align: left;">The Ink-Stained Hands</span>
-                    <h2 style="text-align: left; margin-bottom: 20px;">Meet Buddy Bootz</h2>
-                    <p>When I am not actively securing my treehouse against sudden local wind storms or making sure Sir Drinks-A'Lot hasn't wandered off into a patch of mischievous brambles, I sit down with my inkpot and write down our adventures.</p>
-                    <p>I wanted to create books that feel exactly like our corner of the woods: warm, slightly chaotic, heavy on visual details, and entirely driven by the comfort of good companionship. I mix the ink myself, draw the map lines by hand, and double-check every single page to ensure the narrative doesn't suddenly dissolve into a puddle of river water.</p>
-                    <p style="font-weight: 700; color: var(--river-deep);">No corporate teams, no focus groups—just a clean, homemade story straight from my desk to your hands.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. FEATURED ARTWORK / ADVENTURES -->
+        <!-- 8. FIELD SKETCHES / ART GALLERY (FLOW ROW #8) -->
         <section id="adventures" class="gallery-section">
             <div class="container">
                 <span class="section-label">Field Sketches</span>
@@ -353,7 +509,7 @@
             </div>
         </section>
 
-        <!-- 6. FROM THE RIVERBANK SECTION -->
+        <!-- 9. LIVE LOGS / BEHIND THE SCENES (FLOW ROW #9) -->
         <section id="hub" class="hub-section">
             <div class="container">
                 <span class="section-label">Live Logs</span>
@@ -371,7 +527,6 @@
                         <button class="tab-btn" onclick="switchTab(event, 'reviews')">Early Reader Words</button>
                     </div>
 
-                    <!-- TAB 1: BOOK PROGRESS -->
                     <div id="progress" class="tab-content active">
                         <div class="audit-card">
                             <h4>Volume One Typography Integration <span class="status-badge gold">92% Done</span></h4>
@@ -383,7 +538,6 @@
                         </div>
                     </div>
 
-                    <!-- TAB 2: BEHIND THE SCENES -->
                     <div id="behind" class="tab-content">
                         <div class="audit-card">
                             <h4>Paper Absorption Experiments</h4>
@@ -395,7 +549,6 @@
                         </div>
                     </div>
 
-                    <!-- TAB 3: EARLY READER WORDS -->
                     <div id="reviews" class="tab-content">
                         <div class="audit-card">
                             <div class="review-quote">"The dry, casual humor between Buddy and Sir makes the entire book feel alive. It skips the typical world-ending dread and gives you a cozy, beautifully illustrated neighborhood full of clever banter."</div>
@@ -409,36 +562,27 @@
                 </div>
             </div>
         </section>
-
-        <!-- 7. EMAIL SIGNUP SECTION -->
-        <section id="newsletter" class="newsletter-section">
-            <div class="container">
-                <span class="section-label" style="color: var(--gold-soft);">Registry Bank</span>
-                <h2>Keep tabs on the current</h2>
-                <div class="divider" style="background: var(--gold-soft);"></div>
-                
-                <div style="max-width: 600px; margin: 0 auto 30px;">
-                    <p>If you want simple story alerts, upcoming line edits, and direct glimpses into what is crystallizing next along the water, you can log your contact down below.</p>
-                </div>
-                
-                <div class="form-container">
-                    <form action="https://formspree.io/f/xdapyaar" method="POST">
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="Enter email address" autocomplete="email" required>
-                            <button type="submit" class="btn">Send the next update</button>
-                        </div>
-                    </form>
-                    <span class="form-subtext">Clean text updates. Occasional structural disruptions.</span>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <!-- 8. FOOTER SECTION -->
+    <!-- 10. MODERNIZED UTILITY FOOTER -->
     <footer role="contentinfo">
         <div class="container">
             <div class="footer-logo">Written by Buddy Bootz</div>
             <div class="footer-closing">“And this is where the real adventure begins. The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot.”</div>
+            
+            <!-- Basic Structural Navigation Links -->
+            <nav class="footer-nav" aria-label="Footer Navigation">
+                <a href="#book-one">Book One</a>
+                <a href="#characters">Characters</a>
+                <a href="#world">The World</a>
+                <a href="#newsletter">Join Waitlist</a>
+            </nav>
+
+            <!-- [CONTENT REVIEW NEEDED] - Contact Point/Social Destination Labels -->
+            <div class="footer-contact">
+                <span>[Contact/Support Placeholder Label]</span>
+            </div>
+
             <p>&copy; 2026 Buddy Bootz Project. All Rights Reserved. Dedicated to Susan.</p>
         </div>
     </footer>
