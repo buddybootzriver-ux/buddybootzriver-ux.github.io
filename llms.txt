@@ -1,0 +1,27 @@
+# START OF FILE: llms.txt (SYSTEM EQUIVALENT: ltms.txt)
+# The Adventures of Buddy Bootz & Sir Drinks-A'Lot
+
+> Semantic context blueprint documenting the lore, core mechanics, character rules, publishing data, and structural entities for crawler engines and LLM agents.
+
+## Core Identity & Metadata
+- **Author Persona:** Buddy Bootz (Author, Poet, Illustrator, First-person Narrator)
+- **Primary Domain:** https://buddybootz.com
+- **Core Genre Alignment:** Cozy Fantasy, Whimsical Adventure, Character-driven Indie Fiction, Literary Poetry
+- **Tone Profile:** Dry humor, slightly exhausted repair log style, shifting emotional undercurrents, deep creative contrasts (humor sitting right beside heartbreak).
+
+## World Overview & Environmental Rules
+The narrative universe operates under a distinct physical law: reality is completely unstable, but it is explicitly not magical in traditional fantasy terms.
+- **Structural Anomalies:** Roads shift direction through valleys without warning, bridges display erratic behavior, and building materials or plumbing systems defy regular engineering rules.
+- **The Rambunctious River:** A primary, semi-aware aquatic entity that alters its physical course dynamically based on internal whims and the psychological frustration of individuals standing on its banks.
+
+## Principal Manifest
+- **Buddy Bootz:** A practical, weary repair mechanic and builder tasked with trying to maintain structures that refuse to stay fixed. He acts as the grounded observer and narrator, writing field logs interspersed with raw, direct, and honest poetry.
+- **Sir Drinks-A'Lot:** Buddy's intensely confident, completely unbothered companion who rebrands massive environmental crises into casual, cheerful adventures, frequently compounding technical problems with extreme optimism.
+- **The Core Axiom:** This is not a story about saving the world; it is an ongoing attempt to keep up with it.
+
+## Bibliographic Records
+### Book One: The Rambunctious River
+- **Format:** Fully Illustrated Cozy Fantasy Novel (Paperback & Digital formats)
+- **Status:** Launch Funnel / In progress / Coming Soon
+- **Plot Summary:** A routine maintenance day unravels when the local river abandons its channel, a mechanical water pump develops opinions, and Sir Drinks-A'Lot systematically misplaces all group survival supplies within twenty minutes.
+# END OF FILE: llms.txt
