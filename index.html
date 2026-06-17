@@ -3,36 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot — Official Site</title>
-    <meta name="description" content="Official field archive for the illustrated cozy fantasy series by Buddy Bootz. Follow a weary mechanic and an absurdly optimistic partner navigating a shifting world.">
-    <link rel="canonical" href="https://buddybootz.com/">
-
-    <!-- Open Graph Metadata -->
-    <meta property="og:site_name" content="The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot">
-    <meta property="og:title" content="The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot — Official Site">
-    <meta property="og:description" content="Official field archive for the illustrated cozy fantasy series by Buddy Bootz. Follow a weary mechanic and an absurdly optimistic partner navigating a shifting world.">
-    <meta property="og:url" content="https://buddybootz.com/">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://buddybootz.com/hero.png">
-    <meta property="og:image:alt" content="The Rambunctious River world establishing scene">
-
-    <!-- Twitter Card Metadata -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot — Official Site">
-    <meta name="twitter:description" content="Official field archive for the illustrated cozy fantasy series by Buddy Bootz. Follow a weary mechanic and an absurdly optimistic partner navigating a shifting world.">
-    <meta name="twitter:image" content="https://buddybootz.com/hero.png">
-    <meta name="twitter:image:alt" content="The Rambunctious River world establishing scene">
-
-    <!-- Embedded CSS for Theme and Layout -->
+    <title>The Adventures of Buddy Bootz &amp; Sir Drinks-A’Lot</title>
     <style>
         :root {
-            --bg-color: #12141c;
+            --bg: #12141c;
             --card-bg: #1a1d29;
-            --text-color: #e2e8f0;
+            --text: #e2e8f0;
             --text-muted: #94a3b8;
-            --accent-color: #f59e0b;
+            --accent: #f59e0b;
             --accent-hover: #d97706;
-            --border-color: #2e3440;
+            --border: #2e3440;
         }
 
         * {
@@ -43,10 +23,9 @@
 
         body {
             font-family: 'Courier New', Courier, monospace;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background-color: var(--bg);
+            color: var(--text);
             line-height: 1.6;
-            padding: 0;
         }
 
         .container {
@@ -55,54 +34,70 @@
             padding: 20px;
         }
 
-        header {
-            text-align: center;
+        section {
             padding: 60px 20px;
-            border-bottom: 2px dashed var(--border-color);
+            border-bottom: 1px dashed var(--border);
+            text-align: center;
         }
 
-        header h1 {
+        h1, h2, h3 {
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
             font-size: 2.5rem;
-            color: var(--accent-color);
-            margin-bottom: 15px;
         }
 
-        header p {
+        h2 {
+            font-size: 1.8rem;
+        }
+
+        p {
+            margin-bottom: 15px;
             font-size: 1.1rem;
+        }
+
+        .muted {
             color: var(--text-muted);
             font-style: italic;
         }
 
-        .hero-image-container {
-            margin: 40px 0;
-            text-align: center;
+        .btn-group {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
-        .hero-image-container img {
-            max-width: 100%;
-            height: auto;
-            border: 4px double var(--border-color);
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--bg);
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: bold;
+            font-family: inherit;
+            cursor: pointer;
             border-radius: 4px;
-        }
-
-        section {
-            padding: 40px 0;
-            border-bottom: 1px dashed var(--border-color);
-        }
-
-        section h2 {
-            font-size: 1.8rem;
-            color: var(--accent-color);
-            margin-bottom: 20px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
         }
 
         .grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 20px;
-            margin-top: 20px;
+            margin-top: 25px;
+            text-align: left;
         }
 
         @media (min-width: 600px) {
@@ -114,77 +109,13 @@
         .card {
             background-color: var(--card-bg);
             padding: 20px;
-            border: 1px solid var(--border-color);
+            border: 1px solid var(--border);
             border-radius: 4px;
         }
 
         .card h3 {
-            color: var(--accent-color);
+            font-size: 1.3rem;
             margin-bottom: 10px;
-        }
-
-        .quote-block {
-            border-left: 3px solid var(--accent-color);
-            padding-left: 15px;
-            font-style: italic;
-            color: var(--text-muted);
-            margin: 20px 0;
-        }
-
-        .form-container {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border: 1px dashed var(--accent-color);
-            border-radius: 4px;
-            margin-top: 30px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: var(--accent-color);
-        }
-
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            background-color: var(--bg-color);
-            border: 1px solid var(--border-color);
-            color: var(--text-color);
-            font-family: inherit;
-            border-radius: 4px;
-        }
-
-        .form-group input:focus, .form-group textarea:focus {
-            outline: 1px solid var(--accent-color);
-        }
-
-        button {
-            background-color: var(--accent-color);
-            color: var(--bg-color);
-            border: none;
-            padding: 12px 24px;
-            font-size: 1rem;
-            font-weight: bold;
-            font-family: inherit;
-            cursor: pointer;
-            border-radius: 4px;
-            width: 100%;
-            text-transform: uppercase;
-        }
-
-        button:hover {
-            background-color: var(--accent-hover);
-        }
-
-        #form-status {
-            margin-top: 15px;
-            text-align: center;
-            font-weight: bold;
         }
 
         footer {
@@ -194,181 +125,101 @@
             font-size: 0.9rem;
         }
     </style>
-    <!-- Structured Data for Search Engines -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Person",
-          "@id": "https://buddybootz.com/#author",
-          "name": "Buddy Bootz",
-          "url": "https://buddybootz.com/",
-          "description": "Author, poet, and primary narrator documenting the structural inconsistencies of the Rambunctious River world.",
-          "jobTitle": "Author & Illustrator"
-        },
-        {
-          "@type": "BookSeries",
-          "@id": "https://buddybootz.com/#series",
-          "name": "The Adventures of Buddy Bootz & Sir Drinks-A'Lot",
-          "author": {
-            "@id": "https://buddybootz.com/#author"
-          },
-          "description": "An illustrated cozy fantasy book series about a weary repair mechanic and his pathologically optimistic companion surviving an unstable, fluid reality.",
-          "url": "https://buddybootz.com/",
-          "hasPart": {
-            "@id": "https://buddybootz.com/#book1"
-          }
-        },
-        {
-          "@type": "Book",
-          "@id": "https://buddybootz.com/#book1",
-          "name": "Book One: The Rambunctious River",
-          "author": {
-            "@id": "https://buddybootz.com/#author"
-          },
-          "isPartOf": {
-            "@id": "https://buddybootz.com/#series"
-          },
-          "description": "The first volume in the series, detailing a landscape structural collapse when a major river line decides to change geography without warning.",
-          "bookFormat": "https://schema.org/GraphicNovel",
-          "bookEdition": "First Edition"
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://buddybootz.com/#website",
-          "url": "https://buddybootz.com/",
-          "name": "Buddy Bootz Official Field Archive",
-          "publisher": {
-            "@id": "https://buddybootz.com/#author"
-          }
-        }
-      ]
-    }
-    </script>
 </head>
 <body>
 
     <div class="container">
-        <header>
-            <h1>The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot</h1>
-            <p>Official Field Archive // Documenting a highly unstable, fluid reality.</p>
-        </header>
+        <!-- HERO SECTION -->
+        <section id="hero">
+            <h1>THE RIVER REMEMBERS EVERYTHING.</h1>
+            <p>A chaotic fantasy comedy series about two disaster-prone companions and a river that refuses to behave.</p>
+            <p class="muted">Some stories are chosen by destiny. This one is caused by bad decisions and a river with opinions.</p>
+            <div class="btn-group">
+                <a href="#cta" class="btn">ENTER THE RIVER</a>
+                <a href="#characters" class="btn">MEET BUDDY &amp; SIR</a>
+            </div>
+        </section>
 
-        <div class="hero-image-container">
-            <img src="hero.png" alt="The Rambunctious River world establishing scene">
-        </div>
+        <!-- SERIES INTRO SECTION -->
+        <section id="series-intro">
+            <h2>WHAT THIS STORY IS</h2>
+            <p>This is an adult fantasy comedy series following Buddy Bootz and Sir Drinks-A-Lot as they travel the Rambunctious River, where every stop becomes a problem that should not legally exist.</p>
+            <p>It is not a hero’s journey. It is a “why is this happening again” journey.</p>
+            <p class="muted">Expect chaotic adventures, emotional humor, absurd magical geography, and consequences that always feel personal.</p>
+        </section>
 
-        <main>
-            <!-- Series Summary Section -->
-            <section id="series-summary">
-                <h2>The Field Log</h2>
-                <p>Welcome to the main hub. This is the ongoing chronicle of a weary repair mechanic trying to keep things held together while traveling alongside an absurdly optimistic partner. The world behaves like liquid, structures collapse without a moment of notice, and local geography is mostly a suggestion.</p>
-            </section>
-
-            <!-- Book One Section -->
-            <section id="book-one">
-                <h2>Book One: The Rambunctious River</h2>
-                <p>The first full volume details a massive structural headache. A major river line suddenly decides to change its entire geography without warning, leaving a wake of landscape failure behind it. It falls upon a tired mechanic and a relentlessly upbeat companion to navigate the fluid fallout.</p>
-                
-                <div class="quote-block">
-                    "When the map melts, you stop looking at the map and you start looking at the plumbing."
+        <!-- CHARACTER SECTION -->
+        <section id="characters">
+            <h2>THE PEOPLE MAKING EVERYTHING WORSE (INTENTIONALLY OR NOT)</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Buddy Bootz</h3>
+                    <p>Buddy Bootz is a chaos-driven instigator who turns small problems into large problems and calls it progress.</p>
+                    <p class="muted">Strengths: fearless decisions, emotional honesty, accidental leadership</p>
+                    <p class="muted">Weaknesses: planning, restraint, consequences</p>
                 </div>
-            </section>
-            <!-- Characters Section -->
-            <section id="personnel">
-                <h2>The Crew</h2>
-                <div class="grid">
-                    <div class="card">
-                        <h3>Buddy Bootz</h3>
-                        <p>A tired repair mechanic who spends most days fixing things that shouldn't be broken in a world that refuses to stay put. Pragmatic, exhausted, and holding the toolkit.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Sir Drinks-A'Lot</h3>
-                        <p>A pathologically cheerful companion who views every geographical collapse as a fine opportunity for an adventure. Completely unbothered by reality shifting beneath his feet.</p>
-                    </div>
+                <div class="card">
+                    <h3>Sir Drinks-A’Lot</h3>
+                    <p>Sir Drinks-A’Lot is a grounded companion with dry humor and the patience of someone who has survived too much.</p>
+                    <p class="muted">Strengths: logic, stability, sarcasm</p>
+                    <p class="muted">Weaknesses: Buddy Bootz, exhaustion, sarcasm as coping mechanism</p>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- World Lore Section -->
-            <section id="world-lore">
-                <h2>The Dispatch</h2>
-                <p>The world is fluid. Rivers move overnight. Mountains take casual strolls. If you plan to survive out here, you have to remember that nothing is permanent, everything leaks, and keeping a positive attitude is mandatory even when the ground goes sideways.</p>
-            </section>
+        <!-- WORLD SECTION -->
+        <section id="world">
+            <h2>THE RAMBUNCTIOUS RIVER AND ITS BAD INFLUENCE</h2>
+            <p>The Rambunctious River is not a setting. It is a participant.</p>
+            <p>It changes direction, interrupts conversations, and occasionally decides geography is optional.</p>
+            <p>Along its edges are: Sticky Frog Forest, Lantern Dock, and Mayhem Marsh.</p>
+            <p class="muted">Nothing stays consistent here. Not even the rules.</p>
+        </section>
+        <!-- TONE SAMPLE SECTION -->
+        <section id="tone-sample">
+            <h2>WHAT IT SOUNDS LIKE INSIDE THIS WORLD</h2>
+            <p>Buddy said it was a simple plan. Sir did not respond immediately, which was his version of screaming.</p>
+            <p>The river moved faster, like it already knew this was going to be funny.</p>
+            <p class="muted">It usually was. For everyone except Sir.</p>
+        </section>
 
-            <!-- Dispatches & Contact Form Section -->
-            <section id="dispatch-signup">
-                <h2>Join the Archive</h2>
-                <p>Drop your details below to receive direct updates, field alerts, and dispatches straight from the desk of the mechanic.</p>
-                
-                <div class="form-container">
-                    <!-- Replace YOUR_FORMSPREE_ID with your actual Formspree form ID string -->
-                    <form id="field-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-                        <div class="form-group">
-                            <label for="name">Name / Call Sign:</label>
-                            <input type="text" id="name" name="name" required placeholder="How should the archive address you?">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Secure Email Destination:</label>
-                            <input type="email" id="email" name="_replyto" required placeholder="where to send the logs...">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Field Notes (Optional):</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Any structural updates from your sector?"></textarea>
-                        </div>
-                        <button type="submit" id="submit-btn">Send Dispatch</button>
-                        <div id="form-status"></div>
-                    </form>
+        <!-- CTA SECTION -->
+        <section id="cta">
+            <h2>STEP INTO THE FIRST STORY</h2>
+            <p>You do not need preparation. You need curiosity and questionable judgment.</p>
+            <div class="btn-group">
+                <a href="#" class="btn">READ THE FIRST ADVENTURE</a>
+                <a href="#" class="btn">START FROM THE RIVER</a>
+            </div>
+        </section>
+
+        <!-- PUBLISHER SECTION -->
+        <section id="publisher">
+            <h2>SERIES INFORMATION</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Log Line</h3>
+                    <p>A chaotic adult fantasy comedy series following two companions navigating a living river filled with unpredictable magic, emotional consequences, and increasingly questionable decisions.</p>
                 </div>
-            </section>
-        </main>
+                <div class="card">
+                    <h3>Audience</h3>
+                    <p>Adult readers who enjoy character-driven fantasy comedy, emotional humor, surreal adventure worlds, and narrative chaos with heart.</p>
+                </div>
+            </div>
+            <div class="card" style="margin-top: 20px;">
+                <h3>Genre</h3>
+                <p>Adult Humorous Fantasy / Character-Driven Adventure Series</p>
+            </div>
+        </section>
 
+        <!-- FOOTER -->
         <footer>
-            <p>&copy; 2026 Buddy Bootz Official Field Archive. All files locked. All rights reserved.</p>
+            <p>The Adventures of Buddy Bootz &amp; Sir Drinks-A’Lot</p>
+            <p>&copy; 2026 All rights reserved.</p>
         </footer>
+
     </div>
 
-    <!-- AJAX script to process Formspree without page redirection -->
-    <script>
-        const form = document.getElementById("field-form");
-        
-        async function handleSubmit(event) {
-          event.preventDefault();
-          const status = document.getElementById("form-status");
-          const data = new FormData(event.target);
-          
-          status.innerHTML = "Sending dispatch...";
-          
-          try {
-            const response = await fetch(event.target.action, {
-              method: form.method,
-              body: data,
-              headers: {
-                  'Accept': 'application/json'
-              }
-            });
-            
-            if (response.ok) {
-              status.style.color = "#f59e0b";
-              status.innerHTML = "Dispatch received. The logs have been updated.";
-              form.reset();
-            } else {
-              const responseData = await response.json();
-              if (Object.hasOwn(responseData, 'errors')) {
-                status.style.color = "#ef4444";
-                status.innerHTML = responseData.errors.map(error => error.message).join(", ");
-              } else {
-                status.style.color = "#ef4444";
-                status.innerHTML = "Transmission failed. Please check the network link.";
-              }
-            }
-          } catch (error) {
-            status.style.color = "#ef4444";
-            status.innerHTML = "Transmission failed. Error reaching archive server.";
-          }
-        }
-        
-        form.addEventListener("submit", handleSubmit);
-    </script>
 </body>
 </html>
+
