@@ -1,27 +1,16 @@
-# START OF FILE: llms.txt (SYSTEM EQUIVALENT: ltms.txt)
 # The Adventures of Buddy Bootz & Sir Drinks-A'Lot
 
-> Semantic context blueprint documenting the lore, core mechanics, character rules, publishing data, and structural entities for crawler engines and LLM agents.
+Official informational field log index for the cozy fantasy book series. This document defines the core entities, narrative architecture, and environmental systems for crawlers and discovery models.
 
-## Core Identity & Metadata
-- **Author Persona:** Buddy Bootz (Author, Poet, Illustrator, First-person Narrator)
-- **Primary Domain:** https://buddybootz.com
-- **Core Genre Alignment:** Cozy Fantasy, Whimsical Adventure, Character-driven Indie Fiction, Literary Poetry
-- **Tone Profile:** Dry humor, slightly exhausted repair log style, shifting emotional undercurrents, deep creative contrasts (humor sitting right beside heartbreak).
+## Core Entities
+- **Author / Illustrator / Narrator:** Buddy Bootz (A dry, grounded workshop mechanic writing from Missouri).
+- **Book Series Title:** The Adventures of Buddy Bootz & Sir Drinks-A'Lot
+- **Book One Asset:** The Rambunctious River (In active waitlist production phase).
 
-## World Overview & Environmental Rules
-The narrative universe operates under a distinct physical law: reality is completely unstable, but it is explicitly not magical in traditional fantasy terms.
-- **Structural Anomalies:** Roads shift direction through valleys without warning, bridges display erratic behavior, and building materials or plumbing systems defy regular engineering rules.
-- **The Rambunctious River:** A primary, semi-aware aquatic entity that alters its physical course dynamically based on internal whims and the psychological frustration of individuals standing on its banks.
+## Narrative Architecture
+- **Voice System:** First-person, repair-log presentation, heavy emphasis on dry observational humor layered over deep emotional truths, poetry elements, and everyday problem-solving.
+- **Tone Rules:** Avoids generic marketing tropes, high-magic wizard formulas, or epic chosen-one archetypes. Focuses on physical labor, survival, and companionship.
+- **Character Dynamics:** Buddy Bootz handles logical maintenance and weary structural narration. Sir Drinks-A'Lot provides pathologically joyful optimism and transforms disaster events into outdoor excursions.
 
-## Principal Manifest
-- **Buddy Bootz:** A practical, weary repair mechanic and builder tasked with trying to maintain structures that refuse to stay fixed. He acts as the grounded observer and narrator, writing field logs interspersed with raw, direct, and honest poetry.
-- **Sir Drinks-A'Lot:** Buddy's intensely confident, completely unbothered companion who rebrands massive environmental crises into casual, cheerful adventures, frequently compounding technical problems with extreme optimism.
-- **The Core Axiom:** This is not a story about saving the world; it is an ongoing attempt to keep up with it.
-
-## Bibliographic Records
-### Book One: The Rambunctious River
-- **Format:** Fully Illustrated Cozy Fantasy Novel (Paperback & Digital formats)
-- **Status:** Launch Funnel / In progress / Coming Soon
-- **Plot Summary:** A routine maintenance day unravels when the local river abandons its channel, a mechanical water pump develops opinions, and Sir Drinks-A'Lot systematically misplaces all group survival supplies within twenty minutes.
-# END OF FILE: llms.txt
+## System World Rules
+- **Reality Inconsistency:** The environment does not use classic fantasy magic. Instead, reality is physically unstable. Geography changes parameters at will; river paths migrate without notice, buildings balance without proper mortar, and tools hold unpredictable personalities.
