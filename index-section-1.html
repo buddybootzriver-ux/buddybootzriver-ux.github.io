@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T6C7B7WCS5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-T6C7B7WCS5');
+    </script>    
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <meta name="description" content="The official whimsical home of Buddy Bootz &amp; Sir Drinks-A'Lot. Explore a world of light chaos, loyal friendship, and the rambunctious river.">
+    <link rel="canonical" href="https://buddybootz.com/">
+    <title>The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot</title>
+    
+    <meta property="og:title" content="The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot">
+    <meta property="og:description" content="Explore a world of light chaos, loyal friendship, and the rambunctious river.">
+    <meta property="og:image" content="hero.png">
+    <meta property="og:url" content="https://buddybootz.com/">
+    <meta property="og:type" content="website">
+    
+    <link rel="icon" type="image/png" href="favicon.png">    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    
+    <style>    
+        :root {
+            --river-deep: #1F4E5F;
+            --river-main: #3FA7D6;
+            --river-light: #E6F7FF;
+            --gold: #F2C94C;
+            --gold-soft: #FFE27A;
+            --text-dark: #0B1F26;
+            --text-body: #2A4A55;
+            --white: #ffffff;
+            --bg-paper: #fdfbf7;
+            --ease: cubic-bezier(0.4, 0, 0.2, 1);
+            --sp-xs: 4px;
+            --sp-sm: 8px;
+            --sp-md: 12px;
+            --sp-lg: 16px;
+            --sp-xl: 24px;
+            --sp-2xl: 32px;
+            --sp-3xl: 40px;
+            --sp-4xl: 48px;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Crimson Pro', Georgia, serif; 
+            background: var(--bg-paper); 
+            color: var(--text-dark); 
+            line-height: 1.75; 
+            -webkit-font-smoothing: antialiased;
+            padding-top: 60px;
+            padding-left: max(var(--sp-lg), env(safe-area-inset-left));
+            padding-right: max(var(--sp-lg), env(safe-area-inset-right));
+        }
+        
+        .container { 
+            max-width: 1040px; 
+            margin: 0 auto; 
+            padding: 0 var(--sp-2xl); 
+        }
+        
+        .sticky-inner { 
+            max-width: 1040px; 
+            margin: 0 auto; 
+            padding: 0 var(--sp-2xl);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--sp-lg);
+        }
+        
+        section { 
+            padding: var(--sp-4xl) 0; 
+            position: relative; 
+        }
+        
+        h1, h2, h3, h4 { 
+            font-family: 'DM Serif Display', serif; 
+            font-weight: 400; 
+            line-height: 1.1; 
+            color: var(--river-deep); 
+        }
+        
+        h1 { 
+            font-size: clamp(3.2rem, 6.5vw, 4.8rem); 
+            margin-bottom: var(--sp-xl); 
+            text-align: center; 
+            letter-spacing: -1px; 
+        }
+        
+        h2 { 
+            font-size: clamp(2.4rem, 4.8vw, 3.4rem); 
+            margin-bottom: var(--sp-lg); 
+            text-align: center; 
+            letter-spacing: -0.5px; 
+        }
+        
+        h3 { 
+            font-size: clamp(1.75rem, 3vw, 2.4rem); 
+            margin-bottom: var(--sp-md); 
+        }
+
+        p { 
+            font-size: 1.3rem; 
+            margin-bottom: 1.5rem; 
+            color: var(--text-body); 
+        }
+        
+        .subtext-block p { 
+            font-size: 1.4rem; 
+            color: var(--text-dark); 
+            margin-bottom: 1rem; 
+        }
+
+        .section-label {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--river-main);
+            display: block;
+            text-align: center;
+            margin-bottom: var(--sp-lg);
+        }
+
+        .divider {
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            margin: 0 auto var(--sp-3xl);
+            border-radius: 2px;
+        }
+
+        .btn { 
+            background: var(--gold); 
+            color: var(--text-dark); 
+            padding: var(--sp-lg) var(--sp-3xl); 
+            border-radius: 50px; 
+            text-decoration: none; 
+            display: inline-flex; 
+            align-items: center;
+            justify-content: center;
+            font-family: 'Outfit', sans-serif; 
+            font-weight: 700; 
+            font-size: 1.05rem;
+            transition: all 0.25s var(--ease); 
+            border: 2px solid var(--river-deep); 
+            box-shadow: 4px 4px 0 var(--river-deep);
+            cursor: pointer;
+        }
+        .btn:hover { 
+            transform: translate(-2px, -2px); 
+            box-shadow: 6px 6px 0 var(--river-deep); 
+            background: var(--gold-soft); 
+        }
+
+        /* STICKY CTA BAR */
+        .sticky-cta-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: var(--river-deep);
+            color: var(--white);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--gold);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 0 var(--sp-lg);
+        }
+        
+        .sticky-flex { 
+            display: flex; 
+            width: 100%; 
+            align-items: center; 
+            justify-content: space-between; 
+            gap: var(--sp-lg);
+        }
+        
+        .sticky-text { 
+            font-family: 'Outfit', sans-serif; 
+            font-weight: 700; 
+            font-size: 0.95rem; 
+            letter-spacing: 1px; 
+            color: var(--gold-soft); 
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .sticky-btn { 
+            background: var(--gold); 
+            color: var(--text-dark); 
+            border: none; 
+            padding: var(--sp-sm) var(--sp-lg); 
+            border-radius: 20px; 
+            font-family: 'Outfit', sans-serif; 
+            font-weight: 700; 
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: all 0.25s var(--ease);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        
+        .sticky-btn:hover { 
+            background: var(--gold-soft); 
+        }
+
+        /* PRE-LAUNCH BADGES AND SPECIFICATION MODULES */
+        .status-badge-container { 
+            margin-bottom: var(--sp-xl); 
+            text-align: center; 
+        }
+        
+        .prelaunch-badge { 
+            background: var(--river-deep); 
+            color: var(--gold); 
+            font-family: 'Outfit', sans-serif; 
+            font-size: 0.85rem; 
+            font-weight: 800; 
+            padding: var(--sp-sm) var(--sp-lg); 
+            border-radius: 30px; 
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+        
+        .product-identifier { 
+            font-family: 'Outfit', sans-serif; 
+            font-weight: 700; 
+            font-size: 1.2rem; 
+            color: var(--river-main); 
+            letter-spacing: 1px; 
+            text-transform: uppercase; 
+            margin-bottom: var(--sp-xl);
+            display: block;
+        }
+        
+        .spec-grid { 
+            display: flex; 
+            gap: var(--sp-md); 
+            flex-wrap: wrap; 
+            margin: var(--sp-xl) 0; 
+        }
+        
+        .spec-tag { 
+            background: var(--white); 
+            border: 1px solid rgba(31,78,95,0.15); 
+            padding: var(--sp-sm) var(--sp-md); 
+            border-radius: 6px; 
+            font-family: 'Outfit', sans-serif; 
+            font-size: 0.85rem; 
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        /* HERO & MODULE ARCHITECTURE */
+        .hero { 
+            background: linear-gradient(180deg, var(--river-light) 0%, var(--bg-paper) 100%); 
+            text-align: center; 
+            padding: var(--sp-4xl) 0 80px; 
+            border-bottom: 2px dashed var(--river-main); 
+        }
+        
+        .hero-img { 
+            width: 100%; 
+            max-width: 920px; 
+            border-radius: 20px; 
+            box-shadow: 0 25px 55px rgba(31,78,95,0.18); 
+            margin-top: var(--sp-3xl); 
+            border: 4px solid var(--white); 
+        }
+        
+        .title-img { 
+            max-width: 440px; 
+            width: 100%; 
+            height: auto; 
+            margin-bottom: var(--sp-xl); 
+        }
+        
+        .hero-text-container { 
+            max-width: 760px; 
+            margin: 0 auto var(--sp-2xl); 
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding-top: 60px;
+                padding-left: max(var(--sp-md), env(safe-area-inset-left));
+                padding-right: max(var(--sp-md), env(safe-area-inset-right));
+            }
+            
+            .container {
+                padding: 0 var(--sp-lg);
+            }
+            
+            .sticky-cta-bar {
+                padding: 0 var(--sp-lg);
+                height: auto;
+                flex-direction: column;
+            }
+            
+            .sticky-flex {
+                flex-direction: column;
+                gap: var(--sp-md);
+                align-items: stretch;
+            }
+            
+            .sticky-text {
+                font-size: 0.8rem;
+                text-align: center;
+            }
+            
+            .sticky-btn {
+                width: 100%;
+                text-align: center;
+                padding: var(--sp-md) var(--sp-lg);
+            }
+            
+            h1 {
+                font-size: clamp(2rem, 5vw, 3.2rem);
+                margin-bottom: var(--sp-lg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sticky-cta-bar" role="status">
+        <div class="sticky-flex">
+            <span class="sticky-text">The Adventures of Buddy Bootz Series Launch Waitlist Is Active</span>
+            <a href="#newsletter" class="sticky-btn">Secure Entry Slot</a>
+        </div>
+    </div>
+
+    <header role="banner">
+        <section class="hero">
+            <div class="container">
+                <div class="status-badge-container">
+                    <span class="prelaunch-badge">Coming Soon</span>
+                </div>
+                
+                <div class="product-identifier">[Product Identifier Needed]</div>
+                
+                <img src="title.png" class="title-img" alt="The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot Custom Lettering">
+                <h1>Watch Your Step. The Landscape Is Shifting Again.</h1>
+                
+                <div style="margin: 35px 0 45px;">
+                    <a href="#newsletter" class="btn">Join the Series Launch Waitlist</a>
+                </div>
+
+                <div class="hero-text-container">
+                    <p>Hello. I'm Buddy Bootz. If you were expecting a grand, majestic fantasy chronicle where a chosen hero fulfills an ancient prophecy, I am afraid you have wandered onto the wrong web address. This is not that story.</p>
+                    <div class="subtext-block">
+                        <p>Mostly, this is an official account of my friend Sir Drinks-A'Lot and me trying to handle light infrastructure breakdown, uncooperative plumbing, and a local map that changes its mind every time the sun moves.</p>
+                        <p style="font-style: italic; color: var(--river-main); margin-top: 15px;">Buddy says: "This seems like a fantastic idea." • Sir says: "That's usually when the trouble starts."</p>
+                    </div>
+                </div>
+                <div>
+                    <img src="hero.png" class="hero-img" alt="Illustrated landscape showing elements of the shifting valley environment">
+                </div>
+            </div>
+        </section>
+    </header>
+</body>
+</html>
