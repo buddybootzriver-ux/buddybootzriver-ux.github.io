@@ -81,7 +81,6 @@
             border-radius: 2px;
         }
 
-        /* BUTTON ARCHITECTURE AND CONSISTENCY */
         .btn-group {
             display: flex;
             gap: 16px;
@@ -125,7 +124,6 @@
         }
         .btn-tertiary:hover { background: rgba(31, 78, 95, 0.05); transform: none; box-shadow: none; }
 
-        /* STICKY CTA BAR */
         .sticky-cta-bar {
             position: fixed;
             top: 0;
@@ -146,59 +144,50 @@
         .sticky-btn:hover { background: var(--gold-soft); }
         .sticky-btn:focus-visible { outline: 2px solid var(--white); outline-offset: 2px; }
 
-        /* PRE-LAUNCH BADGES AND SPECIFICATION MODULES */
         .status-badge-container { margin-bottom: 20px; text-align: center; }
         .prelaunch-badge { background: var(--river-deep); color: var(--gold); font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 800; padding: 6px 18px; border-radius: 30px; letter-spacing: 1px; text-transform: uppercase; }
         .product-identifier { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--river-main); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 15px; text-align: center; }
         .spec-grid { display: flex; gap: 12px; flex-wrap: wrap; margin: 20px 0; }
         .spec-tag { background: var(--white); border: 1px solid rgba(31,78,95,0.15); padding: 5px 12px; border-radius: 6px; font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--text-dark); }
 
-        /* START HERE STEP FLOW MODULE */
         .step-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
         .step-node { background: var(--white); padding: 30px; border-radius: 16px; border: 1px solid rgba(31,78,95,0.08); position: relative; box-shadow: 0 8px 24px rgba(0,0,0,0.02); }
         .step-marker { font-family: 'Outfit', sans-serif; font-size: 3rem; font-weight: 800; color: rgba(63,167,214,0.12); position: absolute; top: 15px; right: 25px; line-height: 1; }
 
-        /* SOCIAL PROOF UNIT */
         .proof-strip { background: var(--river-deep); color: var(--white); padding: 40px 0; border-top: 2px solid var(--gold); border-bottom: 2px solid var(--gold); }
         .proof-flex { display: flex; justify-content: space-around; gap: 40px; flex-wrap: wrap; }
         .proof-quote-block { flex: 1; min-width: 260px; max-width: 420px; text-align: center; }
         .proof-body { font-family: 'Crimson Pro', serif; font-style: italic; font-size: 1.2rem; color: rgba(255,255,255,0.9); }
         .proof-cite { font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-top: 12px; color: var(--gold-soft); }
 
-        /* HERO & MODULE ARCHITECTURE */
         .hero { background: linear-gradient(180deg, var(--river-light) 0%, var(--bg-paper) 100%); text-align: center; padding: 100px 0 80px; border-bottom: 2px dashed var(--river-main); }
         .hero-img { width: 100%; max-width: 920px; border-radius: 20px; box-shadow: 0 25px 55px rgba(31,78,95,0.18); margin-top: 50px; border: 4px solid var(--white); height: auto; }
         .title-img { max-width: 440px; width: 100%; height: auto; margin-bottom: 28px; }
         .hero-text-container { max-width: 760px; margin: 0 auto 35px; }
 
-        /* CHARACTER MODULES */
         .duo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 30px; }
         .char-card { background: var(--white); padding: 36px; border-radius: 20px; border: 1px solid rgba(31,78,95,0.08); box-shadow: 0 12px 35px rgba(0,0,0,0.02); }
         .char-img { width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 24px rgba(0,0,0,0.05); border: 4px solid white; margin-bottom: 26px; display: block; }
         .char-tag { font-family: 'Outfit', sans-serif; font-size: 0.75rem; font-weight: 700; color: var(--river-main); text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 6px; }
 
-        /* WORLD EXPLORATION ENGINE */
         .world-section { background: var(--white); border-bottom: 1px solid rgba(0,0,0,0.05); }
         .world-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center; margin-bottom: 90px; }
         .world-grid.reverse { grid-template-columns: 1.2fr 1fr; }
         .world-grid:last-child { margin-bottom: 0; }
         .location-img { width: 100%; height: auto; border-radius: 18px; box-shadow: 0 15px 40px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.05); display: block; }
 
-        /* BOOK PACKAGING DESIGN */
         .book-section { background: var(--river-light); padding: 100px 0; border-top: 1px solid rgba(0,0,0,0.05); }
         .book-layout { display: grid; grid-template-columns: 1.3fr 1fr; gap: 60px; align-items: center; }
         .book-covers { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .book-details { text-align: left; }
         .pullquote { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 1.5rem; color: var(--river-deep); border-left: 4px solid var(--gold); padding-left: 20px; margin: 26px 0; }
 
-        /* ILLUSTRATION EXPANSION UNIT */
         .gallery-section { background: var(--bg-paper); border-top: 1px solid rgba(0,0,0,0.05); }
         .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
         .gallery-card { background: var(--white); padding: 20px; border-radius: 16px; border: 1px solid rgba(0,0,0,0.04); box-shadow: 0 8px 24px rgba(0,0,0,0.02); text-align: center; }
         .gallery-img { width: 100%; height: auto; border-radius: 10px; margin-bottom: 16px; border: 2px solid #f0f0f0; }
         .gallery-caption { font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--text-body); text-transform: uppercase; letter-spacing: 1px; }
 
-        /* LOG TRACKER HUB */
         .hub-section { background: var(--white); border-top: 1px solid rgba(0,0,0,0.05); border-bottom: 1px solid rgba(0,0,0,0.05); }
         .tab-container { max-width: 850px; margin: 40px auto 0; }
         .tab-nav { display: flex; justify-content: center; gap: 12px; margin-bottom: 35px; border-bottom: 2px solid rgba(0,0,0,0.05); padding-bottom: 16px; flex-wrap: wrap; }
@@ -216,7 +205,6 @@
         .status-badge.gold { background: var(--gold-soft); color: var(--text-dark); }
         .status-badge.river { background: var(--river-light); color: var(--river-deep); }
         
-        /* EMAIL SIGNUP MODULE & ASYNC NOTIFICATION ENGINE */
         .newsletter-section { text-align: center; background: var(--river-deep); color: var(--white); padding: 100px 0; }
         .newsletter-section h2 { color: var(--gold); }
         .newsletter-section p { color: rgba(255,255,255,0.85); }
@@ -234,7 +222,6 @@
         .submission-status-panel.success-state { display: block; }
         .status-header { font-family: 'DM Serif Display', serif; font-size: 1.75rem; color: var(--river-deep); margin-bottom: 8px; }
 
-        /* FOOTER STRUCTURE ELEMENTS */
         .footer-navigation-row { display: flex; justify-content: center; gap: 24px; margin: 25px 0; flex-wrap: wrap; }
         .footer-navigation-row a { color: rgba(255,255,255,0.6); text-decoration: none; font-family: 'Outfit', sans-serif; font-size: 0.95rem; font-weight: 600; transition: color 0.2s ease; }
         .footer-navigation-row a:hover { color: var(--gold); }
@@ -260,7 +247,6 @@
         }
     </style>
     
-    <!-- STRUCTURED DATA: AUTHOR AND BOOK SCHEMA -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -291,8 +277,7 @@
     </script>
 </head>
 <body>
-
-    <div class="sticky-cta-bar" role="status">
+        <div class="sticky-cta-bar" role="status">
         <div class="container" style="width: 100%;">
             <div class="sticky-flex">
                 <span class="sticky-text">The Adventures of Buddy Bootz Series Launch Waitlist Is Active</span>
@@ -301,9 +286,7 @@
         </div>
     </div>
 
-    <!-- MAIN HOME PAGE FLOW ARCHITECTURE -->
     <header role="banner">
-        <!-- 1. HERO SECTION -->
         <section class="hero" id="hero-hub">
             <div class="container">
                 <div class="status-badge-container">
@@ -316,7 +299,7 @@
                 <h1>Welcome to the Rambunctious River</h1>
                 
                 <div class="hero-text-container">
-                    <p>Where impossible adventures begin, questionable decisions somehow work out, and every bend in the river has a story waiting to be discovered.</p>
+                    <p>Step onto the Rambunctious River, where every bend leads to a new adventure, every mistake becomes a story, and laughter is never far behind. Join Buddy Bootz and Sir Drinks-A'Lot as they navigate a living river full of unexpected twists, unforgettable places, and just enough chaos to keep things interesting.[span_0](start_span)[span_0](end_span)</p>
                 </div>
 
                 <div class="btn-group">
@@ -340,7 +323,6 @@
     </header>
 
     <main id="main-content">
-        <!-- 2. FEATURED BOOK SECTION -->
         <section id="book-one" class="book-section" aria-labelledby="book-one-heading">
             <div class="container book-layout">
                 <div class="book-covers">
@@ -370,7 +352,6 @@
             </div>
         </section>
 
-        <!-- START HERE FLOW ARCHITECTURE INTEGRATION -->
         <section id="start-here" style="background: var(--bg-paper); border-bottom: 1px solid rgba(0,0,0,0.05);" aria-labelledby="start-here-heading">
             <div class="container">
                 <span class="section-label">New to the River?</span>
@@ -397,7 +378,6 @@
             </div>
         </section>
 
-        <!-- 3. MEET BUDDY & 4. MEET SIR CHARACTERS SECTION -->
         <section id="characters" aria-labelledby="characters-heading">
             <div class="container">
                 <span class="section-label">The Core Dynamic</span>
@@ -409,25 +389,22 @@
                 </div>
 
                 <div class="duo-grid">
-                    <!-- BUDDY PRODUCER IDENTITY -->
                     <div class="char-card" id="profile-buddy">
                         <img src="buddy.png" class="char-img" alt="Hand-inked profile portrait drawing of Buddy Bootz holding structural plans" width="450" height="450" loading="lazy">
                         <span class="char-tag">The Reluctant Repairman</span>
                         <h3>Buddy Bootz (That's Me)</h3>
-                        <p>I possess a notebook full of architectural schematics, a healthy respect for solid ground, and a stubborn belief that if I just tighten enough bolts, the world will eventually cooperate. Rarely does it.</p>
+                        <p>Buddy Bootz charges into every adventure with unstoppable optimism, quick thinking, and just enough confidence to accidentally create spectacular problems. Fortunately, those problems usually become the best stories.[span_1](start_span)[span_1](end_span)</p>
                     </div>
-                    <!-- SIR COMPANION IDENTITY -->
                     <div class="char-card" id="profile-sir">
                         <img src="sir.png" class="char-img" alt="Whimsical ink illustration portrait of Sir Drinks-A'Lot leaning comfortably near a stream" width="450" height="450" loading="lazy">
                         <span class="char-tag">The Confident Navigator</span>
                         <h3>Sir Drinks-A'Lot</h3>
-                        <p>Sir has never met a crisis he couldn't turn into a comfortable rest stop. He travels with an unshakeable inner peace, a flask that never seems completely empty, and the ability to sleep through anything.</p>
+                        <p>Sir Drinks-A'Lot is steady, practical, and always prepared for whatever the Rambunctious River throws their way. When Buddy leaps first, Sir is usually the one figuring out how they'll both land safely.[span_2](start_span)[span_2](end_span)</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- AUTHOR CONTEXT BIOGRAPHY PANEL -->
         <section id="meet-buddy-author" style="background: var(--white); border-top: 1px solid rgba(0,0,0,0.05); border-bottom: 1px solid rgba(0,0,0,0.05);" aria-labelledby="author-heading">
             <div class="container" style="display: grid; grid-template-columns: 1fr 1.3fr; gap: 50px; align-items: center;">
                 <div>
@@ -441,10 +418,8 @@
                     <p style="font-weight: 700; color: var(--river-deep);">No corporate teams, no focus groups—just a clean, homemade story straight from my desk to your hands.</p>
                 </div>
             </div>
-        </section>
-
-        <!-- 5. EXPLORE THE WORLD SECTION -->
-        <section id="world" class="world-section" aria-labelledby="world-heading">
+    </section>
+            <section id="world" class="world-section" aria-labelledby="world-heading">
             <div class="container">
                 <span class="section-label">Tour of the Property</span>
                 <h2 id="world-heading">Places That Keep Me Awake At Night</h2>
@@ -473,7 +448,7 @@
                 <div class="world-grid">
                     <div>
                         <h3 style="color: var(--river-deep);">The Rambunctious River &amp; Water Pump</h3>
-                        <p>This is the source of my persistent headaches. The river changes direction whenever it feels unappreciated, and this iron water pump is my constant mechanical adversary that somehow manages to get worse every single season.</p>
+                        <p>The Rambunctious River is more than a setting. It's alive. Every current, marsh, forest, and hidden bend has its own personality, turning even an ordinary trip into an unforgettable adventure.[span_3](start_span)[span_3](end_span)</p>
                     </div>
                     <div>
                         <img src="rambunctiousriver.png" class="location-img" alt="Ornate ink drawing profiling an iron pump system set along an active water flow channel" width="500" height="350" loading="lazy">
@@ -492,7 +467,6 @@
             </div>
         </section>
 
-        <!-- FIELD SKETCH GALLERY GRAPHICS DISPLAY -->
         <section id="adventures" class="gallery-section" aria-labelledby="gallery-heading">
             <div class="container">
                 <span class="section-label">Field Sketches</span>
@@ -534,7 +508,6 @@
             </div>
         </section>
 
-        <!-- 6. LATEST NEWS SECTION -->
         <section id="hub" class="hub-section" aria-labelledby="tracker-heading">
             <div class="container">
                 <span class="section-label">Live Logs</span>
@@ -588,7 +561,6 @@
             </div>
         </section>
 
-        <!-- SOCIAL PROOF EMBED STRIP -->
         <section class="proof-strip" aria-label="Reader Endorsements and Critiques">
             <div class="container">
                 <div class="proof-flex">
@@ -604,7 +576,6 @@
             </div>
         </section>
 
-        <!-- 7. NEWSLETTER SECTION -->
         <section id="newsletter" class="newsletter-section" aria-labelledby="form-section-title">
             <div class="container">
                 <span class="section-label" style="color: var(--gold-soft);">Registry Node</span>
@@ -614,7 +585,7 @@
                 <div class="form-container" style="margin-bottom: 20px;">
                     <div class="lead-magnet-box">
                         <div class="lead-magnet-title">Exclusive Entry Incentive Pack Included</div>
-                        <p style="font-size: 1.1rem; color: rgba(255,255,255,0.85); margin-bottom: 0;">Join the River Crew and be the first to hear about new adventures, exclusive artwork, behind-the-scenes stories, writing updates, and surprises from the Rambunctious River. <br><br>No spam. No boring emails. Just adventures.</p>
+                        <p style="font-size: 1.1rem; color: rgba(255,255,255,0.85); margin-bottom: 0;">Be the first to read new adventures, see exclusive artwork, and receive behind-the-scenes updates from the Rambunctious River. <br><br>One email at a time. No noise.[span_4](start_span)[span_4](end_span)</p>
                     </div>
                 </div>
                 
@@ -622,7 +593,7 @@
                     <form id="waitlist-submission-form" action="https://formspree.io/f/xdapyaar" method="POST">
                         <div class="form-group">
                             <input type="email" name="email" id="subscriber-email-input" placeholder="Enter email address" autocomplete="email" required aria-label="Subscriber Email Field">
-                            <button type="submit" class="btn" id="form-submit-trigger-button">Join the River Crew</button>
+                            <button type="submit" class="btn" id="form-submit-trigger-button">Join the River Crew[span_5](start_span)[span_5](end_span)</button>
                         </div>
                     </form>
                     <span class="form-subtext">Clean text updates. Occasional structural disruptions.</span>
@@ -636,7 +607,14 @@
         </section>
     </main>
 
-    <!-- 8. FOOTER SECTION -->
+    <section style="background: var(--bg-paper); text-align: center; padding: 80px 0; border-top: 1px solid rgba(0,0,0,0.05);" aria-labelledby="final-cta-heading">
+        <div class="container" style="max-width: 700px;">
+            <h2 id="final-cta-heading" style="display: none;">Conclusion</h2>
+            <p>Every great adventure begins with a single step onto the raft.[span_6](start_span)[span_6](end_span)</p>
+            <p>Climb aboard and see where the Rambunctious River takes you.[span_7](start_span)[span_7](end_span)</p>
+        </div>
+    </section>
+
     <footer role="contentinfo">
         <div class="container">
             <div class="footer-logo">Written by Buddy Bootz</div>
@@ -659,7 +637,6 @@
     </footer>
 
     <script>
-        // Tab Interaction Suite with Complete Keyboard Management
         function switchTab(evt, tabId) {
             const contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => content.classList.remove('active'));
@@ -702,7 +679,6 @@
             });
         });
 
-        // Formspree Anti-Redirect Intercept Engine
         const waitlistForm = document.getElementById('waitlist-submission-form');
         const statusPanel = document.getElementById('async-success-display-panel');
         const submitBtn = document.getElementById('form-submit-trigger-button');
@@ -739,4 +715,5 @@
         }
     </script>
 </body>
-</html>
+    </html>
+                            
