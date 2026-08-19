@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>The Adventures of Buddy Bootz</title>
+    <title>THE ADVENTURES OF BUDDY BOOTZ</title>
 
     <meta name="description" content="The Adventures of Buddy Bootz. Explore the Rambunctious River, Mayhem Marsh, Sticky Frog Forest, Crooked Raft Bend, Lantern Dock, and Wilderin Clearing.">
 
-    <meta property="og:title" content="The Adventures of Buddy Bootz">
+    <meta property="og:title" content="THE ADVENTURES OF BUDDY BOOTZ">
     <meta property="og:description" content="Explore the world of Buddy Bootz, where impossible adventures, curious places, and the Rambunctious River are always waiting.">
     <meta property="og:url" content="https://buddybootz.com/">
     <meta property="og:type" content="website">
@@ -335,23 +334,6 @@
             border-bottom: 2px dashed var(--river-main);
         }
 
-        .hero-img {
-            width: 100%;
-            max-width: 920px;
-            border-radius: 20px;
-            box-shadow: 0 25px 55px rgba(31,78,95,0.18);
-            margin-top: 50px;
-            border: 4px solid var(--white);
-            height: auto;
-        }
-
-        .title-img {
-            max-width: 440px;
-            width: 100%;
-            height: auto;
-            margin-bottom: 28px;
-        }
-
         .hero-text-container {
             max-width: 760px;
             margin: 0 auto 35px;
@@ -444,9 +426,12 @@
         }
 
         .book-covers {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .book-covers .location-img {
+            max-width: 400px;
         }
 
         .book-details {
@@ -608,6 +593,44 @@
         .status-badge.river {
             background: var(--river-light);
             color: var(--river-deep);
+        }
+
+        /* SOCIAL PROOF */
+
+        .proof-strip {
+            background: var(--river-light);
+            padding: 80px 0;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .proof-flex {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .proof-quote-block {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 18px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.03);
+            border-left: 4px solid var(--gold);
+        }
+
+        .proof-body {
+            font-family: 'Crimson Pro', serif;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--text-body);
+            margin-bottom: 14px;
+        }
+
+        .proof-cite {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--river-main);
         }
 
         /* NEWSLETTER */
@@ -786,6 +809,10 @@
             .gallery-grid {
                 grid-template-columns: 1fr 1fr;
             }
+
+            .proof-flex {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 850px) {
@@ -828,11 +855,16 @@
                 gap: 8px;
                 border-bottom: none;
             }
+
+            .sticky-text {
+                font-size: 0.78rem;
+            }
         }
 
     </style>
 
     <!-- STRUCTURED DATA -->
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -916,12 +948,12 @@
                     loading="eager"
                 >
 
-                <h1>Welcome to the Rambunctious River</h1>
+                <h1>THE ADVENTURES OF BUDDY BOOTZ</h1>
 
                 <div class="hero-text-container">
 
                     <p>
-                        Where impossible adventures begin, questionable decisions somehow work out, and every bend in the river has a story waiting to be discovered.
+                        Welcome to the Rambunctious River, where impossible adventures begin, questionable decisions somehow work out, and every bend in the river has a story waiting to be discovered.
                     </p>
 
                 </div>
@@ -987,7 +1019,7 @@
                     <img
                         src="bootz_cover.png"
                         class="location-img"
-                        alt="Alternate presentation artwork for The Buddy Bootz volume"
+                        alt="Official presentation artwork for The Buddy Bootz volume"
                         width="400"
                         height="520"
                         loading="lazy"
@@ -1204,59 +1236,6 @@
         </section>
 
 
-        <!-- MEET BUDDY AUTHOR -->
-
-        <section
-            id="meet-buddy-author"
-            style="background: var(--white); border-top: 1px solid rgba(0,0,0,0.05); border-bottom: 1px solid rgba(0,0,0,0.05);"
-            aria-labelledby="author-heading"
-        >
-
-            <div
-                class="container"
-                style="display: grid; grid-template-columns: 1fr 1.3fr; gap: 50px; align-items: center;"
-            >
-
-                <div>
-
-                </div>
-
-
-                <div>
-
-                    <span
-                        class="section-label"
-                        style="text-align: left;"
-                    >
-                        The Ink-Stained Hands
-                    </span>
-
-                    <h2
-                        id="author-heading"
-                        style="text-align: left; margin-bottom: 20px;"
-                    >
-                        Meet Buddy Bootz
-                    </h2>
-
-                    <p>
-                        When I am not actively securing my treehouse against sudden local wind storms or making sure I haven't wandered off into a patch of thorny brambles, I sit at my desk and draw.
-                    </p>
-
-                    <p>
-                        I wanted to create books that feel exactly like my corner of the woods: warm, slightly chaotic, heavy on visual details, and entirely driven by the comfort of good storytelling.
-                    </p>
-
-                    <p style="font-weight: 700; color: var(--river-deep);">
-                        No corporate teams, no focus groups, just a clean, homemade story straight from my desk to your hands.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
         <!-- EXPLORE THE WORLD -->
 
         <section
@@ -1376,6 +1355,55 @@
 
                 </div>
 
+
+                <!-- WORLD LOCATIONS -->
+
+                <div
+                    style="
+                        margin-top: 20px;
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 20px;
+                    "
+                >
+
+                    <div class="step-node">
+                        <h3>Mayhem Marsh</h3>
+                        <p>
+                            A place where the mud has opinions, the reeds move when nobody is touching them, and a perfectly ordinary walk can become an expedition.
+                        </p>
+                    </div>
+
+                    <div class="step-node">
+                        <h3>Sticky Frog Forest</h3>
+                        <p>
+                            A tangled stretch of green where frogs rule the pathways and every step comes with the possibility of becoming considerably stickier than planned.
+                        </p>
+                    </div>
+
+                    <div class="step-node">
+                        <h3>Crooked Raft Bend</h3>
+                        <p>
+                            A bend in the river where rafts, currents, and common sense rarely agree on which direction things should be going.
+                        </p>
+                    </div>
+
+                    <div class="step-node">
+                        <h3>Lantern Dock</h3>
+                        <p>
+                            A familiar stopping place along the waterways, where the light comes on and the river occasionally decides it has somewhere else to be.
+                        </p>
+                    </div>
+
+                    <div class="step-node">
+                        <h3>Wilderin Clearing</h3>
+                        <p>
+                            A wide-open clearing tucked into the changing landscape, where Buddy's maps become considerably less useful.
+                        </p>
+                    </div>
+
+                </div>
+
             </div>
 
         </section>
@@ -1403,19 +1431,6 @@
 
 
                 <div class="gallery-grid">
-
-
-                    <div class="gallery-card">
-
-                        <div class="gallery-caption">
-                            Raft Coffee Time
-                        </div>
-
-                        <p style="font-size: 1rem; color: var(--text-body); margin: 8px 0 0;">
-                            Hot coffee takes priority over fixing the broken rudder. We hit three boulders, but we were warm.
-                        </p>
-
-                    </div>
 
 
                     <div class="gallery-card">
@@ -1913,7 +1928,7 @@
             <div class="social-outposts-box">
 
                 <span>
-                    Follow Buddy Bootz across the waterways on YouTube, Spotify, and Patreon for the latest Coffee Time updates.
+                    Follow Buddy Bootz across the waterways on YouTube, Spotify, and Patreon for the latest updates.
                 </span>
 
             </div>
