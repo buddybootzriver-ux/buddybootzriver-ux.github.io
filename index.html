@@ -595,6 +595,20 @@
             color: var(--river-deep);
         }
 
+        .review-quote {
+            font-family: 'Crimson Pro', serif;
+            font-style: italic;
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+        }
+
+        .review-meta {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--river-main);
+        }
+
         /* SOCIAL PROOF */
 
         .proof-strip {
@@ -1677,17 +1691,11 @@
 
                         <div class="audit-card">
 
-                            <div
-                                class="review-quote"
-                                style="font-family:'Crimson Pro',serif; font-style:italic; font-size:1.15rem; margin-bottom:8px;"
-                            >
+                            <div class="review-quote">
                                 "The dry, casual humor is what makes this book feel so alive and genuine."
                             </div>
 
-                            <div
-                                class="review-meta"
-                                style="font-family:'Outfit',sans-serif; font-size:0.8rem; font-weight:700; color:var(--river-main);"
-                            >
+                            <div class="review-meta">
                                 Advanced Notebook Review Dispatch • Early Reader Panel
                             </div>
 
@@ -1696,17 +1704,11 @@
 
                         <div class="audit-card">
 
-                            <div
-                                class="review-quote"
-                                style="font-family:'Crimson Pro',serif; font-style:italic; font-size:1.15rem; margin-bottom:8px;"
-                            >
+                            <div class="review-quote">
                                 "The mechanical water pump scene made me laugh out loud. Genuinely refreshing to see practical problem-solving alongside emotional authenticity."
                             </div>
 
-                            <div
-                                class="review-meta"
-                                style="font-family:'Outfit',sans-serif; font-size:0.8rem; font-weight:700; color:var(--river-main);"
-                            >
+                            <div class="review-meta">
                                 Logbook Letter • Reader Correspondence
                             </div>
 
@@ -1821,7 +1823,6 @@
 
                     <form
                         id="waitlist-submission-form"
-                        action="https://formspree.io/f/xdapyaar"
                         method="POST"
                     >
 
@@ -1949,218 +1950,121 @@
 
     <script>
 
+        // Configuration
+        const CONFIG = {
+            formEndpoint: 'https://formspree.io/f/xdapyaar'
+        };
+
+        // DOM Selectors
+        const SELECTORS = {
+            tabContent: '.tab-content',
+            tabBtn: '.tab-btn',
+            form: '#waitlist-submission-form',
+            statusPanel: '#async-success-display-panel',
+            submitBtn: '#form-submit-trigger-button'
+        };
+
         // Tab Interaction
-
         function switchTab(evt, tabId) {
+            const contents = document.querySelectorAll(SELECTORS.tabContent);
+            contents.forEach(content => content.classList.remove('active'));
 
-            const contents =
-                document.querySelectorAll('.tab-content');
-
-            contents.forEach(content => {
-                content.classList.remove('active');
-            });
-
-
-            const buttons =
-                document.querySelectorAll('.tab-btn');
-
+            const buttons = document.querySelectorAll(SELECTORS.tabBtn);
             buttons.forEach(btn => {
-
                 btn.classList.remove('active');
-
-                btn.setAttribute(
-                    'aria-selected',
-                    'false'
-                );
-
-                btn.setAttribute(
-                    'tabindex',
-                    '-1'
-                );
-
+                btn.setAttribute('aria-selected', 'false');
+                btn.setAttribute('tabindex', '-1');
             });
 
-
-            const currentContent =
-                document.getElementById(tabId);
-
+            const currentContent = document.getElementById(tabId);
             if (currentContent) {
                 currentContent.classList.add('active');
             }
 
-
-            const currentTrigger =
-                evt.currentTarget;
-
+            const currentTrigger = evt.currentTarget;
             currentTrigger.classList.add('active');
-
-            currentTrigger.setAttribute(
-                'aria-selected',
-                'true'
-            );
-
-            currentTrigger.setAttribute(
-                'tabindex',
-                '0'
-            );
-
+            currentTrigger.setAttribute('aria-selected', 'true');
+            currentTrigger.setAttribute('tabindex', '0');
         }
 
+        function handleTabKeydown(e, index, tabButtons) {
+            let targetIdx = null;
 
-        const tabButtons =
-            document.querySelectorAll('.tab-btn');
+            if (e.key === 'ArrowRight') {
+                targetIdx = (index + 1) % tabButtons.length;
+            } else if (e.key === 'ArrowLeft') {
+                targetIdx = (index - 1 + tabButtons.length) % tabButtons.length;
+            } else if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                switchTab(e, e.currentTarget.getAttribute('aria-controls'));
+                return;
+            }
 
+            if (targetIdx !== null) {
+                tabButtons[targetIdx].focus();
+                tabButtons[targetIdx].click();
+            }
+        }
 
+        const tabButtons = document.querySelectorAll(SELECTORS.tabBtn);
         tabButtons.forEach((btn, index) => {
+            btn.addEventListener('click', (e) => {
+                const targetPanelId = btn.getAttribute('aria-controls');
+                switchTab(e, targetPanelId);
+            });
 
-            btn.addEventListener(
-                'click',
-                (e) => {
-
-                    const targetPanelId =
-                        btn.getAttribute('aria-controls');
-
-                    switchTab(
-                        e,
-                        targetPanelId
-                    );
-
-                }
-            );
-
-
-            btn.addEventListener(
-                'keydown',
-                (e) => {
-
-                    let targetIdx = null;
-
-
-                    if (e.key === 'ArrowRight') {
-
-                        targetIdx =
-                            (index + 1) %
-                            tabButtons.length;
-
-                    } else if (e.key === 'ArrowLeft') {
-
-                        targetIdx =
-                            (index - 1 + tabButtons.length) %
-                            tabButtons.length;
-
-                    }
-
-
-                    if (targetIdx !== null) {
-
-                        tabButtons[targetIdx].focus();
-
-                        tabButtons[targetIdx].click();
-
-                    }
-
-                }
-            );
-
+            btn.addEventListener('keydown', (e) => {
+                handleTabKeydown(e, index, tabButtons);
+            });
         });
 
-
         // Formspree Submission
-
-        const waitlistForm =
-            document.getElementById(
-                'waitlist-submission-form'
-            );
-
-        const statusPanel =
-            document.getElementById(
-                'async-success-display-panel'
-            );
-
-        const submitBtn =
-            document.getElementById(
-                'form-submit-trigger-button'
-            );
-
+        const waitlistForm = document.querySelector(SELECTORS.form);
+        const statusPanel = document.querySelector(SELECTORS.statusPanel);
+        const submitBtn = document.querySelector(SELECTORS.submitBtn);
 
         if (waitlistForm) {
+            waitlistForm.addEventListener('submit', function(event) {
+                event.preventDefault();
 
-            waitlistForm.addEventListener(
-                'submit',
-                function(event) {
+                submitBtn.disabled = true;
+                submitBtn.innerText = "Logging sequence...";
 
-                    event.preventDefault();
+                const payload = new FormData(waitlistForm);
 
+                fetch(CONFIG.formEndpoint, {
+                    method: 'POST',
+                    body: payload,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        statusPanel.classList.add('success-state');
+                        statusPanel.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'nearest'
+                        });
+                        waitlistForm.reset();
+                        submitBtn.innerText = "Logged Entry";
+                    } else {
+                        throw new Error('Network logging mismatch detected');
+                    }
+                })
+                .catch(error => {
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = "Try Connection Again";
 
-                    submitBtn.disabled = true;
+                    console.error('Newsletter subscription failed:', error);
 
-                    submitBtn.innerText =
-                        "Logging sequence...";
+                    const errorMsg = error instanceof TypeError
+                        ? "Network connection failed. Please check your internet and try again."
+                        : "Server responded unexpectedly. Please try again later.";
 
-
-                    const payload =
-                        new FormData(waitlistForm);
-
-
-                    fetch(
-                        waitlistForm.action,
-                        {
-                            method: 'POST',
-                            body: payload,
-                            headers: {
-                                'Accept': 'application/json'
-                            }
-                        }
-                    )
-
-                    .then(response => {
-
-                        if (response.ok) {
-
-                            statusPanel.classList.add(
-                                'success-state'
-                            );
-
-
-                            statusPanel.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'nearest'
-                            });
-
-
-                            waitlistForm.reset();
-
-
-                            submitBtn.innerText =
-                                "Logged Entry";
-
-                        } else {
-
-                            throw new Error(
-                                'Network logging mismatch detected'
-                            );
-
-                        }
-
-                    })
-
-                    .catch(error => {
-
-                        submitBtn.disabled = false;
-
-                        submitBtn.innerText =
-                            "Try Connection Again";
-
-
-                        alert(
-                            "The communication stream encountered an obstruction. Please verify your connection address and try pushing the lever again."
-                        );
-
-                    });
-
-                }
-            );
-
+                    alert(`The communication stream encountered an obstruction: ${errorMsg}`);
+                });
+            });
         }
 
     </script>
