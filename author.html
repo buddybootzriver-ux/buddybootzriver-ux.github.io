@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Meet Buddy Bootz, the curious chronicler behind the adventures of the Rambunctious River.">
+  <meta name="description" content="About Buddy Bootz, the writer behind stories, poems, and the adventures of Buddy Bootz and Sir Drinks-A-Lot.">
   <link rel="canonical" href="https://buddybootz.com/author.html">
-  <title>About the Author | Buddy Bootz</title>
-  <meta property="og:title" content="About the Author | Buddy Bootz">
-  <meta property="og:description" content="Meet the curious chronicler behind the adventures of the Rambunctious River.">
-  <meta property="og:image" content="author_buddy.png">
+  <title>About Me | Buddy Bootz</title>
+  <meta property="og:title" content="About Me | Buddy Bootz">
+  <meta property="og:description" content="Meet the writer behind Buddy Bootz, poetry, and stories that matter.">
+  <meta property="og:image" content="authorpage.png">
   <meta property="og:url" content="https://buddybootz.com/author.html">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="favicon.png">
@@ -16,79 +16,82 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <style>
-    :root { --river-deep:#1F4E5F; --river-main:#3FA7D6; --river-light:#E6F7FF; --gold:#F2C94C; --gold-soft:#FFE27A; --text-dark:#0B1F26; --text-body:#2A4A55; --white:#fff; --bg-paper:#fdfbf7; }
+    :root { --river-deep:#1f4e5f; --river-main:#3fa7d6; --river-light:#e6f7ff; --gold:#f2c94c; --gold-soft:#ffe27a; --text-dark:#0b1f26; --text-body:#2a4a55; --white:#fff; --paper:#fdfbf7; }
     * { box-sizing:border-box; margin:0; padding:0; }
-    html { scroll-behavior:smooth; }
-    body { background:var(--bg-paper); color:var(--text-dark); font-family:'Crimson Pro', Georgia, serif; line-height:1.75; }
+    body { background:var(--paper); color:var(--text-dark); font-family:'Crimson Pro', Georgia, serif; line-height:1.75; }
     .container { width:min(1040px, calc(100% - 48px)); margin:auto; }
-    .site-header { background:var(--river-deep); border-bottom:3px solid var(--gold); padding:16px 0; }
-    .nav { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    header { background:var(--river-deep); border-bottom:3px solid var(--gold); padding:16px 0; }
+    nav { display:flex; align-items:center; justify-content:space-between; gap:20px; }
     .brand { color:var(--gold); font-family:'DM Serif Display', serif; font-size:1.45rem; text-decoration:none; }
-    .home-link { background:var(--gold); border:2px solid var(--gold); border-radius:999px; color:var(--text-dark); font-family:'Outfit', sans-serif; font-size:.85rem; font-weight:800; letter-spacing:.5px; padding:8px 15px; text-decoration:none; }
-    .hero { background:linear-gradient(180deg, var(--river-light), var(--bg-paper)); padding:78px 0 54px; text-align:center; }
-    .eyebrow { color:var(--river-main); display:block; font-family:'Outfit', sans-serif; font-size:.78rem; font-weight:800; letter-spacing:2.5px; margin-bottom:10px; text-transform:uppercase; }
-    h1,h2 { color:var(--river-deep); font-family:'DM Serif Display', serif; font-weight:400; line-height:1.15; }
-    h1 { font-size:clamp(3rem, 7vw, 5rem); }
-    h2 { font-size:clamp(2.1rem, 4vw, 3.2rem); margin-bottom:18px; }
-    .lead { color:var(--text-body); font-size:1.38rem; margin:18px auto 0; max-width:700px; }
-    .divider { background:var(--gold); border-radius:4px; height:4px; margin:27px auto 0; width:62px; }
-    main { padding:72px 0 90px; }
-    .profile { align-items:center; display:grid; gap:56px; grid-template-columns:minmax(260px,.85fr) minmax(0,1.15fr); }
-    .portrait { background:var(--white); border:4px solid var(--white); border-radius:22px; box-shadow:0 18px 42px rgba(31,78,95,.16); display:block; max-width:100%; }
-    p { color:var(--text-body); font-size:1.25rem; margin-bottom:1.25rem; }
-    .note { background:var(--river-deep); border:2px solid var(--gold); border-radius:22px; box-shadow:8px 8px 0 var(--gold); color:var(--white); margin-top:76px; padding:46px clamp(28px,6vw,70px); }
-    .note h2 { color:var(--gold); text-align:center; }
-    .note p { color:rgba(255,255,255,.92); font-size:1.28rem; }
-    .signature { color:var(--gold-soft)!important; font-family:'DM Serif Display', serif; font-size:1.45rem!important; font-style:italic; margin-bottom:0!important; text-align:right; }
-    .back { display:inline-flex; margin-top:32px; border:2px solid var(--river-deep); border-radius:999px; color:var(--river-deep); font-family:'Outfit', sans-serif; font-size:.95rem; font-weight:800; padding:12px 22px; text-decoration:none; }
-    footer { background:#071418; border-top:4px solid var(--river-deep); color:rgba(255,255,255,.6); padding:42px 0; text-align:center; }
+    .home { background:var(--gold); border-radius:999px; color:var(--text-dark); font-family:'Outfit',sans-serif; font-size:.85rem; font-weight:800; padding:8px 16px; text-decoration:none; }
+    .hero { background:linear-gradient(180deg,var(--river-light),var(--paper)); padding:76px 0 52px; text-align:center; }
+    .eyebrow { color:var(--river-main); display:block; font-family:'Outfit',sans-serif; font-size:.78rem; font-weight:800; letter-spacing:2.5px; margin-bottom:10px; text-transform:uppercase; }
+    h1,h2 { color:var(--river-deep); font-family:'DM Serif Display',serif; font-weight:400; line-height:1.15; }
+    h1 { font-size:clamp(3rem,7vw,5rem); }
+    h2 { font-size:clamp(2.1rem,4vw,3.1rem); margin-bottom:20px; }
+    .rule { background:var(--gold); border-radius:4px; height:4px; margin:27px auto 0; width:62px; }
+    main { padding:70px 0 90px; }
+    .about { align-items:start; display:grid; gap:56px; grid-template-columns:minmax(260px,.8fr) minmax(0,1.2fr); }
+    .portrait { background:var(--white); border:4px solid var(--white); border-radius:22px; box-shadow:0 18px 42px rgba(31,78,95,.18); display:block; max-width:100%; position:sticky; top:25px; }
+    p { color:var(--text-body); font-size:1.27rem; margin-bottom:1.28rem; }
+    .dedication { background:var(--river-deep); border:2px solid var(--gold); border-radius:22px; box-shadow:8px 8px 0 var(--gold); margin-top:76px; padding:48px clamp(28px,6vw,72px); }
+    .dedication h2 { color:var(--gold); text-align:center; }
+    .dedication p { color:rgba(255,255,255,.92); font-size:1.28rem; }
+    .thanks { color:var(--gold-soft)!important; font-family:'DM Serif Display',serif; font-size:1.55rem!important; margin:32px 0 0!important; text-align:center; }
+    footer { background:#071418; border-top:4px solid var(--river-deep); color:rgba(255,255,255,.62); padding:42px 0; text-align:center; }
     footer a { color:var(--gold-soft); }
-    @media (max-width:720px) { .profile { grid-template-columns:1fr; gap:34px; } .portrait { margin:auto; max-width:400px; } .hero { padding:58px 0 40px; } main { padding:54px 0 68px; } }
+    @media (max-width:760px) { .about { grid-template-columns:1fr; gap:34px; } .portrait { margin:auto; max-width:440px; position:static; } .hero { padding:58px 0 40px; } main { padding:54px 0 68px; } }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <nav class="container nav" aria-label="Site navigation">
+  <header>
+    <nav class="container" aria-label="Site navigation">
       <a class="brand" href="index.html">The Adventures of Buddy Bootz</a>
-      <a class="home-link" href="index.html">Back to the River</a>
+      <a class="home" href="index.html">Back to the River</a>
     </nav>
   </header>
-
   <section class="hero">
     <div class="container">
-      <span class="eyebrow">Meet the storyteller</span>
-      <h1>About the Author</h1>
-      <p class="lead">A few notes from the observant, occasionally overconfident explorer who keeps a notebook close whenever the river starts behaving strangely.</p>
-      <div class="divider"></div>
+      <span class="eyebrow">The writer behind the adventures</span>
+      <h1>About Me</h1>
+      <div class="rule"></div>
     </div>
   </section>
-
   <main class="container">
-    <section class="profile" aria-labelledby="author-heading">
-      <img class="portrait" src="author_buddy.png" alt="Illustrated portrait of Buddy Bootz with his notebook">
+    <section class="about" aria-labelledby="about-heading">
+      <img class="portrait" src="authorpage.png" alt="Buddy Bootz, author">
       <div>
-        <span class="eyebrow">The chronicler of the river</span>
-        <h2 id="author-heading">Buddy Bootz</h2>
-        <p>Buddy Bootz is a curious maker, map scribbler, and devoted recorder of the world around the Rambunctious River. He is at his happiest with a fresh notebook, a dependable set of tools, and a plan that has not yet been tested by the local geography.</p>
-        <p>His stories follow the small moments that become big adventures: a water pump with a mind of its own, a path that refuses to stay put, or a peaceful afternoon that suddenly needs a raft, a lantern, and a little optimism.</p>
-        <p>When he is not sketching the next discovery, Buddy can be found repairing his treehouse, comparing maps with yesterday's version, and trying to convince the river that it has already made enough unexpected turns for one day.</p>
-        <a class="back" href="index.html">Explore the Adventures</a>
+        <h2 id="about-heading">Hi, I'm Buddy Bootz.</h2>
+        <p>Buddy Bootz is the name I write under, but behind the name is simply me, writing about the things that matter to me.</p>
+        <p>I've always believed the best writing doesn't try to impress people. It tries to tell the truth.</p>
+        <p>Sometimes that truth comes out as a poem. Sometimes it shows up wearing a crooked crown and wandering into trouble.</p>
+        <p>I write poetry because sometimes a feeling arrives before I have the words for it. Other times, a memory, a strange thought, a ridiculous moment, or something that makes me laugh refuses to leave me alone until I write it down.</p>
+        <p>Some poems come from difficult places. Others come from hope, humor, curiosity, or simply noticing something worth saying. I like having room for all of it.</p>
+        <p>I started <em>The Adventures of Buddy Bootz &amp; Sir Drinks-A-Lot</em> because I wanted to make someone smile when life wasn't giving them many reasons to.</p>
+        <p>I was going through one of the hardest and loneliest periods of my life, and creating those stories gave me a way to bring a little laughter into a time that needed it.</p>
+        <p>What started as a way to make someone else smile became something that helped me, too. The stories gave me a place to imagine, create, laugh, and keep moving when I wasn't sure what tomorrow was supposed to look like.</p>
+        <p>Maybe that's the thread running through everything I write. Whether I'm writing a poem or sending Buddy and Sir into another questionable adventure, I'm looking for something real. Something that makes a reader feel something, think about something, or maybe just smile for a minute.</p>
+        <p>I never quite know where an idea is going when I start writing it.</p>
+        <p>That's usually when things get interesting.</p>
+        <p>Thanks for reading.</p>
+        <p>It means more than you know.</p>
       </div>
     </section>
-
-    <section class="note" aria-labelledby="note-heading">
-      <span class="eyebrow" style="color:var(--gold-soft); text-align:center;">From Buddy's notebook</span>
-      <h2 id="note-heading">Author's Note</h2>
-      <p>I wanted this series to feel like opening a well-worn notebook after an interesting day outdoors: a little muddy around the edges, full of sketches, and packed with the kind of problems that are much more fun to solve with a friend nearby.</p>
-      <p>The Rambunctious River is a place for curious readers, brave tinkerers, thoughtful daydreamers, and anyone who has ever watched a perfectly reasonable plan become something delightfully unexpected. I hope these adventures leave you smiling, imagining, and ready to see where the next bend leads.</p>
-      <p class="signature">— Buddy Bootz</p>
+    <section class="dedication" aria-labelledby="dedication-heading">
+      <span class="eyebrow" style="color:var(--gold-soft);text-align:center;">With gratitude</span>
+      <h2 id="dedication-heading">A Dedication to Richie</h2>
+      <p>One of the hardest and loneliest periods of my life was a time when I was isolated, lost in my own thoughts, and writing more than ever. It was during that time that Richie showed up.</p>
+      <p>Throughout that year, he gave me moments of laughter, conversation, and reasons to keep moving forward. Somehow, he made the world feel a little less heavy and made it feel like I wasn't alone.</p>
+      <p>There were moments when the worries slipped away quietly, and for a little while, I wasn't just surviving.</p>
+      <p>I was there.</p>
+      <p>Present.</p>
+      <p>Part of my own life again.</p>
+      <p>I wanted to give him something back.</p>
+      <p>So I gave him Sir, a place in Buddy Bootz's world where he could be part of the adventures and the world I had created.</p>
+      <p>And now, wherever the adventures go, a little piece of Richie goes with them.</p>
+      <p class="thanks"><strong>Thank you Richie for carrying joy through the wreckage.</strong></p>
     </section>
   </main>
-
-  <footer>
-    <div class="container">
-      <p style="color:rgba(255,255,255,.65); font-size:1rem; margin:0;">&copy; 2026 Buddy Bootz Project. All Rights Reserved. <a href="index.html">Return to the Rambunctious River</a></p>
-    </div>
-  </footer>
+  <footer><div class="container"><p style="color:rgba(255,255,255,.65);font-size:1rem;margin:0;">&copy; 2026 Buddy Bootz Project. All Rights Reserved. <a href="index.html">Return to the Rambunctious River</a></p></div></footer>
 </body>
 </html>
