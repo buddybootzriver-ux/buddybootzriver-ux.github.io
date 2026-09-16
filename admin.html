@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>Private Admin Area | Buddy Bootz</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Crimson+Pro:wght@400;600;700&family=DM+Serif+Display&display=swap">
+  <style>
+    :root{--deep:#1F4E5F;--blue:#3FA7D6;--gold:#F2C94C;--paper:#fdfbf7;--body:#2A4A55}
+    *{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#E6F7FF,var(--paper));font-family:'Crimson Pro',Georgia,serif;color:#0B1F26;min-height:100vh;padding:36px}
+    .wrap{max-width:900px;margin:auto}.card{background:#fff;border:1px solid rgba(31,78,95,.12);border-radius:22px;padding:38px;box-shadow:0 18px 50px rgba(31,78,95,.12);margin-bottom:24px}
+    .label{font:800 .78rem 'Outfit',sans-serif;letter-spacing:2px;text-transform:uppercase;color:var(--blue)}h1,h2{font-family:'DM Serif Display',serif;font-weight:400;color:var(--deep)}h1{font-size:clamp(2.6rem,6vw,4.2rem);margin:8px 0 18px}h2{font-size:2rem}
+    p,li{font-size:1.15rem;line-height:1.65;color:var(--body)}.warning{border-left:5px solid var(--gold);background:#fffaf0;padding:18px 22px;border-radius:10px}
+    a{color:var(--deep);font-weight:700}.btn{display:inline-block;margin-top:20px;background:var(--gold);color:#0B1F26;padding:12px 20px;border-radius:999px;border:2px solid var(--deep);box-shadow:4px 4px 0 var(--deep);text-decoration:none;font:800 .9rem 'Outfit',sans-serif}
+  </style>
+  <script src="auth-config.js"></script><script src="auth.js"></script>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="label">Private Area</div>
+      <h1>Buddy Bootz Admin</h1>
+      <div class="warning" data-auth-panel>
+        <strong>Secure authentication is not connected.</strong>
+        <p>This page contains no private data and is intentionally disabled until a real identity/access provider is connected. A JavaScript-only password gate would not securely protect a GitHub Pages site.</p>
+      </div>
+      <a class="btn" href="login.html">Authentication Setup</a>
+      <a class="btn" href="index.html">Back to the River</a>
+    </section>
+
+    <section class="card">
+      <h2>Planned admin functions</h2>
+      <ul>
+        <li>Manage newsletter/waitlist content.</li>
+        <li>Track story drafts and publication milestones.</li>
+        <li>Manage private editorial notes without placing them in public HTML.</li>
+        <li>Review reader communications after a secure service is connected.</li>
+      </ul>
+    </section>
+  </main>
+  <script>window.requireBuddyAuth && window.requireBuddyAuth();</script>
+</body>
+</html>
