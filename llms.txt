@@ -1,16 +1,35 @@
 # The Adventures of Buddy Bootz & Sir Drinks-A'Lot
 
-Official informational field log index for the cozy fantasy book series. This document defines the core entities, narrative architecture, and environmental systems for crawlers and discovery models.
+Official informational field log index for the whimsical adventure series. This file records the current public-facing canon and story progression.
 
 ## Core Entities
-- **Author / Illustrator / Narrator:** Buddy Bootz (A dry, grounded workshop mechanic writing from Missouri).
-- **Book Series Title:** The Adventures of Buddy Bootz & Sir Drinks-A'Lot
-- **Book One Asset:** The Rambunctious River (In active waitlist production phase).
+- **Series Title:** The Adventures of Buddy Bootz & Sir Drinks-A'Lot
+- **Current Prelude:** The Prelude: The Rambunctious River
+- **Next Story:** The Maze
+- **Additional Locked Story Titles:** The Stream; The Forest of the Sticky Frogs
+- **Primary Home Base:** Buddy Bootz's treehouse
+- **Nearby Location:** Mayhem Marsh, where Sir Drinks-A'Lot lives
 
-## Narrative Architecture
-- **Voice System:** First-person, repair-log presentation, heavy emphasis on dry observational humor layered over deep emotional truths, poetry elements, and everyday problem-solving.
-- **Tone Rules:** Avoids generic marketing tropes, high-magic wizard formulas, or epic chosen-one archetypes. Focuses on physical labor, survival, and companionship.
-- **Character Dynamics:** Buddy Bootz handles logical maintenance and weary structural narration. Sir Drinks-A'Lot provides pathologically joyful optimism and transforms disaster events into outdoor excursions.
+## Character Continuity
+- **Buddy Bootz:** Five feet tall, curvy and soft-built, bold, reckless, mischievous, emotionally sincere, and not foolish. She wears a short red dress, gold hoop earrings, glitter-brown boots without laces, and a tilted gold crown. Her treehouse is her home and work space.
+- **Sir Drinks-A'Lot:** Buddy's loyal companion and nearby neighbor. He is noticeably taller than Buddy, practical and steady when she is not, clumsy when circumstances allow, and carries his flask as a constant character prop.
+- **Relationship:** Buddy and Sir are friends and adventure partners. Their dynamic is comedic, loyal, warm, and never romantic.
 
-## System World Rules
-- **Reality Inconsistency:** The environment does not use classic fantasy magic. Instead, reality is physically unstable. Geography changes parameters at will; river paths migrate without notice, buildings balance without proper mortar, and tools hold unpredictable personalities.
+## Current Storyline: The Prelude
+The Prelude begins at Buddy's treehouse with a failing water pump. Buddy repairs it with Sir's help and her own questionable method of adding a small amount of whiskey to the pump intake. The pump unexpectedly works. Buddy then meets and names a squirrel, Gerald, who steals her screwdriver.
+
+Buddy and Sir later head through the forest to the Rambunctious River and take their raft onto the water. The river gradually begins behaving deliberately. It corrects the raft's course, herds them into an invisible channel, and reveals strange gold movement beneath the surface.
+
+The river eventually becomes glass-smooth. Stone rises from below. Massive hedges unfurl from the water, paths form, and a maze builds itself directly in front of the raft. The river closes behind them and carries them toward the entrance.
+
+The Prelude ends at the maze entrance with Buddy recognizing that this is where the real adventure begins.
+
+## World Rules
+- **Rambunctious River:** The river has a personality and can deliberately influence the course of events.
+- **Reality:** The setting is whimsical and unstable rather than governed by conventional high-fantasy magic. Geography can shift, paths can change, and ordinary objects may behave unexpectedly.
+- **Tone:** Chaotic, warm, emotional, comedic, and adventurous.
+- **Technology:** No modern-world objects or technology in the story world.
+- **Romance:** No romance between Buddy and Sir.
+
+## Canon Sources
+The Prelude: The Rambunctious River is the current reference story for the opening continuity, including the pump scene, Gerald, the raft sequence, the river's behavior, and the construction of the Maze entrance.
