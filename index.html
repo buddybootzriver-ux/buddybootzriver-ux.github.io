@@ -46,7 +46,16 @@
 		.story{background:var(--river-light)}
 		.story-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:52px;align-items:center}
 		.story-card{background:#fff;border-radius:20px;padding:32px;box-shadow:0 12px 35px rgba(0,0,0,.05);border:1px solid rgba(31,78,95,.08)}
-		.story-image{width:100%;border-radius:18px;box-shadow:0 15px 40px rgba(0,0,0,.08)}
+		.story-visual{position:relative;display:flex;flex-direction:column;align-items:center;gap:18px}
+		.story-image{width:100%;border-radius:18px;box-shadow:0 15px 40px rgba(0,0,0,.08);transition:transform .35s ease, box-shadow .35s ease}
+		.story-visual:hover .story-image,.story-visual:focus-within .story-image{transform:translateY(-4px) rotate(-.5deg);box-shadow:0 20px 45px rgba(0,0,0,.12)}
+		.story-toggle{appearance:none;border:2px solid var(--river-deep);background:var(--gold);color:var(--text-dark);font-family:'Outfit',sans-serif;font-weight:800;font-size:.8rem;letter-spacing:1.6px;text-transform:uppercase;padding:12px 16px;border-radius:999px;cursor:pointer;box-shadow:4px 4px 0 var(--river-deep);transition:transform .2s ease, box-shadow .2s ease}
+		.story-toggle:hover,.story-toggle:focus-visible{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--river-deep)}
+		.story-reveal{margin-top:28px}
+		.story-reveal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+		.story-note{background:#fff;border:1px solid rgba(31,78,95,.08);border-radius:18px;padding:20px;box-shadow:0 10px 26px rgba(0,0,0,.04)}
+		.story-note h3{font-size:1.3rem;margin-bottom:8px}
+		.story-tag{font-family:'Outfit',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--river-main)}
 		.sequence{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:38px}
 		.sequence-card{background:#fff;border:1px solid rgba(31,78,95,.08);border-radius:18px;padding:28px;box-shadow:0 8px 24px rgba(0,0,0,.03)}
 		.number{font-family:'Outfit',sans-serif;font-size:2.4rem;font-weight:800;color:rgba(63,167,214,.25);margin-bottom:8px}
@@ -81,17 +90,24 @@
 
 		@media(max-width:850px){
 			.story-grid,.world-grid,.author-grid{grid-template-columns:1fr}
-			.duo,.sequence,.gallery-grid{grid-template-columns:1fr 1fr}
+			.duo,.sequence,.gallery-grid,.story-reveal-grid{grid-template-columns:1fr 1fr}
 			.newsletter form{flex-direction:column}
 			.newsletter input{width:100%}
 		}
 
 		@media(max-width:600px){
+			.story-reveal-grid{grid-template-columns:1fr}
 			.sticky span{font-size:.78rem}
 			.sticky a{font-size:.7rem}
 			.duo,.sequence,.gallery-grid{grid-template-columns:1fr}
 			.container{padding:0 20px}
 			section{padding:70px 0}
+		}
+
+		@media(prefers-reduced-motion:reduce){
+			html{scroll-behavior:auto}
+			*,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important}
+			.story-image{transform:none !important}
 		}
 	</style>
 </head>
@@ -153,8 +169,34 @@
 						<p>The first adventure begins here.</p>
 					</div>
 
-					<div>
+					<div class="story-visual">
 						<img src="bootz_cover.png" class="story-image" alt="The Prelude: The Rambunctious River book cover">
+						<button class="story-toggle" type="button" aria-expanded="false" aria-controls="story-reveal">Explore the world around the first adventure</button>
+					</div>
+				</div>
+
+				<div id="story-reveal" class="story-reveal" hidden>
+					<div class="story-reveal-grid">
+						<div class="story-note">
+							<span class="story-tag">Beginning</span>
+							<h3>Boot Treehouse</h3>
+							<p>Buddy Bootz is fixing a water pump at home before the wild part begins.</p>
+						</div>
+						<div class="story-note">
+							<span class="story-tag">Nearby</span>
+							<h3>Mayhem Marsh</h3>
+							<p>Sir Drinks-A'Lot is close enough to arrive just in time to help, and to get dragged in himself.</p>
+						</div>
+						<div class="story-note">
+							<span class="story-tag">The River</span>
+							<h3>Rambunctious River</h3>
+							<p>The river is not a backdrop. It begins behaving with its own agency and starts choosing the path forward.</p>
+						</div>
+						<div class="story-note">
+							<span class="story-tag">Next Step</span>
+							<h3>The Maze</h3>
+							<p>What appears at the river's edge is not the end of the story, but the beginning of the next impossible turn.</p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -340,6 +382,27 @@
 			</p>
 		</div>
 	</footer>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			var toggle = document.querySelector('.story-toggle');
+			var reveal = document.getElementById('story-reveal');
+			if (!toggle || !reveal) return;
+
+			var update = function () {
+				var expanded = toggle.getAttribute('aria-expanded') === 'true';
+				reveal.hidden = !expanded;
+				toggle.textContent = expanded ? 'Hide the world around the first adventure' : 'Explore the world around the first adventure';
+			};
+
+			update();
+			toggle.addEventListener('click', function () {
+				var next = toggle.getAttribute('aria-expanded') !== 'true';
+				toggle.setAttribute('aria-expanded', String(next));
+				update();
+			});
+		});
+	</script>
 
 </body>
 </html>
