@@ -6,7 +6,6 @@ Official informational field log index for the whimsical adventure series. This 
 - **Series Title:** The Adventures of Buddy Bootz & Sir Drinks-A'Lot
 - **Current Prelude:** The Prelude: The Rambunctious River
 - **Next Story:** The Maze
-- **Additional Locked Story Titles:** The Stream; The Forest of the Sticky Frogs
 - **Primary Home Base:** Buddy Bootz's treehouse
 - **Nearby Location:** Mayhem Marsh, where Sir Drinks-A'Lot lives
 
