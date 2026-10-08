@@ -64,6 +64,18 @@
 		.character{background:#fff;border:1px solid rgba(31,78,95,.08);border-radius:20px;padding:28px;box-shadow:0 12px 35px rgba(0,0,0,.04)}
 		.character img{width:100%;border-radius:14px;margin-bottom:22px}
 		.character .tag{font-family:'Outfit',sans-serif;color:var(--river-main);font-weight:800;font-size:.76rem;letter-spacing:1.5px;text-transform:uppercase}
+		.character-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+		.character-talk{min-height:48px;padding:11px 18px;font-size:.8rem}
+		.character-dialogue,.exchange-dialogue,.gerald-message{background:var(--river-light);border-left:4px solid var(--gold);border-radius:10px;padding:14px 16px;margin:18px 0 0;color:var(--text-dark);font-size:1.12rem}
+		.character.is-speaking{box-shadow:0 14px 38px rgba(31,78,95,.12)}
+		.character-exchange{text-align:center;margin-top:28px}
+		.exchange-dialogue{max-width:720px;margin:18px auto 0;text-align:left}
+		.gerald-discovery{display:flex;align-items:center;gap:12px;margin-top:18px}
+		.gerald-trigger{position:relative;width:48px;height:48px;flex:0 0 48px;overflow:hidden;border:2px solid rgba(31,78,95,.2);border-radius:50%;background:var(--paper);cursor:pointer}
+		.gerald-trigger:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+		.gerald-crop{position:absolute;inset:0;background-image:url('buddy-sir-back-cover-gerald.png');background-repeat:no-repeat;background-size:200px 320px;background-position:-55px -210px;opacity:.82;transition:opacity .2s ease}
+		.gerald-trigger:hover .gerald-crop,.gerald-trigger:focus-visible .gerald-crop{opacity:1}
+		.gerald-message{margin:0;font-size:1rem}
 		.world{background:#fff}
 		.world-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-bottom:70px}
 		.world-grid img{width:100%;border-radius:18px;box-shadow:0 15px 40px rgba(0,0,0,.06)}
@@ -105,10 +117,15 @@
 			section{padding:70px 0}
 		}
 
+		@media(max-width:360px){
+			h1{font-size:2.5rem}
+		}
+
 		@media(prefers-reduced-motion:reduce){
 			html{scroll-behavior:auto}
 			*,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important}
 			.story-image{transform:none !important}
+			.gerald-crop{transition:none}
 		}
 	</style>
 </head>
@@ -232,6 +249,10 @@
 						<span class="tag">Buddy Bootz</span>
 						<h3>Five Feet of Determination</h3>
 						<p>Buddy Bootz is 5 feet tall, curvy and soft-built, with short auburn bouncy curls, grey-green eyes, a short red dress, gold hoop earrings, a tilted cartoon gold crown, sparkling brown pull-on cowboy boots, and no boot laces. She lives in the Boot Treehouse, is clever, curious, bold, impulsive, resourceful, emotionally sincere, and always somehow in the middle of the next problem.</p>
+						<div class="character-actions">
+							<button class="btn character-talk" type="button" data-dialogue="buddy" aria-controls="buddy-dialogue">Talk to Buddy</button>
+						</div>
+						<p id="buddy-dialogue" class="character-dialogue" aria-live="polite" aria-atomic="true" hidden></p>
 					</article>
 
 					<article class="character">
@@ -239,7 +260,15 @@
 						<span class="tag">Sir Drinks-A'Lot</span>
 						<h3>The Steady One, Usually</h3>
 						<p>Sir Drinks-A'Lot is 6'1", lives in a cabin in Mayhem Marsh, and is tall, lean, broad-shouldered, ruggedly handsome, with a buzz-cut style hair, slightly receding hairline, close-cropped facial hair, serious downward-sloping eyebrows, deep-set intense eyes, a strong square jaw, a small stud earring in his left ear, dark gray fitted T-shirt, tan cargo pants with side pockets, brown boots, and a brown belt with pouch. His metal flask is always visible, and he is loyal, protective, steady, practical, dry, sarcastic, and highly competent.</p>
+						<div class="character-actions">
+							<button class="btn character-talk" type="button" data-dialogue="sir" aria-controls="sir-dialogue">Talk to Sir</button>
+						</div>
+						<p id="sir-dialogue" class="character-dialogue" aria-live="polite" aria-atomic="true" hidden></p>
 					</article>
+				</div>
+				<div class="character-exchange">
+					<button class="btn secondary character-talk" type="button" id="exchange-trigger" aria-controls="exchange-dialogue">Catch Buddy and Sir mid-conversation</button>
+					<p id="exchange-dialogue" class="exchange-dialogue" aria-live="polite" aria-atomic="true" hidden></p>
 				</div>
 			</div>
 		</section>
@@ -254,6 +283,12 @@
 					<div>
 						<h3>Boot Treehouse</h3>
 						<p>Buddy Bootz lives in the Boot Treehouse, where tools, rope, books, machinery, and enough questionable repairs keep the whole place permanently interesting.</p>
+						<div class="gerald-discovery">
+							<button class="gerald-trigger" type="button" id="gerald-trigger" aria-label="Inspect the small squirrel detail" aria-expanded="false" aria-controls="gerald-message">
+								<span class="gerald-crop" aria-hidden="true"></span>
+							</button>
+							<p id="gerald-message" class="gerald-message" role="status" aria-live="polite" hidden></p>
+						</div>
 					</div>
 					<img src="buddy_treehouse.png" alt="Buddy Bootz's treehouse">
 				</div>
@@ -388,20 +423,78 @@
 		document.addEventListener('DOMContentLoaded', function () {
 			var toggle = document.querySelector('.story-toggle');
 			var reveal = document.getElementById('story-reveal');
-			if (!toggle || !reveal) return;
 
-			var update = function () {
-				var expanded = toggle.getAttribute('aria-expanded') === 'true';
-				reveal.hidden = !expanded;
-				toggle.textContent = expanded ? 'Hide the world around the first adventure' : 'Explore the world around the first adventure';
-			};
+			if (toggle && reveal) {
+				var update = function () {
+					var expanded = toggle.getAttribute('aria-expanded') === 'true';
+					reveal.hidden = !expanded;
+					toggle.textContent = expanded ? 'Hide the world around the first adventure' : 'Explore the world around the first adventure';
+				};
 
-			update();
-			toggle.addEventListener('click', function () {
-				var next = toggle.getAttribute('aria-expanded') !== 'true';
-				toggle.setAttribute('aria-expanded', String(next));
 				update();
+				toggle.addEventListener('click', function () {
+					var next = toggle.getAttribute('aria-expanded') !== 'true';
+					toggle.setAttribute('aria-expanded', String(next));
+					update();
+				});
+			}
+
+			var dialogueLines = {
+				buddy: [
+					"Curiosity is a perfectly good place to start.",
+					"I have a plan. The details are catching up.",
+					"Let's see what happens if I try this.",
+					"That could have gone worse. I have notes."
+				],
+				sir: [
+					"I have considered the practical options. This is one of them.",
+					"Steady. Check the details before the enthusiasm.",
+					"I prefer a plan with fewer surprises.",
+					"Prepared is a state of mind. Mostly."
+				]
+			};
+			var dialogueIndex = { buddy: 0, sir: 0 };
+			document.querySelectorAll('[data-dialogue]').forEach(function (button) {
+				var character = button.getAttribute('data-dialogue');
+				var dialogue = document.getElementById(character + '-dialogue');
+				var card = button.closest('.character');
+				if (!dialogue || !dialogueLines[character]) return;
+
+				button.addEventListener('click', function () {
+					var lines = dialogueLines[character];
+					dialogue.textContent = lines[dialogueIndex[character] % lines.length];
+					dialogueIndex[character] += 1;
+					dialogue.hidden = false;
+					card.classList.add('is-speaking');
+				});
 			});
+
+			var exchanges = [
+				"Buddy: I have a plan. Sir: You have a direction. Buddy: It's a flexible plan. Sir: I was afraid of that.",
+				"Buddy: It is not a problem yet. Sir: That is a remarkably temporary statement.",
+				"Buddy: You sound unconvinced. Sir: I am choosing the more accurate word."
+			];
+			var exchangeButton = document.getElementById('exchange-trigger');
+			var exchangeDialogue = document.getElementById('exchange-dialogue');
+			var exchangeIndex = 0;
+			if (exchangeButton && exchangeDialogue) {
+				exchangeButton.addEventListener('click', function () {
+					exchangeDialogue.textContent = exchanges[exchangeIndex % exchanges.length];
+					exchangeIndex += 1;
+					exchangeDialogue.hidden = false;
+				});
+			}
+
+			var geraldButton = document.getElementById('gerald-trigger');
+			var geraldMessage = document.getElementById('gerald-message');
+			if (geraldButton && geraldMessage) {
+				geraldButton.addEventListener('click', function () {
+					var found = geraldButton.getAttribute('aria-expanded') !== 'true';
+					geraldButton.setAttribute('aria-expanded', String(found));
+					geraldMessage.textContent = found ? 'You found him. Gerald was not consulted.' : '';
+					geraldMessage.hidden = !found;
+				});
+			}
 		});
 	</script>
 
