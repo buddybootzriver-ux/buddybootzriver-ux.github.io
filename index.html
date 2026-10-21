@@ -32,7 +32,7 @@
 		p{font-size:1.25rem;color:var(--text-body);margin-bottom:1.3rem}
 		.label{font-family:'Outfit',sans-serif;font-size:.78rem;font-weight:800;letter-spacing:2.4px;text-transform:uppercase;color:var(--river-main);display:block;text-align:center;margin-bottom:10px}
 		.rule{width:62px;height:4px;border-radius:4px;background:var(--gold);margin:24px auto 42px}
-		.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 28px;border-radius:999px;background:var(--gold);color:var(--text-dark);border:2px solid var(--river-deep);box-shadow:4px 4px 0 var(--river-deep);text-decoration:none;font-family:'Outfit',sans-serif;font-weight:800}
+		.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 28px;border-radius:999px;background:var(--gold);color:var(--text-dark);border:2px solid var(--river-deep);box-shadow:4px 4px 0 var(--river-deep);text-decoration:none;font-family:'Outfit',sans-serif;font-weight:800;cursor:pointer;transition:transform .2s ease, box-shadow .2s ease;}
 		.btn:hover{background:var(--gold-soft);transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--river-deep)}
 		.btn:focus-visible,.sticky a:focus-visible,footer a:focus-visible,.story-toggle:focus-visible,.newsletter input:focus-visible{outline:3px solid var(--gold-soft);outline-offset:3px;box-shadow:0 0 0 5px rgba(242,201,76,.35)}
 		.btn.secondary{background:var(--white);border-color:var(--river-main);box-shadow:4px 4px 0 var(--river-main)}
@@ -76,6 +76,17 @@
 		.gerald-crop{width:100%;height:100%;object-fit:cover;display:block;opacity:.92;transition:opacity .2s ease}
 		.gerald-trigger:hover .gerald-crop,.gerald-trigger:focus-visible .gerald-crop{opacity:1}
 		.gerald-message{margin:0;font-size:1rem}
+
+		/* Interactive Tour Styles */
+		.tour-section{background:var(--text-dark);color:var(--paper);padding:100px 0;text-align:center;border-top:4px solid var(--gold);border-bottom:4px solid var(--gold)}
+		.tour-visual{width:100%;max-width:800px;height:400px;border-radius:20px;border:4px solid var(--river-deep);box-shadow:0 15px 40px rgba(242,201,76,.2);object-fit:cover;transition:opacity .5s ease-in-out;margin:0 auto 30px;display:block;}
+		.tour-dialogue{font-family:'Crimson Pro',serif;font-size:clamp(1.5rem, 4vw, 2rem);font-style:italic;color:var(--gold-soft);min-height:100px;margin-bottom:30px;transition:opacity .3s ease-in-out;max-width:760px;margin-left:auto;margin-right:auto;}
+		.tour-controls{display:flex;justify-content:center;gap:20px}
+		.tour-btn{background:var(--river-main);color:var(--white);border:2px solid var(--river-light);padding:15px 40px;font-family:'Outfit',sans-serif;font-size:1.2rem;font-weight:800;border-radius:999px;cursor:pointer;transition:transform .2s,background .2s}
+		.tour-btn:hover{background:var(--river-deep);transform:translateY(-3px)}
+		.tour-cta{display:none;animation:fadeIn 1s forwards;margin-top:30px}
+		@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
 		.world{background:#fff}
 		.world-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-bottom:70px}
 		.world-grid img{width:100%;border-radius:18px;box-shadow:0 15px 40px rgba(0,0,0,.06)}
@@ -115,6 +126,7 @@
 			.duo,.sequence,.gallery-grid{grid-template-columns:1fr}
 			.container{padding:0 20px}
 			section{padding:70px 0}
+			.tour-visual{height:250px;}
 		}
 
 		@media(max-width:360px){
@@ -173,17 +185,11 @@
 				<div class="story-grid">
 					<div class="story-card">
 						<p>Buddy Bootz was trying to fix a water pump.</p>
-
 						<p>That should have been simple.</p>
-
 						<p>Instead, the pump had other ideas, Sir Drinks-A'Lot arrived just in time to get dragged into the problem, and a trip down Rambunctious River turned into something neither of them could explain.</p>
-
 						<p>The River doesn't simply carry them downstream. It starts making decisions of its own.</p>
-
 						<p>A strange current. A raft that refuses to behave normally. Something moving beneath the water.</p>
-
 						<p>And then the River reveals something that should not be there.</p>
-
 						<p>The first adventure begins here.</p>
 					</div>
 
@@ -232,16 +238,6 @@
 				<p style="max-width:920px;margin:0 auto 38px;text-align:center">
 					Buddy Bootz lives in a treehouse and has a talent for turning ordinary problems into adventures. Sir Drinks-A'Lot, her loyal friend from Mayhem Marsh, is the practical one, which would be more useful if Buddy ever waited for the practical part.
 				</p>
-				<p style="max-width:920px;margin:0 auto 38px;text-align:center">
-					Together they travel through Rambunctious River, Sticky Frog Forest, Mayhem Marsh, and places stranger than either of them planned to visit. They argue. They improvise. They get into trouble. They get each other out of it.
-				</p>
-				<p style="max-width:920px;margin:0 auto 38px;text-align:center">
-					And somewhere along the way, the world itself starts behaving like it has been paying attention.
-				</p>
-
-				<p style="max-width:780px;margin:0 auto 38px;text-align:center;font-size:1.35rem;">
-					Two best friends. One creates problems faster than the other can solve them. Buddy Bootz brings curiosity, nerve, questionable decisions, and absolutely no respect for the phrase “that might be a bad idea.” Sir Drinks-A'Lot brings practical thinking, loyalty, dry commentary, and a remarkable ability to trip over things that were not technically in his way. They don't always agree. They don't always have a plan. They always have each other's back. And somehow, that usually turns out to be enough.
-				</p>
 
 				<div class="duo">
 					<article class="character">
@@ -259,7 +255,7 @@
 						<img src="sir.png" alt="Sir Drinks-A'Lot">
 						<span class="tag">Sir Drinks-A'Lot</span>
 						<h3>The Steady One, Usually</h3>
-						<p>Sir Drinks-A'Lot is 6'1", lives in a cabin in Mayhem Marsh, and is tall, lean, broad-shouldered, ruggedly handsome, with a buzz-cut style hair, slightly receding hairline, close-cropped facial hair, serious downward-sloping eyebrows, deep-set intense eyes, a strong square jaw, a small stud earring in his left ear, dark gray fitted T-shirt, tan cargo pants with side pockets, brown boots, and a brown belt with pouch. His metal flask is always visible, and he is loyal, protective, steady, practical, dry, sarcastic, and highly competent.</p>
+						<p>Sir Drinks-A'Lot is 6'1", lives in a cabin in Mayhem Marsh, and is tall, lean, broad-shouldered, ruggedly handsome, with a buzz-cut style hair, slightly receding hairline, close-cropped facial hair. His metal flask is always visible, and he is loyal, protective, steady, practical, dry, sarcastic, and highly competent.</p>
 						<div class="character-actions">
 							<button class="btn character-talk" type="button" data-dialogue="sir" aria-controls="sir-dialogue">Talk to Sir</button>
 						</div>
@@ -269,6 +265,39 @@
 				<div class="character-exchange">
 					<button class="btn secondary character-talk" type="button" id="exchange-trigger" aria-controls="exchange-dialogue">Catch Buddy and Sir mid-conversation</button>
 					<p id="exchange-dialogue" class="exchange-dialogue" aria-live="polite" aria-atomic="true" hidden></p>
+				</div>
+			</div>
+		</section>
+
+		<!-- INTERACTIVE GRAND TOUR SECTION -->
+		<section id="interactive-tour" class="tour-section" aria-labelledby="tour-heading">
+			<div class="container">
+				<span class="label" style="color: var(--river-main);">Interactive Audio Experience</span>
+				<h2 id="tour-heading" style="color: var(--paper); margin-bottom: 40px;">The Grand Tour</h2>
+				
+				<img id="tour-image" class="tour-visual" src="buddy_treehouse.png" alt="The Boot Treehouse">
+				
+				<p id="tour-text" class="tour-dialogue">
+					"I got stories. I've got plans. A whole world I'm bringing to life."
+				</p>
+
+				<!-- Audio Files: Link these to your actual mp3s in the assets/audio folder -->
+				<audio id="audio-1" src="assets/audio/line1.mp3"></audio>
+				<audio id="audio-2" src="assets/audio/line2.mp3"></audio>
+				<audio id="audio-3" src="assets/audio/line3.mp3"></audio>
+				<audio id="audio-4" src="assets/audio/line4.mp3"></audio>
+				<audio id="audio-5" src="assets/audio/line5.mp3"></audio>
+				<audio id="audio-6" src="assets/audio/line6.mp3"></audio>
+				<audio id="audio-7" src="assets/audio/line7.mp3"></audio>
+
+				<div class="tour-controls" id="control-panel">
+					<button id="start-tour-btn" class="tour-btn">Play Tour &nbsp; ▶</button>
+				</div>
+
+				<div id="tour-final-cta" class="tour-cta">
+					<h3 style="color: var(--gold);">The River is Waiting.</h3>
+					<p style="color: var(--river-light); font-size: 1.2rem; margin-bottom: 20px;">Don't get left behind on the bank.</p>
+					<a href="#newsletter" class="btn" style="font-size: 1.2rem; padding: 18px 40px;">Join the River Crew for Book One</a>
 				</div>
 			</div>
 		</section>
@@ -421,16 +450,16 @@
 
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
+			
+			// Story Reveal Logic
 			var toggle = document.querySelector('.story-toggle');
 			var reveal = document.getElementById('story-reveal');
-
 			if (toggle && reveal) {
 				var update = function () {
 					var expanded = toggle.getAttribute('aria-expanded') === 'true';
 					reveal.hidden = !expanded;
 					toggle.textContent = expanded ? 'Hide the world around the first adventure' : 'Explore the world around the first adventure';
 				};
-
 				update();
 				toggle.addEventListener('click', function () {
 					var next = toggle.getAttribute('aria-expanded') !== 'true';
@@ -439,6 +468,7 @@
 				});
 			}
 
+			// Character Talk Logic
 			var dialogueLines = {
 				buddy: [
 					"Curiosity is a perfectly good place to start.",
@@ -485,6 +515,7 @@
 				});
 			}
 
+			// Gerald Easter Egg Logic
 			var geraldButton = document.getElementById('gerald-trigger');
 			var geraldMessage = document.getElementById('gerald-message');
 			if (geraldButton && geraldMessage) {
@@ -493,6 +524,60 @@
 					geraldButton.setAttribute('aria-expanded', String(found));
 					geraldMessage.textContent = found ? 'You found him. Gerald was not consulted.' : '';
 					geraldMessage.hidden = !found;
+				});
+			}
+
+			// INTERACTIVE GRAND TOUR LOGIC
+			const tourSteps = [
+				{ text: "I got stories. I've got plans. A whole world I'm bringing to life.", img: "buddy_treehouse.png", audio: "audio-1" },
+				{ text: "There's Buddy, that's me. And there's Sir, that's you.", img: "buddy.png", audio: "audio-2" },
+				{ text: "There's the pump. Ready?", img: "buddy_treehouse.png", audio: "audio-3" },
+				{ text: "There's the raft. Hop on.", img: "raft.png", audio: "audio-4" },
+				{ text: "There's sticky frog forest and all its questionable residents.", img: "frogs.png", audio: "audio-5" },
+				{ text: "And somehow between all the stories... here comes the rambunctious river.", img: "prelude.png", audio: "audio-6" },
+				{ text: "Come on, Sir. Are you ready for what happens next?", img: "maze.png", audio: "audio-7" }
+			];
+
+			let currentStep = -1;
+			const tourBtn = document.getElementById('start-tour-btn');
+			const tourText = document.getElementById('tour-text');
+			const tourImg = document.getElementById('tour-image');
+			const ctaBox = document.getElementById('tour-final-cta');
+			const controlPanel = document.getElementById('control-panel');
+			let currentAudio = null;
+
+			if(tourBtn) {
+				tourBtn.addEventListener('click', () => {
+					if (currentAudio) {
+						currentAudio.pause();
+						currentAudio.currentTime = 0;
+					}
+
+					if (currentStep === -1) {
+						tourBtn.innerHTML = "Next &nbsp; ➔";
+					}
+					
+					currentStep++;
+
+					if (currentStep < tourSteps.length) {
+						tourText.style.opacity = 0;
+						tourImg.style.opacity = 0;
+
+						setTimeout(() => {
+							tourText.textContent = `"${tourSteps[currentStep].text}"`;
+							tourImg.src = tourSteps[currentStep].img;
+							tourText.style.opacity = 1;
+							tourImg.style.opacity = 1;
+
+							currentAudio = document.getElementById(tourSteps[currentStep].audio);
+							if (currentAudio) currentAudio.play().catch(e => console.log("Audio play prevented:", e));
+						}, 300);
+					} else {
+						tourText.textContent = "Welcome to the Maze.";
+						tourImg.src = "maze.png";
+						controlPanel.style.display = "none";
+						ctaBox.style.display = "block";
+					}
 				});
 			}
 		});
