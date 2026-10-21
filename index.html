@@ -1,3 +1,4 @@
+HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,8 +30,8 @@
 			--text-body: #2A4A55;
 			--white: #ffffff;
 			--paper: #fdfbf7;
-			--shadow-soft: 0 12px 35px rgba(11, 31, 38, 0.07);
-			--shadow-strong: 0 22px 50px rgba(11, 31, 38, 0.18);
+			--shadow-soft: 0 12px 35px rgba(11, 31, 38, 0.06);
+			--shadow-strong: 0 22px 50px rgba(11, 31, 38, 0.16);
 		}
 
 		* {
@@ -53,7 +54,7 @@
 		}
 
 		.container {
-			max-width: 1080px;
+			max-width: 1060px;
 			margin: 0 auto;
 			padding: 0 28px;
 		}
@@ -70,7 +71,7 @@
 		}
 
 		h1 {
-			font-size: clamp(2.8rem, 6.5vw, 4.8rem);
+			font-size: clamp(2.9rem, 6.8vw, 4.9rem);
 			text-align: center;
 			margin-bottom: 18px;
 		}
@@ -105,7 +106,7 @@
 		}
 
 		.rule {
-			width: 68px;
+			width: 64px;
 			height: 4px;
 			border-radius: 4px;
 			background: var(--gold);
@@ -127,7 +128,7 @@
 			text-decoration: none;
 			font-family: 'Outfit', sans-serif;
 			font-weight: 800;
-			font-size: 0.95rem;
+			font-size: 0.92rem;
 			cursor: pointer;
 			transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 		}
@@ -151,38 +152,40 @@
 
 		.btn:focus-visible,
 		.sticky a:focus-visible,
-		.sticky button:focus-visible,
 		footer a:focus-visible,
 		.story-toggle:focus-visible,
 		.newsletter input:focus-visible,
 		.hero-waitlist input:focus-visible,
-		.tour-btn:focus-visible,
+		.hotspot-btn:focus-visible,
+		.raft-pin:focus-visible,
+		.scenario-btn:focus-visible,
+		.quiz-option:focus-visible,
 		.gallery-card:focus-visible {
 			outline: 3px solid var(--gold-soft);
 			outline-offset: 3px;
 			box-shadow: 0 0 0 5px rgba(242, 201, 76, 0.35);
 		}
 
-		/* Sticky Top Navigation */
+		/* Sticky Top Navigation Bar */
 		.sticky {
 			position: fixed;
 			top: 0;
 			left: 0;
 			width: 100%;
 			height: 64px;
-			background: var(--text-dark);
+			background: var(--river-deep);
 			border-bottom: 2px solid var(--gold);
 			z-index: 1000;
 			display: flex;
 			align-items: center;
-			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+			box-shadow: 0 4px 20px rgba(11, 31, 38, 0.2);
 		}
 
 		.sticky .container {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			gap: 14px;
+			gap: 16px;
 			width: 100%;
 		}
 
@@ -193,12 +196,12 @@
 			font-family: 'Outfit', sans-serif;
 			font-weight: 800;
 			color: var(--gold-soft);
-			font-size: 0.9rem;
+			font-size: 0.92rem;
 		}
 
 		.status-dot {
-			width: 10px;
-			height: 10px;
+			width: 9px;
+			height: 9px;
 			border-radius: 50%;
 			background: var(--gold);
 			box-shadow: 0 0 0 0 rgba(242, 201, 76, 0.7);
@@ -212,32 +215,33 @@
 			100% { box-shadow: 0 0 0 0 rgba(242, 201, 76, 0); }
 		}
 
-		.sticky-actions {
+		.sticky-nav {
 			display: flex;
 			align-items: center;
-			gap: 10px;
+			gap: 18px;
 		}
 
-		.sticky-nav-links {
+		.sticky-links {
 			display: flex;
-			gap: 16px;
-			margin-right: 8px;
+			gap: 18px;
 		}
 
-		.sticky-nav-links a {
-			color: rgba(255, 255, 255, 0.85);
-			text-decoration: none;
+		.sticky-links a {
+			background: transparent;
+			color: rgba(255, 255, 255, 0.88);
+			padding: 0;
 			font-family: 'Outfit', sans-serif;
 			font-size: 0.8rem;
 			font-weight: 600;
+			text-decoration: none;
 			transition: color 0.2s ease;
 		}
 
-		.sticky-nav-links a:hover {
+		.sticky-links a:hover {
 			color: var(--gold-soft);
 		}
 
-		.sticky .cta-pill {
+		.sticky .sticky-cta {
 			background: var(--gold);
 			color: var(--text-dark);
 			padding: 8px 16px;
@@ -249,50 +253,30 @@
 			white-space: nowrap;
 		}
 
-		.audio-quick-btn {
-			appearance: none;
-			background: rgba(63, 167, 214, 0.2);
-			color: var(--river-light);
-			border: 1px solid var(--river-main);
-			padding: 7px 13px;
-			border-radius: 999px;
-			font-family: 'Outfit', sans-serif;
-			font-size: 0.75rem;
-			font-weight: 700;
-			cursor: pointer;
-			white-space: nowrap;
-			transition: background 0.2s ease;
-		}
-
-		.audio-quick-btn:hover {
-			background: rgba(63, 167, 214, 0.4);
-		}
-
 		/* Hero Section */
 		.hero {
 			background: linear-gradient(180deg, var(--river-light) 0%, var(--paper) 100%);
 			text-align: center;
-			padding-top: 72px;
-			padding-bottom: 80px;
+			padding-top: 76px;
+			padding-bottom: 84px;
 			border-bottom: 2px dashed var(--river-main);
 		}
 
-		.coming-soon-pill {
+		.coming-soon-badge {
 			display: inline-flex;
 			align-items: center;
 			gap: 8px;
 			background: var(--river-deep);
 			color: var(--gold-soft);
 			font-family: 'Outfit', sans-serif;
-			font-size: 0.76rem;
+			font-size: 0.75rem;
 			font-weight: 800;
 			letter-spacing: 2px;
 			text-transform: uppercase;
-			padding: 8px 20px;
+			padding: 7px 18px;
 			border-radius: 999px;
 			border: 2px solid var(--gold);
-			margin-bottom: 22px;
-			box-shadow: 0 8px 20px rgba(31, 78, 95, 0.15);
+			margin-bottom: 20px;
 		}
 
 		.title-img {
@@ -302,70 +286,49 @@
 			display: block;
 		}
 
-		.hero-tagline {
-			font-family: 'Outfit', sans-serif;
-			font-size: 0.88rem;
-			letter-spacing: 2.2px;
-			text-transform: uppercase;
-			color: var(--river-main);
-			font-weight: 800;
-			margin-bottom: 10px;
-		}
-
-		.hero-genre {
-			font-family: 'Outfit', sans-serif;
-			font-size: 0.78rem;
-			letter-spacing: 2.4px;
-			text-transform: uppercase;
-			color: var(--river-deep);
-			font-weight: 800;
-			margin-bottom: 22px;
-		}
-
 		.hero-copy {
-			max-width: 780px;
+			max-width: 760px;
 			margin: 0 auto;
 		}
 
-		/* Instant Hero Waitlist Box */
+		/* Top Launch-Alert Signup Bar */
 		.hero-waitlist {
-			max-width: 680px;
-			margin: 34px auto 24px;
+			max-width: 650px;
+			margin: 32px auto 20px;
 			background: var(--white);
 			border: 2px solid var(--river-deep);
-			border-radius: 22px;
-			padding: 24px 26px;
+			border-radius: 20px;
+			padding: 22px 24px;
 			box-shadow: 6px 6px 0 var(--gold);
 			text-align: left;
 		}
 
-		.hero-waitlist-header {
+		.hero-waitlist-top {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
 			flex-wrap: wrap;
 			gap: 8px;
-			margin-bottom: 12px;
+			margin-bottom: 10px;
 		}
 
-		.hero-waitlist-title {
+		.hero-waitlist-top strong {
 			font-family: 'Outfit', sans-serif;
+			font-size: 0.9rem;
 			font-weight: 800;
-			font-size: 0.95rem;
-			color: var(--river-deep);
 			text-transform: uppercase;
-			letter-spacing: 1px;
+			letter-spacing: 1.2px;
+			color: var(--river-deep);
 		}
 
-		.hero-waitlist-badge {
+		.hero-waitlist-top span {
 			font-family: 'Outfit', sans-serif;
 			font-size: 0.72rem;
-			font-weight: 800;
+			font-weight: 700;
+			color: var(--river-main);
 			background: var(--river-light);
-			color: var(--river-deep);
-			padding: 4px 10px;
+			padding: 3px 10px;
 			border-radius: 999px;
-			border: 1px solid var(--river-main);
 		}
 
 		.hero-waitlist form {
@@ -375,7 +338,7 @@
 
 		.hero-waitlist input[type="email"] {
 			flex: 1;
-			padding: 14px 18px;
+			padding: 13px 18px;
 			border-radius: 999px;
 			border: 2px solid rgba(31, 78, 95, 0.25);
 			font-family: 'Inter', sans-serif;
@@ -384,91 +347,44 @@
 			background: var(--paper);
 		}
 
-		.hero-waitlist-perks {
-			display: flex;
-			gap: 16px;
-			flex-wrap: wrap;
-			margin-top: 12px;
-			font-family: 'Inter', sans-serif;
-			font-size: 0.8rem;
-			color: var(--text-body);
-		}
-
 		.hero-img {
 			width: 100%;
-			max-width: 940px;
-			margin-top: 32px;
-			border-radius: 22px;
+			max-width: 920px;
+			margin-top: 36px;
+			border-radius: 20px;
 			border: 4px solid var(--white);
-			box-shadow: var(--shadow-strong);
+			box-shadow: 0 24px 55px rgba(31, 78, 95, 0.18);
 		}
 
-		/* Book One Section & Clean Spec Bar */
+		/* Book One Story Section */
 		.story {
 			background: var(--river-light);
-		}
-
-		.book-specs-bar {
-			display: grid;
-			grid-template-columns: repeat(4, 1fr);
-			gap: 14px;
-			max-width: 920px;
-			margin: 0 auto 42px;
-		}
-
-		.spec-pill {
-			background: var(--white);
-			border: 1px solid rgba(31, 78, 95, 0.14);
-			border-bottom: 3px solid var(--gold);
-			border-radius: 14px;
-			padding: 16px;
-			text-align: center;
-			box-shadow: var(--shadow-soft);
-		}
-
-		.spec-pill span {
-			display: block;
-			font-family: 'Outfit', sans-serif;
-			font-size: 0.68rem;
-			font-weight: 800;
-			text-transform: uppercase;
-			letter-spacing: 1.8px;
-			color: var(--river-main);
-			margin-bottom: 6px;
-		}
-
-		.spec-pill strong {
-			font-family: 'Outfit', sans-serif;
-			font-size: 0.92rem;
-			color: var(--river-deep);
-			display: block;
-			line-height: 1.3;
 		}
 
 		.story-grid {
 			display: grid;
 			grid-template-columns: 1.15fr 0.85fr;
-			gap: 48px;
+			gap: 52px;
 			align-items: center;
 		}
 
 		.story-card {
 			background: var(--white);
-			border-radius: 22px;
-			padding: 36px;
+			border-radius: 20px;
+			padding: 34px;
 			box-shadow: var(--shadow-soft);
 			border: 1px solid rgba(31, 78, 95, 0.08);
 		}
 
-		.story-quote-highlight {
+		.story-quote-box {
 			background: var(--paper);
 			border-left: 4px solid var(--gold);
-			padding: 16px 20px;
+			padding: 14px 18px;
 			border-radius: 0 12px 12px 0;
-			margin: 22px 0;
+			margin: 20px 0;
 			font-style: italic;
 			color: var(--river-deep);
-			font-size: 1.2rem;
+			font-size: 1.18rem;
 		}
 
 		.story-visual {
@@ -476,34 +392,20 @@
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			gap: 16px;
-		}
-
-		.book-badge-floating {
-			background: var(--gold);
-			color: var(--text-dark);
-			font-family: 'Outfit', sans-serif;
-			font-size: 0.76rem;
-			font-weight: 800;
-			letter-spacing: 1.5px;
-			text-transform: uppercase;
-			padding: 6px 16px;
-			border-radius: 999px;
-			border: 2px solid var(--river-deep);
-			box-shadow: 3px 3px 0 var(--river-deep);
+			gap: 14px;
 		}
 
 		.story-image {
 			width: 100%;
 			border-radius: 18px;
-			box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+			box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
 			transition: transform 0.35s ease, box-shadow 0.35s ease;
 		}
 
 		.story-visual:hover .story-image,
 		.story-visual:focus-within .story-image {
 			transform: translateY(-4px) rotate(-0.5deg);
-			box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+			box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
 		}
 
 		.story-toggle {
@@ -513,7 +415,7 @@
 			color: var(--text-dark);
 			font-family: 'Outfit', sans-serif;
 			font-weight: 800;
-			font-size: 0.8rem;
+			font-size: 0.78rem;
 			letter-spacing: 1.5px;
 			text-transform: uppercase;
 			padding: 12px 18px;
@@ -530,10 +432,47 @@
 			box-shadow: 6px 6px 0 var(--river-deep);
 		}
 
-		.story-toggle.excerpt-btn {
+		.story-toggle.peek-btn {
 			background: var(--river-deep);
 			color: var(--gold-soft);
 			border-color: var(--text-dark);
+		}
+
+		/* Short Spoiler-Safe Peek Inside Drawer */
+		.peek-drawer {
+			margin-top: 30px;
+			background: var(--paper);
+			border: 2px solid var(--river-deep);
+			border-radius: 20px;
+			padding: 34px;
+			box-shadow: var(--shadow-strong);
+		}
+
+		.peek-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: 12px;
+			border-bottom: 2px dashed rgba(31, 78, 95, 0.2);
+			padding-bottom: 14px;
+			margin-bottom: 22px;
+		}
+
+		.peek-excerpt {
+			max-width: 720px;
+			margin: 0 auto;
+			font-size: 1.24rem;
+			line-height: 1.8;
+		}
+
+		.peek-footer {
+			margin-top: 26px;
+			padding: 22px;
+			background: var(--river-light);
+			border: 1px solid var(--river-main);
+			border-radius: 16px;
+			text-align: center;
 		}
 
 		.story-reveal {
@@ -568,185 +507,7 @@
 			color: var(--river-main);
 		}
 
-		/* Spoiler-Safe Short Teaser Excerpt Drawer */
-		.excerpt-drawer {
-			margin-top: 32px;
-			background: var(--paper);
-			border: 2px solid var(--river-deep);
-			border-radius: 22px;
-			padding: 36px;
-			box-shadow: var(--shadow-strong);
-		}
-
-		.excerpt-header {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			border-bottom: 2px dashed rgba(31, 78, 95, 0.2);
-			padding-bottom: 16px;
-			margin-bottom: 24px;
-		}
-
-		.excerpt-body {
-			max-width: 720px;
-			margin: 0 auto;
-			font-size: 1.22rem;
-		}
-
-		.excerpt-body p {
-			margin-bottom: 1.1rem;
-		}
-
-		.excerpt-cta-box {
-			margin-top: 28px;
-			padding: 24px;
-			background: var(--river-light);
-			border-radius: 16px;
-			border: 2px solid var(--river-main);
-			text-align: center;
-		}
-
-		/* Interactive Audio Grand Tour */
-		.tour-section {
-			background: var(--text-dark);
-			color: var(--paper);
-			padding: 96px 0;
-			text-align: center;
-			border-top: 4px solid var(--gold);
-			border-bottom: 4px solid var(--gold);
-		}
-
-		.tour-card {
-			max-width: 860px;
-			margin: 0 auto;
-			background: rgba(31, 78, 95, 0.35);
-			border: 2px solid rgba(242, 201, 76, 0.4);
-			border-radius: 24px;
-			padding: 36px 28px;
-			box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-		}
-
-		.tour-step-badge {
-			display: inline-block;
-			font-family: 'Outfit', sans-serif;
-			font-size: 0.76rem;
-			font-weight: 800;
-			letter-spacing: 2px;
-			text-transform: uppercase;
-			background: var(--river-deep);
-			color: var(--gold-soft);
-			padding: 6px 16px;
-			border-radius: 999px;
-			border: 1px solid var(--gold);
-			margin-bottom: 18px;
-		}
-
-		.tour-visual {
-			width: 100%;
-			max-width: 760px;
-			height: 420px;
-			border-radius: 18px;
-			border: 3px solid var(--gold);
-			box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-			object-fit: cover;
-			transition: opacity 0.35s ease-in-out;
-			margin: 0 auto 22px;
-			display: block;
-			background: #071418;
-		}
-
-		.tour-dots {
-			display: flex;
-			justify-content: center;
-			gap: 8px;
-			margin-bottom: 18px;
-		}
-
-		.tour-dot {
-			width: 10px;
-			height: 10px;
-			border-radius: 50%;
-			background: rgba(255, 255, 255, 0.25);
-			border: none;
-			cursor: pointer;
-			transition: transform 0.2s ease, background 0.2s ease;
-		}
-
-		.tour-dot.active {
-			background: var(--gold);
-			transform: scale(1.3);
-		}
-
-		.tour-dialogue {
-			font-family: 'Crimson Pro', serif;
-			font-size: clamp(1.35rem, 3.2vw, 1.85rem);
-			font-style: italic;
-			color: var(--gold-soft);
-			min-height: 84px;
-			margin: 0 auto 22px;
-			transition: opacity 0.3s ease-in-out;
-			max-width: 720px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-
-		.tour-audio-wrapper {
-			margin: 0 auto 24px;
-			max-width: 460px;
-		}
-
-		.tour-audio-wrapper audio {
-			width: 100%;
-			height: 42px;
-			border-radius: 999px;
-		}
-
-		.tour-controls {
-			display: flex;
-			justify-content: center;
-			gap: 14px;
-			flex-wrap: wrap;
-		}
-
-		.tour-btn {
-			background: var(--gold);
-			color: var(--text-dark);
-			border: 2px solid var(--white);
-			padding: 14px 32px;
-			font-family: 'Outfit', sans-serif;
-			font-size: 0.98rem;
-			font-weight: 800;
-			border-radius: 999px;
-			cursor: pointer;
-			box-shadow: 4px 4px 0 var(--river-main);
-			transition: transform 0.2s ease, background 0.2s ease;
-		}
-
-		.tour-btn:hover {
-			background: var(--gold-soft);
-			transform: translate(-2px, -2px);
-		}
-
-		.tour-btn.secondary-tour {
-			background: transparent;
-			color: var(--paper);
-			border-color: var(--river-main);
-			box-shadow: none;
-		}
-
-		.tour-btn.secondary-tour:hover {
-			background: rgba(63, 167, 214, 0.2);
-		}
-
-		.tour-cta {
-			display: none;
-			margin-top: 28px;
-			padding-top: 24px;
-			border-top: 1px dashed rgba(242, 201, 76, 0.4);
-		}
-
-		/* Characters Section */
+		/* Meet Buddy & Sir + Interactive Scenarios */
 		.duo {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
@@ -786,7 +547,7 @@
 		.character-talk {
 			min-height: 48px;
 			padding: 11px 18px;
-			font-size: 0.82rem;
+			font-size: 0.8rem;
 		}
 
 		.character-dialogue,
@@ -802,8 +563,7 @@
 		}
 
 		.character.is-speaking {
-			box-shadow: 0 14px 38px rgba(31, 78, 95, 0.14);
-			border-color: var(--gold);
+			box-shadow: 0 14px 38px rgba(31, 78, 95, 0.12);
 		}
 
 		.character-exchange {
@@ -817,72 +577,276 @@
 			text-align: left;
 		}
 
-		/* World Section & Gerald Easter Egg */
-		.world {
+		/* Interactive Feature: Chaos vs. Practicality Scenario Lab */
+		.banter-lab {
+			margin-top: 52px;
 			background: var(--white);
+			border: 2px solid var(--river-deep);
+			border-radius: 22px;
+			padding: 34px;
+			box-shadow: 6px 6px 0 var(--gold);
 		}
 
-		.world-grid {
+		.scenario-buttons {
+			display: flex;
+			justify-content: center;
+			gap: 10px;
+			flex-wrap: wrap;
+			margin: 20px 0 26px;
+		}
+
+		.scenario-btn {
+			appearance: none;
+			background: var(--paper);
+			color: var(--river-deep);
+			border: 2px solid rgba(31, 78, 95, 0.2);
+			padding: 10px 18px;
+			border-radius: 999px;
+			font-family: 'Outfit', sans-serif;
+			font-size: 0.8rem;
+			font-weight: 800;
+			cursor: pointer;
+			transition: all 0.2s ease;
+		}
+
+		.scenario-btn:hover,
+		.scenario-btn.active {
+			background: var(--river-deep);
+			color: var(--gold-soft);
+			border-color: var(--river-deep);
+		}
+
+		.scenario-grid {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
-			gap: 56px;
-			align-items: center;
-			margin-bottom: 70px;
+			gap: 20px;
 		}
 
-		.world-grid:last-child {
-			margin-bottom: 0;
-		}
-
-		.world-grid img {
-			width: 100%;
-			border-radius: 18px;
-			box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
-		}
-
-		.gerald-discovery {
-			display: flex;
-			align-items: center;
-			gap: 12px;
-			margin-top: 18px;
-		}
-
-		.gerald-trigger {
-			position: relative;
-			width: 52px;
-			height: 52px;
-			flex: 0 0 52px;
-			overflow: hidden;
-			border: 2px solid var(--gold);
-			border-radius: 50%;
+		.scenario-col {
 			background: var(--paper);
-			cursor: pointer;
-			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+			border-radius: 16px;
+			padding: 20px 22px;
+			border-left: 4px solid var(--river-main);
 		}
 
-		.gerald-crop {
+		.scenario-col.buddy-col {
+			border-left-color: var(--gold);
+		}
+
+		.scenario-col strong {
+			display: block;
+			font-family: 'Outfit', sans-serif;
+			font-size: 0.78rem;
+			text-transform: uppercase;
+			letter-spacing: 1.6px;
+			color: var(--river-deep);
+			margin-bottom: 6px;
+		}
+
+		.scenario-col p {
+			margin-bottom: 0;
+			font-size: 1.15rem;
+		}
+
+		/* Interactive Feature: The Raft of Bad Ideas Inspector */
+		.raft-inspector {
+			background: var(--text-dark);
+			color: var(--paper);
+			border-top: 4px solid var(--gold);
+			border-bottom: 4px solid var(--gold);
+			text-align: center;
+		}
+
+		.raft-inspector h2 {
+			color: var(--gold);
+		}
+
+		.raft-stage {
+			max-width: 900px;
+			margin: 0 auto;
+			background: rgba(31, 78, 95, 0.35);
+			border: 2px solid rgba(242, 201, 76, 0.35);
+			border-radius: 24px;
+			padding: 32px;
+			box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+		}
+
+		.raft-visual-wrap {
+			position: relative;
+			margin-bottom: 24px;
+			border-radius: 18px;
+			overflow: hidden;
+			border: 3px solid var(--gold);
+		}
+
+		.raft-visual-wrap img {
 			width: 100%;
-			height: 100%;
+			max-height: 430px;
 			object-fit: cover;
 			display: block;
-			opacity: 0.92;
-			transition: opacity 0.2s ease, transform 0.2s ease;
 		}
 
-		.gerald-trigger:hover .gerald-crop {
-			opacity: 1;
-			transform: scale(1.08);
+		.raft-pin {
+			position: absolute;
+			width: 36px;
+			height: 36px;
+			border-radius: 50%;
+			background: var(--gold);
+			color: var(--text-dark);
+			border: 2px solid var(--white);
+			font-family: 'Outfit', sans-serif;
+			font-weight: 800;
+			font-size: 0.9rem;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+			transition: transform 0.2s ease, background 0.2s ease;
 		}
 
-		.gerald-message {
-			margin: 0;
-			font-size: 1rem;
+		.raft-pin:hover,
+		.raft-pin.active {
+			background: var(--river-main);
+			color: var(--white);
+			transform: scale(1.18);
+		}
+
+		.hotspot-bar {
+			display: flex;
+			justify-content: center;
+			gap: 10px;
+			flex-wrap: wrap;
+			margin-bottom: 24px;
+		}
+
+		.hotspot-btn {
+			appearance: none;
+			background: var(--river-deep);
+			color: var(--gold-soft);
+			border: 2px solid rgba(242, 201, 76, 0.4);
+			padding: 10px 18px;
+			border-radius: 999px;
+			font-family: 'Outfit', sans-serif;
+			font-size: 0.8rem;
+			font-weight: 800;
+			cursor: pointer;
+			transition: all 0.2s ease;
+		}
+
+		.hotspot-btn:hover,
+		.hotspot-btn.active {
+			background: var(--gold);
+			color: var(--text-dark);
+			border-color: var(--white);
+			transform: translateY(-2px);
+		}
+
+		.raft-readout {
+			background: rgba(11, 31, 38, 0.75);
+			border: 1px solid rgba(242, 201, 76, 0.4);
+			border-radius: 16px;
+			padding: 22px 26px;
+			text-align: left;
+			max-width: 760px;
+			margin: 0 auto;
+		}
+
+		.raft-readout h3 {
+			color: var(--gold);
+			font-size: 1.5rem;
+			margin-bottom: 8px;
+		}
+
+		.raft-readout p {
+			color: rgba(255, 255, 255, 0.9);
+			margin-bottom: 0;
+			font-size: 1.15rem;
+		}
+
+		/* Interactive Feature: River Traveler Reader Quiz */
+		.quiz-section {
+			background: var(--river-light);
+			border-bottom: 1px solid rgba(31, 78, 95, 0.08);
+		}
+
+		.quiz-card {
+			max-width: 780px;
+			margin: 0 auto;
+			background: var(--white);
+			border: 2px solid var(--river-deep);
+			border-radius: 22px;
+			padding: 36px;
+			box-shadow: 6px 6px 0 var(--river-deep);
+		}
+
+		.quiz-progress {
+			font-family: 'Outfit', sans-serif;
+			font-size: 0.76rem;
+			font-weight: 800;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			color: var(--river-main);
+			margin-bottom: 10px;
+			display: block;
+		}
+
+		.quiz-question {
+			font-size: 1.65rem;
+			margin-bottom: 20px;
+		}
+
+		.quiz-options {
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
+		}
+
+		.quiz-option {
+			appearance: none;
+			width: 100%;
+			text-align: left;
+			background: var(--paper);
+			border: 2px solid rgba(31, 78, 95, 0.18);
+			border-radius: 14px;
+			padding: 16px 20px;
+			font-family: 'Crimson Pro', Georgia, serif;
+			font-size: 1.2rem;
+			color: var(--text-dark);
+			cursor: pointer;
+			transition: all 0.2s ease;
+		}
+
+		.quiz-option:hover {
+			background: var(--river-light);
+			border-color: var(--river-main);
+			transform: translateX(4px);
+		}
+
+		.quiz-result {
+			text-align: center;
+			padding: 10px 0;
+		}
+
+		.quiz-result-badge {
+			display: inline-block;
+			background: var(--gold);
+			color: var(--text-dark);
+			font-family: 'Outfit', sans-serif;
+			font-size: 0.78rem;
+			font-weight: 800;
+			text-transform: uppercase;
+			letter-spacing: 1.8px;
+			padding: 6px 16px;
+			border-radius: 999px;
+			border: 2px solid var(--river-deep);
+			margin-bottom: 14px;
 		}
 
 		/* Spoiler-Safe Artwork Gallery */
 		.gallery-section {
 			background: var(--paper);
-			border-top: 1px solid rgba(31, 78, 95, 0.08);
+			border-bottom: 1px solid rgba(31, 78, 95, 0.08);
 		}
 
 		.gallery-grid {
@@ -893,6 +857,7 @@
 		}
 
 		.gallery-card {
+			appearance: none;
 			background: var(--white);
 			border-radius: 18px;
 			overflow: hidden;
@@ -903,6 +868,7 @@
 			display: flex;
 			flex-direction: column;
 			text-align: left;
+			padding: 0;
 		}
 
 		.gallery-card:hover {
@@ -945,7 +911,7 @@
 			color: var(--text-body);
 		}
 
-		/* Lightbox Modal for Gallery */
+		/* Lightbox Modal */
 		.lightbox {
 			position: fixed;
 			inset: 0;
@@ -996,71 +962,75 @@
 			cursor: pointer;
 		}
 
-		/* Early Reader Praise & Production Tracker */
-		.praise-section {
-			background: var(--river-light);
-			border-top: 1px solid rgba(31, 78, 95, 0.08);
+		/* The World Section */
+		.world {
+			background: var(--white);
 		}
 
-		.praise-grid {
+		.world-grid {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
-			gap: 28px;
-			margin-bottom: 42px;
+			gap: 56px;
+			align-items: center;
+			margin-bottom: 70px;
 		}
 
-		.praise-card {
-			background: var(--white);
-			border-radius: 20px;
-			padding: 30px;
-			border-left: 5px solid var(--gold);
-			box-shadow: var(--shadow-soft);
+		.world-grid:last-child {
+			margin-bottom: 0;
 		}
 
-		.praise-card p {
-			font-style: italic;
-			font-size: 1.2rem;
-			margin-bottom: 12px;
+		.world-grid img {
+			width: 100%;
+			border-radius: 18px;
+			box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
 		}
 
-		.praise-source {
-			font-family: 'Outfit', sans-serif;
-			font-size: 0.78rem;
-			font-weight: 800;
-			text-transform: uppercase;
-			letter-spacing: 1.5px;
-			color: var(--river-main);
+		.gerald-discovery {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			margin-top: 18px;
 		}
 
-		.progress-box {
-			background: var(--white);
-			border-radius: 20px;
-			padding: 28px 32px;
-			border: 1px solid rgba(31, 78, 95, 0.1);
-			box-shadow: var(--shadow-soft);
-			max-width: 780px;
-			margin: 0 auto;
-		}
-
-		.progress-bar-wrap {
-			background: var(--river-light);
-			height: 14px;
-			border-radius: 999px;
+		.gerald-trigger {
+			position: relative;
+			width: 48px;
+			height: 48px;
+			flex: 0 0 48px;
 			overflow: hidden;
-			margin: 12px 0 8px;
-			border: 1px solid rgba(31, 78, 95, 0.15);
+			border: 2px solid rgba(31, 78, 95, 0.2);
+			border-radius: 50%;
+			background: var(--paper);
+			cursor: pointer;
 		}
 
-		.progress-bar-fill {
-			width: 92%;
+		.gerald-trigger:focus-visible {
+			outline: 3px solid var(--gold);
+			outline-offset: 3px;
+		}
+
+		.gerald-crop {
+			width: 100%;
 			height: 100%;
-			background: linear-gradient(90deg, var(--river-main), var(--gold));
-			border-radius: 999px;
+			object-fit: cover;
+			display: block;
+			opacity: 0.92;
+			transition: opacity 0.2s ease;
 		}
 
-		/* Author & Dedication Sections */
+		.gerald-trigger:hover .gerald-crop,
+		.gerald-trigger:focus-visible .gerald-crop {
+			opacity: 1;
+		}
+
+		.gerald-message {
+			margin: 0;
+			font-size: 1rem;
+		}
+
+		/* Protected Author & Dedication Sections */
 		.author-section {
-			background: var(--white);
+			background: var(--river-light);
 			border-top: 1px solid rgba(0, 0, 0, 0.05);
 			border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 		}
@@ -1077,17 +1047,16 @@
 			max-width: 520px;
 			margin: auto;
 			display: block;
-			border: 4px solid var(--paper);
+			border: 4px solid var(--white);
 			border-radius: 22px;
 			box-shadow: 0 18px 42px rgba(31, 78, 95, 0.18);
 		}
 
 		.author-copy {
-			background: var(--paper);
+			background: var(--white);
 			border-radius: 22px;
 			padding: 34px;
-			box-shadow: var(--shadow-soft);
-			border: 1px solid rgba(31, 78, 95, 0.08);
+			box-shadow: 0 12px 35px rgba(0, 0, 0, 0.05);
 		}
 
 		.author-copy p {
@@ -1113,7 +1082,7 @@
 			font-weight: 800;
 			letter-spacing: 2.4px;
 			text-transform: uppercase;
-			color: var(--river-main);
+			color: var(--gold);
 			display: block;
 			margin-bottom: 16px;
 		}
@@ -1129,17 +1098,16 @@
 		}
 
 		.dedication-content .thanks {
-			font-size: 1.15rem;
+			font-size: 1.1rem;
 			margin-top: 28px;
 			font-style: italic;
 			text-align: center;
 		}
 
-		/* High-Converting Newsletter Section */
+		/* River Crew Newsletter Section */
 		.newsletter {
 			background: var(--river-deep);
 			text-align: center;
-			color: var(--white);
 		}
 
 		.newsletter h2 {
@@ -1147,72 +1115,65 @@
 		}
 
 		.newsletter p {
-			color: rgba(255, 255, 255, 0.88);
+			color: rgba(255, 255, 255, 0.86);
 			max-width: 700px;
 			margin: 0 auto 28px;
 		}
 
-		.perks-grid {
+		.crew-benefits {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
-			gap: 20px;
-			max-width: 880px;
-			margin: 0 auto 36px;
+			gap: 18px;
+			max-width: 860px;
+			margin: 0 auto 34px;
 			text-align: left;
 		}
 
-		.perk-card {
-			background: rgba(11, 31, 38, 0.45);
+		.crew-benefit-card {
+			background: rgba(11, 31, 38, 0.4);
 			border: 1px solid rgba(242, 201, 76, 0.35);
 			border-radius: 16px;
-			padding: 20px;
+			padding: 18px 20px;
 		}
 
-		.perk-card strong {
+		.crew-benefit-card strong {
 			display: block;
 			font-family: 'Outfit', sans-serif;
 			color: var(--gold-soft);
-			font-size: 0.95rem;
+			font-size: 0.9rem;
 			margin-bottom: 6px;
 		}
 
-		.perk-card span {
-			font-size: 1rem;
+		.crew-benefit-card span {
+			font-size: 0.98rem;
 			color: rgba(255, 255, 255, 0.82);
 			line-height: 1.5;
 			display: block;
 		}
 
 		.newsletter form {
-			max-width: 580px;
+			max-width: 560px;
 			margin: 0 auto;
 			display: flex;
 			gap: 12px;
 		}
 
-		.newsletter input[type="email"] {
+		.newsletter input {
 			flex: 1;
-			padding: 16px 22px;
+			padding: 15px 20px;
 			border-radius: 999px;
-			border: 2px solid rgba(255, 255, 255, 0.3);
-			background: rgba(255, 255, 255, 0.1);
+			border: 2px solid rgba(255, 255, 255, 0.25);
+			background: rgba(255, 255, 255, 0.08);
 			color: var(--white);
 			font-size: 1rem;
 		}
 
-		.newsletter input[type="email"]::placeholder {
-			color: rgba(255, 255, 255, 0.65);
+		.newsletter input::placeholder {
+			color: rgba(255, 255, 255, 0.6);
 		}
 
-		.privacy-note {
-			font-family: 'Inter', sans-serif;
-			font-size: 0.8rem;
-			color: rgba(255, 255, 255, 0.65);
-			margin-top: 14px;
-		}
-
-		/* Smart Floating Waitlist Toast */
-		.floating-waitlist {
+		/* Polite Dismissible Signup Reminder */
+		.floating-reminder {
 			position: fixed;
 			bottom: 20px;
 			right: 20px;
@@ -1223,47 +1184,47 @@
 			border-radius: 18px;
 			padding: 16px 20px;
 			box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
-			max-width: 340px;
+			max-width: 330px;
 			display: flex;
 			flex-direction: column;
 			gap: 10px;
-			transform: translateY(140%);
+			transform: translateY(150%);
 			transition: transform 0.35s ease;
 		}
 
-		.floating-waitlist.is-visible {
+		.floating-reminder.is-visible {
 			transform: translateY(0);
 		}
 
-		.floating-waitlist-top {
+		.floating-reminder-header {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
 			gap: 8px;
 		}
 
-		.floating-waitlist-top strong {
+		.floating-reminder-header strong {
 			font-family: 'Outfit', sans-serif;
-			font-size: 0.85rem;
+			font-size: 0.82rem;
 			color: var(--gold-soft);
 			text-transform: uppercase;
-			letter-spacing: 1px;
+			letter-spacing: 1.2px;
 		}
 
 		.floating-close {
 			background: transparent;
 			border: none;
-			color: rgba(255, 255, 255, 0.6);
-			font-size: 1.1rem;
+			color: rgba(255, 255, 255, 0.65);
+			font-size: 1.15rem;
 			cursor: pointer;
+			line-height: 1;
 		}
 
-		/* Footer */
 		footer {
 			background: #071418;
 			color: rgba(255, 255, 255, 0.6);
 			text-align: center;
-			padding: 52px 0;
+			padding: 48px 0;
 		}
 
 		footer a {
@@ -1284,28 +1245,27 @@
 			font-size: 0.9rem;
 		}
 
-		@media (max-width: 880px) {
+		@media (max-width: 850px) {
 			.story-grid,
 			.world-grid,
 			.author-grid,
-			.praise-grid {
+			.scenario-grid {
 				grid-template-columns: 1fr;
 			}
 			.duo,
 			.story-reveal-grid,
-			.book-specs-bar,
 			.gallery-grid,
-			.perks-grid {
+			.crew-benefits {
 				grid-template-columns: 1fr 1fr;
 			}
-			.sticky-nav-links {
+			.sticky-links {
 				display: none;
 			}
 			.newsletter form,
 			.hero-waitlist form {
 				flex-direction: column;
 			}
-			.newsletter input[type="email"],
+			.newsletter input,
 			.hero-waitlist input[type="email"] {
 				width: 100%;
 			}
@@ -1314,34 +1274,52 @@
 		@media (max-width: 600px) {
 			.story-reveal-grid,
 			.duo,
-			.book-specs-bar,
 			.gallery-grid,
-			.perks-grid {
+			.crew-benefits {
 				grid-template-columns: 1fr;
 			}
 			.sticky-brand span {
-				font-size: 0.76rem;
+				font-size: 0.78rem;
 			}
 			.container {
 				padding: 0 20px;
 			}
 			section {
-				padding: 68px 0;
+				padding: 70px 0;
 			}
-			.tour-visual {
-				height: 250px;
-			}
-			.excerpt-drawer {
+			.peek-drawer,
+			.banter-lab,
+			.raft-stage,
+			.quiz-card {
 				padding: 24px 18px;
+			}
+			.raft-pin {
+				width: 30px;
+				height: 30px;
+				font-size: 0.78rem;
+			}
+		}
+
+		@media (max-width: 360px) {
+			h1 {
+				font-size: 2.5rem;
 			}
 		}
 
 		@media (prefers-reduced-motion: reduce) {
-			html { scroll-behavior: auto; }
+			html {
+				scroll-behavior: auto;
+			}
 			*, *::before, *::after {
 				animation-duration: 0.01ms !important;
 				animation-iteration-count: 1 !important;
 				transition-duration: 0.01ms !important;
+			}
+			.story-image {
+				transform: none !important;
+			}
+			.gerald-crop {
+				transition: none;
 			}
 		}
 	</style>
@@ -1349,69 +1327,60 @@
 
 <body>
 
-	<!-- STICKY TOP LAUNCH BAR -->
 	<div class="sticky">
 		<div class="container">
 			<div class="sticky-brand">
 				<span class="status-dot" aria-hidden="true"></span>
-				<span>Book One: The Prelude &bull; Waitlist Open</span>
+				<span>Book One: The Prelude &bull; Coming Soon</span>
 			</div>
-
-			<div class="sticky-actions">
-				<nav class="sticky-nav-links" aria-label="Primary navigation">
+			<div class="sticky-nav">
+				<nav class="sticky-links" aria-label="Primary navigation">
 					<a href="#story">Book One</a>
-					<a href="#interactive-tour">Audio Tour</a>
-					<a href="#series-heading">Characters</a>
-					<a href="#gallery">Artwork Peek</a>
+					<a href="#series-heading">Meet Buddy &amp; Sir</a>
+					<a href="#raft-inspector">The Raft</a>
+					<a href="#river-quiz">Reader Quiz</a>
+					<a href="#gallery">Artwork</a>
 					<a href="#world">The World</a>
 				</nav>
-				<button type="button" id="header-audio-btn" class="audio-quick-btn" aria-label="Play or pause the Rambunctious River theme song">
-					&#9835; Play River Song
-				</button>
-				<a href="#newsletter" class="cta-pill">Join River Crew</a>
+				<a href="#newsletter" class="sticky-cta">Join River Crew</a>
 			</div>
 		</div>
 	</div>
 
-	<!-- HERO SECTION -->
 	<header class="hero">
 		<div class="container">
-			<div class="coming-soon-pill">
-				<span>&#10024; Coming Soon &bull; Book One Launch Waitlist Is Active</span>
+			<div class="coming-soon-badge">
+				<span>Book One &bull; Coming Soon</span>
 			</div>
 
 			<span class="label">The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot</span>
 			<img src="title.png" class="title-img" alt="The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot">
 			<h1>The Rambunctious River</h1>
-			<p class="hero-tagline">Adventure. Chaos. Probably Fine.</p>
-			<p class="hero-genre">Adult Humorous Fantasy / Comedic Adventure Fantasy</p>
+			<p style="font-family:'Outfit',sans-serif;font-size:.82rem;letter-spacing:2.2px;text-transform:uppercase;color:var(--river-main);font-weight:800;margin-bottom:14px;">Adventure. Chaos. Probably Fine.</p>
+			<p style="font-family:'Outfit',sans-serif;font-size:.78rem;letter-spacing:2.4px;text-transform:uppercase;color:var(--river-deep);font-weight:800;margin-bottom:22px;">Adult Humorous Fantasy / Comedic Adventure Fantasy</p>
 
 			<div class="hero-copy">
 				<p>"Welcome to the Rambunctious River, where plans have a habit of going sideways, and two friends somehow keep finding themselves in the middle of it all."</p>
-				<p>From the Boot Treehouse to Mayhem Marsh, the world of <em>The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot</em> is a place of strange roads, stubborn rivers, and adventures that stand alone while still belonging to the same wild map.</p>
+				<p>From the Boot Treehouse to Mayhem Marsh, the world of The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot is a place of strange roads, stubborn rivers, and adventures that stand alone while still belonging to the same wild map.</p>
 
-				<div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:28px 0 12px">
-					<a class="btn" href="#interactive-tour">&#9654; Play the Grand Tour</a>
-					<a class="btn secondary" href="#story">Take a Peek Inside</a>
+				<div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:28px 0 18px">
+					<a class="btn" href="#story">Discover Book One</a>
 					<a class="btn secondary" href="#series-heading">Meet Buddy &amp; Sir</a>
+					<a class="btn secondary" href="#raft-inspector">Inspect the Raft</a>
+					<a class="btn secondary" href="#river-quiz">Take the River Quiz</a>
 				</div>
 
-				<!-- ABOVE-THE-FOLD INSTANT EMAIL CAPTURE -->
+				<!-- Top Launch-Alert Signup -->
 				<div class="hero-waitlist">
-					<div class="hero-waitlist-header">
-						<span class="hero-waitlist-title">&#9993; Get Notified When Book One Drops</span>
-						<span class="hero-waitlist-badge">VIP River Crew Access</span>
+					<div class="hero-waitlist-top">
+						<strong>Book One Launch Alert</strong>
+						<span>Join the River Crew</span>
 					</div>
 					<form action="https://formspree.io/f/xdapyaar" method="POST">
 						<input type="hidden" name="_next" value="https://buddybootz.com/">
-						<input type="email" name="email" placeholder="Enter your best email address..." autocomplete="email" required aria-label="Email address for Book One launch updates">
-						<button class="btn" type="submit">Join the Launch List</button>
+						<input type="email" name="email" placeholder="Enter your email address for Book One updates..." autocomplete="email" required aria-label="Email address for Book One updates">
+						<button class="btn" type="submit">Notify Me</button>
 					</form>
-					<div class="hero-waitlist-perks">
-						<span>&#10003; First-Day Book One Alert</span>
-						<span>&#10003; Exclusive River Artwork</span>
-						<span>&#10003; No Spam, Just Chaos</span>
-					</div>
 				</div>
 			</div>
 
@@ -1421,43 +1390,28 @@
 
 	<main>
 
-		<!-- BOOK ONE: THE PRELUDE -->
+		<!-- BOOK ONE SECTION -->
 		<section id="story" class="story">
 			<div class="container">
-				<span class="label">Volume One Launch Profile</span>
+				<span class="label">Book One &bull; Coming Soon</span>
 				<h2>The Prelude: The Rambunctious River</h2>
 				<div class="rule"></div>
-
-				<!-- Official Verified Book Specs Bar -->
-				<div class="book-specs-bar">
-					<div class="spec-pill">
-						<span>Format</span>
-						<strong>Full-Color Hardcover</strong>
-					</div>
-					<div class="spec-pill">
-						<span>Edition</span>
-						<strong>32 Illustrated Pages</strong>
-					</div>
-					<div class="spec-pill">
-						<span>Release Target</span>
-						<strong>Coming Soon &bull; Late 2026</strong>
-					</div>
-					<div class="spec-pill">
-						<span>Official ISBN</span>
-						<strong>979-8-89495-000-6</strong>
-					</div>
-				</div>
 
 				<div class="story-grid">
 					<div class="story-card">
 						<p>Buddy Bootz was trying to fix a water pump.</p>
+
 						<p>That should have been simple.</p>
+
 						<p>Instead, the pump had other ideas, Sir Drinks-A'Lot arrived just in time to get dragged into the problem, and a trip down Rambunctious River turned into something neither of them could explain.</p>
+
 						<p>The River doesn't simply carry them downstream. It starts making decisions of its own.</p>
+
 						<p>A strange current. A raft that refuses to behave normally. Something moving beneath the water.</p>
+
 						<p>And then the River reveals something that should not be there.</p>
 
-						<div class="story-quote-highlight">
+						<div class="story-quote-box">
 							"The river doesn't follow rules. Buddy doesn't either."
 						</div>
 
@@ -1465,50 +1419,46 @@
 					</div>
 
 					<div class="story-visual">
-						<span class="book-badge-floating">Book One &bull; Coming Soon</span>
 						<img src="bootz_cover.png" class="story-image" alt="The Prelude: The Rambunctious River book cover">
-						<button class="story-toggle excerpt-btn" type="button" id="excerpt-toggle" aria-expanded="false" aria-controls="chapter-excerpt">
-							&#128214; Take a Peek Inside
+						<button class="story-toggle peek-btn" type="button" id="peek-toggle" aria-expanded="false" aria-controls="book-peek">
+							Take a Peek Inside Book One
 						</button>
-						<button class="story-toggle" type="button" id="world-notes-toggle" aria-expanded="false" aria-controls="story-reveal">
-							Explore the 4 Story Milestones
+						<button class="story-toggle" type="button" id="world-toggle" aria-expanded="false" aria-controls="story-reveal">
+							Explore the world around the first adventure
 						</button>
 					</div>
 				</div>
 
-				<!-- SPOILER-SAFE SHORT TEASER EXCERPT DRAWER -->
-				<div id="chapter-excerpt" class="excerpt-drawer" hidden>
-					<div class="excerpt-header">
+				<!-- SHORT, SPOILER-SAFE TEASER PREVIEW (~115 WORDS) -->
+				<div id="book-peek" class="peek-drawer" hidden>
+					<div class="peek-header">
 						<div>
-							<span class="story-tag">Spoiler-Safe Reader Preview</span>
-							<h3 style="margin-bottom:0">A Peek Inside Book One: The Water Pump Emergency</h3>
+							<span class="story-tag">Short Manuscript Teaser</span>
+							<h3 style="margin-bottom:0">From the Opening Moments of Book One</h3>
 						</div>
-						<button type="button" class="btn secondary" id="close-excerpt-btn" style="padding:8px 18px;font-size:0.8rem">Close Preview &times;</button>
+						<button type="button" class="btn secondary" id="close-peek" style="padding:8px 16px;font-size:0.78rem">Close Preview</button>
 					</div>
-					<div class="excerpt-body">
-						<p>The water pump bolted to the outside of Buddy Bootz's treehouse was doing its best to come apart in public. Pipes knocked together. A loose valve buzzed against the wood. Something inside snapped, and a spring shot into the leaves overhead.</p>
-						<p>Buddy Bootz stood on the top step of a tall ladder, one hand steadying the metal housing while the other worked a screwdriver into a stubborn seam. Her glitter-brown boots were planted carefully, her red dress had picked up grease at the hem, and her gold crown sat slightly crooked in her short auburn hair.</p>
-						<p>She leaned in close. "Alright," Buddy said. "You've made your point."</p>
+					<div class="peek-excerpt">
+						<p>The water pump bolted to the outside of Buddy Bootz's treehouse was doing its best to come apart in public. The little metal box rattled hard against the oak boards. Pipes knocked together. A loose valve buzzed against the wood. The whole contraption sounded less like machinery and more like a personal objection.</p>
+						<p>Buddy Bootz stood on the top step of a tall ladder, one hand steadying the metal housing while the other worked a screwdriver into a stubborn seam. Her glitter-brown boots were planted carefully, and her gold crown sat slightly crooked in her short auburn hair.</p>
+						<p>"Alright," Buddy said. "You've made your point."</p>
 						<p>The pump coughed. A blast of rusty water shot straight into her face.</p>
-						<p>Buddy went still. Water dripped off her nose. "...That felt personal."</p>
-						<p>Below her, something crashed through the brush. Sir Drinks-A'Lot stepped into view, brushing a leaf off his shirt. "I was fine until the forest got involved."</p>
-						<p>That was Sir—practical boots, practical hands, practical expression. It was unfortunate for him that most things nearest to Buddy did not believe in being fixed quietly. When Buddy tipped a splash of whiskey into the pump intake as "negotiations," the machine released a deep mechanical <em>BURP</em> and started running smoothly.</p>
-						<p>And that is just the beginning of how an ordinary morning turns into a wildly unpredictable journey down the Rambunctious River.</p>
+						<p>Below her, something crashed through the brush—just in time for Sir Drinks-A'Lot to step into view, brushing a leaf off his shirt. "I was fine until the forest got involved."</p>
 					</div>
-					<div class="excerpt-cta-box">
-						<h3 style="font-size:1.5rem;margin-bottom:8px">Want to discover what happens when the river takes over?</h3>
-						<p style="font-size:1.1rem;margin-bottom:16px">Secure your place on the River Crew to read Book One the moment it launches.</p>
-						<a href="#newsletter" class="btn">Join the Launch Waitlist</a>
+					<div class="peek-footer">
+						<p style="font-size:1.12rem;margin-bottom:14px;color:var(--text-dark)">
+							<strong>What happens when an ordinary morning turns into a river with opinions of its own?</strong> Discover the rest of the adventure when Book One becomes available.
+						</p>
+						<a href="#newsletter" class="btn">Join the River Crew for Launch Updates</a>
 					</div>
 				</div>
 
-				<!-- 4 STORY MILESTONES -->
 				<div id="story-reveal" class="story-reveal" hidden>
 					<div class="story-reveal-grid">
 						<div class="story-note">
 							<span class="story-tag">Beginning</span>
 							<h3>Boot Treehouse</h3>
-							<p>Buddy Bootz begins Book One at the Boot Treehouse, fixing a stubborn water pump.</p>
+							<p>Buddy Bootz begins Book One at the Boot Treehouse, fixing a water pump.</p>
 						</div>
 						<div class="story-note">
 							<span class="story-tag">Mayhem Marsh</span>
@@ -1521,61 +1471,16 @@
 							<p>The River is not merely scenery. It has agency, personality, and begins behaving unpredictably as the adventure changes direction.</p>
 						</div>
 						<div class="story-note">
-							<span class="story-tag">The Maze</span>
-							<h3>The Maze</h3>
-							<p>The River eventually reveals the Maze, which is the canonical ending and reveal of Book One.</p>
+							<span class="story-tag">Beyond the Bend</span>
+							<h3>Uncharted Waters</h3>
+							<p>Where the current leads next is a secret waiting inside the pages of Book One.</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- INTERACTIVE AUDIO & VISUAL GRAND TOUR -->
-		<section id="interactive-tour" class="tour-section" aria-labelledby="tour-heading">
-			<div class="container">
-				<span class="label" style="color:var(--gold-soft)">Interactive Audio &amp; Visual Experience</span>
-				<h2 id="tour-heading" style="color:var(--paper);margin-bottom:14px">The Grand Tour of the River</h2>
-				<p style="color:rgba(255,255,255,0.82);max-width:680px;margin:0 auto 34px;font-size:1.15rem">
-					Press <strong>Play Tour</strong> to start the official soundtrack and click through the spoiler-safe stops along the Rambunctious River.
-				</p>
-
-				<div class="tour-card">
-					<span id="tour-step-indicator" class="tour-step-badge">Stop 1 of 7 &bull; The Boot Treehouse</span>
-
-					<img id="tour-image" class="tour-visual" src="buddy_treehouse.png" alt="The Boot Treehouse">
-
-					<div class="tour-dots" id="tour-dots" aria-label="Tour scene navigation"></div>
-
-					<p id="tour-text" class="tour-dialogue" aria-live="polite">
-						"Sir, you finally showed up. Took you long enough to catch up. I got stories. I've got plans. A whole world I'm bringing to life."
-					</p>
-
-					<div class="tour-audio-wrapper">
-						<!-- AUDIO FILE LINKED TO line1.mp3 -->
-						<audio id="main-audio" controls preload="auto">
-							<source src="line1.mp3" type="audio/mpeg">
-							Your browser does not support the audio element.
-						</audio>
-					</div>
-
-					<div class="tour-controls" id="control-panel">
-						<button id="prev-tour-btn" class="tour-btn secondary-tour" type="button" hidden>&larr; Previous</button>
-						<button id="start-tour-btn" class="tour-btn" type="button">Play Tour &amp; Next Scene &#9654;</button>
-						<button id="restart-tour-btn" class="tour-btn secondary-tour" type="button" hidden>Restart &#8634;</button>
-					</div>
-
-					<div id="tour-final-cta" class="tour-cta">
-						<h3 style="color:var(--gold);margin-bottom:8px">Welcome to the Maze.</h3>
-						<p style="color:var(--river-light);font-size:1.15rem;margin-bottom:20px">
-							"And this is where the real adventure begins." Don't get left behind on the riverbank!
-						</p>
-						<a href="#newsletter" class="btn">Join the River Crew for Book One</a>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- MEET BUDDY & SIR -->
+		<!-- MEET BUDDY & SIR + INTERACTIVE BANTER LAB -->
 		<section aria-labelledby="series-heading">
 			<div class="container">
 				<span class="label">The Series</span>
@@ -1583,20 +1488,20 @@
 				<div class="rule"></div>
 
 				<p style="max-width:780px;margin:0 auto 38px;text-align:center">
-					<em>The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot</em> is an adult humorous fantasy adventure series about two unlikely best friends, a sentient river that refuses to behave, and the questionable decisions that keep putting them in the middle of it.
+					The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot is an adult humorous fantasy adventure series about two unlikely best friends, a world that refuses to behave, and the increasingly questionable decisions that keep putting them in the middle of it.
 				</p>
 				<p style="max-width:920px;margin:0 auto 38px;text-align:center">
-					Buddy Bootz lives in the Boot Treehouse high above the water, armed with curiosity, nerve, and questionable repairs. Sir Drinks-A'Lot, her loyal friend from Mayhem Marsh, is the practical one—which would be much more useful if Buddy ever waited for the practical part.
+					Buddy Bootz lives in a treehouse and has a talent for turning ordinary problems into adventures. Sir Drinks-A'Lot, her loyal friend from Mayhem Marsh, is the practical one, which would be more useful if Buddy ever waited for the practical part.
 				</p>
 				<p style="max-width:920px;margin:0 auto 38px;text-align:center">
-					Together they are pulled by the Rambunctious River through Sticky Frog Forest, Mayhem Marsh, and places stranger than either of them planned to visit. They argue. They improvise. They get into trouble. They get each other out of it.
+					Together they travel through Rambunctious River, Sticky Frog Forest, Mayhem Marsh, and places stranger than either of them planned to visit. They argue. They improvise. They get into trouble. They get each other out of it.
 				</p>
 				<p style="max-width:920px;margin:0 auto 38px;text-align:center">
 					And somewhere along the way, the world itself starts behaving like it has been paying attention.
 				</p>
 
-				<p style="max-width:780px;margin:0 auto 44px;text-align:center;font-size:1.35rem;">
-					Two best friends. Buddy Bootz brings curiosity, nerve, questionable decisions, and zero respect for the phrase &ldquo;that might be a bad idea.&rdquo; Sir Drinks-A'Lot brings practical thinking, loyalty, dry commentary, and a remarkable ability to trip over things that were not technically in his way. They don't always agree. They don't always have a plan. They always have each other's back.
+				<p style="max-width:780px;margin:0 auto 38px;text-align:center;font-size:1.35rem;">
+					Two best friends. One creates problems faster than the other can solve them. Buddy Bootz brings curiosity, nerve, questionable decisions, and absolutely no respect for the phrase &ldquo;that might be a bad idea.&rdquo; Sir Drinks-A'Lot brings practical thinking, loyalty, dry commentary, and a remarkable ability to trip over things that were not technically in his way. They don't always agree. They don't always have a plan. They always have each other's back. And somehow, that usually turns out to be enough.
 				</p>
 
 				<div class="duo">
@@ -1627,71 +1532,158 @@
 					<button class="btn secondary character-talk" type="button" id="exchange-trigger" aria-controls="exchange-dialogue">Catch Buddy and Sir mid-conversation</button>
 					<p id="exchange-dialogue" class="exchange-dialogue" aria-live="polite" aria-atomic="true" hidden></p>
 				</div>
+
+				<!-- INTERACTIVE CHAOS VS. PRACTICALITY LAB -->
+				<div class="banter-lab" aria-labelledby="banter-lab-heading">
+					<span class="label">Interactive Character Dynamic</span>
+					<h3 id="banter-lab-heading" style="text-align:center;margin-bottom:6px">Chaos vs. Practicality: How They Handle Trouble</h3>
+					<p style="text-align:center;font-size:1.1rem;margin-bottom:0">
+						Click any situation below to compare Buddy's instinct with Sir's assessment.
+					</p>
+
+					<div class="scenario-buttons" role="tablist" aria-label="River scenarios">
+						<button type="button" class="scenario-btn active" role="tab" aria-selected="true" data-scenario="0">Uncooperative Plumbing</button>
+						<button type="button" class="scenario-btn" role="tab" aria-selected="false" data-scenario="1">Shifting River Map</button>
+						<button type="button" class="scenario-btn" role="tab" aria-selected="false" data-scenario="2">Low-Hanging Forest Branches</button>
+						<button type="button" class="scenario-btn" role="tab" aria-selected="false" data-scenario="3">Strange River Currents</button>
+					</div>
+
+					<div class="scenario-grid" aria-live="polite">
+						<div class="scenario-col buddy-col">
+							<strong>Buddy's Approach</strong>
+							<p id="scenario-buddy">"Climb the tallest ladder available, glare at the machine until it knows who's in charge, and improvise."</p>
+						</div>
+						<div class="scenario-col">
+							<strong>Sir's Assessment</strong>
+							<p id="scenario-sir">"Pick up the correct wrench on the first try, steady the ladder, and prepare for whatever happens next."</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 
-		<!-- SPOILER-SAFE ARTWORK & FIELD SKETCHES GALLERY -->
+		<!-- INTERACTIVE RAFT OF BAD IDEAS INSPECTOR -->
+		<section id="raft-inspector" class="raft-inspector" aria-labelledby="raft-heading">
+			<div class="container">
+				<span class="label" style="color:var(--gold-soft)">Interactive Field Guide</span>
+				<h2 id="raft-heading">Inspect the Raft of Bad Ideas</h2>
+				<p style="color:rgba(255,255,255,0.84);max-width:680px;margin:0 auto 30px;font-size:1.15rem">
+					Several logs lashed together with rope suggest confidence more than engineering. Click the numbered pins on the image or the buttons below to inspect the craft.
+				</p>
+
+				<div class="raft-stage">
+					<div class="raft-visual-wrap">
+						<img src="raft_coffeetime.png" alt="Buddy and Sir aboard the handmade log raft on the Rambunctious River" loading="lazy">
+						<button type="button" class="raft-pin active" style="bottom:18%;left:48%" data-spot="0" aria-label="Inspect the Log and Rope Hull">1</button>
+						<button type="button" class="raft-pin" style="top:22%;left:16%" data-spot="1" aria-label="Inspect the Warning Signs">2</button>
+						<button type="button" class="raft-pin" style="bottom:28%;left:18%" data-spot="2" aria-label="Inspect Sir's Stash Box">3</button>
+						<button type="button" class="raft-pin" style="top:24%;left:26%" data-spot="3" aria-label="Inspect the River Lantern">4</button>
+					</div>
+
+					<div class="hotspot-bar" role="tablist" aria-label="Raft equipment features">
+						<button type="button" class="hotspot-btn active" role="tab" aria-selected="true" data-spot="0">1. The Log &amp; Rope Hull</button>
+						<button type="button" class="hotspot-btn" role="tab" aria-selected="false" data-spot="1">2. "No Plan" &amp; "Probably Fine"</button>
+						<button type="button" class="hotspot-btn" role="tab" aria-selected="false" data-spot="2">3. Sir's Stash Box</button>
+						<button type="button" class="hotspot-btn" role="tab" aria-selected="false" data-spot="3">4. The River Lantern</button>
+					</div>
+
+					<div class="raft-readout" aria-live="polite">
+						<h3 id="raft-spot-title">1. The Log &amp; Rope Hull</h3>
+						<p id="raft-spot-desc">Built from rough logs and warped boards held together by old, stubborn knots. Buddy trusts it absolutely. Sir trusts it the way a man trusts a chair that has not yet betrayed him, but clearly thinks about it.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- INTERACTIVE READER QUIZ: WHICH RIVER TRAVELER ARE YOU? -->
+		<section id="river-quiz" class="quiz-section" aria-labelledby="quiz-heading">
+			<div class="container">
+				<span class="label">Interactive Reader Dispatch</span>
+				<h2 id="quiz-heading">How Would You Survive the Rambunctious River?</h2>
+				<div class="rule"></div>
+
+				<div class="quiz-card" aria-live="polite">
+					<div id="quiz-question-view">
+						<span id="quiz-step-label" class="quiz-progress">Question 1 of 3</span>
+						<h3 id="quiz-question-text" class="quiz-question">A piece of machinery bolted to your treehouse wall starts rattling like it has a personal objection. What is your first move?</h3>
+						<div id="quiz-options-list" class="quiz-options"></div>
+					</div>
+
+					<div id="quiz-result-view" class="quiz-result" hidden>
+						<span id="quiz-result-badge" class="quiz-result-badge">Your River Counterpart</span>
+						<h3 id="quiz-result-title" style="font-size:2rem;margin-bottom:10px"></h3>
+						<p id="quiz-result-desc" style="max-width:620px;margin:0 auto 24px"></p>
+						<div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+							<a href="#newsletter" class="btn">Join the River Crew for Book One</a>
+							<button type="button" class="btn secondary" id="quiz-restart-btn">Retake Quiz</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SPOILER-SAFE ARTWORK GALLERY -->
 		<section id="gallery" class="gallery-section" aria-labelledby="gallery-heading">
 			<div class="container">
-				<span class="label">Inside the Pages</span>
-				<h2 id="gallery-heading">Book One Artwork &amp; Field Sketches</h2>
+				<span class="label">Visual Worldbuilding</span>
+				<h2 id="gallery-heading">Scenes from the Riverbank</h2>
 				<div class="rule"></div>
-				<p style="max-width:740px;margin:0 auto;text-align:center">
-					Click any illustration below to inspect approved atmosphere, maps, and equipment from <em>The Prelude: The Rambunctious River</em> without major plot spoilers.
+				<p style="max-width:720px;margin:0 auto;text-align:center">
+					Explore original artwork and settings from the world of <em>The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot</em>. Click any illustration for a closer look.
 				</p>
 
 				<div class="gallery-grid">
-					<button type="button" class="gallery-card" data-full="buddy_treehouse.png" data-caption="The Boot Treehouse: Buddy's structural operational headquarters high above the Rambunctious River.">
+					<button type="button" class="gallery-card" data-full="buddy_treehouse.png" data-caption="The Boot Treehouse: Wrapped around an old oak trunk in uneven levels, rope railings, and crooked windows.">
 						<img src="buddy_treehouse.png" alt="Buddy Bootz's treehouse" loading="lazy">
 						<div class="gallery-card-body">
 							<span class="gallery-card-tag">Home Base</span>
 							<div class="gallery-card-title">The Boot Treehouse</div>
-							<p class="gallery-card-desc">Built high into an oak tree with deep roots, lanterns, and questionable wiring.</p>
+							<p class="gallery-card-desc">High in the oak branches, one strong wind away from a structural argument.</p>
 						</div>
 					</button>
 
-					<button type="button" class="gallery-card" data-full="raft_coffeetime.png" data-caption="The Raft of Bad Ideas: Lashed logs, rope, warning signs, and Sir's Stash.">
-						<img src="raft_coffeetime.png" alt="Buddy and Sir on the raft" loading="lazy">
+					<button type="button" class="gallery-card" data-full="sirs_place.png" data-caption="Sir's Cabin in Mayhem Marsh: A grounded base of operations surrounded by wet marshland.">
+						<img src="sirs_place.png" alt="Sir's Cabin in Mayhem Marsh" loading="lazy">
 						<div class="gallery-card-body">
-							<span class="gallery-card-tag">River Transport</span>
-							<div class="gallery-card-title">The Raft of Bad Ideas</div>
-							<p class="gallery-card-desc">Built from rough logs, rope, and far more confidence than engineering.</p>
+							<span class="gallery-card-tag">Mayhem Marsh</span>
+							<div class="gallery-card-title">Sir's Cabin</div>
+							<p class="gallery-card-desc">Where practical tools and steady preparation meet unpredictable terrain.</p>
 						</div>
 					</button>
 
-					<button type="button" class="gallery-card" data-full="map-prelude.png" data-caption="Official Map of the Rambunctious River Valley, connecting the Treehouse to Mayhem Marsh.">
-						<img src="map-prelude.png" alt="Map of the Rambunctious River Valley" loading="lazy">
+					<button type="button" class="gallery-card" data-full="prelude.png" data-caption="The Rambunctious River: Sun-dappled bands of gold shimmering across water that has a mind of its own.">
+						<img src="prelude.png" alt="The Rambunctious River Prelude artwork" loading="lazy">
 						<div class="gallery-card-body">
-							<span class="gallery-card-tag">Cartography</span>
-							<div class="gallery-card-title">Rambunctious River Map</div>
-							<p class="gallery-card-desc">A local map that changes its mind whenever the River feels unappreciated.</p>
+							<span class="gallery-card-tag">The Waterway</span>
+							<div class="gallery-card-title">Rambunctious River</div>
+							<p class="gallery-card-desc">Broad where it curves, glassy where it shallows, and always paying attention.</p>
 						</div>
 					</button>
 
-					<button type="button" class="gallery-card" data-full="buddy-sir-pump-chaos.png" data-caption="Water Pump Emergency: Negotiating with plumbing using tools and attitude.">
-						<img src="buddy-sir-pump-chaos.png" alt="Buddy and Sir fixing the water pump" loading="lazy">
+					<button type="button" class="gallery-card" data-full="raft_coffeetime.png" data-caption="Aboard the Raft: Drifting past familiar bends before the river decides where the story goes next.">
+						<img src="raft_coffeetime.png" alt="The raft on the Rambunctious River" loading="lazy">
 						<div class="gallery-card-body">
-							<span class="gallery-card-tag">Opening Scene</span>
-							<div class="gallery-card-title">The Water Pump</div>
-							<p class="gallery-card-desc">When infrastructure goes rogue and requires immediate tactical negotiation.</p>
+							<span class="gallery-card-tag">River Travel</span>
+							<div class="gallery-card-title">Adrift on the Current</div>
+							<p class="gallery-card-desc">An easy morning float—right up until the silence gives up.</p>
 						</div>
 					</button>
 
-					<button type="button" class="gallery-card" data-full="frogs.png" data-caption="Sticky Frog Forest: A tangled stretch of green where oversized frogs rule the pathways.">
+					<button type="button" class="gallery-card" data-full="frogs.png" data-caption="Sticky Frog Forest: A tangle of mossy paths where every resident looks like it knows a secret.">
 						<img src="frogs.png" alt="Sticky Frog Forest" loading="lazy">
 						<div class="gallery-card-body">
-							<span class="gallery-card-tag">Field Sketch</span>
+							<span class="gallery-card-tag">Along the Banks</span>
 							<div class="gallery-card-title">Sticky Frog Forest</div>
-							<p class="gallery-card-desc">Where every step comes with the possibility of becoming considerably stickier than planned.</p>
+							<p class="gallery-card-desc">Where the world refuses to stay on the map and the frogs watch the trails.</p>
 						</div>
 					</button>
 
-					<button type="button" class="gallery-card" data-full="prelude.png" data-caption="The Rambunctious River: Glowing golden magical sparkles and currents with opinions.">
-						<img src="prelude.png" alt="The Rambunctious River glowing" loading="lazy">
+					<button type="button" class="gallery-card" data-full="bootz_cover.png" data-caption="Book One: The Prelude: The Rambunctious River — Coming Soon.">
+						<img src="bootz_cover.png" alt="The Prelude: The Rambunctious River cover art" loading="lazy">
 						<div class="gallery-card-body">
-							<span class="gallery-card-tag">River Lore</span>
-							<div class="gallery-card-title">The Rambunctious River</div>
-							<p class="gallery-card-desc">The living mythic spine of the world that decides where the story goes next.</p>
+							<span class="gallery-card-tag">Book One</span>
+							<div class="gallery-card-title">The Prelude Cover</div>
+							<p class="gallery-card-desc">Where friendship, humor, and an unpredictable river set the first adventure in motion.</p>
 						</div>
 					</button>
 				</div>
@@ -1762,42 +1754,7 @@
 			</div>
 		</section>
 
-		<!-- EARLY READER PRAISE & BOOK ONE PRODUCTION TRACKER -->
-		<section class="praise-section" aria-labelledby="praise-heading">
-			<div class="container">
-				<span class="label">Early Dispatches from the Riverbank</span>
-				<h2 id="praise-heading">What Early Readers Are Saying</h2>
-				<div class="rule"></div>
-
-				<div class="praise-grid">
-					<div class="praise-card">
-						<p>"The mechanical water pump scene made me laugh out loud. Genuinely refreshing to see practical problem-solving alongside emotional authenticity and sharp banter."</p>
-						<span class="praise-source">&mdash; Advanced Notebook Review Dispatch &bull; Early Reader Panel</span>
-					</div>
-					<div class="praise-card">
-						<p>"The dry, casual humor makes the entire book feel alive. It skips the typical world-ending dread and gives you a wildly funny, character-driven adventure instead."</p>
-						<span class="praise-source">&mdash; Logbook Letter &bull; Reader Correspondence</span>
-					</div>
-				</div>
-
-				<div class="progress-box">
-					<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
-						<strong style="font-family:'Outfit',sans-serif;color:var(--river-deep);font-size:1rem">
-							&#128218; Book One Production Status: Final Layout &amp; Illustration Polish
-						</strong>
-						<span style="font-family:'Outfit',sans-serif;font-weight:800;color:var(--river-main);font-size:0.95rem">92% Complete</span>
-					</div>
-					<div class="progress-bar-wrap" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
-						<div class="progress-bar-fill"></div>
-					</div>
-					<p style="font-size:1.05rem;margin-bottom:0">
-						Print blocks and full-color illustrations for <em>The Prelude: The Rambunctious River</em> are being locked in at the Treehouse desk. Join the River Crew below so you don't miss launch day!
-					</p>
-				</div>
-			</div>
-		</section>
-
-		<!-- ABOUT THE AUTHOR (LOCKED CONTENT PRESERVED) -->
+		<!-- PROTECTED ABOUT ME SECTION (EXACT WORDING PRESERVED) -->
 		<section class="author-section" aria-labelledby="author-section-heading">
 			<div class="container">
 				<span class="label">The Author</span>
@@ -1820,11 +1777,11 @@
 			</div>
 		</section>
 
-		<!-- DEDICATION TO RICHIE (LOCKED CONTENT PRESERVED) -->
+		<!-- PROTECTED DEDICATION TO RICHIE SECTION (EXACT WORDING PRESERVED) -->
 		<section class="dedication" aria-labelledby="dedication-heading">
 			<div class="container">
 				<div class="dedication-content">
-					<span class="eyebrow">With gratitude</span>
+					<span class="eyebrow" style="color:var(--gold-soft);text-align:center;">With gratitude</span>
 					<h2 id="dedication-heading">A Dedication to Richie</h2>
 
 					<p>One of the hardest and loneliest periods of my life was a time when I was isolated, lost in my own thoughts, and writing more than ever. It was during that time that Richie showed up.</p>
@@ -1850,49 +1807,49 @@
 			</div>
 		</section>
 
-		<!-- HIGH-CONVERTING RIVER CREW NEWSLETTER SECTION -->
+		<!-- RIVER CREW NEWSLETTER SECTION -->
 		<section id="newsletter" class="newsletter">
 			<div class="container">
-				<span class="label" style="color:var(--gold-soft)">Official Launch Waitlist</span>
-				<h2>Join the River Crew</h2>
-				<p>Want to be the first to know when <em>Book One: The Prelude: The Rambunctious River</em> is ready? Step aboard the raft and get insider access straight from Buddy's treehouse desk.</p>
+				<span class="label" style="color:var(--gold-soft)">River Crew</span>
+				<h2>Follow the Adventure</h2>
 
-				<div class="perks-grid">
-					<div class="perk-card">
-						<strong>&#128640; Priority Book One Alert</strong>
-						<span>Be first in line when the hardcover &amp; digital editions of Book One officially launch.</span>
+				<p>Want to know when Book One is ready? Join the River Crew for updates on The Prelude: The Rambunctious River, new artwork, behind-the-scenes glimpses, and news from Buddy's desk.</p>
+
+				<div class="crew-benefits">
+					<div class="crew-benefit-card">
+						<strong>Book One Launch Alerts</strong>
+						<span>Be the first to know when The Prelude: The Rambunctious River is ready.</span>
 					</div>
-					<div class="perk-card">
-						<strong>&#127912; Exclusive Field Sketches</strong>
-						<span>Get behind-the-scenes character art, map updates, and unseen riverbank notes.</span>
+					<div class="crew-benefit-card">
+						<strong>New Artwork &amp; Glimpses</strong>
+						<span>See approved illustrations and behind-the-scenes updates from the series.</span>
 					</div>
-					<div class="perk-card">
-						<strong>&#128214; Early Story Reveals</strong>
-						<span>Receive sneak peeks at upcoming adventures in The Maze and Sticky Frog Forest.</span>
+					<div class="crew-benefit-card">
+						<strong>News from Buddy's Desk</strong>
+						<span>Occasional dispatches on upcoming adventures—no spam, no boring emails.</span>
 					</div>
 				</div>
 
 				<form action="https://formspree.io/f/xdapyaar" method="POST">
 					<input type="hidden" name="_next" value="https://buddybootz.com/">
-					<input type="email" name="email" placeholder="Enter your email address..." autocomplete="email" required aria-label="Email address">
+					<input type="email" name="email" placeholder="Enter email address" autocomplete="email" required aria-label="Email address">
 					<button class="btn" type="submit">Join the River Crew</button>
 				</form>
-				<div class="privacy-note">&#128274; No spam. No boring emails. Just adventures. Unsubscribe anytime.</div>
 			</div>
 		</section>
 
 	</main>
 
-	<!-- SMART FLOATING WAITLIST BAR (DISMISSIBLE) -->
-	<aside id="floating-waitlist" class="floating-waitlist" aria-label="Book One Waitlist Reminder">
-		<div class="floating-waitlist-top">
-			<strong>&#10024; Book One Coming Soon</strong>
-			<button type="button" class="floating-close" id="close-floating-btn" aria-label="Dismiss reminder">&times;</button>
+	<!-- POLITE DISMISSIBLE SIGNUP REMINDER -->
+	<aside id="floating-reminder" class="floating-reminder" aria-label="Join the River Crew reminder">
+		<div class="floating-reminder-header">
+			<strong>Book One Coming Soon</strong>
+			<button type="button" class="floating-close" id="close-reminder" aria-label="Dismiss reminder">&times;</button>
 		</div>
-		<p style="font-size:0.95rem;color:rgba(255,255,255,0.85);margin-bottom:4px">
-			Don't get left on the riverbank! Join the River Crew for the Book One launch alert.
+		<p style="font-size:0.95rem;color:rgba(255,255,255,0.86);margin-bottom:4px">
+			Want to know when <em>The Prelude: The Rambunctious River</em> is ready?
 		</p>
-		<a href="#newsletter" class="btn" id="floating-cta-link" style="padding:10px 18px;font-size:0.82rem">Join the Waitlist &rarr;</a>
+		<a href="#newsletter" class="btn" id="reminder-cta" style="padding:10px 18px;font-size:0.8rem">Join the River Crew</a>
 	</aside>
 
 	<footer>
@@ -1901,89 +1858,91 @@
 				The Adventures of Buddy Bootz &amp; Sir Drinks-A'Lot
 			</div>
 
-			<p style="margin:16px 0;font-size:1.1rem;color:rgba(255,255,255,0.8)">
-				"And this is where the real adventure begins."
+			<p style="margin:16px 0;font-size:1.1rem">
+				The adventure begins with The Prelude: The Rambunctious River.
 			</p>
 
 			<nav aria-label="Footer navigation">
 				<a href="#story">Book One</a>
-				<a href="#interactive-tour">Grand Tour</a>
 				<a href="#series-heading">Meet Us</a>
+				<a href="#raft-inspector">The Raft</a>
+				<a href="#river-quiz">River Quiz</a>
 				<a href="#gallery">Artwork</a>
 				<a href="#world-heading">The World</a>
 				<a href="author.html">About the Author</a>
-				<a href="blog.html">Field Notes</a>
-				<a href="privacy.html">Privacy</a>
 				<a href="#newsletter">Join the River Crew</a>
 			</nav>
 
-			<p style="font-size:0.9rem;color:rgba(255,255,255,0.45);margin:0">
-				&copy; 2026 Buddy Bootz Project. All Rights Reserved. ISBN: 979-8-89495-000-6.
+			<p style="font-size:.9rem;color:rgba(255,255,255,.4);margin:0">
+				&copy; 2026 Buddy Bootz Project. All Rights Reserved.
 			</p>
 		</div>
 	</footer>
 
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
-			// 1. Story Milestones Reveal Toggle
-			var worldToggle = document.getElementById('world-notes-toggle');
-			var worldReveal = document.getElementById('story-reveal');
+			// 1. World Reveal Toggle
+			var worldToggle = document.getElementById('world-toggle');
+			var reveal = document.getElementById('story-reveal');
 
-			if (worldToggle && worldReveal) {
+			if (worldToggle && reveal) {
+				var updateWorld = function () {
+					var expanded = worldToggle.getAttribute('aria-expanded') === 'true';
+					reveal.hidden = !expanded;
+					worldToggle.textContent = expanded ? 'Hide the world around the first adventure' : 'Explore the world around the first adventure';
+				};
+
+				updateWorld();
 				worldToggle.addEventListener('click', function () {
 					var next = worldToggle.getAttribute('aria-expanded') !== 'true';
 					worldToggle.setAttribute('aria-expanded', String(next));
-					worldReveal.hidden = !next;
-					worldToggle.textContent = next ? 'Hide the 4 Story Milestones' : 'Explore the 4 Story Milestones';
+					updateWorld();
 				});
 			}
 
-			// 2. Spoiler-Safe Excerpt Preview Drawer
-			var excerptToggle = document.getElementById('excerpt-toggle');
-			var excerptDrawer = document.getElementById('chapter-excerpt');
-			var closeExcerptBtn = document.getElementById('close-excerpt-btn');
+			// 2. Short Spoiler-Safe Peek Inside Drawer
+			var peekToggle = document.getElementById('peek-toggle');
+			var bookPeek = document.getElementById('book-peek');
+			var closePeek = document.getElementById('close-peek');
 
-			if (excerptToggle && excerptDrawer) {
-				var toggleExcerpt = function (show) {
-					excerptToggle.setAttribute('aria-expanded', String(show));
-					excerptDrawer.hidden = !show;
-					excerptToggle.innerHTML = show ? '&#128214; Hide Peek Inside' : '&#128214; Take a Peek Inside';
-					if (show) {
-						excerptDrawer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+			if (peekToggle && bookPeek) {
+				var setPeek = function (open) {
+					peekToggle.setAttribute('aria-expanded', String(open));
+					bookPeek.hidden = !open;
+					peekToggle.textContent = open ? 'Hide Book One Preview' : 'Take a Peek Inside Book One';
+					if (open) {
+						bookPeek.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 					}
 				};
 
-				excerptToggle.addEventListener('click', function () {
-					var isExpanded = excerptToggle.getAttribute('aria-expanded') === 'true';
-					toggleExcerpt(!isExpanded);
+				peekToggle.addEventListener('click', function () {
+					var isOpen = peekToggle.getAttribute('aria-expanded') === 'true';
+					setPeek(!isOpen);
 				});
 
-				if (closeExcerptBtn) {
-					closeExcerptBtn.addEventListener('click', function () {
-						toggleExcerpt(false);
+				if (closePeek) {
+					closePeek.addEventListener('click', function () {
+						setPeek(false);
 					});
 				}
 			}
 
-			// 3. Character Talk Buttons
+			// 3. Character Talk Buttons (100% Spoiler-Safe Original Lines)
 			var dialogueLines = {
 				buddy: [
 					"Curiosity is a perfectly good place to start.",
 					"I have a plan. The details are catching up.",
-					"It wasn't reckless. It was strategic whiskey.",
-					"I am not lost. I am simply expanding my geographic horizons.",
+					"Let's see what happens if I try this.",
 					"That could have gone worse. I have notes."
 				],
 				sir: [
 					"I have considered the practical options. This is one of them.",
 					"Steady. Check the details before the enthusiasm.",
-					"That is not how plumbing works.",
-					"I was fine until the forest got involved.",
-					"I prefer a plan with fewer surprises."
+					"I prefer a plan with fewer surprises.",
+					"Prepared is a state of mind. Mostly."
 				]
 			};
 			var dialogueIndex = { buddy: 0, sir: 0 };
-
 			document.querySelectorAll('[data-dialogue]').forEach(function (button) {
 				var character = button.getAttribute('data-dialogue');
 				var dialogue = document.getElementById(character + '-dialogue');
@@ -1999,18 +1958,15 @@
 				});
 			});
 
-			// 4. Mid-Conversation Exchange Button
+			// 4. Mid-Conversation Exchange Button (Original Approved Lines)
 			var exchanges = [
 				"Buddy: I have a plan. Sir: You have a direction. Buddy: It's a flexible plan. Sir: I was afraid of that.",
 				"Buddy: It is not a problem yet. Sir: That is a remarkably temporary statement.",
-				"Sir: You poured whiskey into plumbing. Buddy: Strategic whiskey.",
-				"Buddy: You walked into the same tree twice. Sir: It repositioned.",
 				"Buddy: You sound unconvinced. Sir: I am choosing the more accurate word."
 			];
 			var exchangeButton = document.getElementById('exchange-trigger');
 			var exchangeDialogue = document.getElementById('exchange-dialogue');
 			var exchangeIndex = 0;
-
 			if (exchangeButton && exchangeDialogue) {
 				exchangeButton.addEventListener('click', function () {
 					exchangeDialogue.textContent = exchanges[exchangeIndex % exchanges.length];
@@ -2019,188 +1975,207 @@
 				});
 			}
 
-			// 5. Gerald Squirrel Easter Egg
+			// 5. Interactive Chaos vs. Practicality Scenario Switcher
+			var scenarios = [
+				{
+					buddy: '"Climb the tallest ladder available, glare at the machine until it knows who\'s in charge, and improvise."',
+					sir: '"Pick up the correct wrench on the first try, steady the ladder, and prepare for whatever happens next."'
+				},
+				{
+					buddy: '"The map wasn\'t badly drawn—it was interpretive. Besides, I already know where we\'re going."',
+					sir: '"A map is only useful if the river agrees to stay in the same place it was yesterday."'
+				},
+				{
+					buddy: '"Step over the fallen logs at full speed and trust gravity to mind its own business."',
+					sir: '"Proceed with caution—and still somehow get ambushed by a branch that definitely repositioned itself."'
+				},
+				{
+					buddy: '"Call it professional interest, lean over the edge of the raft, and see what the river is up to."',
+					sir: '"Notice the current shifting early and brace for the exact moment enthusiasm turns into an expedition."'
+				}
+			];
+			var scenarioButtons = document.querySelectorAll('.scenario-btn');
+			var scenarioBuddy = document.getElementById('scenario-buddy');
+			var scenarioSir = document.getElementById('scenario-sir');
+
+			scenarioButtons.forEach(function (btn) {
+				btn.addEventListener('click', function () {
+					scenarioButtons.forEach(function (b) {
+						b.classList.remove('active');
+						b.setAttribute('aria-selected', 'false');
+					});
+					btn.classList.add('active');
+					btn.setAttribute('aria-selected', 'true');
+
+					var idx = parseInt(btn.getAttribute('data-scenario'), 10);
+					if (scenarios[idx] && scenarioBuddy && scenarioSir) {
+						scenarioBuddy.textContent = scenarios[idx].buddy;
+						scenarioSir.textContent = scenarios[idx].sir;
+					}
+				});
+			});
+
+			// 6. Interactive Raft of Bad Ideas Inspector (Pins + Buttons Synced)
+			var raftSpots = [
+				{
+					title: '1. The Log & Rope Hull',
+					desc: 'Built from rough logs and warped boards held together by old, stubborn knots. Buddy trusts it absolutely. Sir trusts it the way a man trusts a chair that has not yet betrayed him, but clearly thinks about it.'
+				},
+				{
+					title: '2. "No Plan" & "Probably Fine" Signs',
+					desc: 'Hand-lettered wooden signs posted fore and aft. They serve as both an operational philosophy and a fair warning to anything watching from the riverbank.'
+				},
+				{
+					title: '3. Sir\'s Stash (Do Not Touch)',
+					desc: 'A wooden crate lashed to the side containing practical supplies, spare rope, and emergency gear. The label clearly reads "Do Not Touch"—which Buddy treats as a polite suggestion.'
+				},
+				{
+					title: '4. The River Lantern',
+					desc: 'Tied to an upright post with heavy rope, casting a warm golden glow across the water when the forest canopy thickens and the river starts keeping secrets.'
+				}
+			];
+			var spotControls = document.querySelectorAll('[data-spot]');
+			var spotTitle = document.getElementById('raft-spot-title');
+			var spotDesc = document.getElementById('raft-spot-desc');
+
+			spotControls.forEach(function (ctrl) {
+				ctrl.addEventListener('click', function () {
+					var idx = parseInt(ctrl.getAttribute('data-spot'), 10);
+					spotControls.forEach(function (c) {
+						var match = parseInt(c.getAttribute('data-spot'), 10) === idx;
+						c.classList.toggle('active', match);
+						if (c.hasAttribute('aria-selected')) {
+							c.setAttribute('aria-selected', String(match));
+						}
+					});
+					if (raftSpots[idx] && spotTitle && spotDesc) {
+						spotTitle.textContent = raftSpots[idx].title;
+						spotDesc.textContent = raftSpots[idx].desc;
+					}
+				});
+			});
+
+			// 7. Interactive 3-Question River Traveler Quiz
+			var quizQuestions = [
+				{
+					q: "A piece of machinery bolted to your treehouse wall starts rattling like it has a personal objection. What is your first move?",
+					options: [
+						{ text: "Adjust my crown, grab a screwdriver, and take it personally.", type: "buddy" },
+						{ text: "Inspect the scattered tools, pick up the right wrench, and stand back.", type: "sir" },
+						{ text: "Quietly confiscate a shiny tool and vanish into the oak branches.", type: "gerald" }
+					]
+				},
+				{
+					q: "You step onto a log raft and notice the Rambunctious River shifting current on its own. How do you react?",
+					options: [
+						{ text: "Call it 'professional interest' and untie the rope immediately.", type: "buddy" },
+						{ text: "Point out that 'professional interest' is just enthusiasm in a hat.", type: "sir" },
+						{ text: "Observe from a safe branch while holding unapproved hardware.", type: "gerald" }
+					]
+				},
+				{
+					q: "What is the most important item to bring on an unplanned expedition?",
+					options: [
+						{ text: "Sparkling pull-on cowboy boots, nerve, and a flexible definition of a plan.", type: "buddy" },
+						{ text: "Practical boots, a steady hand, and a metal flask for emergencies.", type: "sir" },
+						{ text: "The element of surprise (and zero prior consultation).", type: "gerald" }
+					]
+				}
+			];
+
+			var quizResults = {
+				buddy: {
+					badge: "Five Feet of Determination",
+					title: "You Travel Like Buddy Bootz!",
+					desc: "You treat 'that might be a bad idea' as a personal invitation. Armed with curiosity, nerve, and an interpretive relationship with maps, you're always ready to see what's around the next bend."
+				},
+				sir: {
+					badge: "The Steady Anchor",
+					title: "You Travel Like Sir Drinks-A'Lot!",
+					desc: "Practical, observant, and dryly humorous, you prefer a plan with fewer surprises—even when the forest branches and the river itself have other ideas."
+				},
+				gerald: {
+					badge: "Unconsulted Chaos Specialist",
+					title: "You Travel Like Gerald the Squirrel!",
+					desc: "You watch the chaos from the high branches, borrow unattended tools when nobody is looking, and never explain your motives."
+				}
+			};
+
+			var quizStep = 0;
+			var quizScores = { buddy: 0, sir: 0, gerald: 0 };
+			var quizQuestionView = document.getElementById('quiz-question-view');
+			var quizResultView = document.getElementById('quiz-result-view');
+			var quizStepLabel = document.getElementById('quiz-step-label');
+			var quizQuestionText = document.getElementById('quiz-question-text');
+			var quizOptionsList = document.getElementById('quiz-options-list');
+			var quizResultBadge = document.getElementById('quiz-result-badge');
+			var quizResultTitle = document.getElementById('quiz-result-title');
+			var quizResultDesc = document.getElementById('quiz-result-desc');
+			var quizRestartBtn = document.getElementById('quiz-restart-btn');
+
+			function renderQuizStep() {
+				if (!quizOptionsList) return;
+				var item = quizQuestions[quizStep];
+				quizStepLabel.textContent = "Question " + (quizStep + 1) + " of " + quizQuestions.length;
+				quizQuestionText.textContent = item.q;
+				quizOptionsList.innerHTML = "";
+
+				item.options.forEach(function (opt) {
+					var btn = document.createElement('button');
+					btn.type = 'button';
+					btn.className = 'quiz-option';
+					btn.textContent = opt.text;
+					btn.addEventListener('click', function () {
+						quizScores[opt.type] += 1;
+						quizStep += 1;
+						if (quizStep < quizQuestions.length) {
+							renderQuizStep();
+						} else {
+							showQuizResult();
+						}
+					});
+					quizOptionsList.appendChild(btn);
+				});
+			}
+
+			function showQuizResult() {
+				var winner = 'buddy';
+				if (quizScores.sir > quizScores[winner]) winner = 'sir';
+				if (quizScores.gerald > quizScores[winner]) winner = 'gerald';
+
+				var res = quizResults[winner];
+				quizResultBadge.textContent = res.badge;
+				quizResultTitle.textContent = res.title;
+				quizResultDesc.textContent = res.desc;
+				quizQuestionView.hidden = true;
+				quizResultView.hidden = false;
+			}
+
+			if (quizRestartBtn) {
+				quizRestartBtn.addEventListener('click', function () {
+					quizStep = 0;
+					quizScores = { buddy: 0, sir: 0, gerald: 0 };
+					quizResultView.hidden = true;
+					quizQuestionView.hidden = false;
+					renderQuizStep();
+				});
+			}
+
+			renderQuizStep();
+
+			// 8. Gerald Squirrel Discovery (Original Approved Easter Egg)
 			var geraldButton = document.getElementById('gerald-trigger');
 			var geraldMessage = document.getElementById('gerald-message');
-
 			if (geraldButton && geraldMessage) {
 				geraldButton.addEventListener('click', function () {
 					var found = geraldButton.getAttribute('aria-expanded') !== 'true';
 					geraldButton.setAttribute('aria-expanded', String(found));
-					geraldMessage.textContent = found ? 'You found him. Gerald was not consulted (and he escalated).' : '';
+					geraldMessage.textContent = found ? 'You found him. Gerald was not consulted.' : '';
 					geraldMessage.hidden = !found;
 				});
 			}
 
-			// 6. Interactive Audio & Visual Grand Tour + Header Quick Audio Button
-			var tourSteps = [
-				{
-					badge: "Stop 1 of 7 \u2022 The Boot Treehouse",
-					text: "Sir, you finally showed up. Took you long enough to catch up. I got stories. I've got plans. A whole world I'm bringing to life.",
-					img: "buddy_treehouse.png",
-					alt: "Buddy Bootz's Treehouse"
-				},
-				{
-					badge: "Stop 2 of 7 \u2022 Buddy & Sir",
-					text: "Now you're finally along for the ride, which means you're legally responsible for whatever happens next. There's Buddy, that's me. And there's Sir, that's you.",
-					img: "buddy.png",
-					alt: "Buddy Bootz"
-				},
-				{
-					badge: "Stop 3 of 7 \u2022 The Water Pump",
-					text: "There's the pump. Ready? Nothing a wrench and a splash of strategic whiskey can't negotiate with.",
-					img: "buddy-sir-pump-chaos.png",
-					alt: "Buddy and Sir fixing the water pump"
-				},
-				{
-					badge: "Stop 4 of 7 \u2022 The Raft of Bad Ideas",
-					text: "There's the raft. Hop on! Built from rough logs, rope, and questionable confidence.",
-					img: "raft_coffeetime.png",
-					alt: "The Raft on the Rambunctious River"
-				},
-				{
-					badge: "Stop 5 of 7 \u2022 Sticky Frog Forest",
-					text: "There's Sticky Frog Forest and all its questionable residents. And Gerald the squirrel.",
-					img: "frogs.png",
-					alt: "Sticky Frog Forest"
-				},
-				{
-					badge: "Stop 6 of 7 \u2022 The Rambunctious River",
-					text: "And somehow between all the stories and all the things I keep throwing at you... here comes the Rambunctious River. Always moving, always pushing.",
-					img: "prelude.png",
-					alt: "The Rambunctious River glowing"
-				},
-				{
-					badge: "Stop 7 of 7 \u2022 The Maze",
-					text: "I made up a world where anything can come true, where we can break the rules and make up new ones, too. Come on, Sir. Are you ready for what happens next?",
-					img: "maze.png",
-					alt: "The Maze rising from the river"
-				}
-			];
-
-			var currentStep = 0;
-			var isAudioPlaying = false;
-			var tourBtn = document.getElementById('start-tour-btn');
-			var prevBtn = document.getElementById('prev-tour-btn');
-			var restartBtn = document.getElementById('restart-tour-btn');
-			var tourText = document.getElementById('tour-text');
-			var tourImg = document.getElementById('tour-image');
-			var tourBadge = document.getElementById('tour-step-indicator');
-			var tourDotsContainer = document.getElementById('tour-dots');
-			var ctaBox = document.getElementById('tour-final-cta');
-			var mainAudio = document.getElementById('main-audio');
-			var headerAudioBtn = document.getElementById('header-audio-btn');
-
-			// Build navigation dots
-			if (tourDotsContainer) {
-				tourSteps.forEach(function (_, idx) {
-					var dot = document.createElement('button');
-					dot.type = 'button';
-					dot.className = 'tour-dot' + (idx === 0 ? ' active' : '');
-					dot.setAttribute('aria-label', 'Go to stop ' + (idx + 1));
-					dot.addEventListener('click', function () {
-						currentStep = idx;
-						renderStep(currentStep);
-					});
-					tourDotsContainer.appendChild(dot);
-				});
-			}
-
-			function updateDots(index) {
-				if (!tourDotsContainer) return;
-				var dots = tourDotsContainer.querySelectorAll('.tour-dot');
-				dots.forEach(function (dot, i) {
-					dot.classList.toggle('active', i === index);
-				});
-			}
-
-			function renderStep(index) {
-				var step = tourSteps[index];
-				tourText.style.opacity = '0';
-				tourImg.style.opacity = '0';
-
-				setTimeout(function () {
-					tourBadge.textContent = step.badge;
-					tourText.textContent = '"' + step.text + '"';
-					tourImg.src = step.img;
-					tourImg.alt = step.alt;
-					tourText.style.opacity = '1';
-					tourImg.style.opacity = '1';
-					updateDots(index);
-				}, 220);
-
-				if (prevBtn) prevBtn.hidden = index === 0;
-				if (tourBtn) {
-					tourBtn.hidden = false;
-					tourBtn.innerHTML = index === tourSteps.length - 1 ? 'Enter the Maze &nbsp; &#10024;' : 'Next Scene &nbsp; &rarr;';
-				}
-			}
-
-			if (tourBtn) {
-				tourBtn.addEventListener('click', function () {
-					if (!isAudioPlaying && mainAudio) {
-						mainAudio.play().catch(function (err) {
-							console.log('Audio playback prevented by browser policy:', err);
-						});
-						isAudioPlaying = true;
-						tourBtn.innerHTML = 'Next Scene &nbsp; &rarr;';
-						restartBtn.hidden = false;
-						return;
-					}
-
-					if (currentStep < tourSteps.length - 1) {
-						currentStep += 1;
-						renderStep(currentStep);
-					} else {
-						tourBtn.hidden = true;
-						ctaBox.style.display = 'block';
-					}
-				});
-			}
-
-			if (prevBtn) {
-				prevBtn.addEventListener('click', function () {
-					if (currentStep > 0) {
-						currentStep -= 1;
-						renderStep(currentStep);
-					}
-				});
-			}
-
-			if (restartBtn) {
-				restartBtn.addEventListener('click', function () {
-					currentStep = 0;
-					renderStep(0);
-					ctaBox.style.display = 'none';
-					if (mainAudio) {
-						mainAudio.currentTime = 0;
-						mainAudio.play().catch(function () {});
-						isAudioPlaying = true;
-					}
-				});
-			}
-
-			// Sync Sticky Header Audio Button with Main Audio
-			if (headerAudioBtn && mainAudio) {
-				headerAudioBtn.addEventListener('click', function () {
-					if (mainAudio.paused) {
-						mainAudio.play().catch(function () {});
-					} else {
-						mainAudio.pause();
-					}
-				});
-
-				mainAudio.addEventListener('play', function () {
-					isAudioPlaying = true;
-					headerAudioBtn.innerHTML = '&#10074;&#10074; Pause River Song';
-				});
-
-				mainAudio.addEventListener('pause', function () {
-					headerAudioBtn.innerHTML = '&#9835; Play River Song';
-				});
-			}
-
-			// 7. Artwork Lightbox Modal
+			// 9. Spoiler-Safe Artwork Lightbox
 			var lightbox = document.getElementById('art-lightbox');
 			var lightboxImg = document.getElementById('lightbox-img');
 			var lightboxCaption = document.getElementById('lightbox-caption');
@@ -2235,35 +2210,35 @@
 				});
 			}
 
-			// 8. Smart Floating Waitlist Reminder (Shows after 45% scroll, remembers dismissal)
-			var floatingToast = document.getElementById('floating-waitlist');
-			var closeFloatingBtn = document.getElementById('close-floating-btn');
-			var floatingCtaLink = document.getElementById('floating-cta-link');
-			var toastDismissed = false;
+			// 10. Polite Dismissible Signup Reminder
+			var reminder = document.getElementById('floating-reminder');
+			var closeReminder = document.getElementById('close-reminder');
+			var reminderCta = document.getElementById('reminder-cta');
+			var reminderDismissed = false;
 
-			if (floatingToast) {
+			if (reminder) {
 				window.addEventListener('scroll', function () {
-					if (toastDismissed) return;
+					if (reminderDismissed) return;
 					var scrolled = window.scrollY;
 					var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
 					if (maxScroll > 0 && scrolled / maxScroll > 0.45 && scrolled / maxScroll < 0.88) {
-						floatingToast.classList.add('is-visible');
+						reminder.classList.add('is-visible');
 					} else {
-						floatingToast.classList.remove('is-visible');
+						reminder.classList.remove('is-visible');
 					}
 				}, { passive: true });
 
-				if (closeFloatingBtn) {
-					closeFloatingBtn.addEventListener('click', function () {
-						toastDismissed = true;
-						floatingToast.classList.remove('is-visible');
+				if (closeReminder) {
+					closeReminder.addEventListener('click', function () {
+						reminderDismissed = true;
+						reminder.classList.remove('is-visible');
 					});
 				}
 
-				if (floatingCtaLink) {
-					floatingCtaLink.addEventListener('click', function () {
-						toastDismissed = true;
-						floatingToast.classList.remove('is-visible');
+				if (reminderCta) {
+					reminderCta.addEventListener('click', function () {
+						reminderDismissed = true;
+						reminder.classList.remove('is-visible');
 					});
 				}
 			}
